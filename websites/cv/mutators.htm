@@ -1,0 +1,683 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Mutators</title>
+<meta name="Microsoft Theme" content="bars 011">
+</head>
+
+<body background="barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633"
+vlink="#996600" alink="#993300">
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3 FOLDED ADD_DATE="873997532" align="center"><!--mstheme--><font face="Times New Roman, Times" color="#000000"><a NAME="top"></a><font SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a>
+| <a HREF="index.htm#MyCVs">my variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a>
+|&nbsp; <a HREF="index.htm#otherPlaces">other places</a></font><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3 FOLDED ADD_DATE="873997549" align="center"><!--mstheme--><font face="Times New Roman, Times" color="#000000"><strong><font size="6">Mutators</font></strong><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">&nbsp;</font></p>
+
+<p><font size="4">The existing chess variants (CVs) use an enormous wide of different
+concepts in their rules. Some of those new rules have a special feature, they can be used
+in other variants, creating new games. A simple and good example is the pass rule: <em>A
+player may pass his turn</em>. If you apply this rule to FIDE chess, you get a different
+game, <em>Passing Chess</em> (or whatever...). I will call to this kind of rules, <em>mutators</em>.</font></p>
+
+<p><font size="4">What I want is to start a discussion about this concept, namely:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">What makes a
+    certain rule a Mutator?</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Can mutators be
+    applied to any game, or just to some set of CVs?</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">How mutators
+    interact with each other?</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Is the mutator
+    concept flexible enough? If not, how can it be expanded?</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Is a mutator
+    list useful to the CV community?</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#000000"><font size="4"><strong>What makes
+a certain rule a Mutator?</strong></font><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<blockquote>
+  <p><font size="4"><strong>Definition</strong>: A <strong>mutator</strong> M is a
+  well-defined and reasonable concept that applied at least to one game G, produces a new
+  game, denoted G[M].</font></p>
+</blockquote>
+
+<blockquote>
+  <p><font size="4"><strong>Remark</strong>: A game G with mutator M, that is G[M] is, by
+  definition, a new game. So we can apply other mutator M' on it to produce another new game
+  denoted by G[M][M'].</font></p>
+</blockquote>
+
+<p><font size="4">I inserted the <em>reasonable</em> word in the mutator definition, to
+avoid questionable mutators like rule <u>8th-yellow</u>: &quot;The game must be played on
+the 8th floor of a yellow building&quot;. I trust your common sense :-)</font></p>
+
+<p><font size="4">Even so, this is a not a strict definition, since I didn't define what a
+game is (a rather complex issue). To avoid this problem (since we will deal just with
+CVs), I use the next definition:</font></p>
+
+<blockquote>
+  <p><font size="4"><strong>Definition</strong>: Let's denote &quot;FIDE Chess&quot; as game
+  FIDE. A <strong>chess variant </strong>C is the result of applying N mutators, M1, M2,
+  ..., Mn to FIDE, that is, C = FIDE[M1][M2]...[Mn].</font></p>
+</blockquote>
+
+<blockquote>
+  <p><font size="4"><strong>Remark</strong>: A consequence is that every CV can be defined
+  in terms of Mutators.</font></p>
+</blockquote>
+
+<p><font size="4">Example: Assume the Pass rule as a mutator. So, <em>Passing Chess</em>
+is defined by FIDE[Pass].</font></p>
+<!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#000000"><font size="4">How Mutators
+interact with each other?</font><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">What if we use more than one mutator in a game? Can we use the same
+mutator twice? It depends, of course...</font></p>
+
+<p><font size="4">Some initial notation:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4"><strong>iff</strong>
+    means &quot;if and only if&quot;</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4"><strong>x|y</strong>
+    means a choice between x or y.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4"><strong>set</strong>
+    means the typical mathematical set with zero or more elements, e.g. {1,2,3} or {}</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4"><strong>sequence
+    </strong>means a deterministic sequence of numbers, e.g., {1,2,3,...} or {1,3,5,7,...}</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4"><strong>rel-op</strong>
+    means one of the relational operators, i.e., &lt;, &gt;, =, &lt;&gt; (not equal), &gt;=,
+    &lt;=</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">A game is made
+    of <strong>turns</strong>, and each turn has a set of <strong>moves</strong> for each
+    player.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">Now for some concepts:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">A mutator M is <strong>applicable</strong>
+    to game G iff G[M] is a game.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">A mutator M is <strong>idempotent</strong>
+    in game G iff G[M] = G[M][M]</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Mutators M and
+    M' are <strong>commutative</strong> in game G iff G[M][M'] = G[M'][M]</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Mutator M is <strong>atomic</strong>
+    iff there is no mutators M' and M'' and a game G such that G[M] = G[M'][M'']. Otherwise M
+    is <strong>composite</strong>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Mutator M is <strong>parameterized</strong>
+    iff it needs one or more arguments to define it properly. It is denoted by M(param1, ...,
+    paramN).</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Given a game G
+    and mutators M and M', if G[M][M'] and G[M'][M] are not games, then M and M' are <strong>incompatible
+    </strong>towards G. Otherwise they are <strong>compatible</strong> towards G.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">Assume the following mutators:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">NIL : <em>changes
+    nothing (perhaps this is not a mutator, because people may argue that it is not a
+    reasonable rule).</em></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Pass : <em>A
+    player may pass is move.</em></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Unroyal: <em>There
+    is no longer any royal piece (no check, no mate and no castling)</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Royal(set): <em>All
+    pieces in set become royal</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Take-All : <em>A
+    player wins if he captures all unroyal opponent pieces.</em></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Move-Opponent :<em>
+    The player can move the opponent pieces.</em></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Regicide : <em>Removes
+    all royal pieces from the board</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Progressive(sequence):
+    <em>The players have increasing moves for each move, given by sequence parameter. </em></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Stop-Turn<em> </em>:<em>
+    If a player checks in the middle of his move, he must pass.</em></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Bad-Advice : <em>A
+    player offers for each move, two possible options to the opponent, who advises the player
+    which to play</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Reuse(same|other)
+    : <em>A player can reuse opponent captured pieces and drop them on his side (like in
+    Shogi)</em> <em>in the same board, or in other board</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Assault(2|4) :<em>
+    Two games are played simultaneous with color reversed boards, by 2 or 4 players. Wins who
+    finish first</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">Examples:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Regicide is not
+    applicable to FIDE (there is no winning condition). However, it is applicable to
+    FIDE[Take-All]</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Pass is
+    idempotent in FIDE, since FIDE[Pass] = FIDE[Pass][Pass]</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Bad-Advice is
+    not idempotent in FIDE, since FIDE[Bad-Advice] is not equal to
+    FIDE[Bad-Advice][Bad-Advice] (in this 2nd game, each player should offer 4 possible
+    moves).</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Pass and
+    Take-All are commutative in FIDE, since FIDE[Take-All][Pass] = FIDE[Take-All][Pass]</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Pass is an
+    atomic mutator (at least, I think it is)</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Progressive and
+    Assault are parameterized.</font><!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE[Progressive(1,2,3,4...)][Stop-Turn]
+        = Scottish Progressive Chess.</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE[Progressive(1,1,2,2,3,3,...)][Stop-Turn]
+        = Slow Progressive Chess.</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE[Progressive(1,2,2,2...)][Stop-Turn]
+        = Marsellais Chess.</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE[Progressive(1,2,3,4...)][Move-Opponent]
+        = Progressive Orthodox Chess.</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Regicide and
+    NIL are incompatible towards FIDE.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Mutator
+    [Bughouse] is composite since it is defined by [Reuse(other)][Assault(4)]</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#000000"><font size="4">More Mutators...</font><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">Here are some other mutators (only a few of them are mine, the others
+were taken from various sources). Some mutators would need more explanations to remove
+ambiguities, but the main idea is there.</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Misere : <em>The
+    player wins if it looses the original game</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Must-Capture : <em>Captures
+    are compulsory</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Must-Move : <em>Moves
+    are compulsory</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">No-Capture(set)
+    :<em> Pieces may not be captured at turns included in set</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">No-Move(set): <em>Pieces
+    may not be moved at turns included in set</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Limit(N) : <em>The
+    game has a maximum of N turns</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Stalemate(win|loss)
+    : <em>A stalemate is a loss or a win</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Swap : <em>A
+    piece may swap its position with some other within its capturing or moving range</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Ko : <em>A move
+    is not legal if it repeats the board position of the last turn</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Strong-Ko : <em>A
+    move is not legal if it repeats any past board position</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Kriegspiel : <em>The
+    player cannot see the opponent pieces, but he can repeat the move if the last one he tried
+    was illegal</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Exhaustion(turn|game)
+    : <em>All pieces should be moved, in a turn or in the entire game, until any piece can be
+    moved again</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Points : <em>At
+    the end of game, the player with more points wins</em> <em>(note: this should be used with
+    other Mutators, like next one)</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Domination(set)
+    :<em> For each turn, the last player that occupied a square included in set, gains 1 point</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Optional-Side(N)
+    : <em>After the Nth turn, the 2nd player can choose to switch sides rather than respond.</em></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Switch(N) :<em>
+    At each set of N turns, players switch sides</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Handicap(remove-set,insert-set)
+    :<em> The pieces in remove-set (insert-set) are removed (inserted) from the board before
+    the game starts</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Conditional(set)
+    :<em> Each move may have a &quot;if condition then ...&quot; prefix attach to it. All
+    legal conditions belongs to set</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Whim : <em>The
+    original game turns Misere. This may be invoked only once in the game (not once per
+    player)</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Neighbors(left|right|opposite,low|high):
+    <em>A player win iff the player to his direction (left, right or opposite) has the lowest
+    or highest score at the end of the game</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Atomic :<em>
+    Each piece adjacent to a capture, friend or foe, is removed from the board</em>. </font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Nuclear :<em>
+    Each piece adjacent to a capture, friend or foe, is removed from the board (except the
+    capturing piece)</em>. </font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Inertial : <em>The
+    last moved piece will continue to move on the following turns, if possible.</em></font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Momentum : <em>Same
+    as Inertial, but the player can also move a new piece, or stop one with momentum</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Rotational(clockwise|cclockwise,N)
+    :</font><em><font size="5"> </font><font size="4">The board rotates 90 degrees
+    (counter)clockwise every N turns.</font></em><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Protean :<em>
+    Each unroyal piece takes on the powers of movement of whatever piece it captures</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Morph : <em>Each
+    unroyal piece becomes whatever piece it captures</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Magnetic : <em>Same
+    color repels, different color attracts in rookwise</em> <em>way</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Diplomatic : <em>Moves
+    are done at the same time, and just if they do not conflict with each other</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Reserve(set) :<em>
+    Each player has the pieces in set that can be dropped one per turn at any turn</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Save-Turn(N) : <em>A
+    player can pass and save his move. After saving N moves, he can make a double move</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">Fell free to send <a href="mailto:vascog@uol.com.br">me</a> more!</font></p>
+<p><i><font size="3">[December 2000]</font></i><font size="4"> Patrick Duff sent
+me an idea for a sacrifice mutator. The point is to give the player, the choice
+to play a move with the opponent's pieces. This can be very interesting in
+certain games, like in Duff's own invention, Sacrifice Reversi, where a play may
+indeed sacrifice some stones in order to get a better future position!</font></p>
+<!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#000000"><font size="4">Mutator Prefixes</font><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">Let's imagine the following CV: The game is equal to FIDE chess until
+turn 40, then it behaves like Misere Chess. How to do it? This could be done only with
+mutators parameterized with other mutators (see next section). Other way is to insert a
+new notation called prefixes. A Prefix is a condition that is attached to one or more
+mutators. A mutator only works if its prefix condition is true, otherwise it behaves like
+mutator NIL, i.e., it changes nothing. A prefix P of mutator M in game G is denoted by G<strong>::</strong>P[M]<strong>::</strong></font></p>
+
+<p><font size="4">List of Prefixes:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">turn rel-op N -
+    works if &quot;actual turn rel-op N&quot; result is true.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">board rel-op N
+    - works on boards where &quot;boards rel-op N&quot;.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">player(s) -
+    works just for specified player(s).</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">pieces in set -
+    works just for pieces included in set. Pieces may be defined by type (e.g., Q), by color
+    (e.g., wQ) or by starting position (e.g., Qd1).</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">It is also possible to combine prefixes using the logical operators,
+like <strong>and</strong>, <strong>or</strong>, <strong>not</strong>, ...</font></p>
+
+<p><font size="4">Examples:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE<strong>::</strong>turn&gt;40[Misere]<strong>::</strong>
+    - The first example of this section.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">[Bughouse]<strong>::</strong>board=1[Atomic]<strong>::</strong>
+    - Bughouse, but the 1st board has an atomic mutator.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE<strong>::</strong>white[Take-All]<strong>::</strong>
+    - The white player can <strong>also</strong> win by capturing all unroyal black pieces.
+    Black plays as usual.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE<strong>::</strong>black[Unroyal]<strong>::
+    ::</strong>white[Take-All]<strong>::</strong> - The white player can <strong>only</strong>
+    win if he captures all black pieces. Black plays with no royal piece.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE[Handicap({a8,h8},{})]<strong>::</strong>white[Limit(35)][Stalemate(loss)]<strong>::
+    - </strong>Black starts without his rooks, but white just has 35 moves to win, otherwise
+    it looses.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE<strong>::</strong>pieces
+    in {N,wQ,bR,Pa2}[Protean]<strong>:: -</strong> Just like FIDE, but there are the special
+    Protean pieces: The Knights, the white Queen, the black Rooks and the Pawn at square a2.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#000000"><font size="4">High-Order Mutators</font><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><big>High-order mutators are mutators that receive one or more mutators as parameters.</big></p>
+
+<p><big>Instead of using prefixes, the job can be done using high order mutator <em>Apply</em>,
+which syntax is [Apply(mutators, condition)] where the mutators are only applied if
+condition is true. The example </big><font size="4">FIDE<strong>::</strong>turn&gt;40[Misere]<strong>::
+</strong>becomes FIDE[Apply([Misere],turn&gt;40)].</font></p>
+
+<p><font size="4">Other high-order mutators:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Remove(mutators)
+    : the rules defined by mutators are removed from the game.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Inverse(mutator)
+    : returns the inverse of mutator, if it exists.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Complement(mutator)
+    : the illegal moves turn legal, and vice versa.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><big>Twice</big><font size="4">(mutator)</font><big>
+    : apply the mutator twice</big><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><big>Limit</big><font size="4">(mutator)</font><big>
+    : apply mutator repeatedly until fixed-point (limit) is reached</big><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><big>Compose</big><font
+    size="4">(mutators)</font><big> : compose two mutators. Mostly useful in combination with
+    other high-order mutators.</big><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">Examples:</font> </p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">FIDE[Remove([En-Passant])],
+    returns a CV just like FIDE but without the en-passant rule.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Inverse([Switch(3)])
+    : <em>At each set of 3 turns, players do not switch sides</em>, <em>switching otherwise</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="barbul1e.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="4">Complement([Swap])
+    : <em>A piece may swap its position with some other <strong>not in</strong> its capturing
+    or moving range</em>.</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><font size="4">Of course, if there are some problems defining what makes a mutator
+reasonable, there is an extra problem with high-order mutators and that is an
+interpretation one (e.g., what is the inverse of mutator X?)</font></p>
+
+<p>&nbsp;</p>
+<!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#000000">Contributions<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+
+<p><big><a href="mailto:chaunier@handy.univ-lyon1.fr">Claude Chaunier</a>, <a
+href="mailto:torbenm@diku.dk">Torben Mogensen</a>, <a
+href="mailto:mathwft@math.canterbury.ac.nz">Bill Taylor</a> </big></p>
+<a HREF="#top">
+
+<p align="right">back to top</a> </p>
+<!--msthemeseparator--><p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font>
+
+<h3 align="center"><!--mstheme--><font face="Times New Roman, Times" color="#000000"><font SIZE="-1"><a
+HREF="http://www.metacrawler.com">webSearch</a> | <a HREF="index.htm#MyCVs">my variants</a>
+|&nbsp; <a HREF="index.htm#Challenges">challenges</a> |&nbsp; <a
+HREF="index.htm#otherPlaces">other places</a></font> <!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+</body>
+</html>

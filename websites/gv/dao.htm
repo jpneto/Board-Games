@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - DAO</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+      <h1 align="center"><strong><font face="Arial Black">DAO&nbsp;</font> </strong></h1>
+<p align="center"><strong><font size="3">Copyright
+      (c) 2000 Jeff Pickering and Ben van Buskirk</font></strong></p>
+  <p align="left"><font size="3" face="Arial">Dao
+  is a simple game played on a 4x4 board with this initial setup:</font></p>
+    <center>
+      <table border="1" width="100" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,4,4,w..x/.wx./.xw./x..w");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+&nbsp;
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font size="3" face="Arial"><strong>MOVE
+            </strong>- A player chooses a stone with at least one adjacent empty
+            cell and then moves it orthogonal or diagonal for as many empty
+            cells as possible.</font></li>
+		<li><font size="3" face="Arial"><b>GOAL</b>
+            - A player wins if he gets one of the following patterns</font>
+            <ul>
+				<li><font size="3" face="Arial">All
+                  of his stones on an horizontal or vertical line (not
+                  diagonal!);</font></li>
+				<li><font size="3" face="Arial">All
+                  of his stones forming a 2x2 square;</font></li>
+				<li><font size="3" face="Arial">All
+                  of his stones on the four corners;</font></li>
+				<li><font size="3" face="Arial">One
+                  stone in a corner, surrounded by three enemy stones.</font></li>
+		</ul>
+		</li>
+		</ul>
+    </td>
+  </tr>
+</table>
+  <p align="left"><font face="Arial">The last winning
+goal is to avoid the obvious tactic of trapping a stone to achieve an easy draw.&nbsp;</font></p>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="100" bordercolor="#000000" background="back-board.jpg">
+      
+<script LANGUAGE="JavaScript">
+<!--
+boardgv2diag("lurd,4,4,.xww/4/x.w./x.xw");
+//-->
+</script>
+      </td>
+      <td valign="top" width="500"><font face="Arial"><strong>An example</strong></font>
+        <p><font face="Arial">White has won! He must move c2-d2 and Black
+        cannot stop him to make an vertical four in a row.</font>
+      </td>
+    </tr>
+</table>
+  <p align="left"><font face="Arial">According to David
+desJardins, there are around 110.000 valid DAO positions (each position is, in
+fact, eight positions under rotation and reflection). I tested the game using
+Zillions, and after a tree search of over 60 million nodes (this. of course,
+includes many repetitions) the program does not seem to give any tactical
+advantage to either player (btw, the best proposed move was 1. b3-a3). This points that
+DAO is probably a drawish game. Notice that this is not a game death sentence,
+all two player abstract games end in one of three ways: win for 1st player, win
+for 2nd player, or draw. What kills a game is to find a specific way to always
+win or draw! More serious than this, is that after more than 70 turns played
+almost by random (just avoiding direct winning moves) Zillions was not able to
+defeat me (and Zillions plays very well on small search spaces like the 4x4 DAO
+board)...</font></p>
+<p align="left"><font face="Arial">There
+is a Java analysis program for Dao on Jan Kristian Haugland's </font><font size="3" face="Arial">
+<a href="http://www.neutreeko.net/neutreeko.htm">website</a>.</font></p>
+</blockquote>
+<hr>
+</body>
+</html>

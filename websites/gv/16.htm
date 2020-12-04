@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="Microsoft Theme" content="ricepapr 011">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - 16!</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">16!</font></strong></h1>
+<p align="center"><strong><font size="3">Copyright (c) ? Niek Neuwahl</font></strong></p>
+<p align="left"><font size="3" face="Arial">This game is played on an empty 12x12 square board:</font></p>
+    <center>
+      <table border="1" width="300" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,12,12,144");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+    <p><font face="Arial">The board is seen as a 4x4 set of 3x3 areas where players drop the following 
+	3x3 patterns:</font></p>
+<div align="center">
+  <center>
+<table border="1" width="460" background="back-board.jpg" bordercolorlight="#333366" bordercolordark="#000000">
+  <tr>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./.x.x./.xxx./5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./.x.../.xxx./5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./.x.x./..xx./5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./.x.../.x.x./5");</script></td>
+  </tr>
+  <tr>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./.x.x./...../5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./...x./..xx./5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./.x.../.xx../5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./.x.../.x.../5");</script></td>
+  </tr>
+  <tr>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./.x.../...../5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./...x./...../5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xxx./...../...../5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xx../.x.../...../5");</script></td>
+  </tr>
+  <tr>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/..xx./...../...../5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.xx../...../...../5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/.x.../...../...../5");</script></td>
+    <td width="25%"><script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,5/..x../...../...../5");</script></td>
+  </tr>
+</table>
+  </center>
+</div>
+<br>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><b><font face="Arial">TURN</font></b><font size="3" face="Arial"> - 
+		On each turn, each player picks one remaining pattern and drops it on a 
+		3x3 empty area.</font><ul>
+				<li><font face="Arial">The pattern must match with any adjacent 
+				pattern already on board.</font><ul>
+				<li><font face="Arial">Two patterns match if for each pair of 
+				adjacent cells, both are empty or both are occupied (see example 
+				below).</font></li>
+				<li><font face="Arial">Players may rotate patterns but cannot 
+				mirror them.</font></li>
+		</ul>
+				</li>
+				<li><font size="3" face="Arial">The first pattern must be placed 
+				at one of the four central 3x3 areas.&nbsp;</font></li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><strong>GOAL</strong> - The player that stalemates the adversary wins the game.</font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="300" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,12,12,12/12/12/XXXxxxXXX3/X....x..X3/X.Xxxx..X3/12/12/12/12/12/12");
+//--></script>
+      </td>
+      <td valign="top" width="300"><font face="Arial"><strong>An match/mismatch example</strong><p>
+		The left marked pattern match the central pattern, every pair of 
+		adjacent cells are both empty or both occupied.<p>
+		The right marked pattern is a mismatch, for example f7 is occupied and 
+		g7 is empty.</font></td>
+    </tr>
+</table>
+</blockquote>
+<hr>
+</body>
+</html>

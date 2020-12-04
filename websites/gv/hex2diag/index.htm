@@ -1,0 +1,228 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>hex2diag</title>
+<script LANGUAGE="JavaScript" src="hex2diag.js"></script>
+</head>
+
+<body bgcolor="#D5BD83" background="../ricebk.jpg">
+
+<center><table border="0" width="60%">
+  <tr>
+    <td width="30%" align="center" bordercolor="#000000">
+       <script LANGUAGE="JavaScript">;
+       </script>
+    </td>
+    <td width="40%" align="center">
+      <p align="center"><b><font size="6">&nbsp;hex2diag&nbsp;</font></b></td>
+    <td width="30%" align="center">
+       <script LANGUAGE="JavaScript">;
+       </script>
+    </td>
+  </tr>
+</table></center><br>
+
+hex2diag is a JavaScript tool to easily add hexagonal boards to a webpage. The
+source code was based on the <a href="../board2diag">board2diag</a> tool.
+<br>First, one has to include the call to the board2diag.js file, in the following
+form:
+  <p><font face="Courier New"><b>
+  &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot; src=&quot;hex2diag.js&quot;&gt;&lt;/SCRIPT&gt;</b></font></p>
+Then, one can use a new JavaScript part, and make a call to hex2diag. This
+version assumes all files are in the same directory (this is easily changed).
+Just click on <a href="hex2diag.zip"> <img border="0" src="../icons/zipped.gif" width="19" height="19">
+</a> to download the actual version.&nbsp;
+<p>The function has one argument, which is a string of the following form:
+<ul>
+  <li>Number of columns of the first row
+  <li>Comma
+  <li>Number of columns of the maximal row&nbsp;
+  <li>Comma
+  <li>Number of columns of the bottom row (this just be less than the previous
+    value, otherwise, it will printed just to the middle row - this is useful
+    for trapezoid boards)
+  <li>String that describes the position. Here:
+    <ul>
+      <li>a / marks the end of a row
+      <li>a . is one empty square
+      <li>a ; is one empty cell marked with a green dot
+      <li>a : is one empty cell marked with a red dot
+      <li>a , is one empty cell marked with a blue dot
+      <li>to place stones, use 'xwopqstuv' for&nbsp; black, white, brown,
+        yellow, gray, blue, green, red, magenta. Use uppercase to mark them.
+      <li>to mark empty cell with numbers, use 'a' for 1, 'c' for 2, 'd' for 3'.
+      <li>a h is a special piece used to define walls, blocks, ... if you use H
+        it will blink!
+      <li>use number 1,2,3,4,5,6,7,8,9,0 to represent simple stacks of white or
+        black stones.
+      <li>use [abc] to represent composite stacks, use 'e' empty tops, 'w' for
+        white stone, 'b' for black stone, and 'r' for red stone.
+      <li>use @a[direction] to draw arrows, direction are the typical n,w,s,e
+        and m,o,r,t for nw,ne,sw,se respectively.
+      <li>use @d[color][number] to draw dices. Available colors are w(hite) and
+        b(lue).
+    </ul>
+</ul>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;3,6,3,.../..../...../....../...../..../...&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="200" bgcolor="#D5BD83" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("3,6,3,.../..../...../....../...../..../...");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;2,5,3,xw/.../.oq./.vhp./.us./.t.&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="170" bgcolor="#D5BD83" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("2,5,3,xw/.../.oq./.vhp./.us./.t.");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;2,5,3,XW/.../.OQ./.VHP./.US./.T.&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="170" bgcolor="#D5BD83" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("2,5,3,XW/.../.OQ./.VHP./.US./.T.");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;1,5,1,./../.x./x..w/.ww../..x./..w/../x&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="170" bgcolor="#D5BD83" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("1,5,1,./../.x./x..w/.ww../..x./..w/../x");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;2,5,5,xw/.../..../acdef&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="170" bgcolor="#D5BD83" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("2,5,5,xw/.../..../acdef");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+  </center>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;3,7,3,.,./;..;/.;.;./..::../;;:x:;;/..::../.;.;./;..;/.,.&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="220" bgcolor="#D5BD83" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("3,7,3,.,./;..;/.;.;./..::../;;:x:;;/..::../.;.;./;..;/.,.");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+  </center>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;3,6,3,.../.12./.3.4./..05../.6.7./.89./...&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="200" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("3,6,3,.../.12./.3.4./..05../.6.7./.89./...");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;3,6,3,.../.[xww][xwx]./.[wwx].[wxw]./.[rre][wxr][rwe][rrx]./.[xxw].[wxw]./.[xwe][wxe]./...&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="200" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("3,6,3,.../.[xww][xwx]./.[wwx].[wxw]./.[rre][wxr][rwe][rrx]./.[xxw].[wxw]./.[xwe][wxe]./...");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+</center>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;3,6,3,.../..../.@am@an@ao./.@aw..@ae./.@ar@as@at./..../...&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="200" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("3,6,3,.../..../.@am@an@ao./.@aw..@ae./.@ar@as@at./..../...");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+</center>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br><center>hex2diag(&quot;3,6,3,.@db4./..../.@dw6@dw5@dw1./.@dw3..@dw2./.@dw4@db1@db3./.@db5@db6./.@db2.&quot;)</center><br>");
+//-->
+</script>
+  <center>
+<table border="1" width="200" background="../back-board.jpg">
+  <tr>
+    <td width="100%">
+<script LANGUAGE="JavaScript"><!--
+hex2diag("3,6,3,.@db4./..../.@dw6@dw5@dw1./.@dw3..@dw2./.@dw4@db1@db3./.@db5@db6./.@db2.");
+//-->
+</script>
+    </td>
+  </tr>
+</table>
+</center>
+<br>
+<p align="right"><i>Version 0.6 - Dec 2003</i></p>
+</body></html>

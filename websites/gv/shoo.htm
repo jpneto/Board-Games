@@ -1,0 +1,159 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Towers - SHOO</title>
+<SCRIPT LANGUAGE="JavaScript" src="tower2diag/tower2diag.js"></SCRIPT>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">SHOO</font></strong></h1>
+<p align="center"><strong><font size="3">Copyright (c) 1999 <a href="mailto:djandrew@ntlworld.com"> David
+Andrew</a>, Justin
+Kalef and Chris Kidd</font></strong></p>
+<p align="left"><font size="3" face="Arial">This game is played on a 9x9 square
+board with the following setup:</font></p>
+    <center>
+      <table border="1" width="330" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" align="center">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","9,9,111....../111....../111....../........./........./........./......666/......666/......666");
+</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+    <br>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+        <li><font size="3" face="Arial"><b>HOME BASE</b> - The 3x3 area where
+          the player's travelers start.</font></li>
+        <li><font size="3" face="Arial"><b>HORSE</b> - A special neutral piece
+          that can be mounted by travelers, see below.&nbsp;</font>
+          <ul>
+            <li><font size="3" face="Arial">First player has 4 horses off-board,
+              second player has 5.</font></li>
+            <li><font size="3" face="Arial">A horse slides any number of empty
+              cells on any directions - there is no jumping.</font>
+              <ul>
+                <li><font size="3" face="Arial">A horse cannot enter on either
+                  home base.</font></li>
+              </ul>
+            </li>
+            <li><font size="3" face="Arial">A horse is <u>free</u> if it is not
+              mounted by any traveler.</font></li>
+            <li><font size="3" face="Arial">A horse can be <u>dropped</u> on any
+              empty cell not inside a home base.</font>
+              <ul>
+                <li><font size="3" face="Arial">The dropped horse - in the next
+                  move - is only free for the player that dropped it. After
+                  that, if it is not used, becomes free.</font></li>
+              </ul>
+            </li>
+            <li><font size="3" face="Arial">A free horse can be <u>retired</u>,
+              i.e., it can be removed permanently from the board. To do that,
+              the player must have a traveler (mounted or not) adjacent to the
+              retiring horse.</font></li>
+          </ul>
+        </li>
+        <li><font size="3" face="Arial"><b>TRAVELER</b> - A single stone. A
+          traveler can move to an adjacent (orthogonal or diagonal) empty cell.</font>
+          <ul>
+            <li><font size="3" face="Arial">After entering the adversary home
+              base, a traveler cannot move out.</font></li>
+            <li><font size="3" face="Arial">A traveler can move into a cell
+              occupied by a free horse, and become a <u>mounted</u>
+              traveler.&nbsp;</font> <font size="3" face="Arial">A mounted
+              traveler moves like the horse.</font></li>
+            <li><font size="3" face="Arial">A traveler can <u>dismount</u> a
+              horse, by moving the traveler to an adjacent empty cell. The horse
+              becomes immediately free!</font></li>
+            <li><font size="3" face="Arial">A traveler can <u>capture</u> a
+              horse which is mounted by an adversary traveler if it adjacent to
+              them. If so, he places the adversary traveler on an adjacent empty
+              cell (from the horse's cell), mounts the horse and (optionally)
+              moves out.</font></li>
+          </ul>
+        </li>
+        <li><font size="3" face="Arial"><b>SHOOING</b> - If two friendly
+          travelers are adjacent to an enemy traveler which is not mounted, then
+          that traveler is <u>shooed</u>, i.e., the other player must move that
+          traveler and remove the shoo.</font>
+          <ul>
+            <li><font size="3" face="Arial">If the traveler cannot move to
+              remove the shoo, the piece is removed from board, and must be
+              dropped on any empty cell adjacent to his home base (which is not
+              shooed).</font>
+              <ul>
+                <li><font size="3" face="Arial">If this is still not possible,
+                  then the piece should be dropped on some adjacent empty cell
+                  from those adjacent to his home base, and so forth...</font></li>
+              </ul>
+            </li>
+            <li><font size="3" face="Arial">A dismounted traveler cannot move
+              into a shoo.</font></li>
+            <li><font size="3" face="Arial">If several shoos exists, the player
+              must remove one per turn on his choice.</font></li>
+            <li><font size="3" face="Arial">A piece inside the adversary home
+              base <i>cannot</i> be shooed!</font></li>
+          </ul>
+        </li>
+        <li><font size="3" face="Arial"><b>MOVE</b> - On each turn, each player
+          can do one of the following things:</font>
+          <ul>
+            <li><font size="3" face="Arial">Remove a shoo</font></li>
+            <li><font size="3" face="Arial">Move a traveler (mounted or not)</font></li>
+            <li><font size="3" face="Arial">Move a free horse</font></li>
+            <li><font size="3" face="Arial">Drop one of his off-board horses</font></li>
+            <li><font size="3" face="Arial">Retire a free horse.</font></li>
+            <li><font size="3" face="Arial">Mount a traveler (i.e., moving it
+              into a free horse)</font></li>
+            <li><font size="3" face="Arial">Dismount a traveler (i.e., moving it
+              out of the horse)</font></li>
+            <li><font size="3" face="Arial">Capture a horse.</font></li>
+          </ul>
+        </li>
+        <li><font size="3" face="Arial"><strong>GOAL</strong> - Wins the player
+          that first occupies the adversary home base with his travelers.</font>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<br>
+<table border="1" width="750" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+  <tr>
+    <td align="center" width="390" bordercolor="#000000"><script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","...b...../..6....../6.1a....[eeeewr]/.6......./........./........./........./........./.........");
+</script>
+    </td>
+    <td valign="top" width="360"><font face="Arial"><strong>An example</strong></font>
+      <p><font size="3" face="Arial">The mounted traveler at i7 slides to cell
+      [1] and shoos the black traveler. Since it must remove the shoo, it must
+      move to the only empty cell adjacent to its home base, cell [2].</font><p><font size="3" face="Arial">Shoo
+      is the mechanism to avoid the drawish tactic of keeping one or more travelers
+      inside its own home base.</font></td>
+  </tr>
+</table>
+<p><font face="Arial">Some variants proposed by David Andrew: <i>You may wish to
+try out the following variants: i) playing with 7 rather than 9 horses; ii) when
+a piece has been hushed, either that you lose the move altogether or (worse)
+that the piece that is hushed is shooed off - to the player's stable; and iii)
+you keep the rule of safety, that prevents travelers in their home area being
+shooed (off), but allow travelers to leave the home area again, taking the risk
+that they will subsequently be shooed off, of course. Or, there may be other
+variants that occur to you. </i></font></p>
+<p><font size="3" face="Arial">For more information (including some examples),
+check this <a href="http://www.nrich.maths.org.uk/mathsf/journalf/jul99/game1/">webpage</a>.</font></p>
+</blockquote>
+<hr align="center">
+</body>
+</html>

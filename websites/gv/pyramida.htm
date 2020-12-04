@@ -1,0 +1,148 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - PYRAMIDA</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">PYRAMIDA</font></strong></h1>
+<p align="center"><strong><font size="3">Copyright (c) ? </font></strong><a href="http://www.vlasak.cz/?fml[view]=hra6"><span class="SpellE"><b>Zbysek</b></span><b>
+<span class="SpellE">Vlasak</span></b></a></p>
+<p align="left"><font size="3" face="Arial">This game is played on the following board:</font></p>
+    <center>
+      <table border="1" width="570" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,14,21,zzzzzzzzzz.zzzzzzzzzz/zzzzzzzzz...zzzzzzzzz/zzzzzzzz.....zzzzzzzz/zzzzzzz.......zzzzzzz/zzzzzz.........zzzzzz/zzzzz...........zzzzz/zzzz.............zzzz/zzz...............zzz/zz.................zz/z...................z/...................../...................../...................../.x.w.x.w.x.w.x.w.x.w.");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+&nbsp;
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font size="3" face="Arial"><b>TURNS</b>
+            - At each turn, each player&nbsp;moves a friendly stone.:</font>
+            <ul>
+				<li><font size="3" face="Arial">Stones move to one diagonally adjacent empty cell (forward or backward).</font></li>
+				<li><font size="3" face="Arial">A stone
+                  is removed if it reaches the pyramid top
+              (cell k14).</font></li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><b>ATTACKS</b> - There are no captures, but enemy stones can be             delayed in
+          two ways:</font>
+		<ul>
+			<li><font size="3" face="Arial"><u>By contact</u>: If a stone moves forwards to a cell adjacent to an enemy&nbsp;<br>
+              stone, then this stone moves diagonally backwards to an empty cell.&nbsp;</font>
+                  <ul>
+					<li><font size="3" face="Arial"> If the enemy stone cannot retreat (because both cells are occupied) the actual
+                  player gets an extra move.</font></li>
+			</ul>
+			</li>
+			<li><font size="3" face="Arial"><u>By column</u>: if there are exactly one black and one white stone at a&nbsp;<br>
+              column, the higher stone can be attacked. If the other player moves one&nbsp;<br>
+              stone forward to that column, the upper stone is placed in an empty cell on
+              the lowest row of that column (which is accessible by a sequence
+                  of moves: in a chess-like board,
+              the game only uses black squares).&nbsp;</font>
+                  <ul>
+					<li><font size="3" face="Arial"> If the enemy stone cannot retreat (it was at
+                  the fifth row) the current player gets an extra move.</font></li>
+			</ul>
+			</li>
+		</ul>
+		<ul>
+			<li><font size="3" face="Arial">If both attacks occur in a single move, column attacks takes precedence&nbsp;<br>
+              over contact attacks. That is, the player only executes the column retreat. If that
+              retreat is not possible, he executes the contact retreat. If that retreat is also
+              not possible, the player gets an extra move.</font></li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><b>LAST STONE</b> - If a player only has one stone, it may move one or two cells
+          (mover's choice) and may retreat one or two cells after an attack by
+          contact (attacker's choice).</font></li>
+		<li><font
+        size="3" face="Arial"><strong>GOAL</strong> - Wins the player that removes all friendly stones.</font>
+		<ul>
+			<li><font size="3" face="Arial">If a player repeats a position by the third time, he loses.</font></li>
+		</ul>
+		</li>
+		</ul>
+    </td>
+  </tr>
+</table>
+<p><font size="3" face="Arial">I have some doubts about the original rules. I think there should be an exception about
+initial attacks by contact between the second and first row (or else, the attacks would
+begin immediately, with an obvious advantage for the first player).&nbsp;</font></p>
+<p><font size="3" face="Arial">When the player gets an extra move due to an
+attack, that next move should or should not produce attacks? I'm not sure about
+the best option. If the answer is yes, a chain reaction of attacks is possible.</font></p>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="142" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,6,6,6/3a2/..W.X./.w.c../6/6");
+//--></script>
+      </td>
+      <td valign="top" width="458"><font face="Arial"><strong>Attacks by contact</strong><p><font size="3">Black's
+        turn. If he moves the marked black stone into [1] an attack by contact
+        occurs: the marked white stone must retreat to [2].</font></font>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="142" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,6,6,6/3a2/..W.X./.w.x../6/6");
+//--></script>
+      </td>
+      <td valign="top" width="458"><font face="Arial"><strong>Attacks by contact</strong><p><font size="3">In
+        this similar move, the marked white stone cannot retreat, and so Black
+        gain an extra move.</font></font>
+ <font face="Arial" size="3">He may
+        move any friendly stone (including the marked one).</font>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="142" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,6,6,6/3W2/..c.a./.w...X/6/6");
+//--></script>
+      </td>
+      <td valign="top" width="458"><font face="Arial"><strong>Attacks by contact</strong><p><font size="3">An
+        attack by contact can be at a stone in a upper position.</font><p><font size="3">If
+        the black stone moves to [1] the marked white stone must move to [2].</font></font>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="142" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,9,6,6/3W2/3.2/3a2/4X./3x2/6/3c2/6");
+//--></script>
+      </td>
+      <td valign="top" width="458"><font face="Arial"><strong>Attacks by column</strong>
+        <p><font size="3">The 'd' column only has two stones, so the upper stone
+        (the marked white stone) is vulnerable to attack.</font></p>
+        <p><font size="3">If Black moves the marked black stone to [1], the
+        white stone must retreat to [2] (the accessible cell in the lowest
+        possible row).</font></font>
+      </td>
+    </tr>
+</table>
+<p><font size="3" face="Arial">I
+wish to thank <a href="http://www.deskovehry.info">Lada
+Urbanová</a> for this game information.</font></p>
+</blockquote>
+<hr>
+</body>
+</html>

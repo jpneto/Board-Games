@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - SEND IT</title>
+<script LANGUAGE="JavaScript" src="hex2diag/hex2diag.js"></script>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote mstheme>
+<h1 align="center"><strong><font face="Arial Black">SEND IT</font></strong></h1>
+  <p align="center"><font size="3"><strong>Copyright (c) 2004 </strong></font>
+	<strong>João Neto</strong></p>
+<p align="left"><font size="3" face="Arial">The game is played on a 8 sided 
+hexagonal board:</font></p>
+       <center>
+    <table border="2" width="435" bgcolor="#D5BD83" bordercolorlight="#333366" bordercolordark="#000000">
+      <tr>
+        <td width="100%" background="back-board.jpg"><script LANGUAGE="JavaScript"><!--
+hexgv2diag("8,15,8,......../........./........../.........../............/............./............../.............../............../............./............/.........../........../........./........");
+        //--></script></td>
+      </tr>
+    </table>
+    </center>
+&nbsp;
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font face="Arial"><strong>GROUP</strong> - A set of connected 
+		stones of the same color.</font><ul>
+		<li><font face="Arial">A group has no liberty if there is no stone 
+		within the group adjacent to an empty cell.</font></li>
+		</ul>
+    	</li>
+		<li><b><font face="Arial">CONTROL</font></b><font face="Arial"> - A 
+		player controls a cell if the adversary cannot drop a stone there.</font></li>
+		<li><strong><font face="Arial">TURN</font></strong><font size="3" face="Arial">
+        - On each turn, a player drops up to 4 pieces on empty cells. Such cells 
+		must be on an orthogonal line of sight of a friendly piece already on 
+		board (the cells in between being empty).</font><ul>
+		<li><font size="3" face="Arial">Drops are sequential, not simultaneous.</font></li>
+		<li><font size="3" face="Arial">None of the new stones may be part of 
+		the same group.</font></li>
+		<li><font size="3" face="Arial">Groups with no liberty are captured.</font></li>
+		<li><font face="Arial"><b>Initial turn</b>: On the first move the first 
+		player drops one friendly stone on an empty cell. Then the second player 
+		drops three friendly stones on empty cells. Then, the game proceeds as 
+		stated.</font></li>
+		</ul>
+    	</li>
+		<li><font size="3" face="Arial"><strong>GOAL</strong>
+        - When both players pass, the winner is whoever 
+		has more controlled cells plus pieces (like the Chinese Go scoring).</font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+<p><font face="Arial">The rule that says that drops are sequential implies that 
+a player may drop a first stone and then use it as line of sight to drop the 
+next stone.</font></p>
+    <table border="1" width="677" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+      <tr>
+        <td align="left" width="435" bordercolor="#000000" bgcolor="#D5BD83" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+hexgv2diag("8,15,8,......../........./..w.x..X../.X........./..xWX......./..........xW./..W...w.....w./..x.........w../.x............/..w.......w../.........xw./......W..X./..w..wxx../.....w.../........");
+//--></script>
+        </td>
+        <td valign="top" width="242"><font face="Arial"><strong>An initial game</strong></font><p>
+		<font face="Arial">Black started. This is the game after three complete 
+		turns.</font><p>
+		<font face="Arial">The last Black and White moves are marked.</font></td>
+      </tr>
+      </table>
+      
+      
+      
+<p><font face="Arial">This game is a restricted variant of Go (a player can only 
+drop stones where he is able to 'see') which is compensated by the possibility 
+of dropping four stones per turn. This provides a tool for quick invasion of 
+almost surrounded areas, leading to complex tactical battles. The another drop 
+restriction (one stone per group per turn) prevents the quick formation of 
+living groups (i.e., groups that cannot be captured because it controls at least 
+one cell). For example, the marked white stone at d7 and the white c8 stone are 
+virtually connected, because Black cannot drop in a single turn two stones at c7 
+and d8 because they would be in the same group, violating a drop restriction.</font></p>
+<p><font face="Arial">Send It can also be played on a square board, using the 
+same rules (adjacency is only orthogonal not diagonal). However, it is easier to 
+make safe structures (to control a cell only needs four stones, instead of six). 
+So, this variant was tested with the following extra rule: &quot;An isolated enemy 
+stone with just one liberty can be pushed into that empty cell while the player 
+drops a friendly stone on that now vacant cell&quot;.</font></p>
+</blockquote>
+<hr>
+</body>
+</html>

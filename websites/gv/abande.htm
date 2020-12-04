@@ -1,0 +1,127 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Towers - ABANDE</title>
+<SCRIPT LANGUAGE="JavaScript" src="tower2diag/tower2diag.js"></SCRIPT>
+<script LANGUAGE="JavaScript" src="hex2diag/hex2diag.js"></script>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">ABANDE</font></strong></h1>
+<p align="center"><font size="3"><strong>Copyri</strong></font><strong><font size="3">ght 
+(c) 2005</font></strong><font size="3"><strong> Dieter Stein</strong></font><strong><font size="3"> </font></strong></p>
+<p align="left"><font face="Arial">Abande is either player on a 7x7 </font>
+<font size="3" face="Arial"> square board or on a hexagonal board of side 4:</font></p>
+<center>
+      <table border="1" width="540" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="60%" align="center">
+          <script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","7,7,......./......./......./......./......./......./.......");
+          </script></td>
+          <td width="40%" background="tower2diag/back-board.jpg"><script LANGUAGE="JavaScript"><!--
+hexgv2diag("4,7,4,..../...../....../......./....../...../....");
+          //--></script></td>
+        </tr>
+      </table>
+</center>
+<p align="left"><font face="Arial">The board is initially empty and each player has 18 stones in reserve.</font></p>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font face="Arial"><b>STACK </b>- A pile up to three stones of 
+		either color. </font>
+      <ul>
+		<li><font face="Arial">The top stone's color determines ownership.</font></li>
+		<li><font face="Arial">Piece, here in, means stone or stack.</font></li>
+		</ul>
+    	</li>
+		<li><font face="Arial"><b>ABANDE</b> - There is an invariant that must 
+		always be satisfied: all pieces on board must be adjacent so that they 
+		form a connected single group.</font><ul>
+		<li><font face="Arial">Adjacency means orthogonal or diagonal for the 
+		square board.</font></li>
+		</ul>
+    	</li>
+		<li><b><font face="Arial">SETUP</font></b><font face="Arial"> - One 
+		player drops a friendly stone on a empty cell. This is called the 
+		&quot;initiative&quot;.</font></li>
+		<li><b><font face="Arial">T</font></b><font size="3" face="Arial"><b>URN</b>
+            -&nbsp; On each turn, each player
+            must do one of the following actions.</font>
+		<ul>
+			<li><font face="Arial">Insert a friendly stone on an empty cell 
+			adjacent to any piece.</font></li>
+			<li><font face="Arial">Move a friendly piece on top of an adjacent 
+			enemy piece (provided that the final stack cannot have more than 3 
+			stones).</font><ul>
+				<li><font face="Arial">Stacks can never be split.</font></li>
+				<li><font face="Arial">A move that would split the board pieces 
+				in two or more groups, is invalid.</font></li>
+				<li><font face="Arial">Move is only allowed after the insertion 
+				of the third piece.</font></li>
+			</ul></li>
+			<li><font face="Arial">If a player has no more pieces in reserve he 
+			may pass his turn, if he cannot or does not want to make a move.</font></li>
+		</ul></li>
+		<li><font size="3" face="Arial"><strong>GOAL</strong> - When both 
+		players pass, the game ends. </font>
+      <ul>
+		<li><font size="3" face="Arial">Every piece not adjacent to an enemy 
+		piece is removed from the board. </font></li>
+		<li><font size="3" face="Arial">The remaining pieces add points to their 
+		owners (1 point for single stones, 2 points for stacks with 2 pieces, 3 
+		points for stacks with 3 pieces).</font></li>
+		<li><font size="3" face="Arial">The winner is whoever gets more points.</font></li>
+		</ul>
+    	</li>
+		</ul>
+    </td>
+  </tr>
+</table>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000" id="table1">
+    <tr>
+      <td align="center" width="240" bordercolor="#000000" background="tower2diag/back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+towergv2diag("tower2diag/back-board.jpg","5,5,.[eeEeee][eeEeee][eeEeee]./.[eeEeee]1[eeEeee]./.[eeEeee]6[eeEeee][eeEeee]/.[eeEeee]16[eeEeee]/.[eeEeee][eeEeee][eeEeee][eeEeee]");
+//--></script>
+      </td>
+      <td valign="top" width="360"><font face="Arial">
+		<p><strong>Keep Abande</strong><p><strong style="font-weight: 400">
+		White's turn. In this position, White can insert a stone adjacent to any 
+		piece on board (the dotted cells). He can also move the stone at d2 to 
+		c2</strong>. But he cannot move the white stone at c3 since it would 
+		split the group in two!</font>
+      </td>
+    </tr>
+    <tr>
+      <td width="240" bordercolor="#000000" background="tower2diag/back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+hexgv2diag("4,7,4,..[xwe]8/..12./.68[xwe].2/....23./.....8/..2[wxe]8/.73.");
+//--></script>
+      </td>
+      <td valign="top" width="360"><font face="Arial">
+		<strong>Ending the game</strong><p><strong style="font-weight: 400">Both 
+		players passed, so the game ended. There are two pieces that must be 
+		removed, one white and one black, since they are not adjacent to any 
+		enemy piece (can you find these pieces?).</strong><p>
+		<strong style="font-weight: 400">Then, each player gets points for each 
+		one of the pieces he owns. White wins by 18-15.</strong></font></td>
+    </tr>
+</table>
+<p><font size="3" face="Arial">Dieter has a very nice
+<a href="http://abande.com">webpage</a> where you can learn a lot more about Abande (check also the official <a href="http://abande.com/abande_rules.pdf">
+rules</a>). Check also <a href="http://superdupergames.org">
+http://superdupergames.org</a> for online play.</font></p>
+</blockquote>
+<hr>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>
+The GameToolbox
+</title>
+</head>
+<body background="../../../ricebk.jpg">
+<h1 align="center"><b>The Game Toolbox</b></h1>
+<p align="center"><i>by João Pedro Neto</i></p>
+
+ <center>
+  <table border="4" width="250">
+    <tr>
+      <td width="100%">
+
+<applet
+  codebase = "."
+  code     = "toolbox.Connect4Applet.class"
+  width    = "250"
+  height   = "180"
+  align    = "top"
+>
+  <param name=WIDTH  value="250">
+  <param name=HEIGHT value="180">
+  <param name=BACKG  value="back-kings.jpg">
+  <param name=PIECES value="soldiers">
+  <param name=CPU    value="2nd">
+</applet>
+
+      </td>
+    </tr>
+  </table>
+ </center>
+
+<br><font face="Arial">The main idea is to provide a set of classes,
+like Game, Board, Player, in order to program all basic needs of a abstract
+game applet, like graphical primitives, undo/redo moves, copy/paste of diagrams,
+a popup menu with the possible options and so on...
+After extending the Game class (to implement the required game) and compiling
+the sources, the applet will work using the following format:</font>
+<blockquote>
+  <blockquote>
+<p><font face="Courier New">&lt;applet<br>
+&nbsp;&nbsp; codebase = "."<br>
+&nbsp;&nbsp; code&nbsp;&nbsp; = "toolbox.Connect4Applet.class"<br>
+&nbsp;&nbsp; width&nbsp; = &quot;200&quot;&nbsp;<br>
+&nbsp;&nbsp; height   = &quot;180&quot;<br>
+&nbsp;&nbsp; align&nbsp; = "top"><br>
+<br>
+&nbsp; &lt;param name=WIDTH&nbsp; value=&quot;200&quot;&gt;<br>
+&nbsp; &lt;param name=HEIGHT value=&quot;180&quot;&gt;<br>
+&nbsp; &lt;param name=BACKG&nbsp; value=&quot;back-kings.jpg&quot;&gt;<br>
+&nbsp; &lt;param name=PIECES value="soldiers"><br>
+&nbsp; &lt;param name=CPU&nbsp;&nbsp;&nbsp; value=&quot;1st&quot;&gt;<br>
+<br>
+&lt;/applet></font></p>
+  </blockquote>
+</blockquote>
+<p><font face="Arial">The applet is personalized using the previous parameters
+which give the width, height, the background image, the piece gif set and if the
+computer is the first or second to move. All the rest is automatic.</font></p>
+<p align="left"><font face="Arial">This initial test uses Connect4 as an example
+(two clicks or a double click to drop the stone at the correct cell). Connect4 is just the actual terminal class, it
+can be changed to another game. This Connect4 player was created by the <a href="http://www.di.fc.ul.pt/~jpn/ludae">LUDAE</a>
+project, thru evolution. If you are interested to know more, please send
+an <a href="mailto:jpnREMOVE__SPAM@di.fc.ul.pt">email</a>.</font></p>
+</body>
+</html>

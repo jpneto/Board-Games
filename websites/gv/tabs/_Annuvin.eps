@@ -1,0 +1,240 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne and Joao Neto
+%%Title: hexs diagrams
+%%CreationDate: 1/1/2004
+%%BoundingBox: 0 0 300 300
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/Root3 1.732050808 def
+
+/OriginX 0 def
+/OriginY 160 def
+
+/HexRadius 32 def
+/HexDiameter { Hexradius 2 mul } def
+
+/CircleRadius { HexRadius 0.65 mul } def
+/CircleDiameter { CircleRadius 2 mul } def
+/CircleLineWidth 1 def
+
+% ----------- Functions -------------
+
+/HexX
+{   % call: i j HexX
+    /j exch def
+    /i exch def
+    OriginX i j add HexRadius mul 1.5 mul add
+} def
+
+/HexY
+{   % call: i j HexY
+    /j exch def
+    /i exch def
+    OriginY j i sub HexRadius mul Root3 mul 2 div sub
+} def
+
+/White
+{   % call: i j White
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    0 setlinewidth
+    1 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+
+    % Draw outline
+    0 setgray
+    CircleLineWidth setlinewidth
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    stroke
+} def
+
+/Grey
+{   % call: i j Grey
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    0 setlinewidth
+    .75 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+
+    % Draw outline
+    0 setgray
+    CircleLineWidth setlinewidth
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    stroke
+} def
+
+/Black
+{   % call: i j Black
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    CircleLineWidth setlinewidth
+    0 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+} def
+
+/Hexagon
+{   % call: i j Hexagon
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    0 setlinewidth
+    1 setgray
+    fill
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    .25 setlinewidth
+    0 setgray
+    stroke
+} def
+
+/Label
+{   % call: i j s(tring)
+    /s exch def
+    /j exch def
+    /i exch def
+
+    /Courier findfont HexRadius 1.2 mul scalefont setfont
+    0 setgray
+    newpath
+    i j HexX HexRadius 3.2 div sub
+    i j HexY HexRadius 2.5 div sub
+    moveto s show
+} def
+
+
+/Marker
+{   % call: i j g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /j exch def
+    /i exch def
+
+    g setgray
+    newpath
+    i j HexX CircleRadius 2 div sub
+    i j HexY CircleRadius 2 div sub
+    moveto
+
+    gsave
+    /Helvetica-Bold findfont HexRadius scalefont setfont
+    .5 setlinewidth
+    b {
+        s true charpath stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+%-------------- Program --------------
+
+-120 200 translate
+
+5 1 Hexagon
+6 1 Hexagon
+7 1 Hexagon
+8 1 Hexagon
+
+4 2 Hexagon
+5 2 Hexagon
+6 2 Hexagon
+7 2 Hexagon
+8 2 Hexagon
+
+3 3 Hexagon
+4 3 Hexagon
+5 3 Hexagon
+6 3 Hexagon
+7 3 Hexagon
+8 3 Hexagon
+
+2 4 Hexagon
+3 4 Hexagon
+4 4 Hexagon
+5 4 Hexagon
+6 4 Hexagon
+7 4 Hexagon
+8 4 Hexagon
+
+2 5 Hexagon
+3 5 Hexagon
+4 5 Hexagon
+5 5 Hexagon
+6 5 Hexagon
+7 5 Hexagon
+
+2 6 Hexagon
+3 6 Hexagon
+4 6 Hexagon
+5 6 Hexagon
+6 6 Hexagon
+
+2 7 Hexagon
+3 7 Hexagon
+4 7 Hexagon
+5 7 Hexagon
+
+8 0 (7) Label
+7 0 (6) Label
+6 0 (5) Label
+5 0 (4) Label
+4 1 (3) Label
+3 2 (2) Label
+2 3 (1) Label
+
+1 5 (a) Label
+1 6 (b) Label
+1 7 (c) Label
+1 8 (d) Label
+2 8 (e) Label
+3 8 (f) Label
+4 8 (g) Label
+
+%------------ Trailer --------------
+
+showpage

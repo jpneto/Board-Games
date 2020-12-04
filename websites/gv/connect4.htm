@@ -1,0 +1,115 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - CONNECT 4</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote mstheme>
+<h1 align="center"><strong><font face="Arial Black">CONNECT
+4</font></strong></h1>
+<p align="center"><font
+      size="3"><strong>Copyright (c) Hasbro, Inc.</strong></font></p>
+<p align="left"><font size="3" face="Arial">Connect 4 is
+    played on an empty 6x7 square board.</font></p>
+
+    <center>
+      <table border="1" width="164" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,6,7,42");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+&nbsp;
+
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font face="Arial"><b>DROP</b>
+            - Each player chooses a column, and then drops a stone on the lowest
+            possible empty cell (the lowest row is the bottom row).</font></li>
+		<li><font face="Arial"><b>GOAL</b>
+            - Wins the player that achieves a 4 in-a-row (orthogonal or
+            diagonal)</font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+
+</blockquote>
+
+<blockquote>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="164" bordercolor="#000000" background="back-board.jpg">
+      
+<script LANGUAGE="JavaScript">
+<!--
+boardgv2diag("lurd,6,7,7/3xx../3ww../.xaww../wwwxw../xxwwxxx");
+//-->
+</script>
+      </td>
+      <td valign="top" width="436"><font face="Arial"><strong>An example</strong></font>
+        <p><font face="Arial">Black wins in three
+        moves, by playing at cell [1]. White must defend at b4, then Black moves
+        c4, forcing White into e7, and then c5 and wins by creating a double
+        attack.</font>
+      </td>
+    </tr>
+</table>
+  <br>
+<font face="Arial">There are several websites that play Connect 4 <a href="http://csc.smsu.edu/~wicks/Connect4/">online</a>.
+  There is a perfect player (first player wins) called <a href="http://www.ce.unipr.it/~gbe/velena.html">Velena</a>
+  by <a href="mailto:gbe@ce.unipr.it">Giuliano Bertoletti</a> (also with source
+  code). Also check the page of <a href="http://www.cs.vu.nl/~victor/thesis.html">Victor
+  Allis</a> about Connect 4 and Gomoku.</font><p><font face="Arial">
+<a href="http://www.gamerz.net/pbmserv/connectris.html" name="connectris">Connectris</a>
+is a variant where when the bottom row is filled, it disappears and all the
+other stones fall down.</font> <font face="Arial">Two other variants are <font size="3"><a href="http://www.zillions-of-games.com/games/antistack4.html">AntiStack</a></font>
+(the first to make 4 in-a-row loses) and <a href="http://www.zillions-of-games.com/games/line4plus.html">Line4Plus</a>
+(upon each checker drop, all adjacent pieces are flipped. Red -&gt; WhiteBlk -&gt; 
+Black -&gt; WhiteRed -&gt; Red. WhiteBlk and WhiteRed checkers are neutral). </font></p>
+<p><font face="Arial">In Beppi Menozzi's
+Centrifugal Connect4 (invented in 1994), played in a 8x8 board, the stones are
+dropped in an empty cell and then they fall down towards the closest edge, while
+stones put on the diagonal lines fall towards the closest corner. </font></p>
+<p><font face="Arial"><a name="forze4x4"></a>In
+<a href="http://clik.to/Abstrakta">Forze 4x4</a>, played on a 8x8 board (initially 
+empty), each player drops a friendly soldier on an empty cell at any edge of the 
+board, and the stone slides to the opposite side until it finds the edge of the 
+board or an occupied cell. E.g., if White drops a stone at [1] it will slide 
+to the right until it stops at [2]. If White drops at [3] the stone will slide 
+down to [4]:</font></p>
+
+    <center>
+      <table border="1" width="186" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000" id="table1">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,8,8,2d5/8/a..cxwwx/8/8/2e5/xxw...../8");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+<p><font face="Arial"><a name="caramba"></a>In <a href="http://www.cricro.com/gamecaramba.html">Caramba</a> 
+each player has 16 stones plus 5 wild stones (that can be used by both players
+to make winning rows).</font></p>
+
+<p align="left"><font face="Arial">
+<a href="http://jeuxsoc.free.fr/index2.php?principal=/q/quigo.htm" name="quintego">Quintego</a> 
+is a Connect-4 variant (with 5 columns): when a vertical column has six stones, 
+the bottom stone is removed and returned to the player's reserve (and all the 
+others on that column move down).</font></p>
+</blockquote>
+<hr>
+</body>
+</html>

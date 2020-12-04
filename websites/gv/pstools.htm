@@ -1,0 +1,378 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>WAG's Postscript Tools</title>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">AGAPO<br>
+<font SIZE="3">Abstract Game PostScripts</font></font></strong></h1>
+<p align="center"><strong><font size="3">by Cameron Browne and João Neto</font></strong></p>
+<font FACE="Times New Roman" SIZE="3">
+<blockquote>
+  <blockquote>
+<p ALIGN="LEFT"><i>The P</i></font><i><font FACE="Times New Roman" SIZE="1">OST</font><font FACE="Times New Roman" SIZE="3">S</font><font FACE="Times New Roman" SIZE="1">CRIPT
+</font><font FACE="Times New Roman" SIZE="3">page description language provides
+a device independent</font> <font FACE="Times New Roman" SIZE="3">standard for
+representing the printed page. [...] The P<font FACE="Times New Roman" SIZE="1">OST</font>S<font FACE="Times New Roman" SIZE="1">CRIPT
+</font>language is a programming language
+designed</font> <font FACE="Times New Roman" SIZE="3">to convey a
+description of virtually any desired page to a printer.</font> <font FACE="Times New Roman" SIZE="3">It
+possesses a wide range of graphic operators that may be combined</font> <font FACE="Times New Roman" SIZE="3">in
+any manner. It contains variables and allows the combining</font>  </i> <font FACE="Times New Roman" SIZE="3"><i>of
+operators into more complex procedures and functions.</i> [cited from
+&quot;<a href="http://www-cdf.fnal.gov/offline/PostScript/BLUEBOOK.PDF">Postscript - Tutorial and Cookbook</a>&quot; - Adobe Systems].</font></p>
+</blockquote>
+</blockquote>
+<font face="Arial">Herein we present <span style="font-variant: small-caps">agapo</span>,
+a set of postscript examples to ease the
+task of drawing board game diagrams. You can download files for <a href="tabs/go-template.eps">Go-like</a>
+diagrams (also for <a href="tabs/rosette-template.eps">hex boards</a>), <a href="tabs/sq-template.eps">Othello-like</a> diagrams, <a href="tabs/hex-template.eps">Hex-like</a>
+diagrams, <a href="tabs/checkers-template.eps">Checker-like</a> diagrams (also for <a href="tabs/hextower-template.eps">hex
+boards</a>) , <a href="tabs/mancala-template.eps">Mancala</a> boards,
+<a href="tabs/chess-template.eps">Chess-like</a> diagrams, 
+<a href="tabs/dominoes-template.eps">Dominoes</a> and
+<a href="tabs/tesselations.eps">Tesselations</a>. </font><font face="Arial">These are text files (use your favorite text editor
+to open it). Each have two parts: (a)&nbsp; a set of routines (learn how to use them
+in the next sections) that handle the drawings (do not modify them before you
+learn a bit of PostScript) and (b) an example that you should
+change in order to make your own diagrams.</font>
+<p><font face="Arial">Some PostScript interpreters may work better if the</font>
+<font face="Arial">files end in <b>.eps</b> (Encapsulated PostScript) others 
+with <b>.ps</b>.
+The internal</font> <font face="Arial">code need not be changed.</font></p>
+<h3><font face="Arial"><b>Go-like
+diagrams</b></font></h3>
+<p><font face="Arial">There
+are the following routines:</font></p>
+<p><font face="Arial"><b>Board</b><br>
+Usage: <i>rows cols [true|false] Board<br>
+</i>makes a GO board with size (rows+1) x (cols+1) with/without coordinates<br>
+Example: </font><font face="Courier New">4 7 false Board</font></p>
+<p><font face="Arial"><b>White</b></font><font face="Arial"><br>
+Usage: <i>row col White<br>
+</i>draws a white stone at position (row,col)<br>
+Example: </font><font face="Courier New">2 3 </font><font face="Courier New">White</font></p>
+<p><font face="Arial"><b>Black</b></font><font face="Arial"><br>
+Usage: <i>row col Black<br>
+</i>draws a black stone at position (row,col)<br>
+Example: </font><font face="Courier New">2 3 Black</font></p>
+<p><font face="Arial"><b>Grey</b></font><font face="Arial"><br>
+Usage: <i>row col Grey<br>
+</i>draws a grey stone at position (row,col)<br>
+Example: </font><font face="Courier New">2 3 Grey</font></p>
+<p><font face="Arial"><b>Marker</b></font><font face="Arial"><br>
+Usage: <i>row col [0-1] (string) Marker<br>
+</i>draws a string (usually one character) at a given position. The 3rd argument
+is the color (between 0=black and 1=white). The 4th argument defines two types
+of presentation.<br>
+Example: </font><font face="Courier New">5 4 1 false (a) Marker</font></p>
+<p><font face="Arial"><b>MarkerSm</b></font><font face="Arial"><br>
+Usage: <i>row col [0-1] (string) MarkerSm<br>
+</i>draws a string (usually two characters) at a given position.<br>
+Example: </font><font face="Courier New">5 4 1 false (12) MarkerSm</font></p>
+<p><font face="Arial"><b>WhiteSpot</b></font><font face="Arial"><br>
+Usage: <i>row col WhiteSpot<br>
+</i>draws a white spot at position (row,col)<br>
+Example: </font><font face="Courier New">1 4 WhiteSpot</font></p>
+<p><font face="Arial"><b>BlackSpot</b></font><font face="Arial"><br>
+Usage: <i>row col BlackSpot<br>
+</i>draws a Black spot at position (row,col)<br>
+Example: </font><font face="Courier New">2 3 BlackSpot</font></p>
+<p align="left"><font face="Arial">This example produces this image:</font></p>
+<table border="1" width="100%" bordercolorlight="#333366" bordercolordark="#000000">
+  <tr>
+    <td width="33%"><font face="Courier New" size="2">6 10 true Board<br>
+      <br>
+      6 4 White<br>
+      3 5 White<br>
+      4 4 White<br>
+      6 5 White<br>
+      7 5 White<br>
+      3 6 White<br>
+      5 2 Black<br>
+      5 3 Black<br>
+      3 4 Black<br>
+      5 4 Black<br>
+      2 5 Black<br>
+      4 5 Black<br>
+      2 7 Black&nbsp;<br>
+      1 1 Grey<br>
+      <br>
+      5 4 1 false (12) MarkerSm<br>
+      5 3 1 false (b) Marker<br>
+      4 4 0 true (c) Marker<br>
+      6 2 WhiteSpot<br>
+      6 2 0 false (d) Marker<br>
+      3 3 BlackSpot</font></td>
+    <td width="67%">
+      <p align="center"><img border="0" src="tabs/go-sample.gif" width="534" height="362"></p>
+    </td>
+  </tr>
+</table>
+<p><font face="Arial"><a name="rosette"></a>There are also the possibility of Rosette-like games 
+(however, the labels are not automatic). This file does not have an automatic board routine. You'll
+need to place each hexagon. The coordinates are not orthogonal: changing x and
+maintaining y will produce a diagonal line of hexagons. There is also a 3rd 
+coordinate z which places the stone at a vertex of that hex (0 is the top left 
+vertex, and it goes clockwise, check the example). This is the diagram
+produced by <a href="tabs/rosette-template.eps">rosette-template.eps</a>:.</font></p>
+<h3 align="center">
+<img border="0" src="tabs/rosette-sample.gif" width="449" height="491"></h3>
+<h3><font face="Arial"><b>Othello-like diagrams</b></font></h3>
+<p><font face="Arial">The methods are the same as in the previous section </font><font face="Arial">(except
+WhiteSpot and BlackSpot),
+including:</font></p>
+<p><font face="Arial"><b>White2</b><br>
+Usage: <i>row col White2<br>
+</i>draws a second type of white stone at position (row,col)<br>
+Example: </font><font face="Courier New">2 3 White2 </font></p>
+<p><font face="Arial"><b>Black2</b><br>
+Usage: <i>row col Black2<br>
+</i>draws a second type of black stone at position (row,col)<br>
+Example: </font><font face="Courier New">2 3 Black2</font></p>
+<table border="1" width="83%" bordercolorlight="#333366" bordercolordark="#000000">
+  <tr>
+    <td width="33%"><font face="Courier New" size="2">6 6 true Board<br>
+      <br>
+      6 4 White<br>
+      3 5 White2<br>
+      6 5 White<br>
+      3 6 White<br>
+      <br>
+      5 2 Black<br>
+      3 4 Black<br>
+      5 4 Black<br>
+      2 5 Black2&nbsp;<br>
+      <br>
+      2 1 Grey<br>
+      <br>
+      5 2 1 true (a) Marker<br>
+      6 5 0 false (12) MarkerSm<br>
+      4 4 0 true (c) Marker<br>
+      6 2 0 false (d) Marker</font></td>
+    <td width="65%">
+      <p align="center"><img border="0" src="tabs/sq-sample.gif" width="376" height="364"></p>
+    </td>
+  </tr>
+</table>
+<h3><font face="Arial"><b>Hex-like
+diagrams</b></font></h3>
+<p><font face="Arial">Includes </font><font face="Arial">routines <b>White</b>, <b>Black</b>,
+<b>Black2</b>, <b>Grey</b>, <b>Marker</b>, <b>MarkerSm</b> and:</font></p>
+<p><font face="Arial"><b>Hexagon</b><br>
+Usage: <i>x y Hexagon<br>
+</i>draws a hexagon at position (x,y)<br>
+Example: </font><font face="Courier New">2 3 Hexagon</font></p>
+<p><font face="Arial"><b>Label</b><br>
+Usage: <i>x y (string) Label<br>
+</i>draws a string at position (x,y)<br>
+Example: </font><font face="Courier New">2 3 Label</font></p>
+<p><font face="Arial">This file does not have an automatic board routine. You'll
+need to place each hexagon. The coordinates are not orthogonal: changing x and
+maintaining y will produce a diagonal line of hexagons. This is the diagram
+produced by <a href="tabs/hex-template.eps">hex-template.eps</a>:</font></p>
+<p align="center"><img border="0" src="tabs/hex-sample.gif" width="351" height="376"></p>
+<h3><font face="Arial"><b><a name="checker"></a>Checker-like
+diagrams</b></font></h3>
+<p><font face="Arial">Includes </font><font face="Arial">routines <b>Marker</b>,
+<b>MarkerSm</b>
+and:</font></p>
+<p><font face="Arial"><b>Board</b><br>
+Usage: <i>rows cols int-array [insert coordinates?] Board<br>
+</i>The array presents all pieces onboard. Each cell have a number up to 5 
+digits that define the stack's structure.<br>
+1 is a white checker, 2 a black checker, 3 a grey checker; 4,5,6: 
+white,black,grey stones with dots.</font></p>
+<p><font face="Arial"><b>White</b><br>
+Usage: <i>row col height White<br>
+</i>draws a white stone at position (row,col) with a certain height&nbsp;<br>
+Example: </font><font face="Courier New">2 3 2 White </font></p>
+<p><font face="Arial"><b>Black</b><br>
+Usage: <i>row col height Black<br>
+</i>draws a black stone at position (row,col) with a certain height&nbsp;<br>
+Example: </font><font face="Courier New">2 3 0 Black</font></p>
+<p><font face="Arial"><b>Grey</b><br>
+Usage: <i>row col height Grey<br>
+</i>draws a grey stone at position (row,col) with a certain height&nbsp;<br>
+Example: </font><font face="Courier New">2 3 1 Grey</font></p>
+<p><font face="Arial">There is also <b>WhiteDot</b>, <b>BlackDot</b>, <b>GreyDot</b> 
+with the same arguments, but place a checker with a dot.</font></p>
+<table border="1" width="94%" bordercolorlight="#333366" bordercolordark="#000000">
+  <tr>
+    <td width="34%"><font face="Courier New" size="2">8 8 [ 0&nbsp;&nbsp;&nbsp; 
+	0&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 
+	0&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; 
+	0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; 
+	0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+&nbsp; 23456&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 
+	0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; 
+	0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp; 1111 1231 13121 423 141 252 363 456<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 23&nbsp;&nbsp; 33&nbsp;&nbsp; 112 123 321 222 123 232
+	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp; 
+	11&nbsp; 12&nbsp; 13&nbsp; 21&nbsp; 22 <br>
+&nbsp; ] true Board y</font></td>
+    <td width="59%">
+      <p align="center">
+		<img border="0" src="tabs/checker-sample.gif" width="475" height="495"></p>
+    </td>
+  </tr>
+</table>
+<p><font face="Arial">There is also another <a href="tabs/tower-template.eps">file</a>
+for checker like pieces in hex boards:</font></p>
+<p align="center"><img border="0" src="tabs/hextower.gif" width="446" height="517"></p>
+<h3><font face="Arial"><b><a name="mancala"></a>Mancala diagrams</b></font></h3>
+<p><font face="Arial">There
+are the following routines:</font></p>
+<p><font face="Arial"><b>Board</b><br>
+Usage: <i>rows cols [boolean coord] [boolean houses] Board<br>
+</i>makes a Mancala board with size rows x cols with/without coordinates and
+with/without houses<br>
+Example: </font><font face="Courier New">2 6 false true Board</font></p>
+<p><font face="Arial"><b>White1</b><br>
+Usage: <i>row col White1<br>
+</i>draws one white stone at position (row,col)<br>
+Example: </font><font face="Courier New">2 3 White1 </font></p>
+<p><font face="Arial"><b>Black1</b><br>
+Usage: <i>row col Black<br>
+</i>draws one black stone at position (row,col)<br>
+Example: </font><font face="Courier New">2 3 Black1</font></p>
+<p><font face="Arial">Similar functions: <b>Black2</b>, <b>Black3</b>, <b>Black4</b>,
+<b>Black5</b>, <b>Black6</b> (and also <b>White2</b> to <b>White6</b>) which
+places from 2 to 6 stones at a given cell. There is also <b>Blacks</b> (and <b>Whites</b>)
+to be used for cells with more than 6 stones. These last functions should be
+used with:</font></p>
+<p><font face="Arial"><b>Marker</b><br>
+Usage: <i>row col [0-1] (string) Marker<br>
+</i>draws a string (usually one character) at a given position. The 3rd argument
+is the color (in this case, is better to use color 0)<br>
+Example: </font><font face="Courier New">5 4 0 (7) Marker</font></p>
+<p><font face="Arial"><b>MarkerSm</b><br>
+Usage: <i>row col [0-1]&nbsp; (string) MarkerSm<br>
+</i>draws a string (usually two characters) at a given position. The 3rd
+argument is the color (in this case, is better to use color 0).<br>
+Example: </font><font face="Courier New">5 4 0 (12) MarkerSm</font></p>
+<table border="1" width="813" bordercolorlight="#333366" bordercolordark="#000000">
+  <tr>
+    <td width="166"><font face="Courier New" size="2">2 6 false false Board&nbsp;<br>
+      <br>
+      1 1 Black4<br>
+      1 2 Black4<br>
+      1 3 Black4<br>
+      1 4 Black4<br>
+      1 5 Black4<br>
+      1 6 Black4<br>
+      <br>
+      2 1 Black4<br>
+      2 2 Black4<br>
+      2 3 Black4<br>
+      2 4 Black4<br>
+      2 5 Black4<br>
+      2 6 Black4</font></td>
+    <td width="631">
+      <p align="center"><img border="0" src="tabs/mancala-sample2.gif" width="420" height="154">
+    </td>
+  </tr>
+  <tr>
+    <td width="166"><font face="Courier New" size="2">3 7 true true Board<br>
+      <br>
+      2 3 White1<br>
+      2 4 Black1<br>
+      2 5 Black2&nbsp;<br>
+      1 2 Black3<br>
+      1 4 Black4<br>
+      1 6 Black5<br>
+      2 6 Black6<br>
+      <br>
+      3 6 Blacks<br>
+      3 7 Blacks<br>
+      <br>
+      3 6 0 (7) Marker<br>
+      3 7 0 (13) MarkerSm</font></td>
+    <td width="631">
+      <p align="center"><img border="0" src="tabs/mancala-sample1.gif" width="629" height="257"></p>
+    </td>
+  </tr>
+</table>
+<h3><font face="Arial"><b><a name="chess"></a>Chess diagrams</b></font></h3>
+<p><font face="Arial">This postscript needs this <a href="tabs/chessfont.zip">
+font</a> (on Windows you may need to put it on folder \Windows\Fonts).</font></p>
+<p><font face="Arial">There
+are the following routines: <b>Board</b>, <b>Marker</b>, <b>MarkerSm</b></font></p>
+<p><font face="Arial"><b>Board</b><br>
+Usage: <i>rows cols int-array [insert coordinates?] Board<br>
+</i>The array presents all pieces onboard. 1,2,3,4,5,6 means white pawn, knight, 
+bishop, rook, queen and King. A minus signal on those numbers represent black 
+pieces. Add 10 to invert white pieces, subtract 10 to invert black pieces.</font></p>
+<table border="1" width="813" bordercolorlight="#333366" bordercolordark="#000000" id="table1">
+  <tr>
+    <td width="365"><font face="Courier New" size="2">8 8 [ -4 -2 -3 -5 -6 -3 -2 
+	-4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1 -1 -1 -1 -1 -1 -1 -1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 
+	0&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 
+	0&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 
+	0&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 
+	0&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 1&nbsp; 1&nbsp; 1&nbsp; 1&nbsp; 1&nbsp; 
+	1&nbsp; 1 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 12&nbsp; 3&nbsp; 5&nbsp; 6&nbsp; 3&nbsp; 
+	2&nbsp; 4 ] true Board<br>
+      &nbsp;</font></td>
+    <td width="432">
+      <p align="center">
+		<img border="0" src="tabs/chess-sample.gif" width="271" height="275"></td>
+  </tr>
+</table>
+<h3><font face="Arial"><a name="dominoes"></a>Dominoes diagrams</font></h3>
+<p><font face="Arial">There
+are the following routines: <b>DominoUp</b>, <b>DominoRight</b>, </font><b>
+<font face="Arial">Sq</font></b></p>
+<p><b><font face="Arial">DominoUp &amp; DominoRight</font></b><font face="Arial"><br>
+Usage: <i>rows cols dot-number1 dot-number-2 Domino[Up/Right]</i></font></p>
+<p><font face="Arial"><b>Sq</b><i><br>
+</i>Usage: <i>rows cols north-bold-line? east-bold-line? south-bold-line? 
+west-bold-line? dot-number Sq</i></font></p>
+<p><font face="Arial">If the dot-number is negative, it rotates 90º.</font></p>
+<p><font face="Arial">Here is an example using
+<a href="tabs/dominoes-template.eps">dominoes-template.eps</a>:</font></p>
+<table border="1" width="813" bordercolorlight="#333366" bordercolordark="#000000" id="table2">
+  <tr>
+    <td width="312"><font face="Courier New" size="2">&nbsp;7 0 4 2 DominoRight<br>
+	&nbsp;7 2 2 3 DominoRight<br>
+	&nbsp;6.5 4 3 3 DominoUp<br>
+	&nbsp;7 5 3 6 DominoRight</font><p><font face="Courier New" size="2">&nbsp;5.5 
+	1.5 false false true true 2 Sq</font></td>
+    <td width="485">
+      <p align="center">
+		<img border="0" src="tabs/domino-sample.gif" width="510" height="236"></td>
+  </tr>
+</table>
+<h3><font face="Arial"><b>Tesselations</b></font></h3>
+<p><font face="Arial"><b>Polygon</b><br>
+Usage: <i>xx yy rotation n-sides Polygon<br>
+</i>draws a polygon at (x,y) with n sides and a certain rotation (between 0-359)<br>
+Example: </font><font face="Courier New"> 1 0 TriXY 0 3 Polygon</font></p>
+<p><font face="Arial">There are a set of routines that help to pinpoint the
+exact position for each polygon (Hex, Tri, Square, Octo, Dode). Check the <a href="tabs/tesselations.eps">source
+file</a> to see how the following examples are designed:</font></p>
+<p align="center"><img border="0" src="tabs/tesselations.gif" width="604" height="552"></p>
+</blockquote>
+<hr>
+</body>
+</html>

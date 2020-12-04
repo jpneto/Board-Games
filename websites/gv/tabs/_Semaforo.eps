@@ -1,0 +1,251 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne and Joao Neto
+%%Title: sq-test.ps
+%%CreationDate: 1/1/2004
+%%BoundingBox: 0 0 100 100
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/dx 48 def                       % the size of the squares
+/r { .4 dx mul } def             % the size of the stones
+/coordsize   { dx 0.7 mul } def  % the size of the coordinates
+/insidesize  { dx 0.6 mul } def  % the size of the letters inside the stones
+/pieceborder {dx .05 mul } def
+
+/Chars { 
+ [(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)
+  (s)(t)(u)(v)(w)(x)(y)(z)(aa)(ab)(ac)]
+} def
+
+/Digits {
+ [( 0)( 1)( 2)( 3)( 4)( 5)( 6)( 7)( 8)( 9)
+  (10)(11)(12)(13)(14)(15)(16)(17)(18)(19)
+  (20)(21)(22)(23)(24)(25)(26)(27)(28)(29)]
+} def
+
+%---------------- Functions -------------------
+
+/White
+{
+    /i exch def
+    /j exch def
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc stroke
+} def
+
+/White2
+{
+    /i exch def
+    /j exch def
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc stroke
+    newpath i dx mul j dx mul r 2 div 0 360 arc stroke
+
+} def
+
+/Black
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+    newpath i dx mul j dx mul r 0 360 arc stroke
+} def
+
+
+/Black2
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+
+    1 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 2 div 0 360 arc stroke
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc stroke
+} def
+
+
+/Grey
+{
+    /i exch def
+    /j exch def
+
+    0.75 setgray
+    0 setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc stroke
+} def
+
+/Board
+{   % call: r(ows) c(ols) b(ool -> if true show coords)
+    /b exch def
+    /cols exch def
+    /rows exch def
+
+    /width  cols dx mul def
+    /height rows dx mul def
+
+    0 setgray
+    1 setlinecap
+    %1 setlinejoin
+
+    % Draw grid
+    0.5 setlinewidth
+
+    gsave
+
+    dx 2 div dx 2 div translate
+   
+    0 1 rows   % for each row
+    { 
+        dup
+        /i exch def     
+        /x i dx mul def
+        newpath 0 x moveto width x lineto stroke
+    } for
+
+
+    0 1 cols   % for each column
+    { 
+        dup
+        /i exch def     
+        /x i dx mul def
+        newpath x 0 moveto x height lineto stroke
+    } for
+
+    dx 2 div 0 translate 
+
+    b {
+      1 1 cols   % for each column label
+      { 
+          dup
+          /i exch def
+          -0.5 i 1 sub Chars i 1 sub get Label 
+      } for
+    } if
+
+
+    dx -1.5 mul dx -0.5 mul translate 
+
+    b {
+      1 1 rows   % for each row label
+      { 
+          dup
+          /i exch def     
+          i 0 Digits i get Label 
+      } for
+    } if
+
+    grestore
+
+    % Draw board edges
+    2 setlinewidth
+    newpath 
+     0.5 dx mul 1 sub
+     0.5 dx mul 1 sub
+     moveto
+
+     0.5 dx mul 1 sub
+     rows 0.5 add dx mul 1 add
+     lineto
+
+     cols 0.5 add dx mul 1 add
+     rows 0.5 add dx mul 1 add
+     lineto
+
+     cols 0.5 add dx mul 1 add
+     0.5 dx mul 1 sub
+     lineto
+
+%     0.5 dx mul 1 sub 0.5 dx mul 1 sub lineto
+    closepath
+    stroke
+} def
+
+/Label
+{   % call: j i s(tring)
+    /s exch def
+    /i exch def
+    /j exch def
+
+    /Courier findfont coordsize scalefont setfont
+    newpath 
+    j 9 gt {      % if the number (for the column label) is 10 or greater
+      gsave       %    it will condense font to fit size
+      /basefont /Courier findfont def
+      basefont [coordsize 2 div 0 0 coordsize 0 0] makefont setfont
+      i dx mul r 2.5 div sub r add
+      j dx mul r 2.5 div sub 
+      moveto s show
+      grestore
+    }{
+      i dx mul r 2.5 div sub
+      j dx mul r 2.5 div sub 
+      moveto s show
+    } ifelse
+
+} def
+
+
+/Marker
+{   % call: j i g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /i exch def
+    /j exch def
+
+    g setgray
+    newpath i dx mul r 2.5 div sub j dx mul r 2.5 div sub
+    moveto
+
+    gsave
+    /Helvetica-Bold findfont insidesize scalefont setfont
+    .5 setlinewidth
+    b {
+        s true charpath stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+%---------------- Program ---------------------
+
+dx 2 mul 100 add dx 2 mul 200 add translate
+
+%-----------------------------------------------------
+
+3 4 true Board
+
+%----------------------------------------------
+
+showpage

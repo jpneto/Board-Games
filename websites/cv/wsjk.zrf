@@ -1,0 +1,402 @@
+; *** The Weak Square of The Jumping King
+; *** Copyright 1998,9 - Joao Pedro Neto (conception and programming)
+
+; It includes the bitmap WeakSquare.bmp (in Images\Chess directory)
+
+(define leap1   ($1    (verify not-friend?) (verify (not-in-zone? weak-zone)) add) )
+(define leap2   ($1 $2 (verify not-friend?) (verify (not-in-zone? weak-zone)) add) )
+
+(define slide (
+  $1 
+  (while empty? 
+     (if (not-in-zone? weak-zone) add ) 
+     $1
+  ) 
+  (verify not-friend?) 
+  add
+) )
+
+(define king-drop (
+  (verify empty?)
+  (verify last-from?)
+  (verify (in-zone? drop-zone))
+  add
+) )
+
+(define Pawn-add
+   (if (in-zone? promotion-zone) (add Knight Bishop Rook ) else add)
+)
+
+(define Pawn-move (
+  n
+  (verify empty?)
+  (Pawn-add)
+) )
+
+(define Pawn-capture (
+  $1
+  (verify enemy?)
+  (Pawn-add)
+) )
+
+(define Board-Definitions
+  (image "images\Chess\WeakSquare.bmp")
+  (grid
+     (start-rectangle 5 5 55 55)
+     (dimensions
+         ("a/b/c/d/e/f" (49 0)) ; files
+         ("8/7/6/5/4/3/2/1" (0 49)) ; ranks
+     )
+     (directions (n 0 -1) (e 1 0) (s 0 1) (w -1 0)
+			     (ne 1 -1) (nw -1 -1) (se 1 1) (sw -1 1)
+     )
+  )
+  (symmetry Black (n s)(s n) (nw sw)(sw nw) (ne se)(se ne))
+  (kill-positions b1 c1 d1 e1 f1 a8 b8 c8 d8 e8)
+  (zone
+     (name weak-zone)
+     (players White)
+     (positions a1)
+  )
+  (zone
+     (name weak-zone)
+     (players Black)
+     (positions f8)
+  )
+  (zone
+     (name promotion-zone)
+     (players White)
+     (positions a7 b7 c7 d7 e7 f7)
+  )
+  (zone
+     (name promotion-zone)
+     (players Black)
+     (positions a2 b2 c2 d2 e2 f2)
+  )
+  (zone
+     (name drop-zone)
+     (players White)
+     (positions a4 b4 c4 d4 e4 f4
+		    a3 b3 c3 d3 e3 f3
+		    a2 b2 c2 d2 e2 f2 )
+  )
+  (zone
+     (name drop-zone)
+     (players Black)
+     (positions a7 b7 c7 d7 e7 f7
+		    a6 b6 c6 d6 e6 f6
+		    a5 b5 c5 d5 e5 f5 )
+  )
+)
+
+(game
+   (title "The Weak Square")
+   (description "Object: Checkmate the opponent's King by attacking
+	   it so it cannot escape, or put some piece on the weak square (a1 or f8)
+         of the opponent! The army (4 pawns, 2 rooks and 2 knights) is dropped
+         and only after that, the pieces may move. Whoever gets into a stalemate
+         position looses. Pawns promote in the last rank!")
+   (history "This game, invented by Joao Pedro Neto, was designed to enter in the 
+             Hans38 contest, in 1998 (see www.di.fc.ul.pt/~jpn/cv/CVindex.htm).\\
+             Programmed in Feb 1999 by Joao Pedro Neto.")
+   (strategy "Try to create positions where you can attack the king and at the same
+              time reach the weak square.\\Remember the opponent cannot enter its own
+              weak square!")
+   (win-sound "Audio\\Orchestra_CF.wav")
+   (loss-sound "Audio\\Orchestra_FC.wav")
+   (click-sound "Audio\\Pickup.wav")
+   (release-sound "Audio\\WoodThunk.wav")
+   (players White Black)
+   (turn-order (White dropping) (Black dropping) 
+               (White dropping) (Black dropping) 
+               (White dropping) (Black dropping) 
+               (White dropping) (Black dropping) 
+               (White dropping) (Black dropping) 
+               (White dropping) (Black dropping) 
+               (White dropping) (Black dropping) 
+               (White dropping) (Black dropping) 
+        repeat (White moving)   (Black moving) 
+   )
+   (pass-turn false)
+   (board (Board-Definitions))
+
+   (board-setup
+      (White
+         (Pawn off 4)
+         (Knight off 2)
+         (Rook off 2)
+         (King d2)
+      )
+      (Black
+         (Pawn off 4)
+         (Knight off 2)
+         (Rook off 2)
+         (King d7)
+      )
+   )
+
+   (piece
+      (name Pawn)
+      (help "Pawn: moves forward, captures diagonally, can promote on the last row")
+      (description "Pawn\A Pawn can move straight ahead one square.
+           A Pawn captures by moving one square ahead and
+           diagonally.  If a Pawn reaches the far rank it promotes, changing into
+           a Knight or Rook.")
+      (image White "images\Chess\wpawn.bmp" Black "images\Chess\bpawn.bmp")
+      (moves
+         (move-type moving)
+         (Pawn-capture nw)
+         (Pawn-capture ne)
+         (Pawn-move)
+      )
+      (drops
+         (move-type dropping)
+         ( (verify empty?)
+           (verify (in-zone? drop-zone))
+           add
+         )
+      )
+   )
+
+   (piece
+      (name Knight)
+	  (help "Knight: moves like an `L`, 2 squares one way and one the other")
+      (description "Knight\A Knight moves like an `L`, two squares vertically plus one
+          horizontally, or two squares horizontally plus one vertically.  It
+          hops over any pieces on the way.")
+      (image White "images\Chess\wknight.bmp" Black "images\Chess\bknight.bmp")
+      (moves
+           (move-type moving)
+	     (leap2 n ne)
+	     (leap2 n nw)
+	     (leap2 s se)
+	     (leap2 s sw)
+	     (leap2 e ne)
+	     (leap2 e se)
+	     (leap2 w nw)
+	     (leap2 w sw)
+      )
+      (drops 
+         (move-type dropping)
+         ( (verify empty?)
+           (verify (in-zone? drop-zone))
+           add
+         )
+      )
+   )
+
+   (piece
+      (name Bishop)
+	  (help "Bishop: slides diagonally any number of squares")
+      (description "Bishop\A Bishop moves any number of squares on a diagonal.  It may
+           not leap over other pieces.")
+      (image White "images\Chess\wbishop.bmp" Black "images\Chess\bbishop.bmp")
+      (moves
+         (move-type moving)
+         (slide ne)
+         (slide nw)
+         (slide se)
+         (slide sw)
+      )
+      (drops
+         (move-type dropping)
+         ( (verify empty?)
+           (verify (in-zone? drop-zone))
+           add
+         )
+      )
+   )
+
+   (piece
+      (name Rook)
+	  (help "Rook: slides any number of squares along the row or column.")
+      (description "Rook\A Rook moves any number of squares orthogonally on a rank
+           or a file.  It may not leap over other pieces.")
+      (image White "images\Chess\wrook.bmp" Black "images\Chess\brook.bmp")
+      (moves
+         (move-type moving)
+         (slide n)
+         (slide e)
+         (slide s)
+         (slide w)
+      )
+      (drops
+         (move-type dropping)
+         ( (verify empty?)
+           (verify (in-zone? drop-zone))
+           add
+         )
+      )
+   )
+
+   (piece
+      (name King)
+	  (help "King: steps 1 square in any direction to a safe square")
+      (description "King\A King can move to any adjacent square, but never to a 
+	      square where it can be captured.")
+      (image White "images\Chess\wking.bmp" Black "images\Chess\bking.bmp")
+      (moves
+         (move-type moving)
+         (leap1 n)
+         (leap1 e)
+         (leap1 s)
+         (leap1 w)
+         (leap1 ne)
+         (leap1 nw)
+         (leap1 se)
+         (leap1 sw)
+      )
+   )
+
+   (loss-condition (White Black) (checkmated King) )
+   (win-condition (White)       (absolute-config Pawn Knight Rook King (f8) ) )
+   (win-condition (Black)       (absolute-config Pawn Knight Rook King (a1) ) )
+
+)
+
+(variant
+   (title "-") ; --------------------------------------------------------
+)
+
+(define jump         ( $1 $2 (verify not-friend?) (verify (in-zone? drop-zone)) add ) 
+)
+
+(variant
+   (title "Jumping King")
+   (description "Object: Checkmate the opponent's King by attacking
+	   it so it cannot escape, or put some piece on the weak square (a1 or f8)
+         of the opponent! The army (4 pawns, 2 rooks and 2 knights) is dropped
+         with the king that in the first jump phase, moves like the knight!
+         Only after that, the pieces may move. Whoever gets into a stalemate
+         position looses. Pawns promote in the last rank!")
+   (strategy "Try to create positions where you can attack the king and at the same
+              time reach the weak square.\\Remember the opponent cannot enter its own
+              weak square!\\Don´t put your king into a stalemate position, plan well
+              his path.")
+   (default)
+   (turn-order (White jumping) (White dropping) (Black jumping) (Black dropping)
+               (White jumping) (White dropping) (Black jumping) (Black dropping)
+               (White jumping) (White dropping) (Black jumping) (Black dropping)
+               (White jumping) (White dropping) (Black jumping) (Black dropping)
+               (White jumping) (White dropping) (Black jumping) (Black dropping)
+               (White jumping) (White dropping) (Black jumping) (Black dropping)
+               (White jumping) (White dropping) (Black jumping) (Black dropping)
+               (White jumping) (White dropping) (Black jumping) (Black dropping)
+        repeat (White moving)  (Black moving) 
+   )
+
+   (piece
+      (name Pawn)
+      (help "Pawn: moves forward, captures diagonally, can promote on the last row")
+      (description "Pawn\A Pawn can move straight ahead one square.
+           A Pawn captures by moving one square ahead and
+           diagonally.  If a Pawn reaches the far rank it promotes, changing into
+           a Knight or Rook.")
+      (image White "images\Chess\wpawn.bmp" Black "images\Chess\bpawn.bmp")
+      (moves
+         (move-type moving)
+         (Pawn-capture nw)
+         (Pawn-capture ne)
+         (Pawn-move)
+      )
+      (drops
+         (move-type dropping)
+         (king-drop)
+      )
+   )
+
+   (piece
+      (name Knight)
+	  (help "Knight: moves like an `L`, 2 squares one way and one the other")
+      (description "Knight\A Knight moves like an `L`, two squares vertically plus one
+          horizontally, or two squares horizontally plus one vertically.  It
+          hops over any pieces on the way.")
+      (image White "images\Chess\wknight.bmp" Black "images\Chess\bknight.bmp")
+      (moves
+           (move-type moving)
+	     (leap2 n ne)
+	     (leap2 n nw)
+	     (leap2 s se)
+	     (leap2 s sw)
+	     (leap2 e ne)
+	     (leap2 e se)
+	     (leap2 w nw)
+	     (leap2 w sw)
+      )
+      (drops 
+         (move-type dropping)
+         (king-drop)
+      )
+   )
+
+   (piece
+      (name Bishop)
+	  (help "Bishop: slides diagonally any number of squares")
+      (description "Bishop\A Bishop moves any number of squares on a diagonal.  It may
+           not leap over other pieces.")
+      (image White "images\Chess\wbishop.bmp" Black "images\Chess\bbishop.bmp")
+      (moves
+         (move-type moving)
+         (slide ne)
+         (slide nw)
+         (slide se)
+         (slide sw)
+      )
+      (drops
+         (move-type dropping)
+         (king-drop)
+      )
+   )
+
+   (piece
+      (name Rook)
+	  (help "Rook: slides any number of squares along the row or column.")
+      (description "Rook\A Rook moves any number of squares orthogonally on a rank
+           or a file.  It may not leap over other pieces.")
+      (image White "images\Chess\wrook.bmp" Black "images\Chess\brook.bmp")
+      (moves
+         (move-type moving)
+         (slide n)
+         (slide e)
+         (slide s)
+         (slide w)
+      )
+      (drops
+         (move-type dropping)
+         (king-drop)
+      )
+   )
+
+   (piece
+      (name King)
+      (help "Jumping King: Like a knight on 1st phase, then usually.")
+      (image White "images\Chess\wking.bmp" Black "images\Chess\bking.bmp")
+      (moves
+         (move-type moving)
+         (leap1 n)
+         (leap1 e)
+         (leap1 s)
+         (leap1 w)
+         (leap1 ne)
+         (leap1 nw)
+         (leap1 se)
+         (leap1 sw)
+         (move-type jumping)
+         (jump n ne)
+	   (jump n nw)
+	   (jump s se)
+	   (jump s sw)
+	   (jump e ne)
+	   (jump e se)
+	   (jump w nw)
+	   (jump w sw)
+      )
+   )
+
+   (loss-condition (White Black) (checkmated King) )
+   (loss-condition (White Black) stalemated )
+
+   (win-condition (White)       (absolute-config Pawn Knight Rook King (f8) ) )
+   (win-condition (Black)       (absolute-config Pawn Knight Rook King (a1) ) )
+
+)

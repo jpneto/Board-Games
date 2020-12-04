@@ -1,0 +1,174 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Towers - SPLAY</title>
+<SCRIPT LANGUAGE="JavaScript" src="tower2diag/tower2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<!--mstheme--><font face="Times New Roman, Times">
+
+<blockquote>
+<!--mstheme--></font>
+<h1 align="center"><!--mstheme--><font face="Times New Roman, Times" color="#333333"><strong><font face="Arial Black">SPLAY</font></strong><!--mstheme--></font></h1>
+<!--mstheme--><font face="Times New Roman, Times">
+<p align="center"><strong><font size="3">Copyright (c) 2000 <a href="mailto:joe_kisenwether@hotmail.com">Joseph
+Kisenwether</a></font></strong></p>
+<p align="left"><font size="3" face="Arial">This game is played on an 8x8 square
+board with the following setup.</font></p>
+    <center>
+<!--mstheme--></font>
+      <table border="1" width="320" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" align="center">
+<!--mstheme--><font face="Times New Roman, Times">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","8,8,......../.777777./.666666./......../......../.111111./.222222./........");
+</script>
+<!--mstheme--></font>
+          </td>
+        </tr>
+      </table>
+<!--mstheme--><font face="Times New Roman, Times">
+    </center>
+<br>
+<!--mstheme--></font>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"><b>TURN</b> - On each turn, each player
+          must one of the following things:</font>
+            <!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">A
+                  <u><b>Step</b></u> consists of moving an entire stack of
+                  stones with the player's color on top and moving it to an
+              (orthogonal or diagonal) adjacent cell.&nbsp;</font>
+                  <!--mstheme--></font>
+                  <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"> If this moves the
+                  stack to an occupied cell, then the stack being moved is
+                  placed on top of the the other (thus creating a larger stack).</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                  <!--msthemelist--></table>
+                  <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">A
+                  <u><b>Splay</b></u> consists of taking an entire stack with
+              the player's color on top and spreading it out in a
+                  straight line in any direction.</font>
+                  <!--mstheme--></font>
+                  <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">The top piece is placed in
+                  the first cell, the one stone that was below that goes
+                  into the next cell and so on. Any stone that is to be played
+                  into an occupied cell is placed on top of the stack that is
+                  already there.</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">A
+                        Splay which would carry stones off the edge of the board
+                        is illegal.&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">Any
+                        move which causes a stack to be on a cell where that
+                  stack could not Splay is illegal.</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">If,
+                        on a players turn, it is legal for him to Splay a stack
+                        which is at its size limit (i.e., a Splay will place the
+                  last stone on the board edge), he must do so!</font>
+                        <!--mstheme--></font>
+                        <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <!--msthemelist--><tr>
+                            <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                            <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">If there are
+                        multiple stacks at this situation, he may choose
+                        whichever he likes.</font><!--mstheme--></font><!--msthemelist--></td>
+                          </tr>
+                        <!--msthemelist--></table>
+                        <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                  <!--msthemelist--></table>
+                  <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">A
+                  player may not pass unless he has no legal moves.</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"><b>CAPTURE</b> - At
+                  the end of each move, if there are any white pieces in any of
+                  the stacks on row 1 or any black pieces in any of the stacks
+                  in row 8, these are removed from the stacks and captured by
+                  the opponent.&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"><strong>GOAL</strong> -
+            The first player that captures 9 enemy stones wins.</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+    </td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times">
+<br>
+<!--mstheme--></font>
+<table border="1" width="750" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="322" bordercolor="#000000">
+<!--mstheme--><font face="Times New Roman, Times">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","8,8,......../......../......../....[eewwwW].../...[eeeeeE]..../..[eeeeeE]..[eeeexw]../.[eeexxw]....6./........");
+</script>
+<!--mstheme--></font>
+      </td>
+      <td valign="top" width="428"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial"><strong>An example</strong></font>
+        <p><font size="3" face="Arial">If the black stack on b3 splay to the top
+        right, it would place its stones on the dotted cells (the black stones
+        at c4 and d5; </font><font size="3" face="Arial">the white stone at e6). However, that move is illegal,
+        because it would create a stack of size 5 at e6, which cannot be splayed
+        on any direction.</font><p><font size="3" face="Arial">Black can splay
+        the stack at f3 to the bottom right and manage to do two things: capture
+        a white stone by placing it at h1, and make a new stack at g2, which can
+        splay and capture another white stone on next turn.</font>
+        <!--mstheme--></font>
+      </td>
+    </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times">
+</blockquote>
+<!--msthemeseparator--><p align="center"><img src="aricerul.gif"></p>
+<!--mstheme--></font>
+</body>
+</html>

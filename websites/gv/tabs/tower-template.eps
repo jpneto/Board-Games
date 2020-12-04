@@ -1,0 +1,323 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne
+%%Title: hex-figure.ps
+%%CreationDate: 3/1/99
+%%BoundingBox: 0 0 595 327
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/dx 28 def
+/dy { .55 dx mul } def
+/dz { .375 dx mul } def
+/rdot { .125 dx mul } def
+/pieceborder {dx .03 mul } def
+
+/r { .4 dx mul } def
+/h { .5 r mul } def
+
+/dark .3 def
+/light .7 def
+
+/Chars 
+{[(A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)(AA)(AB)(AC)]
+} def
+
+/Digits
+{	[( 0)( 1)( 2)( 3)( 4)( 5)( 6)( 7)( 8)( 9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)(23)(24)(25)(26)(27)(28)(29)(30)(31)(32)(33)(34)(35)(36)(37)(38)(39)(40)(41)(42)(43)(44)(45)(46)(47)(48)(49)(50)]
+} def
+
+%---------------- Functions -------------------
+
+% Draw a cell
+
+/XY
+{
+    /k exch def
+    /j exch def
+    /i exch def
+
+    i dx mul j dz mul add 
+    j dy mul k h mul add
+} def
+
+% Draw a White cell at (i,j) with height k
+
+/White
+{
+    /k exch def
+    /j exch def
+    /i exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    i j k XY translate
+    1 .5 scale
+
+    1 setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul r 0 360 arc
+    stroke
+
+    grestore
+} def
+
+% Draw a Black cell at (i,j) with height k
+
+/Black
+{
+    /k exch def
+    /j exch def
+    /i exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    i j k XY translate
+    1 .5 scale
+
+    dark setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul r 0 360 arc
+    stroke
+
+    grestore
+} def
+
+% Draw a Grey cell at (i,j) with height k
+
+/Grey
+{
+    /k exch def
+    /j exch def
+    /i exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    i j k XY translate
+    1 .5 scale
+
+    light setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul r 0 360 arc
+    stroke
+
+    grestore
+} def
+
+% Draw a diagonal diagram (3D-like) with size cols x rows
+/Board
+{
+    % call: rows cols bool Board
+    /b    exch def
+    /cols exch def
+    /rows exch def
+
+%    1 setlinecap
+   
+    % Paint the board (1 is White, 0 is Black)
+    .925 setgray
+    newpath 
+    -.5 -.5 0 XY moveto
+    -.5 rows 0.5 sub 0 XY lineto
+    cols 0.5 sub rows 0.5 sub 0 XY lineto
+    cols 0.5 sub -.5 0 XY lineto
+    closepath
+    fill
+
+    % Draw grid
+    0 setgray
+    0.5 setlinewidth
+ 
+    0 1 cols
+    { 
+        /ii exch def     
+        newpath 
+        ii -.5 add -.5 0 XY moveto ii -.5 add rows 0.5 sub 0 XY lineto 
+        stroke
+    } for
+
+    0 1 rows
+    { 
+        /ii exch def     
+        newpath 
+        -.5 ii -.5 add 0 XY moveto cols 0.5 sub ii -0.5 add 0 XY lineto 
+        stroke
+    } for
+
+    % Draw board edges
+    1.5 setlinewidth
+
+    newpath 
+    -.5 -.5 0 XY moveto
+    -.5 rows 0.5 sub 0 XY lineto
+    cols 0.5 sub rows 0.5 sub 0 XY lineto
+    cols 0.5 sub -.5 0 XY lineto
+    closepath
+    stroke
+
+    b {
+      1 1 cols   % for each column label
+      { 
+          dup
+          /i exch def
+          -1 i 1 sub Chars i 1 sub get Label 
+      } for
+    } if
+
+    b {
+      1 1 rows   % for each row label
+      { 
+          dup
+          /i exch def     
+          i 1 sub cols 0.5 sub Digits i get Label 
+      } for
+    } if
+
+%0 9.7 (1) Label
+
+} def
+
+
+/ArrowSize { 10 } def
+
+/Arrow
+{   % call: i0 j0 angle length width Arrow
+    /width exch def
+    /length exch def
+    /angle exch def
+    /yy exch def
+    /xx exch def
+
+    % set up the graphics state
+    gsave
+    xx yy translate
+    angle rotate
+    %0 setgray
+
+    % draw the arrow head
+    0 setlinewidth
+    length ArrowSize 2 div sub 0 moveto
+    width 6 mul neg width 2.5 mul rlineto
+    width 1 mul width 2.5 mul neg rlineto
+    width 1 mul neg width 2.5 mul neg rlineto
+    closepath
+    fill
+
+    % draw the arrow shaft
+    width setlinewidth
+    %ArrowSize 2 div 0 moveto
+    0 0 moveto
+    length ArrowSize sub width 3 mul sub 0 rlineto
+    %stroke
+
+    grestore
+} def
+
+
+/Label
+{   % call: j i s(tring)
+    /s exch def
+    /i exch def
+    /j exch def
+
+    /coordsize  { dx 0.7 mul } def  % the size of the coordinates
+
+    gsave
+
+    /Courier findfont coordsize scalefont setfont
+    newpath 
+    j 9 gt {      % if the number (for the column label) is 10 or greater
+      gsave       %    it will condense font to fit size
+      /basefont /Courier findfont def
+      basefont [coordsize 2 div 0 0 coordsize 0 0] makefont setfont
+      i j -1.2 XY moveto s show
+      grestore
+    }{
+      i j -1.2 XY moveto s show
+    } ifelse
+
+    grestore
+
+} def
+
+%--------------------------------------------------------------------------
+%---------------- (make your diagram starting here) -----------------------
+%--------------------------------------------------------------------------
+
+75 100 translate
+
+8 10 true Board
+
+0 7 0 White
+0 7 1 White
+0 7 2 White
+2 7 0 Black
+2 7 1 Black
+0 6 0 Black
+0 6 1 Black
+0 4 0 White
+0 4 1 White
+0 3 0 Black
+2 3 0 White
+
+3 5 0 White
+3 5 1 White
+4 5 0 Black
+3 3 0 Black
+3 3 1 Black
+4 1 0 Black
+
+7 7 0 Black
+7 7 1 White
+7 7 2 White
+7 7 3 Black
+7 1 0 Black
+7 1 1 Grey
+
+% 155 135 225 20 2 Arrow
+
+showpage

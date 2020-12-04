@@ -1,0 +1,70 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>tower2diag</title>
+<script LANGUAGE="JavaScript" src="tower2diag.js"></script>
+</head>
+
+<body bgcolor="#D5BD83" background="../ricebk.jpg">
+
+<center><h1>tower2diag</h1></center><br>
+
+<b>tower2diag</b> is a JavaScript tool to easily add&nbsp; boards with stacks or towers
+to a webpage. The
+source code was based on the <a href="../board2diag">board2diag</a> tool.&nbsp;
+<p>First, one has to include the call to the tower2diag.js file, in the following
+form:</p>
+  <p><font face="Courier New"><b>
+  &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot; src=&quot;tower2diag.js&quot;&gt;&lt;/SCRIPT&gt;</b></font></p>
+Then, one can use a new JavaScript part, and make a call to tower2diag. This
+version assumes all files are in the same directory (this is easily changed).
+Just click on <a href="tower2diag.zip"> <img border="0" src="../icons/zipped.gif" width="19" height="19"></a>
+to download the actual version.&nbsp;<p>The function has two arguments, the
+first is a background image for the board (include relative path and extension). The
+second argument is a string of the following form:
+<ul>
+  <li>Number of columns of the first row
+  <li>Comma
+  <li>Number of columns of the maximal row&nbsp;
+  <li>Comma
+  <li>String that describes the position. Here:
+    <ul>
+      <li>a / marks the end of a row
+      <li>a . is one empty square
+      <li>1 to 5, places a tower of 1 to 5 black pieces
+      <li>6 to 0, places a tower of 1 to 5 white pieces
+      <li>[abcde] places a tower with five pieces, namely, use 'xwycbgrm' for&nbsp; black, white,
+        yellow, gray, blue, green, red, magenta. Use uppercase to mark them
+        (this mark can be used to represent more than 6 stones per stack, for
+        e.g., each mark means 5 stones).
+        It's also possible to place an empty cell by using letter 'e'.
+      <li>to mark empty cell with numbers, use 'abcdefghi' for 1 to 9.
+      <li>to remove a cell inside the board, use 'z'
+    </ul>
+</ul>
+<center>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br>tower2diag(\"\",\"3,3,.../.../...\");<br><br>");
+tower2diag("","3,3,.../.../...");
+document.write("<br>tower2diag(\"back-board.jpg\",\"3,5,.123./.456./.789.\");<br><br>");
+tower2diag("back-board.jpg","3,5,.123./.456./.789.");
+document.write("<br>tower2diag(\"back-board.jpg\",\"5,5,.[xwxwxx].[xwxwxw]./...../..[xxeeww]../...../[XXxxxX]...[ewWwWw]\");<br><br>");
+tower2diag("back-board.jpg","5,5,.[xwxwxx].[xwxwxw]./...../..[xxeeww]../...../[XXxxxX]...[ewWwWw]");
+document.write("<br>tower2diag(\"back-sand.jpg\",\"2,6,2.a..7/[eeeEee]...6[eeeWww]\");<br><br>");
+tower2diag("back-sand.jpg","2,6,2.a..7/[eeeEee]...6[eeeWww]");
+document.write("<br>tower2diag(\"back-sand.jpg\",\"3,3,[rregrr][ebbBbb][rrgeem]/.[eeeeeM]./[exwccC][eyyYGR][xXeeeE]\");<br><br>");
+tower2diag("back-sand.jpg","3,3,[rrrgrr][ebbBbb][rrgeem]/.[eeeeeM]./[exwccC][eyyYGR][xXeeeE]");
+document.write("<br>tower2diag(\"\",\"3,3,abc/def/ghi\");<br><br>");
+tower2diag("","3,3,abc/def/ghi");
+document.write("<br>tower2diag(\"\",\"3,3,.../z.z/...\");<br><br>");
+tower2diag("","3,3,.../z.z/...");
+//-->
+</script>
+</center>
+<br>
+<p align="right"><i>Version 0.31 - June 2002</i></p>
+</body></html>

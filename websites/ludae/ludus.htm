@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="pt">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>LUDUS</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="center">LUDUS</h1>
+
+<h2>Introdução </h2>
+
+<p>Este projecto procura explorar o quanto se pode retirar de um ambiente
+competitivo onde a experiência adquirida pode ser partilhada pelos agentes em
+competição. </p>
+
+<p>Dentro deste sistema, existem dois ambientes principais, designados por ARENA
+e ACADEMIA, onde decorrem todas as transações entre os agentes. </p>
+
+<ul>
+  <li>A ARENA é onde decorrem os episódios competitivos entre pares de agentes
+    (numa fase mais avançada do projecto, poderão ser estudados episódios
+    entre 3 ou mais agentes). </li>
+  <li>A ACADEMIA é onde se guarda conhecimento adquirido em alguns desses
+    episódios competitivos, estando disponíveis para consulta por todos os
+    agentes que o desejarem. </li>
+</ul>
+
+<p>Nos processos tradicionais de optimização, um das maiores dificuldades é
+como evitar os mínimos locais da função do problema. Tendo um método para o
+cálculo da aproximação dessa função, esse método pode ter tendência para
+se deslocar para certos mínimos locais, comprometendo a sua eficácia. No
+entanto, se existirem vários métodos de optimização a funcionar em paralelo,
+e cada um deles for capaz de &quot;ajudar&quot; os outros com o conhecimento que
+adquiriu, os mínimos locais de um método podem ser ultrapassados facilmente
+pelas características de um outro método, e vice versa. Se isso acontecer,
+ambos podem melhorar o seu desempenho, de modo a avançar para um melhor
+resultado.&nbsp;</p>
+
+<p> Esta estratégia, porém necessita de um modo de comunicação entre
+os métodos usados, um Esperanto que ligue as várias linguagens utilizadas no
+sistema. Esse Esperanto é um dos objectivos deste projecto.</p>
+
+<h2>Arena</h2>
+<p>A ARENA é simplesmente um espaço onde uma população de agentes competem
+entre si, e onde é guardada a sua classificação dentro de um determinado
+campeonato. Quando o campeonato chega ao fim, é usado o esquema de evolução
+dado pelos algoritmos genéticos, os elementos com mais sucesso possuem maior
+probabilidade de passarem para a próxima geração (ou seja, campeonato).
+Porém, este processo é utilizado para cada uma das populações de agentes. A
+população de Redes Neuronais é seleccionada de forma separada à população
+de Algoritmos Genéticos, por exemplo. Isto permitirá, entre outras coisas,
+manter alguma diversidade estrutural da população, mesmo que um método a
+médio prazo, pareça melhor que outro.</p>
+<p>À partida, o papel da ARENA será:</p>
+<ul>
+  <li>Disponibilizar o espaço de comunicação para os agentes competirem.</li>
+  <li>Gerir a informação daí produzida (as classificações parciais, as
+    descrições dos vários episódios).</li>
+  <li>Realizar o processo de selecção, de modo a criar o próximo campeonato.</li>
+</ul>
+<h2>Agentes</h2>
+
+<p>Um agente é constituído pelos seguintes módulos:</p>
+
+<ul>
+  <li>Um módulo de comunicação, respeitando um protocolo conhecido por todos
+    os agentes.</li>
+  <li>Um módulo de tradução entre as suas primitivas de representação de
+    conhecimento e o Esperanto (ou aproximado, se uma tradução objectiva não
+    for possível).</li>
+  <li>Um módulo de consulta à informação da ACADEMIA</li>
+  <li>Um algoritmo alfa/beta para explorar o espaço de possibilidades das
+    jogadas possíveis.&nbsp;</li>
+  <li>Uma função de avaliação que classifica uma dada posição.&nbsp;</li>
+</ul>
+<p>Esta função de avaliação determina a estrutura do agente. Esta pode ser
+baseada num determinado método de optimização. Entre eles:</p>
+<ul>
+  <li>Redes Neuronais,&nbsp;</li>
+  <li>Algoritmos Genéticos,</li>
+  <li>Autómatos Celulares (?),</li>
+  <li>Ferramentas Estatísticas (<i>Machine Learning</i>) (?)</li>
+  <li>...</li>
+</ul>
+<h2>Tesujis</h2>
+<p>Na terminologia do jogo oriental GO, um Tesuji, é uma sequência de
+movimentos determinados que a partir de uma certa posição definida, são
+considerados a melhor continuação dessa posição. Usaremos este termo para
+designar padrões identificados pelos métodos de optimização usados pelo
+sistema. Ou seja, ao longo da competição na ARENA e durante o processo de
+evolução dos agentes, haverá a criação de conhecimento que poderá ser
+codificado num Tesuji o qual é colocado na ACADEMIA para consulta pública.</p>
+<p>Algumas questões sobre Tesujis que serão abordadas:</p>
+<ul>
+  <li>Como representar um Tesuji? Quais os pontos relevantes a
+    descrever/representar? As células do espaço, a posição dos elementos,
+    ...</li>
+  <li>Quais os processos de criação admissíveis? Entre dois agentes,
+    auto-aprendizagem, conhecimento perito, ...</li>
+  <li>Como combinar Tesujis conhecidos? Processos de combinação e mutação,
+    ...</li>
+  <li>Como quantificar? O valor de um Tesuji deve ser proporcional ao percentual
+    de vitórias obtidas, aquando do seu uso?</li>
+  <li>Quais os limites do seu uso? Poderão ser usados para descrever os
+    padrões da vitória? Podem representar movimentos de abertura?&nbsp;</li>
+  <li>Como usar um Tesuji? Como inseri-lo no agente? (um Tesuji é um gene?,
+    pode ser aprendido por uma Rede Neuronal?, ...) E como retirá-lo do agente
+    para colocá-lo na Academia?</li>
+</ul>
+<h2>Academia</h2>
+<p>A ACADEMIA é uma base de dados de informação recolhida pelos vários
+episódios competitivos na ARENA. Entre a informação recolhida, é suposto
+guardar:</p>
+<ul>
+  <li>Os melhores Tesujis encontrados (com o valor assumido pelo agente que o
+    criou),</li>
+  <li>Um conjunto de conhecimento perito (se for considerado adequado),</li>
+  <li>A evolução dos agentes de cada arquitectura ao longo dos campeonatos,</li>
+  <li>...</li>
+</ul>
+<h2>Jogos</h2>
+<p>Até agora, o episódio competitivo que ocorre entre pares de agentes, foi
+deixado em aberto. Pensamos começar as experiências com jogos de tabuleiro
+tradicionais, onde existe informação perfeita (não existem elementos
+aleatórios. nem existe informação escondida). O Xadrez, as Damas e o Jogo do
+Galo encontram-se dentro deste critério. Há algumas vantagens nesta escolha,
+pois existe um extenso conjunto de pessoas que conhecem estes jogos e
+praticam-nos, bem como alguns trabalhos científicos sobre o assunto, sendo mais
+fácil comparar a qualidade e relevância dos resultados obtidos.</p>
+
+</body>
+

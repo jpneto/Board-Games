@@ -1,0 +1,392 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne and Joao Neto
+%%Title: dominoes.eps
+%%CreationDate: 1/1/2004
+%%BoundingBox: 0 30 390 190
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/dx 30 def                       % the size of the circles
+/r { .1 dx mul } def             % the size of the stones
+/coordsize   { dx 0.7 mul } def  % the size of the coordinates
+/insidesize  { dx 0.5 mul } def  % the size of the letters inside the stones
+/pieceborder {dx .01 mul } def
+
+/large-stroke 2 def
+/thin-stroke .75 def
+
+%---------------- Functions -------------------
+
+/Black1
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+    newpath i dx mul j dx mul r 0 360 arc stroke
+
+} def
+
+
+/Black2
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc stroke
+
+} def
+
+
+/Black3
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul j dx mul r 0 360 arc fill
+    newpath i dx mul j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc stroke
+
+} def
+
+
+/Black4
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc stroke
+
+} def
+
+/Black5
+{
+    /i exch def
+    /j exch def
+
+    % draw first stone
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul j dx mul r 0 360 arc fill
+    newpath i dx mul j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc stroke
+} def
+
+
+/Black6
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+
+
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul add j dx mul r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul add r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc stroke
+
+} def
+
+/Black-2
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc stroke
+
+} def
+
+/Black-3
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul j dx mul r 0 360 arc fill
+    newpath i dx mul j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 2.5 mul add r 0 360 arc stroke
+
+} def
+
+/Black-6
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 2.5 mul add j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.5 mul add j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.5 mul sub j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul r 2.5 mul sub j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul j dx mul r 2.5 mul add r 0 360 arc stroke
+
+    newpath i dx mul j dx mul r 2.5 mul sub r 0 360 arc fill
+    newpath i dx mul j dx mul r 2.5 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.5 mul add j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.5 mul add j dx mul r 2.5 mul add r 0 360 arc stroke
+
+    newpath i dx mul r 2.5 mul sub j dx mul r 2.5 mul add r 0 360 arc fill
+    newpath i dx mul r 2.5 mul sub j dx mul r 2.5 mul add r 0 360 arc stroke
+
+} def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/Sq
+{   % call: r(ow) c(olumn) n(if true, darker line) e(if true, darker line) 
+    %                      s(if true, darker line) w(if true, darker line)
+    %       t(ype, the number of stones)
+
+    /t exch def
+    /w exch def
+    /s exch def
+    /e exch def
+    /n exch def
+    /cols exch def
+    /rows exch def
+
+    gsave
+
+    t 1 eq { rows cols Black1 } if
+    t 2 eq { rows cols Black2 } if
+    t 3 eq { rows cols Black3 } if
+    t 4 eq { rows cols Black4 } if
+    t 5 eq { rows cols Black5 } if
+    t 6 eq { rows cols Black6 } if
+
+    % rotate 90º right
+    t -1 eq { rows cols Black1 } if
+    t -2 eq { rows cols Black-2 } if
+    t -3 eq { rows cols Black-3 } if
+    t -4 eq { rows cols Black4 } if
+    t -5 eq { rows cols Black5 } if
+    t -6 eq { rows cols Black-6 } if
+
+    grestore
+
+    % draw north border
+    n {
+        /my-stroke large-stroke def
+    } {
+        /my-stroke thin-stroke def
+    } ifelse
+
+    my-stroke setlinewidth
+
+    newpath 
+    cols dx mul dx .5 mul sub my-stroke 2 div sub
+    rows dx mul dx .5 mul add
+    moveto
+
+    cols dx mul dx .5 mul add my-stroke 2 div add
+    rows dx mul dx .5 mul add
+    lineto    
+    stroke
+
+    % draw east border
+    e {
+        /my-stroke large-stroke def
+    } {
+        /my-stroke thin-stroke def
+    } ifelse
+
+    my-stroke setlinewidth
+
+    newpath 
+    cols dx mul dx .5 mul add
+    rows dx mul dx .5 mul add
+    moveto
+
+    cols dx mul dx .5 mul add
+    rows dx mul dx .5 mul sub
+    lineto    
+    stroke
+
+    % draw south border
+    s {
+        /my-stroke large-stroke def
+    } {
+        /my-stroke thin-stroke def
+    } ifelse
+
+    my-stroke setlinewidth
+
+    newpath 
+    cols dx mul dx .5 mul add  my-stroke 2 div add
+    rows dx mul dx .5 mul sub
+    moveto
+
+    cols dx mul dx .5 mul sub  my-stroke 2 div sub
+    rows dx mul dx .5 mul sub
+    lineto    
+    stroke
+
+    % draw west border
+    w {
+        /my-stroke large-stroke def
+    } {
+        /my-stroke thin-stroke def
+    } ifelse
+
+    my-stroke setlinewidth
+
+    newpath 
+    cols dx mul dx .5 mul sub
+    rows dx mul dx .5 mul sub
+    moveto
+
+    cols dx mul dx .5 mul sub 
+    rows dx mul dx .5 mul add
+    lineto    
+    stroke
+
+} def
+
+/DominoUp
+{   % call: r(ow) c(olumn) sq1 (number of stones) sq2 (number of stones)
+
+    /sq2 exch def
+    /sq1 exch def
+    /col exch def
+    /row exch def
+
+        row   col false true true true sq1 Sq
+    row 1 add col true true false true sq2 Sq
+
+    newpath col dx mul row .5 add dx mul r .2 mul 0 360 arc fill
+    newpath col dx mul row .5 add dx mul r .2 mul 0 360 arc stroke
+
+} def
+
+/DominoRight
+{   % call: r(ow) c(olumn) sq1 (number of stones) sq2 (number of stones)
+
+    /sq2 exch def
+    /sq1 exch def
+    /col exch def
+    /row exch def
+
+    row    col    true false true true  0 sq1 sub Sq
+    row col 1 add true true  true false 0 sq2 sub Sq
+
+    newpath col .5 add dx mul row dx mul r .4 mul 0 360 arc fill
+    newpath col .5 add dx mul row dx mul r .4 mul 0 360 arc stroke
+
+} def
+
+%--------------------------------------------------------------------------
+%---------------- (make your diagram starting here) -----------------------
+%--------------------------------------------------------------------------
+
+dx 2 mul dx 2 mul translate
+
+% just use the Domino[Up/Right] to draw entire dominoes
+
+3 5 6 5 DominoUp
+3 2 0 1 DominoUp
+3 7 6 3 DominoRight
+
+7 0 4 2 DominoRight
+7 2 2 3 DominoRight
+6.5 4 3 3 DominoUp
+7 5 3 6 DominoRight
+
+5.5 1.5 false false true true 2 Sq
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% it's possible to draw individual squares
+% false means a thin line, true a darker line on that direction
+% row col n e w s number Sq
+
+10 1 false false false false 1 Sq
+10 3 false false false false 2 Sq
+10 5 false false false false 3 Sq
+10 7 false false false false 4 Sq
+10 9 false false false false 5 Sq
+10 11 false false false false 6 Sq
+10 13 false false false false -3 Sq
+10 15 false false false false -6 Sq
+
+% this means we can draw exotic pieces:
+
+13 3 true false true true 1 Sq
+13 4 true false false false 3 Sq
+13 5 true true true false 4 Sq
+12 4 false true true true 0 Sq
+
+showpage

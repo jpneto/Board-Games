@@ -1,0 +1,145 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Towers - INTERCEPT</title>
+<SCRIPT LANGUAGE="JavaScript" src="tower2diag/tower2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">INTERCEPT</font></strong></h1>
+<p align="center"><strong><font size="3">Copyright (c) 1993 </font>Henri Vergne</strong></p>
+<p align="left"><font size="3" face="Arial">This game is played on a 13x13 square
+board with the following setup:</font></p>
+    <center>
+      <table border="1" width="520" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" align="center">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","13,13,.12121[eEeEeE]12121./......3....../............./............./............./............./......[eeeeer]....../............./............./............./............./......8....../.67676[eEeEeE]67676.");
+</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+<br>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><b><font face="Arial">GOAL CELL</font></b><font size="3" face="Arial"> - 
+		the marked cells on the bottom and top row.</font>
+            </li>
+		<li><b><font face="Arial">PIECES</font></b><font size="3" face="Arial"> - 
+		There are the following pieces:</font><ul>
+		<li><font face="Arial"><u>Passage</u> stones (in the diagram, the 
+		black/white stacks of size 1)</font><font size="3" face="Arial">.</font></li>
+		<li><font face="Arial"><u>Rest</u> stones (in the diagram, the 
+		black/white stacks of size 2)</font><font size="3" face="Arial">.</font><ul>
+			<li><font face="Arial">Passage and rest stones may: (i) move to an 
+			(orthogonal or diagonal) adjacent empty cell or (ii) jump over 
+			(orthogonal or diagonal) adjacent passage or rest stones (of either 
+			color) landing on the immediate next cell (which must be empty). 
+			Jumps can be multiple but are not mandatory.</font></li>
+		</ul></li>
+		<li><font face="Arial"><u>Double</u> stones (in the diagram, the 
+		black/white stacks of size 3 or 4)</font><font size="3" face="Arial">.</font><ul>
+		<li><font face="Arial">Double stones move like passage or rest stones, 
+		except they can slide a line of one or more empty cells <i>before</i> 
+		they make a jump. Double stones can also jump over the enemy double 
+		stone.</font></li>
+		<li><font face="Arial">The player can change the size of his double 
+		stack from 3 to 4 stones or vice versa. With size 3 they can act as 
+		passage stones and with 4 like rest stones, regarding the ball (see 
+		below). This size change costs an entire turn.</font></li>
+		</ul></li>
+		<li><font face="Arial">The <u>ball</u> (the red stack).</font><ul>
+		<li><font face="Arial">The ball may move if it is (orthogonal or 
+		diagonal) adjacent to a friendly passage stone. Then, if the passage 
+		stone is also adjacent to a friendly rest stone, the player may transfer 
+		the ball to this rest stone. This sequence can be repeated if the player 
+		has more passage and rest stones adjacent to this new ball position.</font></li>
+		<li><font face="Arial">However, on each transfer, the ball cannot end in 
+		a cell adjacent to its previous position (i.e., each transfer must move 
+		the ball at a distance of two cells).</font></li>
+		<li><font face="Arial">The rest stone carrying the ball cannot move or 
+		jump and cannot be jumped.</font></li>
+		<li><font face="Arial">Goal cells are seen as rest stones regarding ball 
+		transfers.</font></li>
+		<li><font face="Arial">Any enemy piece adjacent to his goal cell can be 
+		stacked over with a friendly stack (by jump or move). Covered stacks cannot move or jump. 
+		A player can only cover one enemy stack at any given moment.</font></li>
+		</ul></li>
+		</ul>
+            </li>
+		<li><font size="3" face="Arial"><b>TURN</b>
+            -&nbsp; On each turn, each player
+          may do two actions:</font><ul>
+		<li><font size="3" face="Arial">Moves one friendly stack or changes the 
+		size of his double stone.</font></li>
+		<li><font face="Arial">Optionally, transfer the ball.</font> </li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><strong>GOAL</strong> - The player that 
+		moves the ball to the adversary goal cell wins the game.</font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+<table border="1" width="750" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000" id="table1">
+    <tr>
+      <td align="center" width="250" bordercolor="#000000">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","6,6,...1../.71.../.6..../...3../..9..1/.12...");
+</script>
+      </td>
+      <td valign="top" width="500"><strong><font face="Arial">Some</font></strong><font face="Arial"><strong> jump examples</strong></font>
+        <p><font face="Arial">Piece b4 can jump over b5 landing on b6 and then 
+		jump over c5 landing on d4. But it cannot continue its jump over d3 
+		because d3 is a double stone (rest and passage stones can only jump rest 
+		and passage stones).</font><p><font face="Arial">The double stone at c2 
+		can jump over c5 and then d6. After the second jump it must land at e6 
+		(always land on the immediate next cell).</font></td>
+    </tr>
+</table>
+<table border="1" width="750" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000" id="table2">
+    <tr>
+      <td align="center" width="250" bordercolor="#000000">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","6,6,..7.../..6[eeerww]../.7..../.6..../..9.../......");
+</script>
+      </td>
+      <td valign="top" width="500"><font face="Arial"><strong>A transfer example</strong></font>
+        <p><font face="Arial">The rest piece at d5 has the ball. White could 
+		transfer it to b4 using c5 and then transfer it to c2 (the double piece 
+		is acting as a rest piece) using b3.</font><p><font face="Arial">White 
+		could not transfer d5 to c6 because the ball would be adjacent to its 
+		previous position.</font></td>
+    </tr>
+</table>
+<table border="1" width="750" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000" id="table3">
+    <tr>
+      <td align="center" width="250" bordercolor="#000000">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","6,6,..[eEeEeE].../..16../.7..../.6..../..[eeerww].../......");
+</script>
+      </td>
+      <td valign="top" width="500"><font face="Arial"><strong>A winning example</strong></font>
+        <p><font face="Arial">White's turn. He moves d5 over the enemy stack at 
+		c5 (it is legal, since c5 is adjacent to his own goal cell).</font><p>
+		<font face="Arial">Then, White makes the transfer from c2 to b4 (thru 
+		b3) and then from b4 to c6 (thru c5). White transferred the ball into 
+		the enemy goal cell, winning the game.</font></td>
+    </tr>
+</table>
+</blockquote>
+<hr>
+</body>
+</html>

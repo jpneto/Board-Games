@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="game.xsl"?>
+
+<game>
+  
+  <title>Abalone</title>
+
+  <meta>
+    <writer>
+      <name>Joao Pedro Neto</name>
+      <mail>jpn%di.fc.ul.pt</mail>
+      <url>http://www.di.fc.ul.pt/~jpn</url>
+      <year>2000</year>
+    </writer>
+    <publisher>
+      <name>Abalone Games</name>
+      <url>http://uk.abalonegames.com/rules/basic_rules/official_rules.html</url> 
+    </publisher>
+    <year>1989</year>
+  </meta>
+  
+  <components>  
+    <board top="5" middle="9" bottom="5">hex</board>
+    <diagram middle="9" type="hex">
+       "5,9,5,wwwww/wwwwww/..www../......../........./......../..xxx../xxxxxx/xxxxx"
+    </diagram>
+    <section>soldier</section>
+    <features grid="hex" cancapture="true" canmove="true" mustcapture="true"/>
+    <pieces number="14" color="black" id="soldiers" /> 
+    <pieces number="14" color="white" id="soldiers" /> 
+  </components>
+
+  <notes>
+    <note>Abalone is perhaps the most successful abstract game of the 1990s.</note>
+    <rulenote>At <a href="http://www.abalonegames.com/cfm2001/foot/flag-en.gif">Abalone Games</a>, there are a lot of information about <a href="http://www.abalonegames.com/cfm2001/presentation/demo.cfm">tactics</a>, <a href="http://uk.abalonegames.com/rules/variations/index.html">variations</a> and news. It is possible to play Abalone with reduced rules (no side-shifts) <a href="http://www.clickhere.nl/cgi-bin/abalone">online</a>. Since the game turned out to be too drawish, the top Abalone players <a href="http://www.msoworld.com/mindzine/news/proprietary/abalonerules.html">proposed</a> a new rule change which is based on a new setup.</rulenote>
+  </notes>
+  
+  <!-- Description-->
+  <description>
+  
+    <setup>Place the stones as shown in the initial diagram</setup>
+    
+    <!-- Rules -->
+    <rules>
+       <rulesection>
+         <rule><rtitle>LINE SHIFT</rtitle>A player can shift 1, 2 or 3 connected marbles on a line, one cell on 
+               one of the 2 directions, provided it is empty.</rule>
+         <rule><rtitle>SIDE SHIFT</rtitle>A player can also shift 2 or 3 connected stones on one of the 6 directions, 
+               provided that all adjacent cells on the chosen direction, are empty.</rule>
+         <rule><rtitle>PUSH</rtitle>A line of 2 or 3 stones can push stone opponent stones, using a line shift:</rule>
+         <rulesection>
+            <rule>The pushed line must be smaller that the pushing line</rule>
+            <rule>If exists, the cell after the pushed line must be empty</rule>
+            <rule>If there is no cell after the pushed line, the last stone is removed from the board</rule>
+         </rulesection>
+       </rulesection>
+    </rules>
+     
+    <goal>Wins the player that removes 6 opponent stones from the board.</goal>
+  
+    <example>
+      <diagram middle="9" type="hex">
+        "5,9,5,.wwww/wwwwww/w.www../.xx...../..x....../...ccc../.axxx../.x.xxx/xx.xx"
+      </diagram>  
+      <note><b>An example</b></note>
+      <note>Stones e2-f2 can line shift to cell [1].<br/>
+            Stones e3-f4-g5 can side shift to cells [2].<br/>
+            Stones b3-c3 can push (2 vs. 1) and remove stone a3.<br/>
+            Stones c5-c6-c7 can push (3 vs. 2) stones c3-c4.</note>
+    </example>
+    
+  </description>
+
+</game>

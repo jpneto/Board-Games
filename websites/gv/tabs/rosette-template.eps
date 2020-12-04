@@ -1,0 +1,896 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne and Joao Neto
+%%Title: hexs diagrams
+%%CreationDate: 1/1/2004
+%%BoundingBox: 90 38 330 290
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/Root3 1.732050808 def
+
+/OriginX 0 def
+/OriginY 160 def
+
+/HexRadius 14 def
+/HexDiameter { Hexradius 2 mul } def
+
+/CircleRadius { HexRadius 0.375 mul } def
+/CircleDiameter { CircleRadius 2 mul } def
+/CircleLineWidth 1 def
+
+% ----------- Functions -------------
+
+/HexX
+{   % call: i j HexX
+    /j exch def
+    /i exch def
+    OriginX i j add HexRadius mul 1.5 mul add
+} def
+
+/HexY
+{   % call: i j HexY
+    /j exch def
+    /i exch def
+    OriginY j i sub HexRadius mul Root3 mul 2 div sub
+} def
+
+/White
+{   % call: i j White
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    0 setlinewidth
+    1 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+
+    % Draw outline
+    0 setgray
+    CircleLineWidth setlinewidth
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    stroke
+} def
+
+/Grey
+{   % call: i j Grey
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    0 setlinewidth
+    .75 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+
+    % Draw outline
+    0 setgray
+    CircleLineWidth setlinewidth
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    stroke
+} def
+
+/Black
+{   % call: i j Black
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    CircleLineWidth setlinewidth
+    0 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+} def
+
+/WhiteIt   % k determines at which vertex the stone will be 
+           % clockwise, starting with 0 at top left
+{   % call: i j k Hexagon
+    /k exch def
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub            /ii exch def
+    i j HexY HexRadius Root3 mul 2 div add  /jj exch def
+    
+    k 0 eq {
+      0 setlinewidth
+      1 setgray
+      ii 
+      jj 
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii 
+      jj 
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 1 eq {
+      0 setlinewidth
+      1 setgray
+      ii HexRadius add 
+      jj 
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add 
+      jj 
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+
+    k 2 eq {
+      0 setlinewidth
+      1 setgray
+      ii HexRadius add HexRadius 2 div add
+      jj HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add
+      jj HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 3 eq {
+      0 setlinewidth
+      1 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 4 eq {
+      0 setlinewidth
+      1 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 5 eq {
+      0 setlinewidth
+      1 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+         HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+         HexRadius Root3 mul 2 div add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+         HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+         HexRadius Root3 mul 2 div add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+} def
+
+/BlackIt   % k determines at which vertex the stone will be 
+           % clockwise, starting with 0 at top left
+{   % call: i j k Hexagon
+    /k exch def
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub            /ii exch def
+    i j HexY HexRadius Root3 mul 2 div add  /jj exch def
+
+    k 0 eq {
+      CircleLineWidth setlinewidth
+      0 setgray
+      ii 
+      jj 
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii  
+      jj 
+      CircleRadius 0 360 arc
+      stroke
+     } if
+
+    k 1 eq {
+      CircleLineWidth setlinewidth
+      0 setgray
+      ii HexRadius add 
+      jj 
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add 
+      jj 
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 2 eq {
+      CircleLineWidth setlinewidth
+      0 setgray
+      ii HexRadius add HexRadius 2 div add
+      jj HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add
+      jj HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 3 eq {
+      CircleLineWidth setlinewidth
+      0 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 4 eq {
+      CircleLineWidth setlinewidth
+      0 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 5 eq {
+      CircleLineWidth setlinewidth
+      0 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+         HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+         HexRadius Root3 mul 2 div add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+         HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+         HexRadius Root3 mul 2 div add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+} def
+
+/GreyIt   % k determines at which vertex the stone will be 
+           % clockwise, starting with 0 at top left
+{   % call: i j k Hexagon
+    /k exch def
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub            /ii exch def
+    i j HexY HexRadius Root3 mul 2 div add  /jj exch def
+    
+    k 0 eq {
+      0 setlinewidth
+      .75 setgray
+      ii 
+      jj 
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii 
+      jj 
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 1 eq {
+      0 setlinewidth
+      .75 setgray
+      ii HexRadius add 
+      jj 
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add 
+      jj 
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+
+    k 2 eq {
+      0 setlinewidth
+      .75 setgray
+      ii HexRadius add HexRadius 2 div add
+      jj HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add
+      jj HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 3 eq {
+      0 setlinewidth
+      .75 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 4 eq {
+      0 setlinewidth
+      .75 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+    k 5 eq {
+      0 setlinewidth
+      .75 setgray
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+         HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+         HexRadius Root3 mul 2 div add
+      CircleRadius 0 360 arc
+      fill
+      0 setgray
+      CircleLineWidth setlinewidth
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+         HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+         HexRadius Root3 mul 2 div add
+      CircleRadius 0 360 arc
+      stroke
+    } if
+
+} def
+
+/MarkerIt  % k determines at which vertex the label will be 
+           % clockwise, starting with 0 at top left
+{   % call: i j k g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /k exch def
+    /j exch def
+    /i exch def
+
+    g setgray
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub           CircleRadius 2 div sub /ii exch def
+    i j HexY HexRadius Root3 mul 2 div add CircleRadius 2 div sub /jj exch def
+    
+    k 0 eq {
+      ii 
+      jj 
+
+      moveto
+      gsave
+      /Helvetica-Bold findfont HexRadius .5 mul scalefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+    k 1 eq {
+      ii HexRadius add 
+      jj 
+      moveto
+      gsave
+      /Helvetica-Bold findfont HexRadius .5 mul scalefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+
+    k 2 eq {
+      ii HexRadius add HexRadius 2 div add
+      jj HexRadius Root3 mul 2 div neg add
+      moveto
+      gsave
+      /Helvetica-Bold findfont HexRadius .5 mul scalefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+    k 3 eq {
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      moveto
+      gsave
+      /Helvetica-Bold findfont HexRadius .5 mul scalefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+    k 4 eq {
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      moveto
+      gsave
+      /Helvetica-Bold findfont HexRadius .5 mul scalefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+    k 5 eq {
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+         HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+         HexRadius Root3 mul 2 div add
+      moveto
+      gsave
+      /Helvetica-Bold findfont HexRadius .5 mul scalefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+} def
+
+/MarkerSmIt  % k determines at which vertex the label will be 
+           % clockwise, starting with 0 at top left
+{   % call: i j k g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /k exch def
+    /j exch def
+    /i exch def
+
+    g setgray
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub           CircleRadius 1.5 div sub /ii exch def
+    i j HexY HexRadius Root3 mul 2 div add CircleRadius 2 div sub /jj exch def
+    
+    k 0 eq {
+      ii 
+      jj 
+
+      moveto
+      gsave
+      /basefont /Helvetica-Bold findfont def
+      basefont [HexRadius 2 div 0 0 HexRadius .5 mul 0 0] makefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+    k 1 eq {
+      ii HexRadius add 
+      jj 
+      moveto
+      gsave
+      /basefont /Helvetica-Bold findfont def
+      basefont [HexRadius 2 div 0 0 HexRadius .5 mul 0 0] makefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+
+    k 2 eq {
+      ii HexRadius add HexRadius 2 div add
+      jj HexRadius Root3 mul 2 div neg add
+      moveto
+      gsave
+      /basefont /Helvetica-Bold findfont def
+      basefont [HexRadius 2 div 0 0 HexRadius .5 mul 0 0] makefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+    k 3 eq {
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      moveto
+      gsave
+      /basefont /Helvetica-Bold findfont def
+      basefont [HexRadius 2 div 0 0 HexRadius .5 mul 0 0] makefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+    k 4 eq {
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+      moveto
+      gsave
+      /basefont /Helvetica-Bold findfont def
+      basefont [HexRadius 2 div 0 0 HexRadius .5 mul 0 0] makefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+    k 5 eq {
+      ii HexRadius add HexRadius 2 div add HexRadius 2 div neg add HexRadius neg add
+         HexRadius 2 div neg add
+      jj HexRadius Root3 mul 2 div neg add HexRadius Root3 mul 2 div neg add
+         HexRadius Root3 mul 2 div add
+      moveto
+      gsave
+      /basefont /Helvetica-Bold findfont def
+      basefont [HexRadius 2 div 0 0 HexRadius .5 mul 0 0] makefont setfont
+      .5 setlinewidth
+      b {
+          s true charpath stroke
+        } {
+          s show
+      } ifelse
+      grestore
+    } if
+
+} def
+
+/Hexagon
+{   % call: i j Hexagon
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    0 setlinewidth
+    1 setgray
+    fill
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    .25 setlinewidth
+    0 setgray
+    stroke
+} def
+
+/Label
+{   % call: i j s(tring)
+    /s exch def
+    /j exch def
+    /i exch def
+
+    /coordsize { HexRadius .9 mul } def
+    /Courier findfont coordsize scalefont setfont
+    0 setgray
+    newpath
+    i j moveto s show
+
+} def
+
+
+/Marker
+{   % call: i j g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /j exch def
+    /i exch def
+
+    g setgray
+    newpath
+    i j HexX CircleRadius 2 div sub
+    i j HexY CircleRadius 2 div sub
+    moveto
+
+    gsave
+    /Helvetica-Bold findfont HexRadius .5 mul scalefont setfont
+    .5 setlinewidth
+    b {
+        s true charpath stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+/MarkerSm
+{   % call: i j g(rey ratio) b(oolean/charpath) s(tring -> just 2 chars)
+    /s exch def
+    /b exch def
+    /g exch def
+    /j exch def
+    /i exch def
+
+    g setgray
+    newpath
+    i j HexX CircleRadius 2 div sub
+    i j HexY CircleRadius 2 div sub
+    moveto
+
+    gsave
+
+    /basefont /Helvetica-Bold findfont def
+    basefont [HexRadius 2 div 0 0 HexRadius 0 0] makefont setfont
+
+    .5 setlinewidth
+    b {
+        s true charpath stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+%--------------------------------------------------------------------------
+%---------------- (make your diagram starting here) -----------------------
+%--------------------------------------------------------------------------
+
+0 -17 translate
+
+6 0 Hexagon
+7 0 Hexagon
+8 0 Hexagon
+9 0 Hexagon
+10 0 Hexagon
+
+5 1 Hexagon
+6 1 Hexagon
+7 1 Hexagon
+8 1 Hexagon
+9 1 Hexagon
+10 1 Hexagon
+
+4 2 Hexagon
+5 2 Hexagon
+6 2 Hexagon
+7 2 Hexagon
+8 2 Hexagon
+9 2 Hexagon
+10 2 Hexagon
+
+3 3 Hexagon
+4 3 Hexagon
+5 3 Hexagon
+6 3 Hexagon
+7 3 Hexagon
+8 3 Hexagon
+9 3 Hexagon
+10 3 Hexagon
+
+2 4 Hexagon
+3 4 Hexagon
+4 4 Hexagon
+5 4 Hexagon
+6 4 Hexagon
+7 4 Hexagon
+8 4 Hexagon
+9 4 Hexagon
+10 4 Hexagon
+
+2 5 Hexagon
+3 5 Hexagon
+4 5 Hexagon
+5 5 Hexagon
+6 5 Hexagon
+7 5 Hexagon
+8 5 Hexagon
+9 5 Hexagon
+
+2 6 Hexagon
+3 6 Hexagon
+4 6 Hexagon
+5 6 Hexagon
+6 6 Hexagon
+7 6 Hexagon
+8 6 Hexagon
+
+2 7 Hexagon
+3 7 Hexagon
+4 7 Hexagon
+5 7 Hexagon
+6 7 Hexagon
+7 7 Hexagon
+
+2 8 Hexagon
+3 8 Hexagon
+4 8 Hexagon
+5 8 Hexagon
+6 8 Hexagon
+
+107 58 (ab) Label
+128 58 (cd) Label
+149 58 (ef) Label
+170 58 (gh) Label
+191 58 (ij) Label
+212 58 (kl) Label
+233 58 (mn) Label
+254 58 (op) Label
+275 58 (qr) Label
+296 58 (st) Label
+
+95  72 (1) Label
+95  84 (2) Label
+95  96 (3) Label
+95 108 (4) Label
+95 120 (5) Label
+95 132 (6) Label
+95 144 (7) Label
+95 156 (8) Label
+95 168 (9) Label
+90 180 (10) Label
+90 192 (11) Label
+90 204 (12) Label
+90 216 (13) Label
+90 228 (14) Label
+90 240 (15) Label
+90 252 (16) Label
+90 264 (17) Label
+90 276 (18) Label
+90 288 (19) Label
+
+6 0 0 BlackIt
+6 0 1 WhiteIt
+6 0 2 WhiteIt
+6 0 3 WhiteIt
+6 0 4 WhiteIt
+6 0 5 WhiteIt
+
+8 0 0 BlackIt
+8 0 1 BlackIt
+8 0 2 BlackIt
+8 0 3 BlackIt
+8 0 4 BlackIt
+8 0 5 BlackIt
+
+8 2 0 GreyIt
+8 2 1 GreyIt
+8 2 2 GreyIt
+8 2 3 GreyIt
+8 2 4 GreyIt
+8 2 5 GreyIt
+
+2 8 4 WhiteIt
+%7 7 0 false (1) Marker
+%7 0 1 false (2) Marker
+%4 4 0 false (13) MarkerSm
+%5 5 0 true (4) Marker
+%2 8 4 0 false (1) MarkerIt
+
+showpage

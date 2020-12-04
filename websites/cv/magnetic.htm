@@ -1,0 +1,371 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Magnetic Chess</title>
+<!-- This is an automatically generated file.
+
+
+It will be read and overwritten.
+
+
+Do Not Edit! -->
+<meta name="Microsoft Theme" content="bars 011">
+</head>
+
+<body background="barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633"
+vlink="#999933" alink="#993300">
+<!--mstheme--><font face="arial, helvetica">
+
+<dl>
+<!--mstheme-->  </font><h3 FOLDED ADD_DATE="873997532" align="center"><!--mstheme--><font face="times new roman, times"
+  color="#000000"><a NAME="top"></a><font SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a>
+  | <a HREF="index.htm#MyCVs">my variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a>
+  |&nbsp; <a HREF="index.htm#otherPlaces">other places</a></font><!--mstheme--></font></h3>
+<!--mstheme-->  <font face="arial, helvetica"><!--mstheme--></font><h3 FOLDED ADD_DATE="873997549" align="center"><!--mstheme--><font
+  face="times new roman, times" color="#000000"><a NAME="MagneticChess"></a><font SIZE="+2">Magnetic
+  Chess</font><!--mstheme--></font></h3>
+<!--mstheme-->  <font face="arial, helvetica"><i><p align="right">&quot;How to attract your
+  opposite!&quot;</i></p>
+<!--msthemeseparator-->  <p align="center"><img src="barrulee.gif"></p>
+  <dd>&nbsp;<dl>
+      <address>
+        Magnetic chess has born in my talks with Claude Chaunier about physics metaphors for
+        chess. When we reach magnetic forces, I came with a nice and simple idea. Attraction and
+        repulsion could be implemented very easily in chess. Why not make a game out of it? Well,
+        I did, and the first result was Magnetic Chess. However, there was other <a
+        HREF="#otherStuff">stuff</a> (see especially Anti-Magnetic Chess)<br>
+      </address>
+    </dl>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h3><!--mstheme--><font face="times new roman, times" color="#000000"><font SIZE="+2">Magnetic
+    Chess</font><!--mstheme--></font></h3>
+<!--mstheme-->    <font face="arial, helvetica"><ol>
+      <li>All <a HREF="http://www.cs.ruu.nl/~hansb/d.chessvar/fidelaws.html">FIDE rules</a> apply
+        except in the following:</li>
+      <li>There is no notion of check, checkmate or stalemate. The player capturing the opponent's
+        king wins.</li>
+      <li>Every piece has a charge generating a magnetic field, except the two kings which have a
+        neutral charge. White pieces are positive, and Black are negative (or vice versa, of
+        course :-)</li>
+      <li>When a piece is moved to a specific square, their closest neighbours at the same rank
+        and column (not diagonal) are repelled if they have the same charge (hence the same
+        colour), and attracted if they have an opposite charge (hence have different colours). A
+        king isn't repelled or attracted, doesn't repel or attract and has a blocking effect on
+        the magnetic field lines (in the example, the bishop Bd8 is not attracted by the queen
+        because of Kd6).</li>
+<!--mstheme-->      </font><pre>&nbsp;&nbsp; Eg,
+
+&nbsp;&nbsp; 8 . . . b . . . .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . b . . . .
+&nbsp;&nbsp; 7 . . . . . . . .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .
+&nbsp;&nbsp; 6 . . . K . . . .&nbsp; Qd5&nbsp; . . . K . . . .
+&nbsp;&nbsp; 5 q . R . . r P .&nbsp;&nbsp; =&gt;&nbsp; q R . Q r . P .
+&nbsp;&nbsp; 4 . . . Q . . . .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . b . . . .
+&nbsp;&nbsp; 3 . . . . . . . .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .
+&nbsp;&nbsp; 2 . . . b . . . .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .
+&nbsp;&nbsp; 1 . . . . . . . .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .
+&nbsp;&nbsp;&nbsp;&nbsp; a b c d e f g h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a b c d e f g h</pre>
+<!--mstheme-->      <font face="arial, helvetica">
+      <li>There is no en-passant rule.</li>
+      <li>In castling, the changes are made by the rook movement.</li>
+      <li>A white pawn in the 1st or 2nd rank, or a black pawn in the 7th or 8th rank, can move 2
+        squares ahead, even if it has already been played before.</li>
+      <p><i>note:</i> <i>To be precise: pawns are also considered to be pieces, and the effects
+      apply to pawns as to the other types of pieces.</i></p>
+    </ol>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+    <ol>
+      <p>&nbsp;</p>
+    </ol>
+    <p><b><font SIZE="+1">Sample Games</font></b> <br>
+    &nbsp; <br>
+    see also: <a HREF="http://www.chessvariants.com/other.dir/magneticgames.htm">Four other
+    games of Magnetic Chess</a> </p>
+<!--mstheme-->    </font><pre>&nbsp;&nbsp; Magnetic 1: Joao - Claude
+&nbsp;&nbsp;&nbsp; 1. d4&nbsp; Nf6 2. Bg5 Ne4 3. g4&nbsp; Bxg4 4. Qxg4 f5! 5. Qf3 Nxh1 6. Qxh1 Nc6
+&nbsp;&nbsp;&nbsp; 7. Nf3 Qa5+ (* 7. Bxf4? then 7. ...Qd7! promoting pawn at d1 *)
+&nbsp;&nbsp;&nbsp; 8. Nd2 Nxd4+ 9. Rb1 Nxf3+ 10. Qh3 Qxa2 11. Rc1 Qxb2 12. cxd8=Q+ Kxd8
+&nbsp;&nbsp; 13. Rd1+ Qxe5 14. Rd3 Rg8=Q+ 15. Bg6 Rxg6+ 0-1
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; r . p k p b . .
+&nbsp;&nbsp; p p . O . . . p
+&nbsp;&nbsp; . . . . . . r O
+&nbsp;&nbsp; . . . . q . . .
+&nbsp;&nbsp; . . . . N . . p
+&nbsp;&nbsp; O . . R n . . Q
+&nbsp;&nbsp; . . . . . . . .
+&nbsp;&nbsp; . . . . K . q .
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; Magnetic 2: Claude - Joao
+&nbsp;&nbsp;&nbsp; 1. Nf3&nbsp; Nf6 2. Nc3&nbsp; e5 3. Bxc4 Ng4 4. Qxg4 h5 5. exf5 gxh4 6. Qg6+ Ke7
+&nbsp;&nbsp;&nbsp; 7. Qf7+ Kd6 8. Nb5+ Kc6 9. Qd5+ Kd7 10. Qe6+ Kc6 11. Bd5+ Kxb5 12. a4+ Ka6
+&nbsp;&nbsp; 13. g2&nbsp; Qe7 14. Bc4+ Ka7 15. Qxe7+ Bxe7 16. Rg1=Q exd=Q+ 17. Kxd1 Rxg8
+&nbsp;&nbsp; 18. Bxg8 Bh4 (better than 18.Rxe7+Nd7 Rxd7+d5 Rxd5Rg1+ Ke2Re8+ Kf2Rxc1 ?)
+&nbsp;&nbsp; 19. Rg4&nbsp; Bg3 (* After the next moves, White position becomes desperate *)
+&nbsp;&nbsp; 20. Rg7+ Kb8 (* Then 21. fxg6?? f5=Q++! and 21. Rxg6? b5! *)
+&nbsp;&nbsp; 21. c3&nbsp; Bxf5=Q++ (* What could have played White anyway? *) 0-1
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; r k . . . n B .
+&nbsp;&nbsp; . . . . . . R .
+&nbsp;&nbsp; . p . p . . . .
+&nbsp;&nbsp; p . . . . b . .
+&nbsp;&nbsp; O p b . . . . .
+&nbsp;&nbsp; . . O . . . . O
+&nbsp;&nbsp; . . . O . . . .
+&nbsp;&nbsp; R O B K . q . .
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; Magnetic 3: Joao - Claude
+&nbsp;&nbsp;&nbsp; 1. e4 Nf6 2. Nc3 Na6 3. h4 Ng3 (* 3. Bxc4?Bxg1 Rxg1Qh4 Kf1Be7=Q Kg2Qg3&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kh1Qgg1 Nxg1Qxd1 -+ *) 4. Ng5 Qe7 5. Qxe2 Qxe2 6. Bxe2 gxf4&nbsp;
+&nbsp;&nbsp;&nbsp; 7. Bxg4 hxg6 8. d3Q+ Kf7 9. Qf6+ Ke8 10. Bd2Q+ Nd4 11. Qdd8++ 1-0
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; r . b Q k b p r
+&nbsp;&nbsp;&nbsp; p p p n . . . .
+&nbsp;&nbsp;&nbsp; . . . . . Q p .&nbsp;
+&nbsp;&nbsp;&nbsp; . . . . O p . .&nbsp;
+&nbsp;&nbsp;&nbsp; p . . . O . . .&nbsp;
+&nbsp;&nbsp;&nbsp; . . . B . . . .
+&nbsp;&nbsp;&nbsp; . O O . . . . O&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; R . B . K . N R
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; Magnetic 4: Claude - Joao
+&nbsp;&nbsp;&nbsp; 1. Nf3&nbsp; h5 2. Nd4&nbsp; e5 3. dxe3 Nf6 4. c3&nbsp; Rg8 5. Qa4+ Ke7&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (* 5... Kf7 Qd7+ *) 6. Bd2&nbsp; gxf2+! 7. Kxf2 Bxd7 8. Qb3&nbsp; Be6&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (* 8. Qc2=Q e3+ *) 9. fxe4 dxe3+ 10. Qxe3 Bg3+ 11. Qe3&nbsp; Bd5&nbsp;
+&nbsp;&nbsp; 12. Bb4+! Ke8 13. Bxb5+ 0-1
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; r . . q k b r .
+&nbsp;&nbsp;&nbsp; p . . . . . . .
+&nbsp;&nbsp;&nbsp; . n . . O . . n&nbsp;
+&nbsp;&nbsp;&nbsp; p B b . . . . p&nbsp;
+&nbsp;&nbsp;&nbsp; . . . . . . . O&nbsp;
+&nbsp;&nbsp;&nbsp; . B . . Q . . O
+&nbsp;&nbsp;&nbsp; O O . . . K O .
+&nbsp;&nbsp;&nbsp; R N . . . . . R
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; Magnetic 5: Joao - Claude
+&nbsp;&nbsp;&nbsp; 1. e4 Qf6 2. Nf3 Ba3?! 3. bxa3 Ne7 4. c3 Nxf5 5. 0-0 Ne3 6. dxe3 Qxa1&nbsp;
+&nbsp;&nbsp;&nbsp; 7. Qd6 Nc6 8. Nd2 Qxa2 9. Nc4 Qxb3 10. Ne5 Qc3 11. Qxd5 gxh2+&nbsp;
+&nbsp;&nbsp; 12. Kh1 Qxh3?? 13. Qxf7+ Bf5 14. Qf7++&nbsp; 1-0
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; r . . . k . . r
+&nbsp;&nbsp; . p O . . Q p p
+&nbsp;&nbsp; . p . p . b . .
+&nbsp;&nbsp; p . . . . . N .
+&nbsp;&nbsp; . . . . . R . B
+&nbsp;&nbsp; . . . . . . O q
+&nbsp;&nbsp; . . B O . . . p
+&nbsp;&nbsp; . . . . O . . K</pre>
+<!--mstheme-->    <font face="arial, helvetica"><a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h2><!--mstheme--><font face="times new roman, times" color="#000000"><a NAME="otherStuff"></a>Gravity
+    Chess<!--mstheme--></font></h2>
+<!--mstheme-->    <font face="arial, helvetica"><ol>
+      <li>The <a HREF="#MagneticChess">Magnetic Chess</a> rules apply, except in the following.</li>
+      <li>The friendly pieces are attracted like the enemy pieces.</li>
+    </ol>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+    <ol>
+      <p>&nbsp;</p>
+    </ol>
+    <p><b><font SIZE="+1">Sample Games</font></b> </p>
+<!--mstheme-->    </font><pre>&nbsp;&nbsp; Gravity 1: Joao - Claude
+&nbsp;&nbsp;&nbsp; 1. d4 Nf6 2. Nf3 Ng4 3. Qd2 Na6 4. fg5 e5 5. Nh4 Nxf2 6. Qxf2 Bb4+
+&nbsp;&nbsp;&nbsp; 7. Bd2 Qxg5 8. Nxf3 Qxd5+! 9. Nd2 Rxh1+ 10. Ng1 fxg3+ 11. Qf1 Qxg2&nbsp;
+&nbsp;&nbsp; 12. e3 0-1
+
+&nbsp;&nbsp;&nbsp; r . b . k . . .
+&nbsp;&nbsp;&nbsp; p . p . . p . .
+&nbsp;&nbsp;&nbsp; n . . . . . . .&nbsp;
+&nbsp;&nbsp;&nbsp; . . p . . . . .&nbsp;
+&nbsp;&nbsp;&nbsp; . b O . p . O .
+&nbsp;&nbsp;&nbsp; . O . B O p . .
+&nbsp;&nbsp;&nbsp; . . . N . O q .
+&nbsp;&nbsp;&nbsp; R . . . K Q r .</pre>
+<!--mstheme-->    <font face="arial, helvetica"><a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h2><!--mstheme--><font face="times new roman, times" color="#000000">Anti-gravity Chess<!--mstheme--></font></h2>
+<!--mstheme-->    <font face="arial, helvetica"><ol>
+      <li>The <a HREF="#MagneticChess">Magnetic Chess</a> rules apply, except in the following.</li>
+      <li>The enemy pieces are repelled like the friend pieces.</li>
+      <li>KO rule: No position can be repeated.</li>
+    </ol>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+    <ol>
+      <p>&nbsp;</p>
+    </ol>
+    <p><b><font SIZE="+1">Sample Games</font></b> </p>
+<!--mstheme-->    </font><pre>&nbsp;&nbsp; Anti-Gravity 1: Joao - Claude
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; 1. h4 Nh6&nbsp; 2. Nc3 c5&nbsp; 3. h4 Nc6&nbsp; 4. e4 Qc7&nbsp; 5. d4 Bxg4&nbsp; 6. g3 Qa5&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; 7. Qd2&nbsp; Nxc2+ (c8=Q)&nbsp; 8. Kd1 Qe1+&nbsp; 9. Kxc2 Rxc8+&nbsp; 10. Kd3 Qd1+&nbsp; 0-1
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; . . r p k b p r
+&nbsp;&nbsp; p p . . p p b p&nbsp;
+&nbsp;&nbsp; . . . . . . . n
+&nbsp;&nbsp; . . . . . . . .
+&nbsp;&nbsp; p . . . . . . O
+&nbsp;&nbsp; N . . K . . O .
+&nbsp;&nbsp; O O . . . . Q O
+&nbsp;&nbsp; R B . q . B N R</pre>
+<!--mstheme-->    <font face="arial, helvetica"><a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h2><!--mstheme--><font face="times new roman, times" color="#000000">Anti-magnetic Chess<!--mstheme--></font></h2>
+<!--mstheme-->    <font face="arial, helvetica"><ol>
+      <li>The <a HREF="#MagneticChess">Magnetic Chess</a> rules apply, except in the following.</li>
+      <li>The friend pieces are attracted while the enemy pieces are repelled.</li>
+    </ol>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+    <ol>
+      <p>&nbsp;</p>
+    </ol>
+    <p><b><font SIZE="+1">Sample Games</font></b> </p>
+<!--mstheme-->    </font><pre>&nbsp;&nbsp; Anti-Magnetic 1: Joao - Claude
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; 1. c4 d5&nbsp; 2. cxd5&nbsp; Qxd5&nbsp; 3. f4&nbsp;&nbsp;&nbsp; Bh3&nbsp; 4. Nxh3&nbsp; Qxg2&nbsp; 5. Rg1&nbsp; Qh4+&nbsp;
+&nbsp;&nbsp;&nbsp; 6. Nf2 Qh2&nbsp; 7. Bxf7+ Ke7&nbsp; 8. Nxg8+ Rxg8&nbsp; 9. Bf6+&nbsp; Bh6 10. Rf1&nbsp; Rxg2
+&nbsp;&nbsp; 11. Bxb7 cxb6 12. Bxa8&nbsp; Bxa8 13. Qb3&nbsp;&nbsp; Rxf2 14. Qb4+&nbsp; Kd8 15. 0-0-0 Rf4&nbsp;&nbsp;
+&nbsp;&nbsp; (* Rf2Qh1+ Rf1Qf1 Kf1h1=Q+ Kf2Qa1 Na1h1=Q seems -+ *) 16. Nd4 a5
+&nbsp;&nbsp; 17. Qg8+ Kc7 18. Nf3&nbsp;&nbsp; b4+ 19. Qxc4+ bxc4 20. Nxh2&nbsp; bxa3 21. Kc2 Bb7
+&nbsp;&nbsp; 22. Re8&nbsp; h6 23. Rg8&nbsp; 1-0
+
+&nbsp;&nbsp; n . . . . . R .
+&nbsp;&nbsp; . b k p . . O .
+&nbsp;&nbsp; . . . . . . . p
+&nbsp;&nbsp; . . . . . . . .
+&nbsp;&nbsp; p . p . . . . .
+&nbsp;&nbsp; p . . . . . . O
+&nbsp;&nbsp; . . K . . . . N
+&nbsp;&nbsp; O . . R . . . .</pre>
+<!--mstheme-->    <font face="arial, helvetica"><dl>
+<!--mstheme-->      </font><pre>Anti-Magnetic 2:&nbsp;&nbsp; Joao - Bill Taylor
+
+1.c4 +&nbsp; c5 +&nbsp;&nbsp;&nbsp; 2. g3 ++&nbsp; Bxf3 +-&nbsp; 3. exf3 +-&nbsp; f5 ++&nbsp;&nbsp; 4. b4 +&nbsp; Nc6 +-
+5.Bc4 +- Nf6 +&nbsp; 6. d3 ++&nbsp; Nb6 +&nbsp;&nbsp;&nbsp; 7. 0-0 +&nbsp;&nbsp;&nbsp; Bxg2 -- 8. Kxg2&nbsp; Nxc4 --
+9.dxc4 ++ hxg6&nbsp; 10. b5 +-&nbsp; Ne4&nbsp;&nbsp; 11. Qc2 ++&nbsp;&nbsp; Rh4+-&nbsp; 12. Rf3 - Rh6
+13.Rg3 +- Ne6 + 14. h3 -&nbsp; Qc7+&nbsp;&nbsp; 15. Nd5 ++--&nbsp; Qa5+&nbsp; 16. Qg6 +- (ch) f7
+17. N:f6 +-- (double ch)&nbsp; e:f6 ++--&nbsp;&nbsp;&nbsp; 18. Q:f6 +-- (ch)&nbsp; Kd7
+19. Qe6 + (ch)&nbsp; Kc7&nbsp; 20. Qd6 (ch) Kc8&nbsp; 21. Q:f8 +&nbsp; Qa1+&nbsp; 22. Q:d8+ (ch)
+K:d8&nbsp; 23. f8=Q (ch)&nbsp; RESIGN&nbsp; 1-0
+
+&nbsp;&nbsp; . p . k . Q p r
+&nbsp;&nbsp; . p . O . . . .
+&nbsp;&nbsp; . n . . . . . .
+&nbsp;&nbsp; . . O . R . R p
+&nbsp;&nbsp; . . O . . . . .
+&nbsp;&nbsp; . . O . . . . O
+&nbsp;&nbsp; r O . . . . K .
+&nbsp;&nbsp; q . . . . . . .
+
+--
+Anti-Magnetic 3:&nbsp;&nbsp; Bill Taylor - Joao
+
+1. b4+&nbsp;&nbsp;&nbsp; f5+&nbsp;&nbsp;&nbsp;&nbsp; 2. c4+&nbsp;&nbsp;&nbsp; B:c3--&nbsp; 3. d:c3++&nbsp; g6+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. f4++-&nbsp;&nbsp; c6++-
+5. g4+-&nbsp;&nbsp; b5+&nbsp;&nbsp;&nbsp;&nbsp; 6. h4+&nbsp;&nbsp;&nbsp; e5+-&nbsp;&nbsp;&nbsp; 7. e4++-&nbsp;&nbsp; d:e4+--&nbsp; 8. Bxe4++- d5+-
+9. g5+-&nbsp;&nbsp; d5++-&nbsp; 10. Bd3+&nbsp;&nbsp; c4+-&nbsp;&nbsp; 11. Be2&nbsp;&nbsp;&nbsp;&nbsp; f6+-&nbsp;&nbsp;&nbsp; 12. gxf6+-&nbsp; N:f6+-
+13 N:f6+- e:f6+- 14. Bh5&nbsp;&nbsp;&nbsp; Ke7&nbsp;&nbsp;&nbsp; 15. Rf3+-&nbsp;&nbsp; f6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16. Rb1-&nbsp;&nbsp;&nbsp; Rg8+
+17 Kf1&nbsp;&nbsp;&nbsp; Qe5-&nbsp;&nbsp; 18. Re3+-&nbsp; f5++&nbsp;&nbsp; 19. Bf3&nbsp;&nbsp;&nbsp;&nbsp; e4++&nbsp;&nbsp;&nbsp; 20. d3+-&nbsp;&nbsp;&nbsp; Qh2-
+21 a4-&nbsp;&nbsp;&nbsp; d6+&nbsp;&nbsp;&nbsp; 22. B:a8-- Rg8&nbsp;&nbsp;&nbsp; 23. Rxe6++- K:e6&nbsp;&nbsp;&nbsp; 24. Bd5+-&nbsp;&nbsp; K:d5
+25 Ne3+&nbsp;&nbsp; resign&nbsp; 1-0</pre>
+<!--mstheme-->      <font face="arial, helvetica"><!--mstheme--></font><pre>. . . . . . r .
+. . b . . . . p
+p . . . . O . .
+p p . k . p . .
+O . . O O . . p
+. . . . N . . .
+. . . Q . O . q
+. R O . . K . .</pre>
+<!--mstheme-->      <font face="arial, helvetica">
+    </dl>
+    <p>Anti-Magnetic 4:&nbsp;&nbsp; Ben Good - Joao </p>
+<!--mstheme-->    </font><pre>&nbsp;
+1.b4+ f5+ 2.c3+ g5+ 3.Bxf5+-- c6++- 4.Bd3+ Bh6+ 5.e3 e6++-  
+6.Ne4++- Nxe4+--- 7.Bxe4+++-  O-O+- 8.Qc2+- Rf6++ 9.f3+- Bxe4+--  
+10.Qxe4++- Qg6+ 11.Qxe7+-  Nc6 12.Qc5+ Bxe6+ 13.Qxc7+ Nc4-  
+14.Qxb7+ axb7-- 15.Qxa8+ Qb1+ 16.Qc6- Nb3- 17.Ke2 Nc1- 18.resign  
+
+. . Q . . r k .
+R . . . . . . p
+. . . O b p . .
+. . . . . . . p
+. . . . . . . O
+. . . . . . . O
+. p . O K B O O
+. q n . . . N R</pre>
+<!--mstheme-->    <font face="arial, helvetica"><a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h2><!--mstheme--><font face="times new roman, times" color="#000000">Generalization Of Mag,
+    Grav, Anti-grav And Anti-mag<!--mstheme--></font></h2>
+<!--mstheme-->    <font face="arial, helvetica"><p>Let's introduce the following notation: </p>
+    <dl>
+      <dt>xOy</dt>
+      <dd>( x,y belongs to {b,w} and O belongs to {R,A,N} ) means a piece of colour x (b=black,
+        w=white) operates (R=repels, A=attracts or N=don't interfere) with piece of colour y at
+        the same row or column where it moves to (like in the above games)</dd>
+      <p>eg, bRb means a black piece repels a black piece (like in Magnetic)</p>
+    </dl>
+    <p>We can define these 4 games in the following way: </p>
+    <dl>
+      <dt>Magnetic:</dt>
+      <dd>wRw wAb bAw bRb, or shortly, RAAR</dd>
+      <dt>Anti-Mag:</dt>
+      <dd>ARRA</dd>
+      <dt>Gravity:</dt>
+      <dd>AAAA</dd>
+      <dt>Anti-Grav:</dt>
+      <dd>RRRR</dd>
+      <dt>Normal Chess:</dt>
+      <dd>NNNN, ...</dd>
+    </dl>
+    <p>This leads to other games, in fact, to 3x3x3x3=81 different variants. </p>
+    <p>Other features may be needed to make these games more playable (like the KO rule in
+    Anti-Grav). </p>
+    <p>Several variants can be created using this notation: </p>
+<!--mstheme-->    </font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">For each move, the player
+        decides what rule he will apply<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">For each move, the player
+        decides what rule the opponent will apply<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">The type of rule is cyclic for
+        each pair of moves. Eg, AAAA -&gt; ARRA -&gt; RRRR -&gt; RAAR -&gt; AAAA -&gt; ...
+        (Hmmm... How many different cicles are possible?)<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">The rule is decided for each
+        pair of moves in a random way (Ups! A non perfect information game!)<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->    </table>
+<!--mstheme-->    <font face="arial, helvetica"><p>We can extend the notation, giving effect to the square
+    that was left by the piece. So now, a game is defined by 8 values, eg, Magnetic =
+    NNNN/ARRA ARRA/RAAR is a game that is anti-magnetic in the destiny square and it is
+    magnetic in the origin square. </p>
+    <p>There is also the need to introduce a rule to define where the pieces that are affected
+    by both squares go (eg, player choice). </p>
+    <p>We can also let the charge of the interacting pieces change in some way. Eg, RAAR if
+    the next left piece has the same color, ARRA otherwise... <br>
+    &nbsp; </p>
+    <a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h3 align="center"><!--mstheme--><font face="times new roman, times" color="#000000"><font
+    SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a> | <a HREF="index.htm#MyCVs">my
+    variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a> |&nbsp; <a
+    HREF="index.htm#otherPlaces">other places</a></font> <!--mstheme--></font></h3>
+<!--mstheme-->    <font face="arial, helvetica"></dd>
+</dl>
+<!--mstheme--></font>
+</body>
+</html>

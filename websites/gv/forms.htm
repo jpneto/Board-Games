@@ -1,0 +1,221 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<title>Games of Soldiers - Forms</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<font face="Times New Roman, Times" mstheme>
+
+<blockquote mstheme>
+</font mstheme>
+<h1 align="center"><strong><font face="Arial Black" color="#333333">Forms</font></strong></h1>
+<font face="Times New Roman, Times" mstheme>
+<p align="center"><strong><font
+      size="3">Copyright (c) </font> </strong><font
+      size="3"><strong>2007, 2011 </strong></font><b>
+<a href="mailto:swmeyers@fuse.net">Steven W. Meyers</a></b></p>
+</font mstheme>
+<font face="Arial">
+    <p align="left">Forms</font mstheme><font face="Times New Roman, Times" mstheme><font face="Arial"><font size="3"> is a two player game
+    played on a nxn square board with this typical configuration.</font><font size="2">&nbsp;</font></font></p>
+</font mstheme>
+    <center>
+      <table border="1" width="186" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,8,8,xwxwxwxw/wxwxwxwx/xwxwxwxw/wxwxwxwx/xwxwxwxw/wxwxwxwx/xwxwxwxw/wxwxwxwx");</script>
+</font mstheme>
+          </td>
+        </tr>
+      </table>
+    </center>
+    &nbsp;<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li>
+		<p align="left"><b><font face="Arial">FORM: </font></b>
+		<font size="3" face="Arial" mstheme>an orthogonally connected grouping 
+		of stones of either or both colors</font></li>
+		<li>
+		<p align="left"><font size="3" face="Arial"><b>TURN</b> - </font>
+		<font size="3" face="Arial" mstheme>On each turn, a player can do one of 
+		two options:</font><ol>
+			<li>
+			<p align="left"><font size="3" face="Arial" mstheme>Capture by 
+			replacement an adjacent enemy stone;</font></li>
+			<li>
+			<p align="left"><font size="3" face="Arial" mstheme>Move a friendly 
+			stone to an empty cell reachable by one or more orthogonal slides.</font></li>
+		</ol>
+		</li>
+		<li>
+		<p align="left"><font size="3" face="Arial" mstheme>Any stone or stones not 
+		connected to the moved stone's form -- as reckoned after the move -- is removed.</font></li>
+		<li>
+		<p align="left"><font size="3" face="Arial" mstheme>Move 2 must produce the removal of at least one stone to be legal (so, every move in Forms produces 
+		at least one capture/removal).</font></li>
+		<li>
+		<p align="left"><font size="3" face="Arial"><b>GOAL</b>
+            - </font><font size="3" face="Arial" mstheme>The last player to move 
+		<i>loses</i>.</font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+
+</font mstheme>
+
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="186" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript">
+<!--
+boardgv2diag("lurd,8,8,8/8/8/4xxx./4wx2/4x3/8/8");
+//-->
+</script>
+</font mstheme>
+      </td>
+      <td valign="top" width="414"><font face="Times New Roman, Times" mstheme><font face="Arial"><strong>An example</strong></font>
+        </font mstheme>
+        <p><font face="Arial">One of the ways for White to win the game is by moving his e4 piece to e2. 
+		This results in the removal of the four-stone Black group.&nbsp; Now Black 
+		must either capture White's stone at e2 or he must slide to an empty 
+		cell and abandon White's stone (thus causing it to be removed).&nbsp; Either 
+		way Black loses the game since he's made the last legal move.</font></td>
+    </tr>
+    </table>
+<font face="Times New Roman, Times" mstheme>
+
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="186" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript">
+<!--
+boardgv2diag(",4,4,4/.xx./.ww./4");
+//-->
+</script>
+</font mstheme>
+      </td>
+      <td valign="top" width="414"><font face="Arial">
+        <b>Next player to move will lose</b><p>Can you find out why?</font mstheme></td>
+    </tr>
+    </table>
+</blockquote>
+<p align="center" msthemeseparator><img src="aricerul.gif" width="600" height="10"></p>
+</font mstheme>
+<font face="Arial">
+
+<blockquote>
+	<p align="left">Bill Taylor studied the result of a number of patterns: &quot;I have a bunch of entries here, which are *all* 
+	for centre-board positions.&nbsp;I use Conway's N,O,P notation.&quot; </p>
+	<blockquote>
+		<blockquote>
+			<p align="left">
+</font mstheme><font face="Courier New"><b>N positions (next player wins)<br>
+			</b><br>x x o <br><br>x x o o <br><br>x o x o <br><br>- o - <br>x x x 
+			<br><br>x x o x x <br><br>x x o x o <br>&nbsp;</p>
+			<p align="left"><b>P positions (previous player wins)<br></b><br>x o 
+			<br><br>x o <br>o x <br><br>x x <br>x o <br><br>x x <br>o o <br><br>- o - 
+			<br>o x o <br>- o - <br><br>- o - <br>o x o <br>- x - <br>&nbsp;</p>
+			<p align="left"><b>O positions&nbsp; (O wins whoever starts)<br></b>
+			<br>x o x <br><br>x x o x <br><br>o o o x <br><br>x o o x <br><br>- x - 
+			<br>x o x <br><br>- o - <br>x o x <br><br>- x - <br>x x x <br>- o - 
+			<br><br>- o - <br>x x x <br>- o - <br><br>x x x o x <br><br>o o o o x 
+			<br><br>x x o o x <br><br>x o x o x <br><br>x o o x o <br><br>x x o o o 
+			<br><br>x o o o x </p></font mstheme>
+			<p align="left"><font face="Arial">I have done ALL x-o-mixed positions up to 4 stones; and for 
+	5 stones in a line or cross.&nbsp;Bear in mind that there will be another load 
+	of X positions which I haven't bothered to put in, as they are just the 
+	complements to the O positions.
+	And also note that I haven't bothered to put in positions which are 
+	topologically equivalent to others, (they must have the same outcomes). <br>
+			</font><font face="Courier New"><br>e.g. x x o x&nbsp;&nbsp; and <br>
+			<br>x <br>x o x&nbsp;&nbsp; are equivalent;&nbsp;&nbsp;&nbsp; as are 
+			<br><br>- o - <br>x x x&nbsp;&nbsp;&nbsp; and <br><br>- x - <br>o x x&nbsp;&nbsp; (by &quot;bending round&quot; one of the forks.)</p>
+		</blockquote>
+	</blockquote>
+</blockquote></font mstheme>
+
+<!-- removed at author's request (Dec, 2011)
+<p align="center" msthemeseparator><img src="aricerul.gif" width="600" height="10"></p>
+
+<blockquote>
+	<p><font size="3" face="Arial" mstheme>Those were the revised rules of 
+	Forms. The original rules (from May 2007) are the following (taken from
+	<a href="http://www.gamerz.net/pbmserv/forms.html">Gamerz.net</a>):</font></p>
+	<div>
+		<blockquote>
+			<font size="3" face="Arial" mstheme>Forms can be played on any size square or rectangular grid which has an 
+		even number of rows, an even number of columns, or both. Initially, one 
+		entire side of the board is filled with black stones and the opposite 
+		side with an equal number of white stones, all forming one 
+		interconnected group, as shown in the next figure. Each player takes ownership 
+		of one entire set of like-colored, on-board stones. When all of your 
+			stones have been removed from the board, you win. Draws and ties 
+		cannot occur in Forms. </font>
+		</blockquote>
+  	</div>
+  	    <center>
+      <table border="1" width="168" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,6,6,wwwwww/wwwwww/wwwwww/xxxxxx/xxxxxx/xxxxxx");</script>
+</font mstheme>
+          </td>
+        </tr>
+      </table>
+    </center>
+	<div>
+		<pre>&nbsp;</pre>
+	</div>
+	<p>&nbsp;</p>
+</blockquote>
+-->
+<font face="Arial">
+
+<blockquote>
+	<p align="left">The author sent me some strategy guidelines:</p>
+	<blockquote>
+		<div>Working through the above bestiary will serve as an excellent 
+			introduction to Forms' tactics.&nbsp; (Just bear in mind that the outcome 
+			is often different when the situation is at or near an edge or 
+			corner.)&nbsp; Before going on to learn about Forms' strategy, it is 
+			first necessary to understand why Forms is a misere game:&nbsp; the 
+			all-abandoned-pieces-vanish rule means that it *has* to be.&nbsp; 
+			Otherwise at the first opportunity a player will simply fly a piece 
+			into empty space, abandoning everything, and win.<br>&nbsp;</div>
+		<div>Although Forms is a game of elimination, it may be helpful to think 
+			of it in terms of a game of checkmate:&nbsp; any opponent's piece or 
+			group of pieces can be considered a &quot;king&quot; and&nbsp;a potential target 
+			for checkmate.&nbsp; Try to isolate your opponent's pieces to make them 
+			easier to attack --- an isolated singleton is a particularly good 
+			target.&nbsp; In general you want to keep your own pieces connected, but 
+			don't just lump them together.&nbsp; Instead arrange them efficiently in 
+			lines and bent lines; this&nbsp;will make it easier to detach from 
+			yourself and therefore give you more opportunities to make a slide 
+			move.&nbsp; (Slide moves are often more powerful&nbsp;than replacement 
+			captures.)&nbsp; Generally speaking, you want to have more pieces on the 
+			board than the opponent&nbsp;has (except at the very end, of course); 
+			again this will help maximize your slide move opportunities.&nbsp; 
+			Since&nbsp;abandoned portions of the board are removed, you want to be 
+			sure that the single surviving portion is a position to your 
+			advantage ---&nbsp;it will do you no good to have an advantage in a 
+			portion of the board that ends up getting abandoned.&nbsp; And be careful 
+			not to get&nbsp;outmaneuvered in or near an edge or corner, where sliding 
+			options quickly diminish.</div>
+	</blockquote>
+</blockquote>
+</font mstheme>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Towers - HEX-IT</title>
+<script LANGUAGE="JavaScript" src="hex2diag/hex2diag.js"></script>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote mstheme>
+<h1 align="center"><strong><font face="Arial Black">HEX-IT</font></strong></h1>
+  <p align="center"><font size="3"><strong>Copyright (c) 2004
+	<a href="http://vincent.everaert.club.fr/index.htm">Vincent Everaert</a> </strong></font></p>
+<p align="left"><font size="3" face="Arial">
+<a href="http://vincent.everaert.club.fr/index.htm">Hex-It</a> starts 
+with just four colored hexagons which can be appended with more hexs. There are, 
+in a shared reserve 
+39 white tiles, 39 black tiles (or just 39 Othello-like tiles) and also 8 
+pieces per player (8 black stones for Black, and 8 white stones for White). 
+Herein, I use a boundless plane of hexes where players drop tiles and stones.</font></p>
+       <center>
+    <table border="2" width="420" bgcolor="#D5BD83" bordercolorlight="#333366" bordercolordark="#000000">
+      <tr>
+        <td width="100%" background="back-board.jpg"><script LANGUAGE="JavaScript"><!--
+hexgv2diag("7,14,7,......./......../........./........../.........../............/......6....../......61....../......1....../............/.........../........../........./......../.......");
+        //--></script></td>
+      </tr>
+    </table>
+    </center>
+&nbsp;
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font face="Arial"><strong>STACK</strong> - a stack of stones of either color</strong>. 
+		The color of the top stone defines ownership. </font>
+      <ul>
+		<li><font face="Arial">A stack does not include the (eventual) tile under 
+		it. </font></li>
+		<li><font face="Arial">A stack with no tile is called a prisoner, 
+		otherwise, it is free.</font></li>
+		</ul>
+    	</li>
+		<li><font face="Arial"><b>TILE</b> - A tile with no other stone over it 
+		is called empty.</font></li>
+		<li><strong><font face="Arial">M</font></strong><font size="3" face="Arial"><strong>OVE</strong>
+        - On each turn, each player must do one of the following actions:</font>
+            <ul>
+				<li><font face="Arial"><b>Drop</b> - drop a friendly stone over 
+				an empty tile (of either color).</font></li>
+				<li><font face="Arial"><b>Deal</b> - pick a free stack and drop one 
+				stone per tile (starting at the bottom) on a straight line, if at least one of its 
+				stones land over an enemy stack not higher than the picked stack.</font><ul>
+				<li><font face="Arial">Every tile between both stacks should be 
+				empty.</font></li>
+				<li><font face="Arial">If the player, when dropping his stack, 
+				reaches a cell with no tile, all the remaining stones are 
+				dropped there (i.e., the remaining stack is a prisoner).</font></li>
+		</ul>
+				</li>
+				<li><font face="Arial"><b>Release</b> - If a prisoner (of either 
+				color) is adjacent to two or more tiles, the player may remove 
+				the stack and replace it with a friendly tile.</font><ul>
+				<li><font face="Arial">A player may replace, at the same turn, 
+				any number of adjacent prisoners.</font></li>
+				<li><font face="Arial">The removed stones are returned to their 
+				initial owners so they may be used again.</font></li>
+		</ul>
+				</li>
+				<li><font face="Arial"><b>Pass</b> - the player passes his turn.</font></li>
+				<li><font face="Arial">Deals take precedence over drops and 
+				releases. </font></li>
+				<li><font face="Arial">Deals which produce prisoners take 
+				precedence over other deals.</font></li>
+				<li><font face="Arial">Drops and releases take precedence over 
+				passes.</font></li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><strong>GOAL</strong>
+        - The game ends when there are 39 tiles on board or both player pass. 
+		Wins the player with the highest score:</font><ul>
+		<li><font size="3" face="Arial">1 point per friendly tile from the 
+		biggest group (i.e., the biggest set of friendly connected tiles)</font></li>
+		<li><font face="Arial">1/2 for each other friendly tile.</font></li>
+		</ul>
+    	</li>
+		</ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+    <table border="1" width="677" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+      <tr>
+        <td align="left" width="280" bordercolor="#000000" bgcolor="#D5BD83" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+hexgv2diag("5,9,5,...../....../......./...66.../...[xwe]26.../...1..../......./....../.....");
+        //--></script></td>
+       </td>
+        <td valign="top" width="397"><strong><font face="Arial">E</font></strong><font face="Arial"><strong>xamples</strong></font><p>
+		<font face="Arial">(<i>In the following diagrams we use a red tile below 
+		stacks to 
+		denote prisoners</i>) </font>
+		<p>
+		<font face="Arial">In this example, there are six tiles and two stones 
+		(no prisoners). </font>
+		<p>
+		<font face="Arial">If it is Black's turn, he must execute a deal: move 
+		his stone over to the white stone and by that, be the only player with a 
+		stack (of size 2) on board.</font><p>
+		<font face="Arial">After that, White may drop a friendly stone of any of 
+		the five empty tiles.</font></td>
+      </tr>
+      <tr>
+        <td align="left" width="280" bordercolor="#000000" bgcolor="#D5BD83" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+hexgv2diag("5,9,5,...../....../..216../...167../...11[xwx].../..46[xxw]1../...6.../....../.....");
+        //--></script></td>
+        <td valign="top" width="397"><font face="Arial">White's turn. White must 
+		execute a deal. There are three black stacks on line of sight, but the 
+		isolated black stone at c5 is too far away (white's stack only has two 
+		stones), while the big black stack on the left is too high. So these two 
+		stacks do not offer valid moves. </font>
+		<p><font face="Arial">The only valid deal for White is over the adjacent 
+		black stack, placing there the black stone, and the white stone over the&nbsp;
+		white stack.</font></td>
+      </tr>
+      <tr>
+        <td align="left" width="280" bordercolor="#000000" bgcolor="#D5BD83" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+hexgv2diag("5,9,5,...../..764./..116../......../........./..[rxe][wwx][wxe]1../..116../....../.....");
+        //--></script></td>
+        <td valign="top" width="397"><font face="Arial">Here is an example (top 
+		group) where the execution of the deal produces a 
+		prisoner (bottom group). </font> </td>
+      </tr>
+      <tr>
+        <td align="left" width="280" bordercolor="#000000" bgcolor="#D5BD83" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+hexgv2diag("5,9,5,...../...[rww][rxe]./..166../..[rwe]11.../........./....66../..166../.[rwe]11../.....");
+        //--></script></td>
+        <td valign="top" width="397"><font face="Arial">Here is an example of a white replacement 
+		(top is before, bottom is after), where he replaces two adjacent 
+		prisoners with two friendly tiles.</font></td>
+      </tr>
+      <tr>
+        <td align="left" width="280" bordercolor="#000000" bgcolor="#D5BD83" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+hexgv2diag("5,9,5,...../.[rwe]..[rxe]./..616../[xwx]6.61[xwe].[rwe]/1[wwx]66661[wxx]./6112116./.16116./166..[rwx]/[xwe]11[rwe]");
+hexgv2diag("5,9,5,...../....../..616../16.611../16666616./6111116./.16116./166.../111.");
+        //--></script></td>
+        <td valign="top" width="397"><b><font face="Arial">Final Score</font></b><p>
+		<font face="Arial">The game ended in this board position.</font><p>
+		&nbsp;<p>
+		&nbsp;<p>
+		&nbsp;<p>
+		&nbsp;<p>
+		&nbsp;<p>
+		<font face="Arial">If we 'clean' everything out except the tiles, we get 
+		this second diagram.</font><p>
+		<font face="Arial">White's biggest group has 9 
+		tiles (=9 points) and he has 7 other tiles (=3.5 points) with a total of 
+		12.5 points.</font><p>
+		<font face="Arial">Black's biggest group has 16 tiles (=16 points) and 2 
+		other tiles (=1 point), making a total of 17 points). Black wins the 
+		game.</font></td>
+      </tr>
+      </table>
+<p><font face="Arial">C</font><font size="3" face="Arial">heck Vincent's
+<a href="http://vincent.everaert.club.fr/index.htm">website</a> for more 
+information (game records, more examples...) about Hex-It. This game
+<a href="http://jeuxsoc.free.fr/index2.php?principal=/h/hexit.htm&param=">won</a> 
+a french &quot;Abstract Game of Year&quot; of 2004.</font></p>
+</blockquote>
+<hr>
+</body>
+</html>

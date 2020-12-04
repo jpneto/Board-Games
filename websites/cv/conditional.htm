@@ -1,0 +1,249 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Bookmarks for Joao Pedro Neto</title>
+<!-- This is an automatically generated file.
+
+
+It will be read and overwritten.
+
+
+Do Not Edit! -->
+<meta name="Microsoft Theme" content="bars 011">
+</head>
+
+<body background="barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633"
+vlink="#999933" alink="#993300">
+<!--mstheme--><font face="arial, helvetica">
+
+<dl>
+<!--mstheme-->  </font><h3 FOLDED ADD_DATE="873997532" align="center"><!--mstheme--><font face="times new roman, times"
+  color="#000000"><a NAME="top"></a><font SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a>
+  | <a HREF="index.htm#MyCVs">my variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a>
+  |&nbsp; <a HREF="index.htm#otherPlaces">other places</a></font><!--mstheme--></font></h3>
+<!--mstheme-->  <font face="arial, helvetica"><!--mstheme--></font><h3 FOLDED ADD_DATE="873997549" align="center"><!--mstheme--><font
+  face="times new roman, times" color="#000000"><font SIZE="+2">Conditional Chess</font><!--mstheme--></font></h3>
+<!--mstheme-->  <font face="arial, helvetica"><i><p align="right">&quot;Let's play at the same time!&quot;</i></p>
+  <p align="right">&nbsp;</p>
+<!--msthemeseparator-->  <p align="center"><img src="barrulee.gif"></p>
+  <dd><br>
+    &nbsp; <dl>
+      <address>
+        This one was one of the first CV I made up, and it does more sense as an tool for
+        Diplomacy Chess, but it can be played as it is. The idea is to have a game played not in
+        turns but in a simultaneous way. 
+      </address>
+      <dd><br>
+        &nbsp;</dd>
+    </dl>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h3><!--mstheme--><font face="times new roman, times" color="#000000"><font SIZE="+2">Conditional
+    Chess</font><!--mstheme--></font></h3>
+<!--mstheme-->    <font face="arial, helvetica"><ol>
+      <li>All <a HREF="http://www.cs.ruu.nl/~hansb/d.chessvar/fidelaws.html">FIDE rules</a> apply
+        except in the following:</li>
+      <li><br>
+        &nbsp;</li>
+    </ol>
+    <ol>
+      <li>Each turn consists of the following steps:</li>
+      <ol TYPE="i">
+        <li>White makes a normal move (A-move).</li>
+        <li>White states a conditional move. (Below, you find explained what is a conditional move.)</li>
+        <li>Black makes a normal move (B-move).</li>
+        <li>Whites conditional move is executed (C-move).</li>
+        <li>Black makes a normal move (A-move).</li>
+        <li>Black states a conditional move. (Below, you find explained what is a conditional move.)</li>
+        <li>White makes a normal move (B-move).</li>
+        <li>Blacks conditional move is executed (C-move).</li>
+      </ol>
+      <p>There is an exception to this general scheme in case of checks. </p>
+      <li>Checks:</li>
+      <ol TYPE="i">
+        <li>The only allowed check in A-moves is when there is checkmate! If one player cannot
+          prevent check in an A-move (and it's not checkmate), it's a draw (variant: the player
+          loose the game).</li>
+        <li>If there is a check in a B-move, the C-move is skipped (except if the check is cancelled
+          by the C-move itself!) and the game returns to an A-move of the player in check (checks in
+          B-moves aren't so great!), unless it's checkmate and then the game is over.</li>
+        <li>There are no restrictions to C-move checks.</li>
+      </ol>
+      <li>If a C-move is an illegal move, it is skipped. (One possible variant: in this case, the
+        other player can move whatever enemy piece he likes (legal move, of course) Terrible!! :-)
+        In this variant, each game is a legal FIDE game.)</li>
+      <li>If there is a stalemate it's a draw.</li>
+    </ol>
+<!--mstheme-->    </font><h3><!--mstheme--><font face="times new roman, times" color="#000000">Conditional Moves (C-moves)<!--mstheme--></font></h3>
+<!--mstheme-->    <font face="arial, helvetica"><p>A conditional move consists of three parts: the <i>condition</i>,
+    the <i>then-move</i>, and the <i>else-move</i>. The following types of conditions can be
+    used: </p>
+<!--mstheme-->    </font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Is a specified square empty?<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Is there an enemy piece on a
+        specified square?<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Is there a specified enemy
+        piece on a specified square?<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->    </table>
+<!--mstheme-->    <font face="arial, helvetica"><p>The then-move and the else-move are moves for the player
+    that states the C-move. We can use the following syntax: </p>
+    <blockquote>
+      <p>syntax: condition?then-move/else-move</p>
+    </blockquote>
+    <p>A C-move is executed as follows: </p>
+    <blockquote>
+      <p>If condition is true, then the player makes the then-move, if not, he makes the
+      else-move.</p>
+    </blockquote>
+    <p>Here are some examples of conditions: </p>
+<!--mstheme-->    </font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">a8? =&gt; is square a8 empty?<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Bg5? =&gt; An enemy bishop is
+        in g5?<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Pe2? =&gt; An enemy pawn is in
+        e2?<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Eg7? =&gt; There is an enemy
+        piece in g7?<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->    </table>
+<!--mstheme-->    <font face="arial, helvetica"><p>Here are some examples of conditional moves: </p>
+<!--mstheme-->    </font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">d2?Nh4/e6 =&gt; If d2 is
+        empty, then make move Nh4, else, make move e6<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Nh5?gxh5/g5 =&gt; If there is
+        a Knight in h5, move gxh5, else, move g5.<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Pb4?Na2/Ncd3 =&gt; If there is
+        a Pawn in b4, move Na2, else, move Ncd3.<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->    </table>
+<!--mstheme-->    <font face="arial, helvetica"><p><i>note: it is allowed to have a C-move with the
+    then-move and the else-move equals. As in this case, the condition is not relevant, it is
+    omitted from the notation, and one writes: !move.</i> </p>
+    <p>Examples of this are: </p>
+<!--mstheme-->    </font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">h5?Qe2/Qe2 &lt;=&gt; !Qe2<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->      <tr>
+<!--msthemelist-->        <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+        hspace="15"></td>
+        <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Ea1?Ra1/Rxa1 &lt;=&gt; !Ra1<!--mstheme--></font><!--msthemelist--></td>
+      </tr>
+<!--msthemelist-->    </table>
+<!--mstheme-->    <font face="arial, helvetica"><!--msthemeseparator--><p align="center"><img src="barrulee.gif"></p>
+    <p><font SIZE="+1">Sample game</font> <b>Cristina Matos - Joao Pedro Neto</b> (April 16,
+    1996) <br>
+    &nbsp; </p>
+    <ol>
+      <li>e4 d5</li>
+      <li>!d4</li>
+    </ol>
+    <p>Note that 2. !d4 is planned before 1. ... d5 appears! </p>
+    <ol START="2">
+      <li>..., dxe4</li>
+      <li>Bg5, Bg5?*Nf6*/c4</li>
+    </ol>
+    <p>I use *...* to indicate what move was made. In 3. ... Bg5?*Nf6*/c4 black asked if there
+    is a bishop in g5, white played 3. Bg5, so the condition is true, the then-move is
+    executed. </p>
+    <ol START="4">
+      <li>Qxd4, Be7</li>
+      <li>Bb4?Qxb4/*Bb5*, ...</li>
+    </ol>
+    <p>This was to prevent Bb4+. </p>
+    <ol START="5">
+      <li>..., c6</li>
+      <li>Ba4, Ef6?Bxf6/*d5*</li>
+    </ol>
+    <p>Using Ef6? black prevents Qxf6 and Bxf6! </p>
+    <ol START="7">
+      <li>Bxf6, Bxf6</li>
+      <li>Bf6?*Qb4*/Be5, dxe4</li>
+      <li>Qxb7, !Qe7</li>
+    </ol>
+    <p>White saw that he can take b7 without any problem, black will play Qe7. </p>
+    <ol START="10">
+      <li>Qxa1, Bb2</li>
+      <li>Qb2?Qxb2/Qxc3, ...</li>
+    </ol>
+    <p>Taking the tower was an allusion. The Queen is lost! Bb2 invalidate the white C-move! </p>
+    <ol START="11">
+      <li>..., Bxa1</li>
+      <li>Nc3, c3?Bxb2/*e3*</li>
+      <li>fxe3, O-O</li>
+      <li>Kg8?/*Rd1*/Nf3, Rd8</li>
+    </ol>
+    <p>White cannot choose Rxd8 in the next move (it's an A-move!) </p>
+    <ol START="15">
+      <li>Bxc6, Nd5?cxd5/*Bb2*</li>
+      <li>Bxb2, Qxe3+</li>
+      <li>Td1/Kxd1/e4, ...</li>
+    </ol>
+    <p>A check in a B-move! White can move again. </p>
+    <ol START="17">
+      <li>Nge2, Nc6</li>
+      <li>Bc3?bxc3/*Rf1*, Nb4</li>
+    </ol>
+    <p>White must protect c2, or else... (of course, black knows that :-) </p>
+    <ol START="19">
+      <li>Rc1, Rc1?*Bd4*/g5</li>
+    </ol>
+    <p>Black cannot choose Rc1?Bd4/Nc2 because of Rd2 and then Rxc2 </p>
+    <ol START="20">
+      <li>Rf3, Qf1+</li>
+      <li>e3?*Rg1*/Rxe3, Bf2++</li>
+    </ol>
+    <p>A check in an A-move, but also a checkmate! <br>
+    &nbsp; </p>
+    <a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h3 align="center"><!--mstheme--><font face="times new roman, times" color="#000000"><font
+    SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a> | <a HREF="index.htm#MyCVs">my
+    variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a> |&nbsp; <a
+    HREF="index.htm#otherPlaces">other places</a></font> <!--mstheme--></font></h3>
+<!--mstheme-->    <font face="arial, helvetica"></dd>
+</dl>
+<!--mstheme--></font>
+</body>
+</html>

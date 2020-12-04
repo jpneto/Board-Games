@@ -1,0 +1,573 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne and Joao Neto
+%%Title: sq-test.ps
+%%CreationDate: 1/1/2004
+%%BoundingBox: 0 0 590 260
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/dx 40 def                       % the size of the piece
+/coordsize   { dx 0.7 mul } def  % the size of the coordinates
+/insidesize  { dx 0.7 mul } def  % the size of the letters inside the squares
+
+/Chars 
+{[(A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)(AA)(AB)(AC)]
+} def
+
+/Digits
+{	[( 0)( 1)( 2)( 3)( 4)( 5)( 6)( 7)( 8)( 9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)(23)(24)(25)(26)(27)(28)(29)(30)(31)(32)(33)(34)(35)(36)(37)(38)(39)(40)(41)(42)(43)(44)(45)(46)(47)(48)(49)(50)]
+} def
+
+
+%---------------- Functions -------------------
+
+/PlaceAt
+{   % call: r(ow) c(ol)
+    /col exch def
+    /row exch def
+    dx col mul dx row mul moveto    
+} def
+
+/Square
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col Black
+    } {
+      row col White
+    } ifelse 
+} def
+
+/Black
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    row col PlaceAt (+) show
+} def
+
+/White
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    row col PlaceAt (*) show
+} def
+
+/PawnW
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (P) show
+    } {
+      row col PlaceAt (p) show
+    } ifelse 
+    
+} def
+
+/PawnB
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (O) show
+    } {
+      row col PlaceAt (o) show
+    } ifelse 
+
+} def
+
+/KnightW
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (H) show
+    } {
+      row col PlaceAt (h) show
+    } ifelse 
+    
+} def
+
+/KnightB
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (J) show
+    } {
+      row col PlaceAt (j) show
+    } ifelse 
+
+} def
+
+/BishopW
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (B) show
+    } {
+      row col PlaceAt (b) show
+    } ifelse 
+    
+} def
+
+/BishopB
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (N) show
+    } {
+      row col PlaceAt (n) show
+    } ifelse 
+
+} def
+
+/RookW
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (R) show
+    } {
+      row col PlaceAt (r) show
+    } ifelse 
+    
+} def
+
+/RookB
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (T) show
+    } {
+      row col PlaceAt (t) show
+    } ifelse 
+
+} def
+
+/QueenW
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (Q) show
+    } {
+      row col PlaceAt (q) show
+    } ifelse 
+    
+} def
+
+/QueenB
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (W) show
+    } {
+      row col PlaceAt (w) show
+    } ifelse 
+
+} def
+
+/KingW
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (K) show
+    } {
+      row col PlaceAt (k) show
+    } ifelse 
+    
+} def
+
+/KingB
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    col row add 2 mod 0 eq {
+      row col PlaceAt (L) show
+    } {
+      row col PlaceAt (l) show
+    } ifelse 
+
+} def
+
+/KnightWInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (H) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (h) show
+    } ifelse 
+    
+    grestore
+
+} def
+
+/KnightBInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (J) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (j) show
+    } ifelse 
+
+    grestore
+
+} def
+
+/BishopWInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (B) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (b) show
+    } ifelse 
+    
+    grestore
+
+} def
+
+/BishopBInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (N) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (n) show
+    } ifelse 
+
+    grestore
+
+} def
+
+/RookWInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (R) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (r) show
+    } ifelse 
+    
+    grestore
+
+} def
+
+/RookBInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (T) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (t) show
+    } ifelse 
+
+    grestore
+
+} def
+
+/QueenWInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (Q) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (q) show
+    } ifelse 
+
+    grestore
+    
+} def
+
+/QueenBInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (W) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (w) show
+    } ifelse 
+
+    grestore
+
+} def
+
+/KingWInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (K) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (k) show
+    } ifelse 
+    
+    grestore
+
+} def
+
+/KingBInv
+{   % call: row col
+    /col exch def
+    /row exch def
+
+    gsave
+    1 -1 scale
+
+    col row add 2 mod 0 eq {
+      row -1 mul 0.8 sub col PlaceAt (L) show
+    } {
+      row -1 mul 0.8 sub col PlaceAt (l) show
+    } ifelse 
+
+    grestore
+
+} def
+
+/Board
+{   % call: r(ows) c(ols) p(osition <- array) b(ool -> show coord)
+    /b    exch def
+    /pos  exch def
+    /cols exch def
+    /rows exch def
+
+    1 1 rows   % for each row
+    { 
+        /i exch def
+        i 0 PlaceAt (/) show
+
+        b {  % write row coords
+          i -0.25 Digits i get Label
+        } if                 
+
+        1 1 cols   % for each column
+        { 
+          /j exch def     
+
+          % get (i,j) symbol from the board
+          pos i 1 sub cols mul j 1 sub add get
+          /piece exch def     
+
+          rows i sub 1 add j 
+          piece   0 eq { Square  } if
+          piece   1 eq { PawnW   } if
+          piece  -1 eq { PawnB   } if
+          piece   2 eq { KnightW } if
+          piece  -2 eq { KnightB } if
+          piece   3 eq { BishopW } if
+          piece  -3 eq { BishopB } if
+          piece   4 eq { RookW   } if
+          piece  -4 eq { RookB   } if
+          piece   5 eq { QueenW  } if
+          piece  -5 eq { QueenB  } if
+          piece   6 eq { KingW   } if
+          piece  -6 eq { KingB   } if
+
+          piece  12 eq { KnightWInv } if    % inverted stones
+          piece -12 eq { KnightBInv } if
+          piece  13 eq { BishopWInv } if
+          piece -13 eq { BishopBInv } if
+          piece  14 eq { RookWInv   } if
+          piece -14 eq { RookBInv   } if
+          piece  15 eq { QueenWInv  } if
+          piece -15 eq { QueenBInv  } if
+          piece  16 eq { KingWInv   } if
+          piece -16 eq { KingBInv   } if
+
+        } for
+        i cols 1 add PlaceAt (\\) show
+
+        1 1 cols   % draw upper and bottom lines
+        { 
+          /j exch def     
+          0 j PlaceAt (_) show
+          rows 1 add j PlaceAt (-) show
+
+
+          b {  % write column coords
+            0 j Chars j 1 sub get Label
+          } if                 
+
+        } for
+    } for
+
+} def
+
+/Label
+{   % call: row col s(tring)
+    /s exch def
+    /c exch def
+    /r exch def
+
+    gsave       
+    dx 4 div dx 5 div translate 
+
+    /Courier findfont coordsize scalefont setfont
+    r 9 gt {      % if the number is 10 or greater
+      /basefont /Courier findfont def   % it will condense font to fit size
+      basefont [coordsize 2 div 0 0 coordsize 0 0] makefont setfont
+      r c 0.4 add PlaceAt 
+    } {
+      r c PlaceAt 
+    } ifelse
+
+    s show
+
+    grestore
+
+} def
+
+/Marker
+{   % call: j i g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /i exch def
+    /j exch def
+
+    gsave
+    g setgray
+    dx 3.5 div dx 5 div translate 
+    j i PlaceAt
+
+    /Helvetica-Bold findfont insidesize scalefont setfont
+    .5 setlinewidth
+    b {
+        s true charpath gsave 1 setgray fill grestore stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+/MarkerSm
+{   % call: j i g(rey ratio) b(oolean/charpath) s(tring -> just 2 chars)
+    /s exch def
+    /b exch def
+    /g exch def
+    /i exch def
+    /j exch def
+
+    gsave
+    g setgray
+    dx 3.5 div dx 6 div translate 
+    j i PlaceAt
+
+    /basefont /Helvetica-Bold findfont def
+    basefont [insidesize 2 div 0 0 insidesize 0 0] makefont setfont
+    .5 setlinewidth
+
+    b {
+        s true charpath gsave 1 setgray fill grestore stroke
+      } {
+        s show
+    } ifelse
+
+    grestore
+
+} def
+
+%--------------------------------------------------------------------------
+
+/ChessPiece findfont
+dx scalefont 
+setfont
+
+100 100 translate
+
+%--------------------------------------------------------------------------
+%---------------- (make your diagram starting here) -----------------------
+%--------------------------------------------------------------------------
+
+11  8 [ -4  -2  -3  -5  -6  -3  -2  -4
+        -1  -1  -1  -1  -1  -1  -1  -1
+         0   0   0   0   0   0   0   0
+         0   0   0   0 -12   0 -16   0
+         0   0   0  13  12  14  16   0
+         0   0   0 -13   0 -14   0   0
+         0   0   0 -15   0   0   0   0
+         0   0   0  15   0   0   0   0
+         0   0   0   0   0   0   0   0
+         1   1   1   1   1   1   1   1  
+         4   2   3   5   6   3   2   4 ] true Board
+
+6 5 0 true (x) Marker
+5 5 0 true (x) Marker
+4 5 0 false (x) Marker
+3 5 0 false (x) Marker
+
+5 6 0 false (13) MarkerSm
+
+showpage

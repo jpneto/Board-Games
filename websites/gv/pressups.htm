@@ -1,0 +1,477 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Kings and Soldiers - PRESS UPS</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<font face="Times New Roman, Times" mstheme>
+
+<blockquote>
+</font mstheme>
+<h1 align="center"><font face="Times New Roman, Times" color="#333333" mstheme><strong><font face="Arial Black">PRESS UPS</font></strong></font mstheme></h1>
+<font face="Times New Roman, Times" mstheme>
+<p align="center"><font size="3"><strong>Copyright (c) 1974 Invicta Plastics Ltd</font></strong></p>
+<p align="left"><font size="3" face="Arial">This game is played on a 7x7 square board with the
+following setup:</font></p>
+    <center>
+</font mstheme>
+      <table border="1" width="168" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-kings.jpg" align="center">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,7,7,txxxxxt/wtttttw/wtttttw/wtttttw/wtttttw/wtttttw/txxxxxt");</script>
+</font mstheme>
+          </td>
+        </tr>
+      </table>
+<font face="Times New Roman, Times" mstheme>
+    </center>
+    <br>
+</font mstheme>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <font face="Times New Roman, Times" mstheme></font mstheme>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" msthemelist>
+        <tr msthemelist>
+          <td valign="top" width="42" msthemelist><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><font face="Times New Roman, Times" mstheme><font size="3" face="Arial"><b>TURN</b> - On the first turn, the
+          first player picks any stone.</font>
+            </font mstheme>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" msthemelist>
+              <tr msthemelist>
+                <td valign="top" width="42" msthemelist><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="Times New Roman, Times" mstheme><font size="3" face="Arial">After that, the next player must
+              remove any stone that is adjacent (orthogonal or diagonal) to the
+              last picked stone.</font></font mstheme></td msthemelist>
+              </tr>
+            </table msthemelist>
+            <font face="Times New Roman, Times" mstheme></font mstheme></td msthemelist>
+        </tr>
+        <tr msthemelist>
+          <td valign="baseline" width="42" msthemelist><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><font face="Times New Roman, Times" mstheme><font size="3" face="Arial"><strong>GOAL</strong> -The game ends
+          where all white or black stones are picked, winning the respective
+          player, or when there are no moves available, in this case, wins the
+          player with more of his own stones picked (if the numbers are equal,
+          the game is a draw)</font>
+            </font mstheme></td msthemelist>
+        </tr>
+      </table msthemelist>
+      <font face="Times New Roman, Times" mstheme></font mstheme>
+    </td>
+  </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+<br>
+</font mstheme>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="168" bordercolor="#000000" background="back-kings.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,7,7,txxx.at/wtt...w/wt..t../w....t./w.....w/wt...tw/txxxxxt");
+//--></script>
+</font mstheme>
+      </td>
+      <td valign="top" width="432"><font face="Times New Roman, Times" mstheme><font face="Arial"><strong>An example</strong><p><font size="3">White
+        picked the Black stone at cell [1] and wins the game. Since each player
+        has 2 stones, White cut all paths to the remaining Black stones, leaving
+        one last white stone to capture, to win 3-2.</font></font>
+        </font mstheme>
+      </td>
+    </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+<p><font size="3" face="Arial">Try to play this game with this JavaScript player
+(made by <a href="mailto:jp.queill@wanadoo.fr">Jean-Pierre Queille</a>) called
+JS Press-Ups..</font></p>
+
+<!------------------------------------------------------------------------------------->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!---
+var Size=7
+var Limit=8
+var First=true
+var ScoreH=0
+var ScoreC=0
+var Trace=false
+
+if (Trace)
+{
+	var tw=window.open("","Trace","width=100,height=120,toolbar=0,status=0")
+	tw.document.write("TRACE<BR>")
+}
+
+// prechargement des images
+var Bd=new Image(); Bd.src="Bd.gif"
+var Bl=new Image(); Bl.src="Bl.gif"
+var Bu=new Image(); Bu.src="Bu.gif"
+var Jd=new Image(); Jd.src="Jd.gif"
+var Jl=new Image(); Jl.src="Jl.gif"
+var Ju=new Image(); Ju.src="Ju.gif"
+var Rd=new Image(); Rd.src="Rd.gif"
+var Rl=new Image(); Rl.src="Rl.gif"
+var Ru=new Image(); Ru.src="Ru.gif"
+
+function Koup(i,j,k)
+{
+	this.x=i
+	this.y=j
+	this.flat=k
+}
+var Last=new Koup(-1,-1,-1)
+
+function FlatIndex(i,j)
+{
+		return (Size*(i-1)+j-1)
+}
+function GetColor(k)
+{
+		var gif=document.images[k+101].src    // this 101 is because there are other images on the html...
+		var c=gif.substring(gif.length-6,gif.length-5)
+		return (c)
+}
+function GetState(k)
+{
+		var gif=document.images[k+101].src
+		var c=gif.substring(gif.length-5,gif.length-4)
+		return (c)
+}
+function PushDown(cou,reel)
+{
+		var k=cou.flat
+		var l=Last.flat
+		var gif, begin, end
+		if (reel && (l>=0))
+		{
+				gif=document.images[l+101].src
+				begin=gif.substring(0,gif.length-5)
+				end=gif.substring(gif.length-4,gif.length)
+				document.images[l+101].src=begin+'d'+end
+		}
+		gif=document.images[k+101].src
+		var c=gif.substring(gif.length-6,gif.length-5)
+		if (c=='R') ScoreH++
+		else if (c=='B') ScoreC++
+		begin=gif.substring(0,gif.length-5)
+		end=gif.substring(gif.length-4,gif.length)
+		document.images[k+101].src=begin+'l'+end
+		if (reel) 
+		{
+			Last=cou
+          document.F1.BLACK.value = ScoreH
+          document.F1.WHITE.value = ScoreC	
+       }
+		return (true)
+}
+function PushUp(cou)
+{
+		var k=cou.flat
+		var gif=document.images[k+101].src
+		var c=gif.substring(gif.length-6,gif.length-5)
+		if (c=='R') ScoreH--
+		else if (c=='B') ScoreC--
+		var begin=gif.substring(0,gif.length-5)
+		var end=gif.substring(gif.length-4,gif.length)
+		document.images[k+101].src=begin+'u'+end
+		return (true)
+}
+function CoupsPossibles(cou)
+{
+		var i=cou.x
+		var j=cou.y
+		var x,y,k
+		var C=new Array()
+		var nb=0
+		for (var dx=-1; dx<2; dx++)
+		{
+				for (var dy=-1; dy<2; dy++)
+				{
+						x=i+dx
+						y=j+dy
+						if ((x>0)&&(x<=Size)&&(y>0)&&(y<=Size))
+						{
+								k=FlatIndex(x,y)
+								if (GetState(k)=='u')
+								{
+										C[nb]=new Koup(x,y,k)
+										nb++
+								}
+						}
+				}
+		}
+		return (C)
+}
+function HumanFirst(cou)
+{
+		var k=cou.flat
+		if (GetColor(k)=='J')
+		{
+				PushDown(cou,true)
+				First=false
+				return (true)
+		}
+		else
+		{
+				document.F1.T1.value = "Invalid Move"
+				return (false)
+		}
+}
+function HumanPlay(cou)
+{
+		var k=cou.flat
+		var delta=Last.flat-k
+		if
+((GetState(k)=='u')&&((Math.abs(delta)==1)||(Math.abs(delta)==Size-1)||(Math.abs(delta)==Size)||(Math.abs(delta)==Size+1)))
+
+		{
+				PushDown(cou,true)
+				return (true)
+		}
+		else
+		{
+				document.F1.T1.value = "Invalid Move"
+				return (false)
+		}
+}
+function Eval(p,d,cou0)
+{
+		var C=CoupsPossibles(cou0)
+		var cou, v
+		if (C.length==0)
+		{
+				if (ScoreC>ScoreH) return (1000)					   
+				else if (ScoreC<ScoreH) return (-1000)						  
+				else return (0)
+		}
+		else if (C.length==1)
+		{
+				cou=C[0]
+				PushDown(cou,false)
+				v=Eval(-p,d,cou)
+				PushUp(cou)
+				return (v)
+		}
+		if (d>=Limit) return ((ScoreC-ScoreH)*10+p*C.length)
+		var m=p*10000
+		for (var i=0; i<C.length; i++)
+		{
+				cou=C[i]
+				PushDown(cou,false)
+				v=Eval(-p,d+C.length,cou)
+				PushUp(cou)
+				if (p*v<p*m) m=v
+		}
+		return (m)
+}
+function ComputerPlay(coups)
+{
+		var best=new Array()
+		var ib=0;
+		var score=-10000
+		var cou, v
+		for (var i=0; i<coups.length; i++)
+		{
+				cou=coups[i]
+				PushDown(cou,false)
+				v=Eval(1,0,cou)
+				PushUp(cou)
+				if (v>score)
+				{
+						score=v
+						best[0]=cou
+						ib=1
+				}
+				else if (v==score)
+				{
+						best[ib]=cou
+						ib++
+				}
+		}
+		var n=Math.round(Math.random()*ib-0.5)
+		cou=best[n]
+		PushDown(cou,true)
+		return (cou)
+}
+function TestFin(coups)
+{
+		if (coups.length==0)
+		{
+				if (ScoreC>ScoreH) document.F1.T1.value = "I won"
+				else if (ScoreC<ScoreH) document.F1.T1.value = "You won"
+				else document.F1.T1.value = "Tie!"
+				return (true)
+		}
+		else if (ScoreC==(Size-2)*2)
+		{
+				document.F1.T1.value = "I won"
+				return (true)
+		}
+		else if (ScoreH==(Size-2)*2)
+		{
+				document.F1.T1.value = "You won"
+				return (true)
+		}
+		return (false)
+}
+
+var coups=new Array()
+function ComputerReply()
+{
+		var c=ComputerPlay(coups)
+		coups=CoupsPossibles(Last)
+    	document.F1.T1.value = "Your turn"
+		if (TestFin(coups)) return (true)
+		return (false)
+}
+function GotClick(i,j,k)
+{
+		var cou=new Koup(i,j,k)
+		var ok=false
+		var t
+		if (First)
+		{
+				ok=HumanFirst(cou)
+				if (ok)
+				{
+						document.F1.T1.value = "Thinking..."
+						coups=CoupsPossibles(cou)
+						t=setTimeout("ComputerReply()",1000)
+				}
+		}
+		else
+		{ 
+				ok=HumanPlay(cou)
+				if (ok)
+				{
+						coups=CoupsPossibles(cou)
+						if (TestFin(coups)) return (false)
+						document.F1.T1.value = "Thinking..."
+						t=setTimeout("ComputerReply()",1000)
+				}
+		}
+		return (false)
+}
+// -->
+
+  </SCRIPT>
+</blockquote>
+	
+<center>	
+</font mstheme>	
+<table border="1" width="210" bordercolorlight="#333366" bordercolordark="#000000">
+  <tr>
+    <td width="100%" background="back-kings.jpg" align="center">
+      <font face="Times New Roman, Times" mstheme>
+      <form name = "F1">
+        <center>  <input type = "text"   NAME = "T1" VALUE = "You're Black" SIZE = "10">
+        B: <input type = "text"   NAME = "BLACK" SIZE = "1">
+        W: <input type = "text"   NAME = "WHITE" SIZE = "1"> </center>
+      </form>
+
+    <center>
+      </font mstheme>
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(1,1,0)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(1,2,1)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(1,3,2)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(1,4,3)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(1,5,4)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(1,6,5)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(1,7,6)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+				</tr>
+				<tr>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(2,1,7)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(2,2,8)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(2,3,9)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(2,4,10)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(2,5,11)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(2,6,12)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(2,7,13)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+				</tr>
+				<tr>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(3,1,14)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(3,2,15)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(3,3,16)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(3,4,17)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(3,5,18)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(3,6,19)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(3,7,20)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+				</tr>
+				<tr>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(4,1,21)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(4,2,22)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(4,3,23)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(4,4,24)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(4,5,25)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(4,6,26)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(4,7,27)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+				</tr>
+				<tr>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(5,1,28)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(5,2,29)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(5,3,30)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(5,4,31)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(5,5,32)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(5,6,33)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(5,7,34)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+				</tr>
+				<tr>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(6,1,35)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(6,2,36)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(6,3,37)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(6,4,38)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(6,5,39)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(6,6,40)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(6,7,41)"><img src="icons/press-ups/Bu.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+				</tr>
+				<tr>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(7,1,42)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(7,2,43)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(7,3,44)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(7,4,45)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(7,5,46)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(7,6,47)"><img src="icons/press-ups/Ru.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+					<td><font face="Times New Roman, Times" mstheme><a href="(Empty Reference!)" onclick="return GotClick(7,7,48)"><img src="icons/press-ups/Ju.gif" border="0" width="22" height="22" naturalsizeflag="3" align="BOTTOM"></a></font mstheme></td>
+				</tr>
+			</table>
+      <font face="Times New Roman, Times" mstheme>
+  	       <br><input type = "button" VALUE = "New" NAME = "B1" OnClick = "document.location.reload()"></center>
+      </font mstheme>
+		</td>
+  </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+</center>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <p><i><font size="3" face="Arial">&nbsp;</font>JS Press Ups is a
+            JavaScript implementation with pure didactic purposes of the game
+            Press Ups of Invicta Plastics Limited, Leicester, England. ©, ®,
+            1974. All rights reserved. JS Press Ups © 1998-2000 JPQ Software.<!------------------------------------------------------------------------------------->
+            </i></p>
+
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+<p align="center" msthemeseparator><img src="aricerul.gif" width="600" height="10"></p>
+</font mstheme>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - HALMA</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="hex2diag/hex2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">THE
+HALMA FAMILY</font></strong></h1>
+<p align="center"><strong><font size="3">Original game - England, 1880s</font></strong></p>
+  <p align="left"><font size="3" face="Arial">Halma starts on a 16x16 board with
+  the following setup:</font></p>
+    <center>
+      <table border="1" width="362" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,16,16,11xxxxx/11xxxxx/12xxxx/13xxx/14xx/96/ww14/www13/wwww12/wwwww11/wwwww11");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+&nbsp;
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font size="3" face="Arial"><strong>BASE - </strong>The player's
+          base is the set of cells occupied by his stones before the game
+          starts.</font>
+            </li>
+		<li><font size="3" face="Arial"><strong>MOVE - </strong>On each turn,
+          each player moves one of his stones. A stone may:</font>
+            <ul>
+				<li><font size="3" face="Arial">Move to an adjacent (orthogonal or
+              diagonal) empty cell</font>
+                  <ul>
+					<li><font size="3" face="Arial">However, if a stone is inside
+                  the enemy base, it cannot be moved out of the base, but may
+                  move within the base.</font></li>
+				</ul>
+				</li>
+				<li><font size="3" face="Arial">Jump another adjacent stone of
+              either color, landing on the immediate empty cell.&nbsp;</font>
+                  <ul>
+					<li><font size="3" face="Arial">Jumps are multiple, a jumping
+                  stone may continue to jump a different stone if it possible. A
+                  stone may jump the same piece several times in a jumping
+                  sequence.&nbsp;</font></li>
+					<li><font size="3" face="Arial">Jumps are not mandatory.</font></li>
+					<li><font size="3" face="Arial">Jumps do not capture, there are
+                  no captures in Halma.</font></li>
+				</ul>
+				</li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><b>GOAL</b>
+            - Wins the first player that moves at least one of his stones to the
+          enemy base, while that base is totally occupied.</font>
+            </li>
+		</ul>
+    </td>
+  </tr>
+</table>
+<p align="left"><font size="3" face="Arial">The goal is stated this way to
+prevent that players keep some of their stones on their own base, to achieve trivial draws.
+However, other trivial draws are still possible, check the second example. In
+this case, a further fix to the goal must be added. A proposal from <a href="mailto:ploog@mathematik.hu-berlin.de">David
+Ploog</a> is the following:</font></p>
+<blockquote>
+  <p align="left"><font size="3" face="Arial"><i>&quot;A player wins if he
+  cannot move any of his stones nearer to the opposing corner and if all of his
+  stones left his base.&quot;</i></font></p>
+</blockquote>
+<p align="left"><font size="3" face="Arial"><i>Then he adds: [...] use
+&quot;nearer&quot; with respect to geometric distance of cells. So if one player has a piece
+trapped while his opponent doesn't, then he may as well resign. If both players
+have pieces trapped the games is drawn because neither of them will open a path
+for his opponent. In any case it is a bad idea to keep pieces behind on purpose.
+[...] The aesthetic point is this: When you declare a game as won when the base
+is full (regardless of inhabitants) you cover still not all possibilities. Hence
+there's need of another rule. But I tried to state this additional in such a way
+that it also covers ordinary games.</i></font></p>
+<p align="left"><font size="3" face="Arial">Ralf Gering notes<i>: I would like
+to describe another solution to the problem which is known in Germany for at
+least half a century: &quot;<u>If one player has left his base, the other player
+must also leave his base (or move towards the exit of his base). Other moves are
+not permitted</u>.&quot; The beauty of this solution is that the original
+winning condition of Halma remains unchanged.</i></font></p>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="186" bordercolor="#000000" background="back-board.jpg">
+      
+<script LANGUAGE="JavaScript">
+<!--
+boardgv2diag("ur,8,8,8/5e../5w2/5d../5w2/.X3c../..w.x3/3a4");
+//-->
+</script>
+      </td>
+      <td valign="top" width="414"><font face="Arial"><strong>A Jumping sequence</strong></font>
+        <p><font size="3" face="Arial">The black marked stone can jump over one
+        or more stones. The numbers show a possible jumping sequence until cell
+        [4].&nbsp;</font>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="186" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript">
+<!--
+boardgv2diag("ur,8,8,5xxX/5xx:/5xxx/5x.x/8/8/8/8");
+//-->
+</script>
+      </td>
+      <td valign="top" width="414"><font face="Arial"><strong>Trivial draw
+        strategy</strong></font>
+        <p><font size="3" face="Arial">If Black uses the marked stone to move to
+        the cell with the red dot, and then back, White is totally unable to win
+        the game.</font></p>
+        <p><font size="3" face="Arial">.</font>
+      </td>
+    </tr>
+</table>
+<p><font size="3" face="Arial">There is a ZRF to play Halma
+and (Chinese Checkers) with <a href="http://www.zillionsofgames.com">Zillions</a>,
+both games are included in the Zillions original game set. </font></p>
+<p><font size="3" face="Arial">Wayne Schmittberger in <a href="http://www.amazon.co.uk/exec/obidos/ASIN/0471536210/ref=sr_aps_books_1_1/026-3784884-1446006">New
+Rules for Classic Games</a>, refers a variant called Super Halma,
+where a stone jumps at any distance, provided that the jumped stone lies at the
+exact midpoint of the jump (this jump rule is popular in France).</font> <font size="3" face="Arial">Another well known variant, played on a
+star-shaped board, is <a href="http://dir.yahoo.com/Recreation/Games/Board_Games/Chinese_Checkers/">Chinese
+Checkers</a>  (btw, the game is not Chinese - it's German (or Sweden...)- and it's not even
+a variant of <a href="checkers.htm">Checkers</a> :-)</font></p>
+<p><font size="3" face="Arial">Another curious variant of Halma, is <u>Top
+Secret</u>, where each player drops in turns their 18 stones on the central 6x6
+square area of the 16x16 board. Then, after all drops were made, the goal is to
+be the first to remove all stones moving or jumping over the board.</font></p>
+<p><font size="3" face="Arial"><a name="legrec"></a>A simple variation is <a href="http://www.math-ecole.ch/jeux/le-grec.htm">Le
+Grec</a> (by Dominique Huguenin and Yves Chédel) played in the next diagram. The rules:&nbsp;(1)
+Move one friendly stone (orthogonal or diagonal) to an empty cell, or jump over
+an enemy stone (no jumps over friendly stones) landing on the immediate next
+cell. Every move/jump must be forwards or sideways never backwards. (2) Wins the
+player that moves his stones to the last two rows.&nbsp;</font></p>
+    <center>
+      <table border="1" width="98" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,4,4,wwww/.www/xxx./xxxx");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+<p><font size="3" face="Arial"> <a href="http://www.vanmaanen.org/hans/boeken/wolf/renpaarden.html">Renpaarden</a>
+ is played on a 9x9 square board: Both players start with the first two rows filled
+with friendly stones (so, 18 stones each). Stones&nbsp; move like chess knights:
+either to an empty square, which ends the turn, or to a square with an opponent piece.
+In the latter case, the piece must make another jump or jumps (there is no
+capturing) until it lands on an empty cell. Winner is who has all his stones at the two rows at the opposite of
+the board. Check wag's <a href="renpaarden.htm">page</a>.</font></p>
+<p><font size="3" face="Arial"><a name="lezug"></a><a href="http://jeuxstrategie.free.fr/Zug_complet.php">Le
+Zug</a> is played on the following 17x17 board. Below is a initial setup (the
+stones on the second row can be placed at any column where they are diagonally
+adjacent to the first row stones). Stones
+move diagonally forward and can jump diagonally over stones of either color
+(jumps can be multiple and are not mandatory). A piece which performs a jumping
+move, whether single or multiple, is allowed to make an additional diagonal
+step. All steps and jumps are forward only. The first four rows of each side is
+considered the camp of that player.&nbsp; No piece may be moved into an enemy
+camp while their are still friendly pieces in their own. Wins the player that first
+occupies the last row, and place the remaining three stones at the penultimate
+row.</font></p>
+    <center>
+      <table border="1" width="384" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,17,17,x.x.x.x.x.x.x.x.x/3x3x5x3/221/.w3w5w5/w.w.w.w.w.w.w.w.w");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+<p><font size="3" face="Arial">According to L. Lynn Smith the title appears to
+be an amalgamate of French and German. Its meaning &quot;The Course&quot;.</font></p>
+<p align="left"><font size="3" face="Arial"><a name="carrera"></a>Carrera de
+Caballos, from <a href="mailto:hectormaximo(AT)hotmail.com">Héctor
+Canteros</a>, is played on the next board, where pieces move like non-capture
+chess Knights, </font><font size="3" face="Arial">i.e., they jump to one of the nearest cells not in the same column or
+              row.</font>
+<font size="3" face="Arial">&nbsp;</font></p>
+    <center>
+      <table border="1" width="230" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,10,10,xxx..zzzzz/xxx...zzzz/xx.....zzz/........zz/.........z/z........./zz......../zzz.....ww/zzzz...www/zzzzz..www");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+<p><font size="3" face="Arial"><a name="hexma"></a>Check also <a href="http://www.gamerz.net/pbmserv/hexma.html">Hexma</a>
+(by Cameron Browne) a variant of Chinese Checkers with a connection touch: &quot;<i>a player wins by
+completing a chain of their pieces between their home and away board edges</i>&quot;&nbsp;
+(it should be use one of the mechanisms explained above to remove drawish
+strategies). The same game on a typical hex board:</font></p>
+    <center>
+    <table border="2" width="310" bgcolor="#D5BD83" bordercolorlight="#333366" bordercolordark="#000000">
+      <tr>
+        <td width="100%" background="back-board.jpg"><script LANGUAGE="JavaScript"><!--
+hexgv2diag("5,10,5,.www./.wwww./.wwwww./......../........./........../........./......../.xxxxx./.xxxx./.xxx.");
+        //--></script></td>
+      </tr>
+    </table>
+    </center>
+
+<p align="left"><font size="3" face="Arial"><a name="caesar"></a>Caeser game </font>
+<font face="Arial">is an old variant (c.1900) when Halma was a game with lots of 
+followers. Here are the board and the rules taken from
+<a href="http://www.gamesboard.org.uk/cgi-pub/gardpub.cgi?table=examples&pk=8731&command=view">
+GARD</a>, the gamesboard database:</font></p>
+<p align="center">
+<img border="0" src="icons/caesar2.jpg" width="341" height="343"></p>
+<p><font size="3" face="Arial">Each player places their 17 stones into his half 
+of the board (only the central three cells start empty) and try to move his army 
+to the other side. Pieces may not move backwards and a blocked player must pass 
+his turn.</font></p>
+<p align="center">
+<img border="0" src="icons/caesar3.jpg" width="350" height="449"></p>
+
+</blockquote>
+<hr>
+</body>
+</html>

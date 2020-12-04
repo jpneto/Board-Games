@@ -1,0 +1,202 @@
+/***************************************************
+ *                    WAG Styles
+ ***************************************************/
+
+/* COLORS
+ *    #fff - White	    #f00 - Red 	    	#ddd - Gray 
+ *    #999 - Darker Gray    #966 - Brown	#00c - Blue
+ *    #009 - Darker Blue    #000 - Black
+ */
+
+body {
+  color            : black;
+  font-family      : arial, sanserif, courier;
+  background-image : url("icons/wagback.jpg")
+}
+
+h1,h2,h3
+{
+  text-align   : center;
+  color        : #009
+}
+
+/***** Paragraph properties ******/
+
+p {
+  text-align   : left;
+  margin-left  : 20px;
+  margin-right : 3%;
+  font-size    : 12pt
+}
+
+p.note {                   /* <p class="note">...</p> */
+  margin-right    : 5%;
+  font-size       : 90%
+}
+
+p.rulenote {
+  font-size       : 90%
+}
+
+p.authornote {
+  margin-right    : 10%;
+  font-size       : 90%;
+  font-style      : italic;
+  border-style    : groove;
+  padding         : 0.1cm;
+  font-size       : 90%
+}
+
+p#title {
+  color        : #009;
+  text-align   : center;
+  margin-top   : -10px;
+  margin-left  : 0px;
+  margin-right : 0px;
+  font-family  : 'Arial Black', Arial, SanSerif;
+  font-size    : 200%;
+  font-weight  : bold;
+  text-transform : uppercase;
+}
+
+p#subtitle {
+  color        : #009;
+  text-align   : center;
+  margin-top   : -10px;
+  margin-left  : 0px;
+  margin-right : 0px;
+  font-size    : 100%;
+  font-weight  : bold;
+  text-transform : uppercase
+}
+
+p#author {                     /* <p id="author">Author...</p> */
+  text-align   : center;
+  margin-top   : -10px;
+  margin-left  : 0px;
+  margin-right : 0px;
+  font-size    : 9pt;
+  font-weight  : bold;
+/*  font-variant : small-caps */
+}
+
+p#history {
+  text-align   : center;
+  margin-top   : -10px;
+  margin-left  : 30px;
+  margin-right : 30px;
+  font-size    : 9pt;
+  font-style   : italic
+}
+
+p#caption {
+  text-align   : center;
+  margin-top   : -2px;
+  font-size    : 8pt;
+}
+
+p#back2WAG {
+  text-align   : right;
+  margin-left  : 0px;
+  margin-right : 0px;
+  font-size    : 70%;
+  font-style   : italic
+}
+
+p#components {
+  font-style      : italic;
+  font-size       : 95%
+}
+
+/***** Table properties ******/
+
+table {
+  border-color  : black
+}
+
+table.rules {
+  text-align      : left;
+  margin-right    : 10%;
+  background-color: none; 
+  border-style    : none;
+  border-left     : double #000;
+  border-left-width: 4px;
+  margin-left     : 20px
+}
+
+table.example {            
+  text-align      : left;
+  margin-right    : 5%;
+  background-color: none;
+  border-style    : double;
+  margin-left     : 20px
+}
+
+td.wide {                /* used in games of soldiers / kings and soldiers */
+  padding       : 0.1cm;
+}
+
+
+td.rules {
+  padding-right : 0.1cm;
+  text-align    : left
+}
+
+/***** List properties ******/
+
+ul {
+  text-align   : left;
+}
+
+ul.rule {
+  padding-top      : 5px;                    
+  list-style-image : url("icons/bullet1.gif");
+  cursor           : crosshair;
+}
+
+ul.srule {
+  padding-top      : 3px;                   
+  list-style-image : url("icons/bullet2.gif");
+  cursor           : crosshair;
+}
+
+ul.ssrule {
+  padding-top      : 2px;                   
+  list-style-image : url("icons/bullet3.gif");    
+  cursor           : crosshair;
+}
+
+/***** Link properties ******/
+
+a:link {
+  color           : #0000ff; 
+  text-decoration : none
+}
+
+a:visited {
+  color           : #ff0000; 
+  text-decoration : none
+}
+
+a:hover {
+  text-decoration : underline
+}
+
+/***** Ruler properties *****/
+
+div.hr {
+  height     : 15px;
+  background : url("icons/ruler.gif") no-repeat scroll center;
+}
+
+div.hr hr {
+  display: none;
+}
+
+
+/* This should be used with:   
+ *
+ *    <div class="hr"><hr /></div> 
+ *
+ */
+

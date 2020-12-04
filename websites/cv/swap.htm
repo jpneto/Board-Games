@@ -1,0 +1,353 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Bookmarks for Joao Pedro Neto</title>
+<!-- This is an automatically generated file.
+
+
+It will be read and overwritten.
+
+
+Do Not Edit! -->
+<meta name="Microsoft Theme" content="bars 011">
+</head>
+
+<body background="barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633"
+vlink="#999933" alink="#993300">
+<!--mstheme--><font face="arial, helvetica">
+
+<dl>
+<!--mstheme-->  </font><h3 FOLDED ADD_DATE="873997532" align="center"><!--mstheme--><font face="times new roman, times"
+  color="#000000"><a NAME="top"></a><font SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a>
+  | <a HREF="index.htm#MyCVs">my variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a>
+  |&nbsp; <a HREF="index.htm#otherPlaces">other places</a></font><!--mstheme--></font></h3>
+<!--mstheme-->  <font face="arial, helvetica"><!--mstheme--></font><h3 FOLDED ADD_DATE="873997549" align="center"><!--mstheme--><font
+  face="times new roman, times" color="#000000"><font SIZE="+2">Swap Chess</font><!--mstheme--></font></h3>
+<!--mstheme-->  <font face="arial, helvetica"><i><p align="right">&quot;What's the harm in just changing
+  these two little pieces?&quot;</i></p>
+<!--msthemeseparator-->  <p align="center"><img src="barrulee.gif"></p>
+  <dd>&nbsp; <dl>
+      <address>
+        The idea was to make the simple notion of swap work somehow. This was the 1st version of
+        the game. It is not very good, because of the enormous range of moves that a player can
+        choose, some of them changing the board completely. After reading this, check the next
+        entry, <a HREF="bswap.htm">Balanced Swap Chess</a>. 
+      </address>
+    </dl>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h3><!--mstheme--><font face="times new roman, times" color="#000000"><font SIZE="+2">Swap Chess</font><!--mstheme--></font></h3>
+<!--mstheme-->    <font face="arial, helvetica"><ol>
+      <li>All <a HREF="http://www.cs.ruu.nl/~hansb/d.chessvar/fidelaws.html">FIDE rules</a> apply
+        except in the following:</li>
+      <li>A player can choose in his turn, to make a FIDE move or to perform a swap sequence,
+        respecting the following:</li>
+      <li>To perform a swap, one must be a player's piece P1 (except the King), and the other (any
+        piece) must be at the range attack of P1. Pawns swap as they take, i.e., diagonally
+        forward.</li>
+      <li>P1 can continue the swapping with other pieces.</li>
+      <li>Any piece, except P1, cannot be swapped more than once in a swap sequence.</li>
+      <li>A swap sequence must stop if a check happens.</li>
+      <li>If any pawn reaches, due to a swap sequence, the promotion rank, it is always the player
+        who decides to which piece he promotes.</li>
+      <li>If a pawn reaches his 1st rank, he can move one or two squares forward.</li>
+      <li>The KO rule: a player cannot undo the last swap sequence.</li>
+    </ol>
+<!--mstheme-->    </font><h2><!--mstheme--><font face="times new roman, times" color="#000000"><font size="4"><b>A White
+    Mate-in-One Example</b></font><!--mstheme--></font></h2>
+<!--mstheme-->    <font face="arial, helvetica"><ol>
+<!--mstheme-->      </font><pre>&nbsp;. . . r k . . .&nbsp; 8
+&nbsp;. . . . . r . .&nbsp; 7
+&nbsp;. Q . . . . . .&nbsp; 6
+&nbsp;. . . . . . . .&nbsp; 5
+&nbsp;. . b . . . . .&nbsp; 4
+&nbsp;. . . p . . . .&nbsp; 3
+&nbsp;. . . . . R . .&nbsp; 2
+&nbsp;. B . . . . . .&nbsp; 1
+
+&nbsp;a b c d e f g h</pre>
+<!--mstheme-->      <font face="arial, helvetica">
+    </ol>
+    <p>(check the <a HREF="#mateSol">solution</a>) <br>
+    </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+    <ol>
+      <p>&nbsp;</p>
+    </ol>
+    <p><b><font SIZE="+1">Sample Games</font></b> </p>
+    <dl>
+      <p><tt>&nbsp;1.&nbsp; e2-e4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e7-e5</tt>
+      <br>
+      <tt>&nbsp;2.&nbsp; Nb1-c3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nb8-c6</tt> <br>
+      <tt>&nbsp;3.&nbsp; g2-g4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bf8-c5</tt>
+      <br>
+      <tt>&nbsp;4.&nbsp; Qd1/g4/g7/h8</tt> </p>
+      <p><tt>(the 1st swap sequence, Qh8 threats Q:g7)</tt> </p>
+      <p><tt>&nbsp;r . b q k . n Q&nbsp; 8</tt> <br>
+      <tt>&nbsp;p p p p . p r p&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . n . . . . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. . b . p . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . . . O . p .&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . N . . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O O O . O . O&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . B O K B N R&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>&nbsp;4...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Qd8-h4</tt> <br>
+      <tt>&nbsp;5. Qh8/h7/g7/g8+</tt> </p>
+      <p><tt>(white don't mind the mate threath, and start checking)</tt> </p>
+      <p><tt>&nbsp;r . b . k . Q p&nbsp; 8</tt> <br>
+      <tt>&nbsp;p p p p . p n r&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . n . . . . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. . b . p . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . . . O . p q&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . N . . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O O O . O . O&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . B O K B N R&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>&nbsp;5...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Ke8-e7</tt> <br>
+      <tt>&nbsp;6. Nc3-d5+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ke7-e6</tt> <br>
+      <tt>&nbsp;7. Nd5:c7+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ke6-d6</tt> <br>
+      <tt>&nbsp;8. Nc7-b5+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kd6-e7</tt> <br>
+      <tt>&nbsp;9. Qg8/c8/c6/c5+</tt> </p>
+      <p><tt>(the mate threath ended)</tt> </p>
+      <p><tt>&nbsp;r . n . . . b p&nbsp; 8</tt> <br>
+      <tt>&nbsp;p p . p k p n r&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . b . . . . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. N Q . p . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . . . O . p q&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . . . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O O O . O . O&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . B O K B N R&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>&nbsp;9...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Ke7-e8</tt> <br>
+      <tt>10. Bf1-c4?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Qh4/h2/h1/g1+</tt> </p>
+      <p><tt>&nbsp;r . n . k . b p&nbsp; 8</tt> <br>
+      <tt>&nbsp;p p . p . p n r&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . b . . . . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. N Q . p . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . B . O . p O&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . . . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O O O . O . R&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . B O K . q N&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>11. Bc4-f1</tt> </p>
+      <p><tt>(if 11. Ke1-e2 then Rh7/h6/g4/e4+)</tt> </p>
+      <p><tt>11...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Qg1:h2?</tt> </p>
+      <p><tt>(if 11... Rh7/g7/f7/f2/f1+ then Qc5 was lost)</tt> </p>
+      <p><tt>12. Bb5/c6/d7+</tt> </p>
+      <p><tt>&nbsp;r . n . k . b p&nbsp; 8</tt> <br>
+      <tt>&nbsp;p p . B . p n r&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . p . . . . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. b Q . p . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . . . O . p O&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . . . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O O O . O . q&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . B O K N . N&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>12...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Ke8:d7</tt> <br>
+      <tt>13. Nf1:h2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f7-f6</tt> <br>
+      <tt>14. Nh2:g4?</tt> </p>
+      <p><tt>(better 14. Nh2/g4/f6+)</tt> </p>
+      <p><tt>14...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Rh7/g7/g4/h4/h1+</tt> </p>
+      <p><tt>&nbsp;r . n . . . b p&nbsp; 8</tt> <br>
+      <tt>&nbsp;p p . k . . N n&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . p . . p . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. b Q . p . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . . . O . O N&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . . . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O O O . O . .&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . B O K . . r&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>15. Qf2/e1/d1/c1/c2&nbsp; Nh7/f6/g4+</tt> <br>
+      <tt>16. Kf2-f3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nc8/a7/c6/e5+</tt>
+      <br>
+      <tt>17. Kf3-g3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h:g7</tt> <br>
+      <tt>18. Bd1:g4+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ne5:g4</tt> <br>
+      <tt>19. Kg3:g4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bg8-e6+</tt> </p>
+      <p><tt>&nbsp;r . p . . . . .&nbsp; 8</tt> <br>
+      <tt>&nbsp;p p . k . . p p&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . p . b O . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. b O . . . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . . . O . K N&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . . . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O Q O . . . .&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . O . O . . r&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>20. Kg4-g3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g:f6</tt> <br>
+      <tt>21. Qc2/e4/h7+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ra8/a7/b7/d7</tt> </p>
+      <p><tt>&nbsp;p . p . . . . .&nbsp; 8</tt> <br>
+      <tt>&nbsp;p k . r . . . Q&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . p . b p . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. b O . . . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . . . p . . N&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . . . . K .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O O O . . . .&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . O . O . . r&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>22. Qh7:e4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Be6-d5</tt> <br>
+      <tt>23. Qe4/c2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rd7-g7+</tt> <br>
+      <tt>24. Kg3-f2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rh1-f1+</tt> </p>
+      <p><tt>&nbsp;p . p . . . . .&nbsp; 8</tt> <br>
+      <tt>&nbsp;p k . . . . r .&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . p . . p . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. b O b . . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . . . O . . N&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . . . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;O O Q O . K . .&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . O . O r . .&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>25. Kf2-e3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rg7-g3+</tt> <br>
+      <tt>26. Ke3-d4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rf1-f4</tt> <br>
+      <tt>27. d2-d3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rf4:h4</tt> <br>
+      <tt>28. a2-a4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bb5/d3??</tt> <br>
+      <tt>&nbsp;</tt> <br>
+      <tt>(why? the position seems bad for white!)</tt> </p>
+      <p><tt>&nbsp;p . p . . . . .&nbsp; 8</tt> <br>
+      <tt>&nbsp;p k . . . . . .&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . p . . p . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. O O b . . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;O . . K O . . r&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . b . . r .&nbsp; 3</tt> <br>
+      <tt>&nbsp;. O Q . . . . .&nbsp; 2</tt> <br>
+      <tt>&nbsp;R . O . O . . .&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>29. Qc2/d3/e4/d5/c6+ Kb7-b8</tt> <br>
+      <tt>30. Ra1/a4/a7/a8+&nbsp;&nbsp;&nbsp; Be4/d5/c6/a8</tt> <br>
+      <tt>31. Qd5-d6+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kb8-b7</tt> <br>
+      <tt>32. Qd6-c7+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ba8/b7</tt> </p>
+      <p><tt>&nbsp;k . p . . . . .&nbsp; 8</tt> <br>
+      <tt>&nbsp;p b Q . . . . .&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . R . . p . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. O O . . . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;p . . K p . . r&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . O . . r .&nbsp; 3</tt> <br>
+      <tt>&nbsp;. O b . . . . .&nbsp; 2</tt> <br>
+      <tt>&nbsp;O . O . O . . .&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> </p>
+      <p><tt>33. Rc6/c7/c8+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bb7/c8</tt> <br>
+      <tt>34. R:c7+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Bc2/d3/e4/c6</tt> <br>
+      <tt>35. Qe4/c6+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ka8-b8</tt> </p>
+      <p><tt>(35... Be4/c6 is illegal because of the KO rule)</tt> </p>
+      <p><tt>36. Rc7:c8++</tt> </p>
+      <p><tt>1-0</tt> </p>
+      <p><tt>final position:</tt> </p>
+      <p><tt>&nbsp;. k R . . . . .&nbsp; 8</tt> <br>
+      <tt>&nbsp;p . . . . . . .&nbsp; 7</tt> <br>
+      <tt>&nbsp;. . Q . . p . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. O O . . . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;p . . K b . . r&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . p . . r .&nbsp; 3</tt> <br>
+      <tt>&nbsp;. O O . . . . .&nbsp; 2</tt> <br>
+      <tt>&nbsp;O . O . O . . .&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt> <br>
+      &nbsp;</p>
+    </dl>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+    <p><br>
+    &nbsp; </p>
+    <dl>
+      <tt><p>White: Joao Neto&nbsp;&nbsp; (Nutty Knights)</tt> <br>
+      <tt>Black: Ralph Betza (Remarkable Rookies)</tt> <br>
+      <tt>Result: 1-0</tt> <br>
+      <tt>Date:&nbsp;&nbsp; February 1998</tt> </p>
+      <p><tt>1.&nbsp;&nbsp; Rh1/h2/g1/g2/f1/f2/e2/d1/d2/c1/c2/b1/b2/a1/a2</tt> <br>
+      <tt>1... (WD)b8-b6</tt> <br>
+      <tt>2.&nbsp;&nbsp; (fbNF)h2-g4</tt> <br>
+      <tt>2... (RN)d8/e8/g7/g4/f2/h1/h7(h1=RN)/h8/f7/f8/d7/b6/</tt> <br>
+      <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /b2/b1/c1/a2/a7/a8/c7/c8/e7/g8</tt> <br>
+      <tt>3.&nbsp;&nbsp; (fbNF)g7-f6</tt> <br>
+      <tt>3... (HFD)c7:b6</tt> <br>
+      <tt>4.&nbsp;&nbsp; (fbNF)f6:g8</tt> <br>
+      <tt>4... (RN)h1:g1 ??</tt> <br>
+      <tt>5.&nbsp;&nbsp; (fhNrlbK)g2:g1</tt> <br>
+      <tt>5... (R4)a7/b7/b6/b2/b1/a1/a2(a1=RN)</tt> <br>
+      <tt>6.&nbsp;&nbsp; b:a2</tt> <br>
+      <tt>6... (RN)a1/a2/b2/b6/b7/d7/e7/f7/h8/g8</tt> <br>
+      <tt>7.&nbsp;&nbsp; (fhNrlbK)d2-c4</tt> <br>
+      <tt>7... (R4)h7:h8</tt> <br>
+      <tt>8.&nbsp;&nbsp; (frlRbK)c1/a1/a2/b2/c2/e2</tt> <br>
+      <tt>8... (RN)g8:g4</tt> <br>
+      <tt>9.&nbsp;&nbsp; (fhNrlbK)g1-f3</tt> <br>
+      <tt>9... (HFD)b6-e6</tt> <br>
+      <tt>10.&nbsp; (fbNF)b2-a4</tt> <br>
+      <tt>10...(HFD)e7-e4+</tt> </p>
+      <p><tt>&nbsp;&nbsp; Final Position:</tt> </p>
+      <p><tt>---------------</tt> <br>
+      <tt>R4 WD HFD RN K HFD WD R4</tt> <br>
+      <tt>---------------</tt> <br>
+      <tt>&nbsp;&nbsp; p . p k p p . r</tt> <br>
+      <tt>&nbsp;&nbsp; p n . n . p . .</tt> <br>
+      <tt>&nbsp;&nbsp; . . . . b . . .</tt> <br>
+      <tt>&nbsp;&nbsp; . . . . . . . .</tt> <br>
+      <tt>&nbsp;&nbsp; N . B . b . q .</tt> <br>
+      <tt>&nbsp;&nbsp; . . . . . B . .</tt> <br>
+      <tt>&nbsp;&nbsp; O . Q . R O . .</tt> <br>
+      <tt>&nbsp;&nbsp; O . O O K O . .</tt> <br>
+      <tt>---------------</tt> <br>
+      <tt>frlRbK fbNF fhNrlbK fhNfrlRK K fhNrlbK bfNF frlRbK</tt> <br>
+      <tt>---------------</tt> </p>
+      <p>Notes: <br>
+      Betza wrote: <br>
+      &gt;But then I would have had a nice swap defense. A swap attack can't <br>
+      &gt;capture anything, and it can't give double check, and it can't do <br>
+      &gt;anything offensively deadly except get a Pawn to the 7th or 8th rank. <br>
+      Neto wrote: <br>
+      you're right! Swapping must be improved to be useful on a chess variant... </p>
+      <p>One possible modification is that a move consists of: </p>
+      <p>&nbsp;&nbsp; a) a regular move, <br>
+      &nbsp;&nbsp; b) a 2 piece swap. </p>
+      <p>It's near marsellais chess, and reduce drastically the move possibilities. </p>
+      <p>&nbsp;&nbsp; Betza wrote: </p>
+      <p>&nbsp;&nbsp;&nbsp; a) a regular move, <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; must be the first part of the move and must get
+      you out of check, <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; therefore swapping is no longer such a powerful
+      defense. <br>
+      &nbsp;&nbsp;&nbsp; b) a 2 piece swap <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Qd1/e2&quot;? or &quot;Qd1/e2/f2&quot;? <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Not an unlimited swap because it would be even
+      &quot;heavier&quot;,&nbsp; I understand. </p>
+      <p>and then <a HREF="bswap.htm">balanced swap chess</a> has born...</p>
+    </dl>
+    <p>&nbsp; </p>
+    <a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+    <ol>
+      <p>&nbsp;</p>
+    </ol>
+    <p><a NAME="mateSol"></a><b>Mate problem solution</b> </p>
+    <p><tt>White queen swaps with the white bishop, then with the black pawn promoting it to a
+    knight, then with the black bishop and the black rook, mating Black. The notation would
+    be:</tt> </p>
+    <p><tt>1. 1 Qb6/b1/d3=N/c4/f7++</tt> <br>
+    &nbsp; </p>
+    <dl>
+      <tt><p>&nbsp;. . . r k . . .&nbsp; 8</tt> <br>
+      <tt>&nbsp;. . . . . Q . .&nbsp; 7</tt> <br>
+      <tt>&nbsp;. B . . . . . .&nbsp; 6</tt> <br>
+      <tt>&nbsp;. . . . . . . .&nbsp; 5</tt> <br>
+      <tt>&nbsp;. . r . . . . .&nbsp; 4</tt> <br>
+      <tt>&nbsp;. . . b . . . .&nbsp; 3</tt> <br>
+      <tt>&nbsp;. . . . . R . .&nbsp; 2</tt> <br>
+      <tt>&nbsp;. n . . . . . .&nbsp; 1</tt> </p>
+      <p><tt>&nbsp;a b c d e f g h</tt></p>
+    </dl>
+    <a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+<!--mstheme-->    </font><h3 align="center"><!--mstheme--><font face="times new roman, times" color="#000000"><font
+    SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a> | <a HREF="index.htm#MyCVs">my
+    variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a> |&nbsp; <a
+    HREF="index.htm#otherPlaces">other places</a></font> <!--mstheme--></font></h3>
+<!--mstheme-->    <font face="arial, helvetica"></dd>
+</dl>
+<!--mstheme--></font>
+</body>
+</html>

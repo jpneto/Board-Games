@@ -1,0 +1,179 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - PUX</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote mstheme>
+<h1 align="center"><font face="Arial Black"><strong>PUX</strong></font></h1>
+<p align="center"><strong><font size="3">Copyright (c) 2000 <a href="mailto:jpn@di.fc.ul.pt"> João Neto</a></font></strong></p>
+<p align="left"><font size="3" face="Arial">Pux is a two player strategy game played on a 8x8 board with the following setup:</font></p>
+    <center>
+      <table border="1" width="186" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,8,8,.xxxxxx./.xxxxxx./8/8/8/8/.wwwwww./.wwwwww.");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+    <br>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+        <li><font size="3" face="Arial"><b>Definitions</b></font>
+          <ul>
+            <li><font size="3" face="Arial">A <i>Piece </i>may
+                  be one stone or a promoted stone (two</font> <font size="3" face="Arial">stones
+              stacked together).</font></li>
+            <li><font size="3" face="Arial">&nbsp;The <i>Move
+                  Potential</i> (MP) of a Piece is the number of</font> <font size="3" face="Arial">adjacent
+                  friendly stones (orthogonal and diagonal) plus</font> <font size="3" face="Arial">its
+                  own stones.</font></li>
+          </ul>
+        </li>
+        <li><font size="3" face="Arial"><b>MOVING</b> - A Piece
+            moves up to MP cells on a straight line, on a</font> <font size="3" face="Arial">lateral
+            or forward direction (diagonal or orthogonal)</font> <font size="3" face="Arial">without
+            jumping any stones.</font>
+          <ul>
+            <li><font size="3" face="Arial">(a) A player
+                  cannot make two consecutive lateral moves.</font></li>
+            <li><font size="3" face="Arial">(b) A stone is
+                  promoted when it reaches last rank (the player</font> <font size="3" face="Arial">places
+                  another stone above it).</font><font size="3" face="Arial"> A promoted stone may move</font> <font size="3" face="Arial">backwards
+                  (incl. diagonals).</font></li>
+            <li><font size="3" face="Arial">(c) When moving, a
+                  Piece may transport its (up to 4) orthogonal</font> <font size="3" face="Arial">neighbors.
+                  However, the Piece must distribute evenly its MP</font> <font size="3" face="Arial">with
+                  all transported Pieces (remove any decimal part).</font></li>
+          </ul>
+        </li>
+        <li><font size="3" face="Arial"><b>CAPTURING</b> - To
+            capture, a Piece:</font>
+          <ul>
+            <li><font size="3" face="Arial">(a) Must have a
+                  greater MP than its target, and</font></li>
+            <li><font size="3" face="Arial">(b) Must not
+                  transport any other Piece.</font></li>
+          </ul>
+        </li>
+        <li><font size="3" face="Arial">The board, at any moment,
+            cannot have more than 12 stones</font> <font size="3" face="Arial">of
+            each color.</font></li>
+        <li><font size="3" face="Arial"><b>GOAL </b>- Wins the
+            player that captures all enemy stones.</font></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+            <p align="left">&nbsp;
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="186" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,8,8,.xxxxxx./.xxxx3/4xx../.w6/..ww4/8/4www./.wwwwww.");//--></script>
+      </td>
+      <td valign="top" width="414"><font face="Arial"><strong>Some
+        capture samples</strong></font><p><font face="Arial">Black can capture any one (but just
+        one!) of the 3 advanced White pieces. E.g., b7:b5, d7:b5, c7:c4, f6:d4</font>
+      </td>
+    </tr>
+</table>
+<br>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%"><font face="Arial"><strong>Some notes:</strong></font>
+      <ul>
+        <li><font face="Arial">A
+            promoted stone may move 2 squares by itself.</font></li>
+        <li><font face="Arial">Rule
+            (a) for moving prevents many drawish strategies, since both armies
+            must advance.</font></li>
+        <li><font face="Arial">Rule
+            (c) for moving says that if a Piece having MP points is going to
+            transport N pieces, the group can move up to MP/N squares (integer
+            division, i.e., divide then remove decimal part).</font></li>
+        <li><font face="Arial">Rule
+            (c) for moving does not forbid enemy Pieces transportation!</font></li>
+        <li><font face="Arial">Rule (b) for capturing states that there are no multiple captures or captures
+            with multiple stones.</font></li>
+        <li><font face="Arial">Stones
+            cannot promote if there are no friendly stones captured<font SIZE="2">.
+  </font>
+            </font></li>
+        <li><font face="Arial">About PUX notation:</font>
+          <ul>
+            <li><font face="Arial">[CAPTURE]
+                  piece position : captured piece position</font></li>
+            <li><font face="Arial">[MOVEMENT]
+                  piece position, transported pieces - next position. E.g.,
+                  b2,b1c2-c3. It means piece b2 transports b1 and c2 and moves
+                  to c3 (b1 goes to c2 and c2 goes to d3) The b2 stone has 3
+                  neighbors (including diagonals) which are b1, c1 and c2. That means
+                  its move potential is 4 (including itself). Since White wants
+                  to transport 2 neighbors, he must distribute the b2 move
+                  potential (which is 4) by itself and the other 2 transported
+                  stones. So, move potential which is 4 divided by 3 stones
+                  equals 1.3, then after removing the decimal part, we get 1, i.e.,
+                  the group may move 1 square. If b2 transports only one stone,
+                  then both of them could move up to 2 squares (4 MP / 2 stones
+                  = 2 squares). For e.g.. 1. b2,b1-b4</font></li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+<hr align="center">
+</blockquote>
+
+<p align="left"><i><font size="2"><b>Game Background</b>:</font> <font SIZE="2">Trabsact
+Sagme was the Earth's 1st serious ExoLudologist. She was</font> <font SIZE="2">born
+around Ulan Bator, in 2293. Since her infancy, she was very</font> <font SIZE="2">interested
+by all the knowledge created and gathered in the 20th</font> <font SIZE="2">and
+21st centuries about abstract board games, a subject almost</font> <font SIZE="2">forgotten
+on those exciting days. Alien civilizations were finally</font> <font SIZE="2">found
+across the big black sky, and Humanity had the 1st change</font> <font SIZE="2">to
+read Encyclopedia Galactica.</font> <font SIZE="2">After collecting the most
+important games on Earth, she decided</font> <font SIZE="2">that her life goal
+would be to study the games from some of those</font> </i><i><font SIZE="2">alien
+civilizations.</font></i> <i><font SIZE="2">She was one of the few people that
+had the right to travel and</font></i><i> <font SIZE="2">enter into some alien
+home worlds. It was no coincidence that</font> <font SIZE="2">the aliens that
+allow her to enter, was exactly the ones which</font> <font SIZE="2">had more
+respect about games, especially abstract board games.</font></i> <i><font SIZE="2">She
+visited the following civilizations:</font> </i></p>
+<ul>
+  <li><i><font SIZE="2"><b>Civ-3</b>: They use trilogic as a
+      foundation for all mathematical</font> <font SIZE="2">activities, i.e.,
+      instead of true/false logic, they use</font> <font SIZE="2">true/false/unknown.</font>
+      </i></li>
+  <li><i><font SIZE="2"><b>Konn'ex</b>: They see all objects and
+      concepts as connections of others,</font> <font SIZE="2">and their games
+      reflect these way of seeing things.</font> </i></li>
+  <li><i><font SIZE="2"><b>Zet</b>: Everything is a part of
+      something. Their games, usually create complex pieces from atomic ones.</font></i>
+  </li>
+</ul>
+<p align="left"><i><font SIZE="2">She
+found many resemblances with Human games, especially in connection</font></i><i>
+<font SIZE="2">and pattern games, namely, Hex and Gomoku were found in almost
+all</font> <font SIZE="2">home worlds (however in different board sizes and move
+equalizers).</font> </i><i><font SIZE="2">Curiously, no chess related game was
+ever found! This game came from the Zet culture, and was renamed by T.Sagme in
+2379. Perhaps her most famous discover was Desdemona, the Othello variant from
+Civ-3.</font></i>
+</p>
+
+</body>
+</html>

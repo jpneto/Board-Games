@@ -1,0 +1,225 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Towers - GOBBLER</title>
+<SCRIPT LANGUAGE="JavaScript" src="tower2diag/tower2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<!--mstheme--><font face="Times New Roman, Times">
+
+<blockquote>
+<!--mstheme--></font>
+<h1 align="center"><!--mstheme--><font face="Times New Roman, Times" color="#333333"><strong><font face="Arial Black">GOBBLER</font></strong><!--mstheme--></font></h1>
+<!--mstheme--><font face="Times New Roman, Times">
+<p align="center"><font size="3"><strong>Copyright (c) 2002 <a href="mailto:luke@ai.mit.edu"> Luke Weinsman</a></strong></font></p>
+<p align="left"><font size="3" face="Arial">This game is played on the
+following board:</font></p>
+    <center>
+<!--mstheme--></font>
+      <table border="1" width="320" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" align="center">
+<!--mstheme--><font face="Times New Roman, Times">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","8,8,66666666/66666666/66666666/6661.666/666.1666/66666666/66666666/66666666");
+</script>
+<!--mstheme--></font>
+          </td>
+        </tr>
+      </table>
+<!--mstheme--><font face="Times New Roman, Times">
+    </center>
+&nbsp;<!--mstheme--></font>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"><strong>LITTLE</strong> - </font><font size="3" face="Arial">The
+          Little player moves three of his stones one cell in any (orthogonal
+          and diagonal) direction.</font>
+            <!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">Littles can be stacked in a single
+              cell (there's no limit)</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">A Little cannot move more than once
+              in a single turn.</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">The Little Player does not need to
+              use all his moves.</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">A Little cannot move to a cell
+              occupied by a Gobbler.</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">The Little player starts moving.</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"><b>GOBBLER</b> - The Gobbler player
+          moves one of his pieces either one or two chess Knight move
+          jumps&nbsp; (a knight move is a jump two spaces in one direction, then
+          one space over, making the shape of an L).&nbsp;</font>
+            <!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">The Gobbler eats any Littles it
+              lands on. It <u>must</u> consume two or more Littles in its two
+              hops, and will stop hopping as soon as it consumes two or more
+              Littles (so if it lands on two Littles in its first hop, it eats
+              them and then immediately stops moving).&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">A move than consumes less than two
+              Littles is invalid</font><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"><u>Scattering</u> - When a Gobblers
+              stops moving, all adjacent Littles run directly away from the
+              Gobbler one cell.&nbsp;</font>
+                  <!--mstheme--></font>
+                  <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">If a Little is up against the
+                  edge of the board but on the diagonal with the Gobbler it
+                  slides down the edge one space.&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">If it is stuck in the corner, it
+                  is pinned and eaten.&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">If it is directly adjacent to
+                  the Gobbler and on the edge of the board, it is pinned and
+                  eaten.&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">If a Little would run into the
+                  jaws of another Gobbler, it is eaten.&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">Pinned and eaten Littles do not
+                  count towards the two Littles eaten per move requirement for a
+                  Gobbler.</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                  <!--msthemelist--></table>
+                  <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"><u>Starving</u> - If a Gobbler does
+              not have a valid move, it starves and is removed from the
+              board.&nbsp;</font>
+                  <!--mstheme--></font>
+                  <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">Even if the Gobbler could reach
+                  one Little, but not two, the Gobbler starves.&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial">A Gobbler starves even if the
+                  other Gobbler is still able to move.</font><!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                  <!--msthemelist--></table>
+                  <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font size="3" face="Arial"><strong>GOAL</strong> - Gobblers win if
+          they eat 40 Littles, otherwise if both
+          Gobblers starve before that, the Littles win.</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+    </td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times">
+<br>
+<!--mstheme--></font>
+<table border="1" width="750" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="322" bordercolor="#000000">
+<!--mstheme--><font face="Times New Roman, Times">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","5,5,66b66/666.a/6161./66666/66666");
+</script>
+<br>
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","5,5,77.76/...../.1.1./...66/77676");
+</script>
+<!--mstheme--></font>
+      </td>
+      <td valign="top" width="428"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial"><strong>An scattering
+        example</strong></font>
+        <p><font size="3" face="Arial">The Gobbler jump from cell [1] to cell
+        [2] then to b3 (he must have eaten two or more Littles in the jumping's).</font>
+        <p><font size="3" face="Arial">In the scattering, one Little was pinned and eaten
+        (at cell a3), and one was chased into the maw of the other Gobbler.</font>
+        <!--mstheme--></font>
+      </td>
+    </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times">
+<p><font size="3" face="Arial">Some words from the author: <i>One way for the
+Littles to survive is to sacrifice Littles so the Gobblers get lured to one side
+of the board where they hopefully starve. Traps and trickery on the part of the
+Littles is the heart of the game. The Gobblers, in turn, must keep an eye to the
+long term and avoid being tempted into short-term gain. Also, there is a cool
+checker pattern for the corners that is often safe for Littles--see if you can
+discover it!</i></font></p>
+<p><font size="3" face="Arial"><i><u>Ranking System</u>: </i></font><font size="3" face="Arial"><i>Differences
+between players in exposure to the game and natural ability is easily corrected
+by the following ranking system--based on the beauty of handicap stones and
+ranking in Go--to create an even game. A player has two ranks, Marauding and
+Scatter, representing ability with Gobblers and Littles respectively. A rank of
+0 is a truly novice player. Higher ranks indicate greater ability. With each
+game played, the winner gains a rank of the appropriate type and the loser loses
+a rank. If this would put a rank below 0, leave the rank at 0. The ranks affect
+the number of Littles the Gobbler needs to eat in order to win. Add the
+Gobbler's Marauding and subtract the Little's Scatter to the Gobbler's base
+objective of eating more than forty Littles to determine the threshold for the
+Gobbler's victory. So, a 8M/10S player playing the Gobblers against a 13M/12S
+player would need to eat more than 40 + 8 - 12 = 36 Littles to win. In this
+example, if the Littles won, the second player would go up a rank in Scatter and
+the first player would lose a rank in Marauding. </i></font></p>
+</blockquote>
+<!--msthemeseparator--><p align="center"><img src="aricerul.gif"></p>
+<!--mstheme--></font>
+</body>
+</html>

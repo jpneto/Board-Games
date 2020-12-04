@@ -1,0 +1,110 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Microsoft Theme" content="ricepapr 011">
+<title>Games of Soldiers - JADE</title>
+<script LANGUAGE="JavaScript" src="hex2diag/hex2diag.js"></script>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote mstheme>
+  <h1 align="center"><font face="Arial Black">JADE</font></h1>
+  <p align="center"><strong><font size="3">Copyright (c) 2001 Mark Thompson</font></strong></p>
+    <p align="left"><font size="3" face="Arial">Jade is played on an empty
+    hexagonal grid in the shape of a parallelogram with size MxN (both odd
+    numbers and not equal). The size currently considered best is 11x9, but
+    other sizes and shapes could be used. Since my diagram tool cannot draw this
+    type of board, I present an example with size 9x9 (use your imagination to
+    add two extra rows at one edge for a real game).</font></p>
+    <center>
+    <table border="2" width="280" bgcolor="#D5BD83" bordercolorlight="#333366" bordercolordark="#000000">
+      <tr>
+        <td width="100%" background="back-board.jpg"><script LANGUAGE="JavaScript"><!--
+hexgv2diag("1,9,1,./../.../..../...../....../......./......../........./......../......./....../...../..../.../../.");
+        //--></script></td>
+      </tr>
+    </table>
+    </center>
+&nbsp;
+<table border="0" width="91%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font size="3"
+        face="Arial"><b>TURN</b> - On each turn, each player drops a white or
+          black stone on an empty cell.</font>
+            <ul>
+				<li><font size="3" face="Arial">One player is called Cross and the
+              other is called Parallel. Cross starts the game.</font></li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><b>GOAL
+            </b>- Each player has a different goal:</font>
+            <ul>
+				<li><font size="3" face="Arial">Cross
+                  wins if a
+              group of either color is formed that connects all four edges</font></li>
+				<li><font size="3" face="Arial">Parallel wins if either pair of
+              opposite edges is joined by &quot;parallel&quot; chains of both
+              colors.</font></li>
+		</ul>
+		</li>
+		</ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+  <table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="left" width="280" bordercolor="#000000" bgcolor="#D5BD83" background="back-board.jpg"><script LANGUAGE="JavaScript"><!--
+hexgv2diag("1,9,1,./../.../.Ww./.xa.w/.xwx../.xwx.x./.xw..w../....xxw../.xwwxw../...x.../.w..x./..w../..../.../../.");
+//--></script>
+      </td>
+      <td valign="top" width="320"><font face="Arial"><strong>An example</strong></font>
+        <p><font size="3" face="Arial">Cross just played the marked white stone
+        and with this move, he wins the match.&nbsp;</font><p><font size="3" face="Arial"> If
+        Parallel drops a white stone at
+        cell [1], Cross will win using the white structure. If Parallel drops a
+        black stone at
+        cell [1], Cross will win using the black structure.</font></td>
+    </tr>
+  </table>
+    <p align="left"><font size="3" face="Arial">Jade can be played on Richard's
+    PbM <a href="http://www.gamerz.net/pbmserv/">server</a>. Some words from the
+    author: <i>Draws are impossible. Proof: Note that draws are impossible in
+    conventional <a href="Hex.htm">Hex</a>, because when a board is filled either Black will connect
+    the two Black edges or White the two White edges. So I claim that when a
+    board is filled, either Parallel or Cross will have won a game of Jade. For
+    if you color the edges as a Hex game, either Black or White will have won
+    that Hex game; and if you then recolor the edges in the opposite colors,
+    again either Black or White will have won this second Hex game. If the two
+    Hex games are won by the same player, then Parallel has won the Jade game;
+    if by different players, then Cross has won the Jade game. Q.E.D.</i></font></p>
+<!--    <p align="left"><font size="3" face="Arial"><i>Parallel seems to have a
+    disadvantage if he moves first. The current rule is that Cross should go
+    first, since otherwise (since Cross aims at a single powerful group) he gets
+    an advantage by copying the color Parallel uses for the first stone. On an
+    even-order board, Parallel has a winning strategy if Cross goes first: he
+    plays the symmetrically opposite cell, using the opposite color of stone. No
+    winning group for Cross can be formed then.</i></font></p>
+  <p align="left"><font size="3" face="Arial">However its simplicity, there is a
+  need for a game fix, since: <i>Cross moving to the center (or any cell on the
+  short diagonal), but after that it's quite simple: play symmetrically, the
+  same color stone as Parallel, mirror-reflected across the short diagonal. If
+  Parallel makes a move on the short diagonal, reply with any move to the short
+  diagonal (either color will do). This wins for Cross, because it's impossible
+  to have two parallel groups in opposite colors connecting the same pair of
+  opposite sides on a board that is mirror-symmetric about the short diagonal. </i>Mark
+  <a href="http://groups.yahoo.com/group/abstractgames/message/430">presented</a>
+  some ways to prevent this situation. Probably the best way is to play at a
+  board with two extra rows, making it more difficult for Cross thus, hopefully,
+  balancing the game.</font></p>-->
+</blockquote>
+<hr>
+</body>
+</html>

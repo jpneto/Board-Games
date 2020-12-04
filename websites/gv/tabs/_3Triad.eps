@@ -1,0 +1,551 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne
+%%Title: fig-2-5
+%%CreationDate: 3/1/99
+%%BoundingBox: 0 0 600 355
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/Root3 1.732050808 def
+
+/Chars 
+{
+	[(A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)]
+} def
+
+/Digits
+{
+	[( 0)( 1)( 2)( 3)( 4)( 5)( 6)( 7)( 8)( 9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)(23)(24)(25)(26)(27)(28)(29)(30)(31)(32)(33)(34)(35)(36)(37)(38)(39)(40)(41)(42)(43)(44)(45)(46)(47)(48)(49)(50)]
+} def
+
+%--------------- Variables ------------------
+
+/Dim 5 def
+
+/PageWidth 600 def
+/PageHeight 347 def
+
+/MidX 300 def
+/MidY 130 def
+
+/OriginX 0 def
+/OriginY 160 def
+
+/HexRadius 32 def
+/HexDiameter { Hexradius 2 mul } def
+
+/CircleRadius 11 def
+/CircleDiameter { CircleRadius 2 mul } def
+
+/GoalRadius 11.739 def
+
+/CircleLineWidth 1.5 def
+/HexLineWidth 0.046 def
+/RhombusEdgeWidth 0.696 def
+/TextHeight 15.652 def
+/TextWidth 7.043 def
+/SubTextHeight 7.435 def
+/AxisTextHeight 11.739 def
+
+
+% ----------- Functions -------------
+
+/HexX
+{   % call: i j HexX
+    /j exch def
+    /i exch def
+    OriginX i j add HexRadius mul 1.5 mul add
+} def
+
+/HexY
+{   % call: i j HexY
+    /j exch def
+    /i exch def
+    OriginY j i sub HexRadius mul Root3 mul 2 div sub
+} def
+
+/White
+{   % call: i j White
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    0 setlinewidth
+    1 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+
+    % Draw outline
+    0 setgray
+    CircleLineWidth setlinewidth
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    stroke
+} def
+
+/Grey
+{   % call: i j Grey
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    0 setlinewidth
+    .75 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+
+    % Draw outline
+    0 setgray
+    CircleLineWidth setlinewidth
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    stroke
+} def
+
+/Black
+{   % call: i j Black
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    CircleLineWidth setlinewidth
+    0 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+} def
+
+/Hexagon
+{   % call: i j Hexagon
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    0 setlinewidth
+    1 setgray
+    fill
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    .25 setlinewidth
+    0 setgray
+    stroke
+} def
+
+/HexagonFill
+{   % call: i j color Hexagon
+    /c exch def
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    0 setlinewidth
+    c setgray
+    fill
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    .25 setlinewidth
+    0 setgray
+    stroke
+} def
+
+/DrawThickEdge
+{   % call: i j e w DrawThickEdge
+    /e exch def
+    /j exch def
+    /i exch def
+
+    i j HexX dup
+    /x0 exch def
+    i j HexY dup
+    /y0 exch def
+
+    .666 setlinewidth
+    1 setlinecap
+    0 setgray
+
+    newpath
+    e 1 and 1 eq
+    {
+        % edge 0
+        x0 HexRadius 2 div sub
+        y0 HexRadius Root3 mul 2 div add
+        moveto
+
+        HexRadius 0 rlineto
+    } if
+    e 2 and 2 eq
+    {
+        % edge 1
+        x0 HexRadius 2 div add
+        y0 HexRadius Root3 mul 2 div add
+        moveto
+
+        HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    } if
+    e 4 and 4 eq
+    {
+        % edge 2
+        x0 HexRadius add     y0   moveto
+        HexRadius 2 div neg 		HexRadius Root3 mul 2 div neg rlineto
+    } if
+    e 8 and 8 eq
+    {
+        % edge 3
+        x0 HexRadius 2 div add
+        y0 HexRadius Root3 mul 2 div sub
+        moveto
+
+        HexRadius neg 0 rlineto
+    } if
+    e 16 and 16 eq
+    {
+        % edge 4
+        x0 HexRadius 2 div sub
+        y0 HexRadius Root3 mul 2 div sub
+        moveto
+
+        HexRadius 2 div neg 		HexRadius Root3 mul 2 div rlineto
+    } if
+    e 32 and 32 eq
+    {
+        % edge 5
+        x0 HexRadius sub     y0   moveto
+        HexRadius 2 div 		HexRadius Root3 mul 2 div rlineto
+    } if
+    stroke
+} def
+
+/DrawGoals
+{
+    /Top { DimX 1 sub 0 HexY } def
+    /Left { 0 0 HexX } def
+    /Bottom { 0 DimY 1 sub HexY } def
+    /Right { DimX 1 sub DimY 1 sub HexX } def
+
+    CircleLineWidth setlinewidth
+    0 setgray
+
+    newpath Left Top GoalRadius 0 360 arc fill
+    newpath Left Bottom GoalRadius 0 360 arc stroke
+    newpath Right Top GoalRadius 0 360 arc stroke
+    newpath Right Bottom GoalRadius 0 360 arc fill
+} def
+
+/LabelAxes
+{
+    /Times-Roman findfont AxisTextHeight scalefont setfont
+    0 setgray
+
+    % draw horizontal axis labels along left side
+    0 1 DimX 1 sub
+    {
+        /i exch def
+        newpath
+        i -1 HexX HexDiameter 0.15 mul add
+        i -1 HexY HexDiameter 0.05 mul sub
+        moveto  % Lower left corner of text
+        Chars i get
+        show
+    } for
+
+    % draw vertical axis labels along top
+    0 1 DimY 1 sub
+    {
+        /j exch def
+        newpath
+        -1 j HexX HexDiameter 0.075 mul add
+        -1 j HexY HexDiameter 0.1 mul sub
+        moveto  % Lower left corner of text
+        Digits j 1 add get
+        show
+    } for
+} def
+
+/LabelNumber
+{   % call: i j (str) strlen shade LabelNumber
+    /shade exch def
+    /strlen exch def
+    /str exch def
+    /j exch def
+    /i exch def
+
+    /Times-BoldItalic findfont TextHeight scalefont setfont
+    newpath
+    i j HexX TextWidth strlen mul 0.5 mul sub TextWidth 0.1 mul sub
+    i j HexY TextHeight 0.31 mul sub
+    moveto
+    str
+    shade setgray
+    show
+} def
+
+/LabelString
+{   % call: i j (str) strlen shade bold LabelString
+    /bold exch def
+    /shade exch def
+    /strlen exch def
+    /str exch def
+    /j exch def
+    /i exch def
+
+    bold
+    {/Times-BoldItalic findfont TextHeight scalefont setfont}
+    {/Times-Italic findfont TextHeight scalefont setfont}
+    ifelse
+
+    newpath
+    i j HexX TextWidth strlen mul 0.5 mul sub
+    i j HexY TextHeight 0.225 mul sub
+    moveto
+    str
+    shade setgray
+    show
+} def
+
+/LabelSub
+{   % call: i j (str) substr shade bold LabelSub
+    /bold exch def
+    /shade exch def
+    /substr exch def
+    /str exch def
+    /j exch def
+    /i exch def
+
+    % load font and draw character
+    bold
+    {/Times-BoldItalic findfont TextHeight scalefont setfont}
+    {/Times-Italic findfont TextHeight scalefont setfont}
+    ifelse
+
+    shade setgray
+    newpath
+    i j HexX TextWidth 0.6 mul sub
+    i j HexY TextHeight 0.225 mul sub
+    moveto
+    str
+    show
+
+    % load font and draw character
+    bold
+    {/Times-BoldItalic findfont SubTextHeight scalefont setfont}
+    {/Times-Italic findfont SubTextHeight scalefont setfont}
+    ifelse
+
+    newpath
+    i j HexX TextWidth 0.45 mul add
+    i j HexY TextHeight 0.325 mul sub
+    moveto
+    substr
+    show
+} def
+
+/DrawRhombus
+{
+    % draw the grid
+    0 1 DimY 1 sub
+    {
+        /j exch def
+        0 1 DimX 1 sub
+        {
+            /i exch def
+            i j Hexagon
+        } for
+    } for
+
+    % draw horizontal edges
+    0 1 DimX 1 sub
+    {
+        /i exch def
+        i 0 RhombusEdge
+        i DimY 1 sub RhombusEdge
+    } for
+
+    % draw vertical edges
+    0 1 DimY 1 sub
+    {
+        /j exch def
+        0 j RhombusEdge
+        DimX 1 sub j RhombusEdge
+    } for
+
+    LabelAxes
+    DrawGoals
+} def
+
+/RhombusEdge
+{
+    % function call: i j RhombusEdge
+    /j exch def
+    /i exch def
+
+    newpath
+    RhombusEdgeWidth setlinewidth
+    0 setgray
+
+    i 0 eq
+    {
+        % start at tile's left vertex, go ccw
+    	   i j HexX HexRadius sub 	i j HexY moveto
+    	   HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    	   HexRadius  			0 rlineto
+    	   stroke
+    } if
+
+    j 0 eq
+    {
+    	   % start at tile's left vertex, go cw
+    	   i j HexX HexRadius sub 	i j HexY moveto
+    	   HexRadius 2 div 		HexRadius Root3 mul 2 div rlineto
+    	   HexRadius  			0 rlineto
+    	   stroke
+    } if
+
+    i DimX 1 sub eq
+    {
+    	   % start at tile's right vertex, go ccw
+    	   i j HexX HexRadius add 	i j HexY moveto
+    	   HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    	   HexRadius neg		0 rlineto
+    	   stroke
+    } if
+
+    j DimY 1 sub eq
+    {
+    	   % start at tile's right vertex, go cw
+    	   i j HexX HexRadius add 	i j HexY moveto
+    	   HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    	   HexRadius neg		0 rlineto
+    	   stroke
+    } if
+} def
+
+%-------------- Program --------------
+
+-175 175 translate
+
+6 0 1 HexagonFill
+7 0 0 HexagonFill
+8 0 0.5 HexagonFill
+9 0 1 HexagonFill
+10 0 0 HexagonFill
+
+5 1 0 HexagonFill
+6 1 0.5 HexagonFill
+7 1 1 HexagonFill
+8 1 0 HexagonFill
+9 1 0.5 HexagonFill
+10 1 1 HexagonFill
+
+4 2 0.5 HexagonFill
+5 2 1 HexagonFill
+6 2 0 HexagonFill
+7 2 0.5 HexagonFill
+8 2 1 HexagonFill
+9 2 0 HexagonFill
+10 2 0.5 HexagonFill
+
+3 3 1 HexagonFill
+4 3 0 HexagonFill
+5 3 0.5 HexagonFill
+6 3 1 HexagonFill
+7 3 0 HexagonFill
+8 3 0.5 HexagonFill
+9 3 1 HexagonFill
+10 3 0 HexagonFill
+
+2 4 0 HexagonFill
+3 4 0.5 HexagonFill
+4 4 1 HexagonFill
+5 4 0 HexagonFill
+6 4 0.5 HexagonFill
+7 4 1 HexagonFill
+8 4 0 HexagonFill
+9 4 0.5 HexagonFill
+10 4 1 HexagonFill
+
+2 5 1 HexagonFill
+3 5 0 HexagonFill
+4 5 0.5 HexagonFill
+5 5 1 HexagonFill
+6 5 0 HexagonFill
+7 5 0.5 HexagonFill
+8 5 1 HexagonFill
+9 5 0 HexagonFill
+
+2 6 0.5 HexagonFill
+3 6 1 HexagonFill
+4 6 0 HexagonFill
+5 6 0.5 HexagonFill
+6 6 1 HexagonFill
+7 6 0 HexagonFill
+8 6 0.5 HexagonFill
+
+2 7 0 HexagonFill
+3 7 0.5 HexagonFill
+4 7 1 HexagonFill
+5 7 0 HexagonFill
+6 7 0.5 HexagonFill
+7 7 1 HexagonFill
+
+2 8 1 HexagonFill
+3 8 0 HexagonFill
+4 8 0.5 HexagonFill
+5 8 1 HexagonFill
+6 8 0 HexagonFill
+
+%------------ Trailer --------------
+
+showpage

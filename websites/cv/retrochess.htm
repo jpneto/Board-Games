@@ -1,0 +1,515 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Bookmarks for Joao Pedro Neto</title>
+<!-- This is an automatically generated file.
+
+
+It will be read and overwritten.
+
+
+Do Not Edit! -->
+<meta name="Microsoft Theme" content="bars 011">
+</head>
+
+<body background="barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633"
+vlink="#999933" alink="#993300">
+<!--mstheme--><font face="arial, helvetica">
+
+<dl>
+<!--mstheme-->  </font><h3 FOLDED ADD_DATE="873997532" align="center"><!--mstheme--><font face="times new roman, times"
+  color="#000000"><a NAME="top"></a><font SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a>
+  | <a HREF="index.htm#MyCVs">my variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a>
+  |&nbsp; <a HREF="index.htm#otherPlaces">other places</a></font><!--mstheme--></font></h3>
+<!--mstheme-->  <font face="arial, helvetica"><!--mstheme--></font><h3 align="center"><!--mstheme--><font
+  face="times new roman, times" color="#000000"><font SIZE="+2">Retrochess - A chess variant
+  challenge</font><!--mstheme--></font></h3>
+<!--mstheme-->  <font face="arial, helvetica"><p>You can make a chess variant (CV) by changing the FIDE
+  rules in one or more ways, like the shape of the board, the movement of the pieces or the
+  number of players. What we (Joao Neto and Ralph Betza) propose here is to make a game
+  where the change happens in an unexpected point, the arrow of time! </p>
+  <p>The idea of retrochess would be to make a CV where you start with an empty board (an
+  impossible FIDE position) or with just both kings (a FIDE draw) and start playing
+  backwards. That is, the possible retraction moves of retrochess would be untakes, unmoves,
+  uncastles and so on... (if you don't want to read the discussion, check the final rules
+  for Progressive <a href="#ProgRules">RetroChess</a>)</p>
+  <p>In other words, you would play a game where every move was a retraction of a previous
+  legal move, using the principle of retroanalysis. Until now, retroanalysis has been used
+  in problems, but never to try to play a game! </p>
+  <p>The basic rules of Retrochess are: </p>
+  <ol>
+    <li>Every position in the game must be a legal chess position that could be reached by a
+      series of legal moves starting from the initial position of FIDE Chess. An exception is
+      made for the first move, when the board is empty and the players must place their Kings.</li>
+    <li>A move is made by retracting a move: you must look at the current position and imagine
+      the previous position and the move that was made to create the current position. The move,
+      the current position, and the previous position must all be legal.</li>
+    <li>You retract the move you have chosen and now it is the other player's turn to unplay a
+      move.</li>
+  </ol>
+  <p>Here are a few examples of situations that may arise: </p>
+  <p>a) legal back moves </p>
+  <p><tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . k . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . Q . . . . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . k . . . . . .</tt>
+  <br>
+  <tt>. . . . . K . .&nbsp;&nbsp;&nbsp;&nbsp; =&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . .
+  K . .</tt> <br>
+  <tt>. . . . . . . .&nbsp;&nbsp; Kb5:Qc6&nbsp;&nbsp; . . . . . . . .</tt> <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  </p>
+  <p>so in this position, black forces white to make some move with the queen </p>
+  <p>b) illegal back moves </p>
+  <p><tt>. . . . . . q
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . q .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . . . . k . .&nbsp;&nbsp;&nbsp;&nbsp; =&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . .
+  k . .</tt> <br>
+  <tt>. . . . . . . .&nbsp;&nbsp; Qg3-g1&nbsp;&nbsp;&nbsp; . . . . . . Q .</tt> <br>
+  <tt>. . . . . K .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . K . .</tt>
+  <br>
+  <tt>. . . . . . Q
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  </p>
+  <p>white cannot unmove his queen to g3, because it creates a illegal FIDE position (black
+  is in check, but it is White's move). </p>
+  <p>Notice that when Black is choosing an unmove, the current position is &quot;White to
+  play&quot;, and vice versa! </p>
+  <p>c) impossible positions </p>
+  <p><tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . b . . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  <br>
+  <tt>. . . . . k . .&nbsp;&nbsp;&nbsp;&nbsp; =&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . .
+  k . .</tt> <br>
+  <tt>b . . . . . . .&nbsp;&nbsp; Be7:a3&nbsp;&nbsp;&nbsp; O . . . . . . .</tt> <br>
+  <tt>O O . . . K .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O O . . . K . .</tt>
+  <br>
+  <tt>. . . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . . . .</tt>
+  </p>
+  <p>there could not be a pawn in a3 in this position <br>
+  &nbsp; <br>
+  There are some ideas that we have (but feel free to not use them) &nbsp; </p>
+<!--mstheme-->  </font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->    <tr>
+<!--msthemelist-->      <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+      hspace="15"></td>
+      <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">A player who has no legal
+      retraction has lost the game.<!--mstheme--></font><!--msthemelist--></td>
+    </tr>
+<!--msthemelist-->    <tr>
+<!--msthemelist-->      <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+      hspace="15"></td>
+      <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">A player reaching the initial
+      FIDE position of his army wins.<!--mstheme--></font><!--msthemelist--></td>
+    </tr>
+<!--msthemelist-->    <tr>
+<!--msthemelist-->      <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+      hspace="15"></td>
+      <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Until all the pieces are on
+      the board, every unmove must, if possible, be the retraction of a capture. Otherwise, it
+      would be a very loooong game! (If you don't put any enemy pieces back onto the board, the
+      other player can't win by getting back to the initial position.) This&nbsp; rule is
+      probably necessary.<!--mstheme--></font><!--msthemelist--></td>
+    </tr>
+<!--msthemelist-->    <tr>
+<!--msthemelist-->      <td valign="baseline" width="42"><img src="barbul2e.gif" width="12" height="12"
+      hspace="15"></td>
+      <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">A player who makes a move that
+      reaches an impossible position loses; but making an incorrect claim of &quot;impossible
+      position&quot; also loses! (Once in a while, you might be able to create a clever
+      retroanalysis problem on the board.)<!--mstheme--></font><!--msthemelist--></td>
+    </tr>
+<!--msthemelist-->  </table>
+<!--mstheme-->  <font face="arial, helvetica"><p>We each had this idea independently when talking to other
+  people, but we could not manage to find the perfect set of rules to make a good game out
+  of it. Perhaps you can! </p>
+  <a HREF="#top"><p align="right">back to top</a></p>
+<!--msthemeseparator-->  <p align="center"><img src="barrulee.gif"></p>
+  <p>After the announce in Hans Bodlaender pages, we get some comments: <br>
+  &nbsp; </p>
+  <dd><i>I saw your writeup of Retrochess on Hans's CV web site.&nbsp; I was intrigued because
+    I had been thinking of the same idea myself.&nbsp; I would be interested in playing Retro
+    by e-mail, once a set of cohesive rules is established. In the meantime, here are some
+    random thoughts I had about the rules.&nbsp; Let me know what you think!</i></dd>
+  <dd align="right"><i>- Mike Smolowitz (penguin2@ma.ultranet.com)</i></dd>
+  <p>[Mike]You could say that you can't win until your opponent has all of his/her pieces on
+  the board.&nbsp; But that probably wouldn't work so well.&nbsp; Doing all the untakes at
+  the beginning would make for a very unlikely bloodbath, if you looked at the game going
+  forwards; but at least it would be legal. </p>
+  <p>[Ralph] Right, so maybe if you had to make one uncapture every 2 moves, or something
+  similar? </p>
+  <p>[Joao] I like it! Perhaps that should be agreed by the players, and the rules could
+  give a default value. That value could even be used as a compensation in stronger vs
+  weaker player games (not usual in chess, but typical in go) </p>
+  <p>[Mike] Sure, why not.&nbsp; If it were more than every 3 moves, for instance, then the
+  game would be very long - at least 60 moves each (15 uncaptures x 4 moves per
+  uncapture).&nbsp; A cycle of 2 or 3 should be enough.&nbsp; And doing all the uncaptures
+  at the beginning of the game might be interesting too. </p>
+  <p>[...] I have also thought about retro-strategy.&nbsp; I would tend to do my untakes in
+  my back rows, so that the new enemy pieces have a long way to travel home (especially the
+  pawns).&nbsp; I might untake many pawns in the a (or h) column, so that my opponent would
+  be forced to bring the pawns home by a series of untakes to get them in different
+  columns.&nbsp; The king would be a powerful piece in Retro:&nbsp; you can walk into check,
+  and force your opponent to undo the check.&nbsp; Done properly, you could advance your
+  king toward his home square while forcing your opponent to waste moves undoing checks. </p>
+  <p>One other bit of strategy I thought of might have to be prohibited by a special
+  rule.&nbsp; Under the rules mentioned so far, it's OK to leave a piece on an opponent's
+  home square, preventing him/her from reaching the complete initial position.&nbsp; It's
+  not like the opponent can take the piece that's in the way. This is legal in backgammon,
+  but the difference is that it's possible for the opponent to hit a single blot.&nbsp; How
+  would we prevent this approach?&nbsp; We can't ban pieces from the 7th and 8th rows.&nbsp;
+  What about a variation of check: if a piece can reach its initial square, and an enemy
+  piece is on it, that enemy piece must move right away.&nbsp; That's off the top of my head
+  as I write this; I don't know what the ramifications would be. We need some kind of rule
+  to prevent both sides lounging around in their 7th and 8th ranks, just as we need a
+  mandatory untaking rule. </p>
+  <p>Other oddities:&nbsp; after uncastling, the king and the rook are frozen!&nbsp; You
+  can't move them, because that would invalidate the castle that's already happened.&nbsp;
+  The castling restrictions regarding check are still the same. </p>
+  <p>[Ralph] Since you demonstrate that uncastling may be undesirable, I am tempted to make
+  it forced. </p>
+  <p>[Mike] How about &quot;un passant&quot;?&nbsp; For instance, a black pawn moves from a3
+  to b4, leaving a white pawn at a4.&nbsp; This forces white to immediately move the new
+  pawn from a4 to a2! </p>
+  <p>Other obligations might arise.&nbsp; If white moves pawns back to b2 and d2, and there
+  is a dark-square white bishop already on the board, then it can't reach c1.&nbsp; So it
+  must be un-underpromoted (underdemoted?), or else black has to untake the bishop on
+  c1.&nbsp; And black might choose not to cooperate. </p>
+  <p>[Ralph] Wow! That's a three-exclamation-point winning tactic. Black must cooperate
+  because of the requirement to make a legal uncapture, and must do so without delay or else
+  his piece from c1 might have a long journey home. However, is it a winning tactic? The
+  promoted Bishop must become a Pawn on the 7th rank, so White also has some disadvantage,
+  which might well be larger. If nothing else, this is a way to make a position more
+  complicated and difficult. If you have several of these situations and some tripled Pawns,
+  finding a legal unmove could be very hard; and deciding whether your opponent's unmove was
+  legal could be equally hard. </p>
+  <p>[Joao] About unpromotion: should it be a good strategy to untake 10 knights? or 10
+  bishops? </p>
+  <p>[Mike] Yes and no, IMO.&nbsp; It would force your opponent to unpromote all the extra <br>
+  pieces, but he/she could easily retaliate by doing the same to you.&nbsp; So if your
+  opponent uses this approach as much as you do, then all it does is slow down the game
+  without giving either side an advantage.&nbsp; Maybe we should only allow uncaptures that
+  don't create extra pieces (or two bishops on the same color square). </p>
+  <p>[Joao]We should try the game with the least possible move restrictions! </p>
+  <p>[Mike] I agree!&nbsp; It wouldn't be as much fun to play if you had to constantly check
+  <br>
+  a long list of restrictions before each move.&nbsp; I'd like to allow at least some dirty
+  tricks. :)&nbsp; Making things difficult for the opponent is a natural part of the
+  strategy - especially if you can't remove the opponent's pieces! </p>
+  <a HREF="#top"><p align="right">back to top</a></p>
+<!--msthemeseparator-->  <p align="center"><img src="barrulee.gif"></p>
+  <dd><br>
+    <b>Progressive ideas</b> <p>[Ralph] There should also be a shorter way to win, I think. Of
+    course, if a game takes too many moves, people can play Progressive! </p>
+    <p>[Joao] That's a good idea! But in this case, Progressive Orthodox moves (both players
+    move the opponent pieces) </p>
+    <p>[Mike] Well, I'd be content to try basic Retro first.&nbsp; We could always have basic
+    Retro and Progressive Retro as separate games. </p>
+    <p>[Joao] I had another different idea for progressive retrochess, here it goes: <br>
+    &nbsp; </p>
+    <ol>
+      <li>White puts the white king on the board</li>
+      <li>Black puts the black king in a legal position on the board</li>
+      <li>White makes a legal FIDE unmove, then Black makes two unmoves (one black and one white),
+        then White makes 3 unmoves (b,w,b), then Black makes 4 (w,b,w,b), and so on (like in
+        Progressive Orthodox Chess)</li>
+      <li>The winner is the one who obtains the initial FIDE setup, and that means <u>all</u>
+        pieces (black and white)</li>
+      <li>A player looses if he puts the board into an impossible position</li>
+    </ol>
+    <p>So now, both players are interested in unmoving all pieces, not just their own. It's
+    kind of a race, a progressive retro-race, where you run and run just to get at the start
+    line of a usual FIDE game (I wonder why this reminds me of Alice?...) </p>
+    <a HREF="#top"><p align="right">back to top</a> </p>
+<!--msthemeseparator-->    <p align="center"><img src="barrulee.gif"></p>
+  </dd>
+</dl>
+
+<p>After some time, I did manage to play one game with Ted Hwa (in Feb. 2000)</p>
+
+<p><font face="Courier New">[Progressive RetroChess]<br>
+<br>
+1st Player: Theodore Hwa (<a href="mailto:hwatheod@Stanford.EDU">hwatheod@Stanford.EDU</a>)<br>
+2nd Player: Joao Pedro Neto (<a href="mailto:vascog@uol.com.br">vascog@uol.com.br</a>)<br>
+<br>
+1.&nbsp;&nbsp; Ke3&nbsp;&nbsp;&nbsp;&nbsp; * Kd7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11. *
+Rf8:Bc8&nbsp;&nbsp; Qa1:Ne1<br>
+2. * Kd4:Qe3&nbsp;&nbsp; Qe1:Re3&nbsp;&nbsp; 12.&nbsp;&nbsp; Qa3-c5 &nbsp;&nbsp;&nbsp;
+Kf6:e6<br>
+3.&nbsp;&nbsp; Re2-e3&nbsp;&nbsp;&nbsp; Ke6:Nd7&nbsp;&nbsp; 13.&nbsp;&nbsp; Nf7:e5+
+&nbsp;&nbsp; Ke7:f6<br>
+4. * Ke4:Bd4 * Bg7:d4&nbsp;&nbsp;&nbsp; 14.&nbsp;&nbsp; f6+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f6:e5<br>
+5. * c3:d4&nbsp;&nbsp; * c5:Bd4&nbsp;&nbsp;&nbsp; 15. * Ra2-e2&nbsp; * c7:b6 <br>
+6.&nbsp;&nbsp; Ne5:d7&nbsp;&nbsp;&nbsp; b6:Rc5&nbsp;&nbsp;&nbsp; 16. * a4-a5&nbsp;&nbsp; *
+Qc1-a1 <br>
+7.&nbsp;&nbsp; Ra5:c5&nbsp;&nbsp;&nbsp; b7-b6&nbsp;&nbsp;&nbsp;&nbsp; 17. * b5-b6 &nbsp; *
+Qd2:Bc1<br>
+8.&nbsp;&nbsp; Ra7:a5&nbsp; * d6:Qc5&nbsp;&nbsp;&nbsp; 18. * c2-c3&nbsp;&nbsp; * Qg5-d2<br>
+9. * Ra8:a7&nbsp; * b6:a5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+10. * Rc8:Ra8 * Bh8:g7
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1-0<br>
+</font><br>
+<em>Winning Claim by Ted (accepted by Joao)</em>: This is an impossible position.&nbsp;
+White is missing only one piece, which is the bishop moving on light squares.&nbsp; But a
+Black capture (which must have captured this missing piece) has happened on d6, a dark
+square.<br>
+<br>
+<font face="Courier New">Final Position<br>
+<br>
+===============<br>
+r . b . . R . b<br>
+p p p p k N O .<br>
+. . . p O p . .<br>
+. O . . O O q .<br>
+O . . B K . . .<br>
+Q . . . . . . .<br>
+R . O . . . . .<br>
+. . B . N . . .<br>
+===============</font></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica"><strong>Hints so far:</strong><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica">
+
+<p>[jpn] Uncapture two Bishops in the same color, means that one of them must be
+unpromoted first<br>
+<br>
+[ted] Configurations like black pawns on b7, d7 force an uncapture of the light squared
+black bishop on its original square (c8).&nbsp; Any other light<br>
+squared black bishop must be promoted. </p>
+
+<p>[jpn] What will be the critical turn? Possibly this is a game with 80-100 moves, so
+decomposing it to progressive, 1+2+3+4+5+6+7+8+9+10+11+12 = 78 moves Then, possibly the
+first 12 moves would be &quot;safe&quot;...<br>
+<br>
+[ted] For the first few moves of the game, both sides were in a hurry uncapturing pieces.
+&nbsp; However, once there are pawn captures on the board, one must be careful of
+uncapturing too many pieces with other non-pawn moves, leaving too few missing pieces to
+account for pawn captures. And uncapturing the wrong pieces may lead to impossible
+promotions or pawn structures.</p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica"><strong>Some Final Remarks</strong><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica">
+
+<p>[ted] There should probably be some rule &quot;requiring&quot; uncaptures near the
+beginning of the game, to speed things up.&nbsp; Otherwise the players could just move the
+kings around forever.&nbsp; Of course, theoretically, this is not necessary since if both
+players just move kings around, eventually one of the players will have enough moves to go
+all the way back to the starting position in one turn, but that would take a long time in
+practice.</p>
+
+<p>[jpn] I believe that players will not uncapture. What's the point of just moving the
+King? Anyway, there is the 50-move rule that does not permit such kind of behaviour!</p>
+
+<p>[ted]&nbsp; Another point is that repetition of position should be disallowed, for the
+same reason.</p>
+
+<p>[jpn] The FIDE 3-repetition rule will cover it nicely, I think, since the game would
+end in a undraw, something impossible.</p>
+
+<p>[ted] I and a friend wrote some retro software a few years ago.&nbsp; You can use it to
+try out some of these variants.&nbsp; The software (for Windows) is at: <a
+href="http://www.stanford.edu/~hwatheod/Retractor">http://www.stanford.edu/~hwatheod/Retractor</a>.
+It lets you set up a position and take back moves, and checks for illegal positions.
+&nbsp; It does not detect every illegal position, but all common illegalities are
+detected.&nbsp; It also won't incorrectly declare a position illegal.</p>
+
+<p>Hmmm... maybe we could add code to allow network play of one of these retro variants
+?!?!&nbsp; (Or even some how modify it to be used with one of the chess servers...) &nbsp;
+Then we could try these games out.&nbsp; Unfortunately I have no time for that
+currently...</p>
+
+<p>[jpn] I received this text from the itaprob mailing list:</p>
+
+<blockquote>
+  <p><em>This is left the devout record of the short one that it finishes with single the
+  two King on the chessboard. The previous result (old of 100 years) was of Sam Loyd: 17
+  movements, with two various examples. Giuseppe Ponzetto (brother of the director of the
+  Scacco review), than cica a year fa' I had goaded goaded with the result of Loyd, has
+  introduced us from the pages of the newspaper one solution (sara the only one? si/ci the
+  same Ponzetto) with 16,5 movements asks... &quot; <br>
+  </em><br>
+  Giuseppe Ponzetto - Italy,&nbsp; T&amp;C/Scacco! 1/1, 2000</p>
+</blockquote>
+
+<blockquote>
+  <p><font face="Courier New">+-a-b-c-d-e-f-g-h-+<br>
+  8 . . . . . . . . 8<br>
+  7 . . . .-K . . . 7<br>
+  6 . . . . . . . . 6<br>
+  5 . . . . . . . . 5<br>
+  4 . . . . . . . . 4<br>
+  3 . . . . . . . . 3<br>
+  2 . . . . . K . . 2<br>
+  1 . . . . . . . . 1<br>
+  +-a-b-c-d-e-f-g-h-+<br>
+  <br>
+  SPG 33 1+1</font><br>
+  <br>
+  <em>This the short resolutive line, with reversal of the movements that generate 866
+  varying... <br>
+  <br>
+  1.e2-e4 d7-d5 2.e4xd5 Qd8xd5 3.Bf1-d3 Qd5xa2 4.Bd3xh7 Qa2xb1 5.Bh7xg8 Qb1xc2 6.Bg8xf7+
+  Ke8xf7 7.Ra1xa7 Qc2xc1 8.Ra7xb7 Rh8xh2 9.Rb7xb8 Rh2xg2 10.Qd1xc1 Rg2xg1+ 11.Rh1xg1 Ra8xb8
+  12.Qc1xc7 Rb8xb2 13.Qc7xc8 Rb2xd2 14.Qc8xf8+ Kf7xf8 15.Rg1xg7 Rd2xf2 16.Rg7xe7 Kf8xe7
+  17.Ke1xf2 diagr </em></p>
+</blockquote>
+
+<p>[jpn] This means the shortest progressive retrochess must have 8 prog. moves
+(1+2+...+8=36&gt;33 moves). It is impossible to have less (7 prog. moves means just 28
+moves and there are 30 pieces to untake).<br>
+</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+
+<p>After the end of the 1st game, we got some comments from Alfred Pfeiffer:</p>
+
+<p>[apf] Why you will start only from positions where the white king did the last move?
+&nbsp; Let the player which will unmoves first decide whether white or black did the last
+move.</p>
+
+<p>[ted] I like the rule about have the first retractor select who unmoves first. In
+stalemate positions these rules seem to require that the stalemating side make the first
+retraction, even though from a pure positional point of view, either side might have made
+the last move (ignoring the stalemate). Of course this does not apply to checkmates, in
+which the last player to move is determined. </p>
+
+<p>[apf] An extension for the rules above could be to start from any position, which is in
+FIDE chess a final condition (mate, stalemate, draw because insufficent mating material),
+and positions that theoretical could not more reduced (simplified) by further captures. </p>
+
+<p>The idea for this proposal is that for each game that could occur in regular FIDE chess
+(forward playing) its final position also could be the starting point for a (progressive)
+retroplay game. </p>
+
+<p>[ted] I don't understand that last condition.&nbsp; Do you mean some position where,
+say, pawns are all blocked and no captures could be made by any pieces on the board?
+&nbsp; I will refer to such a position as a 'blocked' position below. Also, there's really
+no reason to insist we play from a 'final' position, e.g., any middle game position will
+do.&nbsp; We could have players make several 'dropping' moves before starting the
+retractions.&nbsp; A drop is legal if the resulting position could be completed to a legal
+position in some way, even if the position itself is not necessarily legal. One way to
+implement such a rule would be to allow either player to end the dropping process at his
+turn and start the retractions, provided the position at that point is legal.&nbsp; Or we
+could have some minimum number of required drops.</p>
+
+<p>[jpn] Something like that would need a 3rd party to give the initial end position. But
+it can be fun to undo a tied middle game, things would be even faster!&nbsp; </p>
+
+<p>That idea can be transformed into a puzzle: &quot;<em>given an end game, find the
+minimum unmoves to reach initial FIDE board position</em>&quot; </p>
+
+<p>If some initial positions were played a lot , it could appear a kind of opening theory
+to handle those notorious cases... And every retrochess tournament should have an award
+for the most elegant retrochess game seen backwards (ie, a FIDE game) ok, I know I'm
+dreaming... :-)</p>
+
+<p>[apf] A further condition should be, that the first unmove should a such retracting
+move that the new position does not belong to the class&nbsp; of final positions. When
+starting with two alone kings (like above)&nbsp; therefore it should recapture at least a
+pawn or a piece with mating capabilities. </p>
+
+<p>[jpn] Using the previous sugestions, I can remake the rules of Progressive RetroChess
+as follows:</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+
+<p><a name="ProgRules"></a><strong>Progressive RetroChess</strong></p>
+
+<ol>
+  <li>White puts the white king on the board (see note)</li>
+  <li>Black puts the black king in a legal position on the board</li>
+  <li>White makes a legal FIDE unmove (with the white or black King), then Black makes two
+    unmoves (alternating colors), then White makes 3 unmoves (alternating colors), then Black
+    makes 4 and so on (like in Progressive Orthodox Chess)<ol>
+      <li>The first unmove should produce a position that does not belong to the class of final
+        positions. A final position is a mate, stalemate, draw because insufficent mating material
+        or a blocked position.</li>
+    </ol>
+  </li>
+  <li>The winner is the one who obtains the initial FIDE setup, and that means all pieces
+    (black and white)</li>
+  <li>A player looses if he puts the board into an impossible position</li>
+</ol>
+
+<p>note: rules 1 and 2 can be replaced with any position agreed by both players. This
+position can be proposed by one player (or a 3rd party) or made after several 'dropping'
+moves just before starting the retractions. A drop is legal if the resulting position
+could be completed to a legal position in some way, even if the position itself is not
+necessarily legal. One way to implement such a rule would be to allow either player to end
+the dropping process at his turn (there can be a minimum number of drops) and start the
+retractions, provided the position at that point is legal.</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+
+<p>[jpn] Some people has pointed out that RetroChess seems rather pointless in the 1st
+moves (what should a player do in the first 30 piece moves?). In order to give more
+tactical interest, I propose the following:</p>
+
+<p><strong>RetroChess Race</strong>: <em>A match is made of two prog. retrochess games
+(check rules above). In each board, one player tries to delay the ending (i.e., avoid
+reaching the initial FIDE position) and the other tries to achieve it! The player that
+finished first in his board, wins!</em><br>
+</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font>
+
+<h3 align="center"><!--mstheme--><font face="times new roman, times" color="#000000"><font SIZE="-1"><a
+HREF="http://www.metacrawler.com">webSearch</a> | <a HREF="index.htm#MyCVs">my variants</a>
+|&nbsp; <a HREF="index.htm#Challenges">challenges</a> |&nbsp; <a
+HREF="index.htm#otherPlaces">other places</a></font> <!--mstheme--></font></h3>
+<!--mstheme--><font face="arial, helvetica"><!--mstheme--></font>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Microsoft Theme" content="ricepapr 011">
+<title>LUDAE - The LUDAE system</title>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<table border="0" width="100%">
+  <tr>
+    <td width="29%"><!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font></td>
+    <td width="60%"><!--mstheme--><font face="Times New Roman, Times">
+      <p align="center"><b><a href="index.htm"><img border="0" src="icons/ludae-logo.gif" alt="The LUDAE project" width="32" height="32"></a></b><!--mstheme--></font></td>
+    <td width="11%"><!--mstheme--><font face="Times New Roman, Times">
+      <p align="right"><b>&nbsp;<a name="top"></a></b><a href="arena.htm"><img border="0" src="icons/prev.gif" alt="...previous" width="12" height="12"></a>
+      <a href="index.htm"><img border="0" src="icons/center.gif" alt="goto main page" width="12" height="12"></a><img border="0" src="icons/line.gif" width="160" height="10"><!--mstheme--></font></td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<h2><!--mstheme--><font face="Times New Roman, Times" color="#333333">The System
+Structure<!--mstheme--></font></h2>
+<!--mstheme--><font face="Times New Roman, Times">
+<blockquote>
+  <p>LUDÆ is built in different conceptual layers, in order to achieve the
+  required modularity for meta-game learning. This next diagram shows some of
+  the working modules</p>
+  <div align="center">
+    <center>
+    <!--mstheme--></font>
+    <table border="1" width="642" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+      <tr>
+        <td width="590" colspan="6">
+          <!--mstheme--><font face="Times New Roman, Times">
+          <p align="center"><b><font size="4">Graphical
+          User Interface</font></b></p>
+          <!--mstheme--></font>
+        </td>
+      </tr>
+      <tr>
+        <td width="304" align="center" colspan="4">
+          <!--mstheme--><font face="Times New Roman, Times">
+          <p><font size="4"><b><a href="#arena">Arena</a></b>&nbsp;</font></p>
+          <!--mstheme--></font>
+        </td>
+        <td width="280" align="center" colspan="2">
+          <!--mstheme--><font face="Times New Roman, Times">
+          <p><b><font size="4">Academy</font></b></p>
+          <!--mstheme--></font>
+        </td>
+      </tr>
+      <tr>
+        <td width="116" align="center">
+          <!--mstheme--><font face="Times New Roman, Times">
+          <p align="center"><font size="4"><b><a href="#selection">Selection</a>&nbsp;</b></font></p>
+          <!--mstheme--></font>
+        </td>
+        <td width="101" align="center">
+          <!--mstheme--><font face="Times New Roman, Times">
+          <font size="4"><b><a href="#tournament">Tournament</a></b></font>
+          <!--mstheme--></font>
+        </td>
+        <td width="108" align="center">
+          <!--mstheme--><font face="Times New Roman, Times">
+          <font size="4"><b><a href="#player">Players</a></b></font><!--mstheme--></font>
+        </td>
+        <td width="161" align="center" colspan="2">
+          <!--mstheme--><font face="Times New Roman, Times">
+          <font size="4"><b><a href="#game">Game</a></b></font>
+          <!--mstheme--></font>
+        </td>
+      </center>
+      <td width="140" align="center">
+        <!--mstheme--><font face="Times New Roman, Times">
+        <p align="right"><font size="4"><b>Libraries</b></font>
+        <!--mstheme--></font>
+      </td>
+      </tr>
+    </table>
+  <!--mstheme--><font face="Times New Roman, Times">
+  </div>
+  <p>&nbsp;</p>
+<!--mstheme--></font>
+<table border="0" width="600">
+  <tr>
+    <td width="100%">
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+            Graphical User Interface (GUI) give access to the following
+            tasks:&nbsp;<!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                  <i>Arena viewer</i>, where the user may check the statistics
+                  and update any parameter of the present tournament.<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                  <i>Academy viewer</i>, where the user may check the knowledge
+                  gathered so far.<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                  <i>Player viewer</i>, where the user may actually play a game
+                  against a chosen computer player - this should also be
+                  included in a game Applet.&nbsp;<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+            Arena module, where the actual contests will occur, needs the
+            following structures:<!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                        Game Class<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">An
+                        array of Player Class instances, which may use different
+                        playing methods.<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                  Tournament Class, specifies how a set of players will match
+                  each other, and execute all contests.<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                  Selection Class can:<!--mstheme--></font>
+                  <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">Initialize
+                        a new random generation.<!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">Create the new
+                        generation given a tournament result.&nbsp;<!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                  <!--msthemelist--></table>
+                  <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+            Academy module, consisting of:<!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">A
+                  set of game measures, computed by the tournaments on the
+                  Arena.<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">An
+                  opening theory game tree<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">A
+                  library of middlegame positions<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">A
+                  library of endgame positions.<!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+    </td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times">
+</blockquote>
+<!--mstheme--></font>
+<h2><!--mstheme--><font face="Times New Roman, Times" color="#333333">Class
+Design<!--mstheme--></font></h2>
+<!--mstheme--><font face="Times New Roman, Times">
+<blockquote>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b>Academy</b>
+      <!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b>Library</b><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b>Game-Tree</b><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#arena">Arena</a></b>
+      <!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#tournament">Tournament</a></b>
+            <!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#contest">Contest</a></b><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#selection">Selection</a></b><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#game">Game</a></b>
+      <!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#cell">Cell</a></b><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#Link">Link</a></b><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#sector">Sector</a></b><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#board">Board</a></b>
+            <!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b>Square-Board
+                  [subclass]</b><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b>Hex-Board
+                  [subclass]</b><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#player">Player</a></b>
+      <!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#strategy">Strategy</a></b>
+            <!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><b><a href="#tactic">Tactic</a></b><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="arena"></a>Arena
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font color="#0000FF" size="2" face="Courier New">   //
+        where the nasty stuff really happens...
+        :-)</font><font face="Courier New"><font color="#0000FF" size="2"><br>
+        </font>
+  <br>
+        <b>
+   Game</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; game&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" size="2">// what game are we talking about</font><br>
+        <b>
+   Player</b>[]&nbsp;&nbsp;&nbsp; players&nbsp; &nbsp;&nbsp; <font color="#0000FF" size="2">//
+        the set of players</font><br>
+        <b>Tournament</b>&nbsp; tournament&nbsp; <font color="#0000FF" size="2">//
+        what kind of tournament are we using<br>
+        </font><b>Selection</b>&nbsp;&nbsp; selector&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        how player generations are created</font>
+        </font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="tournament"></a>Tournament Class
+</b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font color="#0000FF" size="2">   <font face="Courier New">   //
+        define a set of contes</font></font><font color="#0000FF" size="2" face="Courier New">ts (e.g.,   round-robin, pools, Swiss
+        system,&nbsp;<br>
+        //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        direct elimination...</font><font face="Courier New"><font color="#0000FF" size="2"><br>
+        </font>
+  <br>
+        <b>Arena</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arena&nbsp;&nbsp; &nbsp; <font color="#0000FF" size="2">// to which arena this tournament belongs<br>
+        </font>
+        <b>Result</b>[][] results&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        the actual table of results</font><br>
+  <br>
+        start()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" size="2">// reset and start 1st contest</font><br>
+        report()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" size="2">// report last contest to ACADEMY</font><br>
+        next()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" size="2">// start next contest</font><br>
+        pause()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" size="2">// pause tournament</font><br>
+        continue()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        continue tournament</font><br>
+        <br>
+        toString()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        actual tournament state in a string</font></font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="contest"></a>Contest Class
+</b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><font color="#0000FF" size="2">  // a specific game
+        contest between two players<br>
+        </font>
+<br>
+        <b>Tournament</b> tournament&nbsp; &nbsp;<font color="#0000FF" size="2">//
+        to which tournament it belongs</font><br>
+        <b><br>
+   Player </b>player1<br>
+        <b>
+   Player </b>player2<br>
+        <b>bool</b>&nbsp;&nbsp; nextPlayer&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF" size="2">// TRUE = Player1, FALSE = Player2
+        </font>
+        </font>
+        <p><font face="Courier New"><b>Board</b>[]<b> </b>positions<b><br>
+        int</b>&nbsp;&nbsp;&nbsp;&nbsp; actualTurn&nbsp;&nbsp;&nbsp;<font color="#0000FF" size="2">//
+        0 = start, 1 = after 1st Player1 move, ...</font><br>
+        <b></b>
+        <b>int</b>&nbsp;&nbsp;&nbsp;&nbsp; actualMove&nbsp;&nbsp;&nbsp;<font color="#0000FF" size="2">// how many played moves so far (several moves&nbsp;<br>
+        </font><font color="#0000FF">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000FF" size="2">//&nbsp;&nbsp;
+        can be made in the same turn)</font></font></p>
+        <p><font face="Courier New"><b>Board</b>&nbsp;&nbsp; getPos( n )&nbsp;&nbsp;<font color="#0000FF" size="2">// returns
+        nth position (relative position, if n&lt;0)<br>
+        </font>
+<br>
+        nextMove() &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">// get move from next player,
+        and update <b>positions[]</b></font><br>
+        <font color="#0000FF">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000FF" size="2">//&nbsp;&nbsp;
+        <b>nextPlayer</b>, <b>actualTurn</b> and <b>actualMove</b></font></font></p>
+        <!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><a name="selection"></a>Selection
+Class<img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>Arena</b>&nbsp;&nbsp;&nbsp;
+        arena&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <font color="#0000FF" size="2">// to which arena this
+        selection belongs<br>
+        </font>
+        </font><font face="Courier New">
+  <br>
+        <b>Player</b>[] reset()&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        create a new set of players
+        </font>
+        <br>
+        <b>Player</b>[] next( </font><font face="Courier New"><b>Result</b>[][]
+        results</font><font face="Courier New">) <font color="#0000FF" size="2">//
+        evolve a new generation
+        </font>
+        </font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="player"></a>Player
+Abstract Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>int&nbsp;&nbsp;&nbsp;</b>
+        id<br>
+        <b>string </b>type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" size="2">// the player's type<br>
+        </font><b>string </b>name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" size="2">// the player's name (e.g., White, Black,
+        Left, ...)<br>
+        </font>
+  <br>
+        <b>abstract Board</b>&nbsp; nextMove()</font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times">
+<blockquote>
+<!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b>HumanPlayer Class
+</b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+</blockquote>
+<!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times">
+        <blockquote>
+          <p><font face="Courier New"><b>Board</b>&nbsp; nextMove()&nbsp;&nbsp;&nbsp;
+          <font color="#0000FF" size="2">// Get a valid move by mouse, or
+          whatever...<br>
+          </font><font color="#0000FF"><br>
+        &nbsp;&nbsp;&nbsp;</font><font color="#0000FF" size="2">// Humans are
+          permitted to express an opinion of his own moves</font></font>
+          </p>
+        </blockquote>
+        <!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times">
+<blockquote>
+<!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b>ComputerPlayer Class
+</b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+</blockquote>
+<!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times">
+        <blockquote>
+          <p><font face="Courier New"><b>Board</b>&nbsp; nextMove()<br>
+  <br>
+  <b>Strategy </b>strategy&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+  where the complexity is hiding!!!</font></font>
+          </p>
+        </blockquote>
+        <!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="strategy"></a>Strategy
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New">
+          <b>string </b>name<br>
+          <b><br>
+          Game&nbsp;&nbsp; </b>game&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" size="2">// which game are we talking</font><br>
+          <br>
+          <b>Tactic</b>[] features&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF" size="2">// the
+        feature set defining the evaluation function<br>
+          </font>
+          <b>float</b>[]&nbsp; weights&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">// the relevance of each feature<br>
+          </font><br>
+        search()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF" size="2">//
+        the search game tree algorithm (alpha-beta,
+          ...)</font><br>
+          analyze()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF" size="2">// optimize strategy (if analysis is
+          available)</font><br>
+          learn()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF" size="2">// optimize strategy (if learning is
+          available)</font></font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="tactic"></a>Tactic
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><font color="#0000FF" size="2">  // a
+        specific point of view for evaluate a certain game position<br>
+        </font>
+        <b>
+        string</b> type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        expert, genetic, HOYLE-like,, neural, whatever...</font><br>
+        <b><br>
+        float</b>&nbsp;evaluation( <b>Board </b>position ) <font color="#0000FF" size="2">
+        // the positional credit assignment </font></font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="game"></a>Game
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><p><font face="Courier New"><b>string </b>name<b><br>
+  <br>
+  final char</b> empty = '-';<br>
+ </font><font face="Courier New"><b>
+  final char</b> soldierBlack = 'x';<br>
+ </font><font face="Courier New"><b>
+  final char</b> kingBlack = 'b';<br>
+ </font><font face="Courier New"><b>
+  final char</b> soldierWhite = 'o';<br>
+ </font><font face="Courier New"><b>
+  final char</b> kingWhite = 'w';&nbsp;&nbsp;</font>&nbsp;&nbsp; <font face="Courier New"><font color="#0000FF" face="Courier New" size="2">//
+        more if needed...</font><br>
+  <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setup( <b>Board</b>  setupBoard )&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" face="Courier New" size="2">//
+  initializes game setup</font><br>
+  <b>float</b>&nbsp;endgame()&nbsp;&nbsp;&nbsp; <font size="2">//
+  1 if win, 0.5 if draw, 0 if lost, -1 otherwise<br>
+        <br>
+        </font><b>Board</b>[] validMoves( <b>Board </b>actualBoard )<br>
+        <b>Board</b>&nbsp;&nbsp; nextBoard( <b>Board </b>actualBoard, <b>String</b>
+        nextMove )<br>
+        <font color="#0000FF">
+  <br>
+  </font> </font><font face="Courier New" color="#0000FF" size="2">&nbsp;
+  // auxiliary methods to ease the construction of validMoves()<br>
+  </font><font face="Courier New"><b>
+   bool</b> KO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <font color="#0000FF" size="2">// TRUE means KO rule is ON</font><br>
+  <b>int&nbsp; </b>equalizer&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+  Black plays N moves, White chooses side; 0 = OFF</font></font>
+  </p>
+        <!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b>&nbsp;<a name="cell"></a>Cell
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New">Cell(
+        <b>String</b><b> </b>id, <b>int</b> maxLinks )<br>
+        <b><br>
+        String&nbsp; </b>id<br>
+        <b>char&nbsp;&nbsp;&nbsp; </b>piece&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        empty, Black soldier, White soldier, ...</font><br>
+        <b>char&nbsp;&nbsp;&nbsp; </b>state&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        cell state<br>
+        </font><b>Links</b>[]<b> </b>links&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        the set of connections (defined by maxLinks)</font>
+  </font>
+        <p><font face="Courier New"><b>Cell</b><font color="#0000FF">&nbsp;&nbsp;&nbsp;
+        </font>next( <b>char</b><b> </b>direction )&nbsp; <font color="#0000FF" size="2">//
+        next cell in that direction</font><br>
+        </font><font face="Courier New" color="#0000FF"><br>
+  &nbsp; <font size="2">// used to update specific cell information&nbsp;
+  </font><br>
+  </font><font face="Courier New"><font color="#0000FF">&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">
+        </font>setPiece( <b>char </b>value )<br>
+        <b>char </b>getPiece(</font><font face="Courier New">)<br>
+  </font><br>
+        <font face="Courier New"><font color="#0000FF">&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">
+        </font>setState( <b>char </b>value )<br>
+        <b>char </b>getState()<br>
+        </font><br>
+        <font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">addLink(
+  </font><font face="Courier New"><b>char </b> direction, <b>Cell </b>toCell )<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; remLink( <b>char </b>direction )</font></p>
+        <!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="Link"></a>Link
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New">Link(
+        <b>char</b> direction, <b>char</b> state, <b>Cell </b>toCell )<br>
+        <font color="#0000FF" size="2"><br>
+  &nbsp; // we will use one letter direction (to use chars instead of Strings)<br>
+  &nbsp; //&nbsp;<br>
+  &nbsp; //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m n
+        o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; u -&gt; up<br>
+  &nbsp;
+  //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        \|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d -&gt; down<br>
+  &nbsp;
+  //&nbsp;&nbsp;&nbsp;&nbsp; w--c--e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
+        -&gt; diagonal<br>
+  &nbsp;
+  //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        /|\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + -&gt;
+        orthogonal<br>
+  &nbsp;
+  //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r s
+        t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * -&gt; x and +<br>
+        &nbsp; //<br>
+        &nbsp; // other symbols may be used to extra directions!<br>
+        <br>
+        </font><b>char </b>direction&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        the actual direction</font><br>
+        <b>char </b>state&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        link state<br>
+        </font><b>Cell</b> toCell&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        to what cell<br>
+        <br>
+        </font>
+  &nbsp;&nbsp;&nbsp;&nbsp; setDirection( <b>char </b>direction )<br>
+        <b>char </b>getDirection()<br>
+        <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; setState( </font><font face="Courier New"><b>char </b>value )<br>
+        <b>char </b>getState()<br>
+        <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; setCell( <b>Cell </b>cell )<br>
+        <b>Cell </b>getCell()<br>
+        </font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="sector"></a>Sector
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><font color="#0000FF" size="2">&nbsp;
+        // a sector is a sub-area of the board (e.g., a promotion zone)<br>
+        <br>
+        </font>Sector( <b>String </b>name, <b>int</b> maxCells )</font>
+        <p><font face="Courier New"><b>S</b><b>tring </b>name<b><br>
+        char&nbsp;&nbsp; </b>state&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        for dynamic sector change<br>
+        </font><br>
+        <b>Cell</b>[] cells&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF" size="2">//
+        which cells are included in this sector</font></font></p>
+        <p>
+  <font face="Courier New">add(
+  </font><font face="Courier New"><b>Cell </b>cell )<br>
+  rem(
+  </font><font face="Courier New"><b>Cell </b>cell )<br>
+        <b><br>
+        bool</b>  isIn( <b>Cell </b>cell )<br>
+        <b>bool</b>  isIn( <b>String</b> idCell )<br>
+  <b><br>
+  int </b>nPiece( <b>char</b><b> </b>piece )&nbsp;&nbsp;</font><font face="Courier New" color="#0000FF" size="2">//
+  the number of <i>piece</i> in the sector<br>
+  </font><font face="Courier New"><b>int </b>nState( <b>char</b><b> </b>state )&nbsp;&nbsp;</font><font face="Courier New" color="#0000FF" size="2">//
+  the number cells in <i>state</i> in the sector<br>
+  </font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b><a name="board"></a>Board
+Abstract Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>Cell</b>[]
+        position&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="#0000FF" face="Courier New" size="2">// keeps the actual board
+  position</font><br>
+  </font><font face="Courier New"><b><br>
+        bool</b>&nbsp; equals( <b>Board </b>other )&nbsp;</font><font face="Courier New" color="#0000FF" size="2">//
+        this == other?<br>
+  </font>
+  <font face="Courier New"> <b>Board </b>clone()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <font color="#0000FF" size="2">// make a copy</font><br>
+  <font color="#0000FF" size="2"><br>
+  &nbsp; // automatic creation of regular topologies,<br>
+  &nbsp; // using the following coordinate system for cell naming<br>
+  &nbsp; //&nbsp;<br>
+  &nbsp;
+  //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  4 5 6<br>
+  &nbsp; //&nbsp; 6 . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 . . .<br>
+  &nbsp; //&nbsp; 5 . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 . . . .<br>
+  &nbsp; //&nbsp; 4 . . . . . .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1 . . . . .<br>
+  &nbsp; //&nbsp; 3 . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . . . . .<br>
+  &nbsp; //&nbsp; 2 . . . . . .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  a . . . . .<br>
+  &nbsp; //&nbsp; 1 . . . . .
+  .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b . . . .<br>
+  &nbsp; //&nbsp;&nbsp;&nbsp; a b c d e
+  f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c d e f<br>
+  &nbsp; //&nbsp;<br>
+  </font><b>abstract </b>createGrid()
+  </font><p><font face="Courier New" color="#0000FF" size="2">&nbsp; // auxiliary
+        methods to ease the construction of Game.validMoves()<br>
+  <br>
+        </font><font face="Courier New"><b>Board</b>[] step ( <b>Cell </b>cell, <b>char</b>
+        direction,&nbsp;<b>bool </b>capture )
+  <br>
+        <b>Board</b>[] slide( <b>Cell</b> cell, <b>char</b><b> </b>direction,&nbsp;<b>bool </b>capture )
+  <br>
+        <b>Board</b>[] jump ( <b>Cell</b> cell, <b>char</b><b> </b>direction,&nbsp;<b>bool </b>capture,<b> &nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        int</b>  pre, <b>int</b>  pos,&nbsp;<b>bool</b> multiple, <b>bool</b> both )<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;</font><font face="Courier New" color="#0000FF" size="2">&nbsp;
+  // pre is the number of cells before the jumped piece<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // pos is the number of cells after
+  the jumped piece<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // multiple is TRUE for multiple jumps<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // both is TRUE for jumps of either color<br>
+  </font><!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times">
+<blockquote>
+<!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b>SquareBoard
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+</blockquote>
+<!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times">
+        <blockquote>
+          <p><font face="Courier New">createGrid( <b>int </b>rows,
+  </font><font face="Courier New"><b>int </b> columns )
+  </font></p>
+        </blockquote>
+        <!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times">
+<blockquote>
+<!--mstheme--></font>
+
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b>HexBoard
+Class </b><img border="0" src="icons/line.gif" width="360" height="10" align="left"><!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+</blockquote>
+<!--mstheme--></font>
+  <table border="0" width="650">
+    <tr>
+      <td width="100%"><!--mstheme--><font face="Times New Roman, Times">
+        <blockquote>
+          <p><font face="Courier New">createGrid( <b>int </b>sizeTopRow, <b>int </b>sizeMidRow,&nbsp;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New"><b>int
+          </b>sizeBottomRow )
+  </font></p>
+        </blockquote>
+        <!--mstheme--></font></td>
+    </tr>
+  </table>
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<h2 align="center"><!--mstheme--><font face="Times New Roman, Times" color="#333333"><img border="0" src="icons/inWorkAnim.gif" width="45" height="45"><!--mstheme--></font></h2>
+<!--mstheme--><font face="Times New Roman, Times">
+</blockquote>
+
+<p align="right"><img border="0" src="icons/line.gif" width="360" height="10"> <a href="#top"><br>
+<img border="0" src="icons/up.gif" alt="goto top" width="12" height="12"></a>
+<a href="arena.htm"><img border="0" src="icons/prev.gif" alt="...previous" width="12" height="12"></a>
+ <a href="index.htm"><img border="0" src="icons/center.gif" alt="goto main page" width="12" height="12"></a></p>
+<!--mstheme--></font>
+</body>
+
+</html>

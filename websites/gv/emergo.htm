@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Towers - EMERGO</title>
+<SCRIPT LANGUAGE="JavaScript" src="tower2diag/tower2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">EMERGO</font></strong></h1>
+<p align="center"><strong><font size="3">Copyright (c) 1980s <a href="mailto:christian@mindsports.net">Christian
+Freeling</a> &amp; <a href="mailto:ed@mindsports.net">Ed van Zon</a>.</font></strong></p>
+<p align="left"><font size="3" face="Arial">This game is played on the following
+empty board:</font></p>
+    <center>
+      <table border="1" width="382" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" align="center" background="file://Titanic/jpn/public_html/gv/back-board.jpg">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","9,9,zzzz.zzzz/zzz...zzz/zz.....zz/z.......z/........./z.......z/zz.....zz/zzz...zzz/zzzz.zzzz");
+</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+&nbsp;
+
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font size="3" face="Arial"><b>OFF BOARD</b> - Each player starts
+          with 12 stones each off-board.</font></li>
+		<li><font size="3" face="Arial"><b>PIECE</b> -&nbsp; A piece is a stack
+          of one or more stones of either color.&nbsp;</font>
+            <ul>
+				<li><font size="3" face="Arial">&nbsp;The piece belongs to the
+              player that has the top stone.</font></li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><b>CAPTURE</b> - A
+          piece jumps an adjacent (orthogonal) opponent piece, landing on the
+          immediate cell that must be empty. Doing so, he captures the top stone
+          of the jumped piece.</font>
+		<ul>
+			<li><font size="3" face="Arial">Capture is mandatory, i.e., it must
+              be done before a drop or a move (see below).</font>
+                  </li>
+			<li><font size="3" face="Arial">Capture is multiple (several jumps
+              must be made if possible) and must be maximize the number of
+              captured stones.&nbsp;Jumps of 180º are invalid.</font></li>
+			<li><font size="3" face="Arial">In a multiple capture the capturing
+              piece may visit a cell more than once as well as jump a piece more
+              than once.</font></li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><b>DROP</b> - An off-board stone can be
+          dropped on an empty cell.</font>
+            <ul>
+				<li><font size="3" face="Arial">Dropping may not force an opponent
+              into making a capture, unless the entering player is already being
+              attacked by his opponent.</font></li>
+				<li><font size="3" face="Arial">Each
+                  player may not enter more than one stone, unless his opponent
+                  has all twelve stones on the board, in which case he must
+                  enter his remaining stones as one piece. This piece is called
+                  the <u>shadowpiece.</u></font></li>
+		</ul>
+		</li>
+		<li><font size="3" face="Arial"><b>MOVE</b> - If a player has no
+          captures available, and all stones were already dropped, then he must
+          move one of his pieces into an adjacent (orthogonal) empty cell.</font></li>
+		<li><font size="3" face="Arial"><strong>GOAL</strong> -&nbsp;Wins the player 
+		that captures all enemy stones.&nbsp;</font>
+            <ul>
+				<li><font size="3" face="Arial">However,
+                  draws are possible
+                  if <font color="#000000">a player has at least one piece left
+                  and cannot move; or </font>a 3-fold
+              repetition of the same position with the same player, occurs.</font></li>
+		</ul>
+		</li>
+		</ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+<table border="1" width="750" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="390" bordercolor="#000000">
+<script LANGUAGE="JavaScript">
+towergv2diag("tower2diag/back-board.jpg","9,9,[xwwwww]zzz.zzzz/zzz1..zzz/zz6...1zz/z.f.1.[eeeEew]6z/.1e1b6a../z.6.6.1.z/zzd6c61zz/zzz...zzz/zzzz.zzzz");
+</script>
+      </td>
+      <td valign="top" width="360"><font face="Arial"><strong>An example</strong></font>
+        <p><font size="3" face="Arial">White drops a stone at g6 (the cell with
+        the marked dot). He can do this because Black already is attacking him.
+        Then, Black must capture 5 white stones (jumping sequence 1 to 5) making
+        a piece like the one showed in the top left corner. Then, White drops a
+        stone above it at cell [6], and black must make a second capture to
+        square 3. After that white captures the top black stone of that stack
+        and gains a better position.</font>
+      </td>
+    </tr>
+</table>
+<p><font size="3" face="Arial">Freeling's words: <i>The game is a joint effort
+by Ed van Zon, who got me interested in Lasca's way of capture in the first
+place, and me. [...] Emergo derives from the Latin 'Luctor et Emergo', the motto
+of the Dutch province of Zeeland, and meaning 'I wrestle and emerge'. You'll
+find this name to be very appropriate. Emergo originates in the game <a href="lasca.htm">Lasca</a>,
+invented by the legendary Chess world champion Emanuel Lasker. Lasker made a
+classic mistake: he left a great idea where he found it, which was in the game
+of Checkers. Thus he hooked it up to three interrelated principles of this game:
+an initial position, a forward orientation&nbsp;and promotion. None of these is
+needed to implement the essence of his idea, and applying them makes Lasca an
+overcomplicated game. </i></font><font face="Arial" size="2">[<font SIZE="2"><a href="http://www.mindsports.net/Arena/Emergo/AboutEmergo.html">www.mindsports.net/Arena/Emergo/AboutEmergo.html</a></font>]</font></p>
+<p><font size="3" face="Arial">You can also play and read extensive information
+about the game at the <a href="http://www.mindsports.net/Arena/Emergo/">MindSports
+Arena</a>.</font></p>
+<p><font size="3" face="Arial">There's a variant of Emergo to the hexagonal
+board, <a href="http://www.zillionsofgames.com/games/HexEmergo.html">HexEmergo</a> 
+(the first player has a decisive advantage).</font></p>
+</blockquote>
+<hr>
+</body>
+</html>

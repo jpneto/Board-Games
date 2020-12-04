@@ -1,0 +1,582 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Microsoft Theme" content="ricepapr 011">
+<title>LUDAE - The ACADEMY</title>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<table border="0" width="100%">
+  <tr>
+    <td width="29%"><!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font></td>
+    <td width="60%"><!--mstheme--><font face="Times New Roman, Times">
+      <p align="center"><b><a href="index.htm"><img border="0" src="icons/ludae-logo.gif" width="32" height="32" alt="The LUDAE project"></a></b><!--mstheme--></font></td>
+    <td width="11%"><!--mstheme--><font face="Times New Roman, Times">
+      <p align="right"><b>&nbsp;<a name="top"></a></b><a href="index.htm"><img border="0" src="icons/center.gif" alt="goto main page" width="12" height="12"></a>
+<a href="arena.htm"><img border="0" src="icons/next.gif" alt="next..." width="12" height="12"></a><img border="0" src="icons/line.gif" width="160" height="10"><!--mstheme--></font></td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<h2><!--mstheme--><font face="Times New Roman, Times" color="#333333"><b>ACADEMY Knowledge</b><!--mstheme--></font></h2>
+<!--mstheme--><font face="Times New Roman, Times">
+<blockquote>
+<!--mstheme--></font>
+<table border="0" width="702">
+  <tr>
+    <td width="476">
+      <!--mstheme--><font face="Times New Roman, Times">
+      The ACADEMY purpose is to provide a place for cooperation among competing
+  players. This cooperation is translated in a set of common knowledge about the
+  game being played. This knowledge will be mainly the product of the experience
+  gathered by the contests held on successive tournaments. Another knowledge
+  will be provided by active game analysis and learning.<!--mstheme--></font>
+    </td>
+    <td width="36">
+    <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+    </td>
+      <td width="170">
+        <!--mstheme--><font face="Times New Roman, Times">
+        <div align="right">
+        <!--mstheme--></font>
+          <table border="1" width="100%" bgcolor="#99CCFF" bordercolorlight="#333366" bordercolordark="#000000">
+            <tr>
+              <td width="33%" background="file://Titanic/jpn/public_html/labmag/icons/back-chip2.jpg"><!--mstheme--><font face="Times New Roman, Times"><font color="#000099"><b><a href="#patterns">Patterns</a><br>
+                <a href="#symmetrical">Symmetrical Games</a><br>
+                <a href="#patternDB">Pattern Database</a><br>
+                <a href="#generalization">Generalization</a><br>
+                <a href="#specialization">Specialization</a><br>
+                <a href="#patternLib">Pattern Libraries</a><a href="#using"><br>
+                Using the Academy</a></b></font><!--mstheme--></font></td>
+            </tr>
+          </table>
+        <!--mstheme--><font face="Times New Roman, Times">
+        </div>
+        <!--mstheme--></font>
+    </td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+  <h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><a name="patterns"></a>Patterns<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+  <p>Patterns are a coded way to
+keep playing knowledge. A <b>pattern </b>is a local representation of a certain
+board position or positions, labeled with a tuple of numbers, the pattern <b>signature</b>.
+This signature is made of: (a) the number of players proposing the pattern, (b)
+the average ELO of those players, (c) the expected value of that position, this
+value ranges from 0.0 (an expected loss) to 1.0 (an expected win), (d) what
+player are we addressing (1 for first player, 2 for second player).</p>
+<blockquote>
+  <p>Next, two pattern samples:</p>
+</blockquote>
+<div align="center">
+  <center>
+  <!--mstheme--></font>
+  <table border="0" width="500">
+    <tr>
+      <td width="250">
+        <!--mstheme--><font face="Times New Roman, Times">
+        <p align="center"><font face="Courier New"><b><br>
+        # - x b<br>
+        # - o -<br>
+        - x - w<br>
+        <br>
+        <br>
+        &lt; 3; 165; 0.78; 2 &gt;&nbsp;</b></font><!--mstheme--></font></td>
+      <td width="250">
+        <!--mstheme--><font face="Times New Roman, Times">
+        <p align="center"><font face="Courier New"><b>- w<br>
+        # - o<br>
+        # - x #<br>
+        - o -<br>
+        - -<br>
+        <br>
+        &lt; 1; 700; 0.12; 1 &gt;&nbsp;</b></font><!--mstheme--></font></td>
+    </tr>
+  </table>
+  <!--mstheme--><font face="Times New Roman, Times">
+  </center>
+</div>
+<blockquote>
+  <p>The left tuple <font face="Courier New"><b><font size="2">&lt;3;165;0.78;2&gt;</font></b></font>
+  means: 3 players with average ELO 165, propose that this pattern has value
+  0.78 for the second player.</p>
+</blockquote>
+<p>The first lines give local board areas (the left from a square board, the
+right from a hexagonal board) . The possible letters and meanings inside these
+areas are (let's assume black color for first player, white color for second
+player):</p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>-</b>,
+      an empty cell</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>x</b>,
+      a black soldier</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>b</b>,
+      a black King</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>B</b>,
+      a black piece (soldier or King)</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>1</b>,
+      a cell with no white pieces&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>o</b>,
+      a white soldier</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>w</b>,
+      a white King</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>W</b>,
+      a white piece</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>2</b>,
+      a cell with no black pieces</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New">+,
+      a non-cell (to define board edges and corners)&nbsp;</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Courier New"><b>#</b></font><font face="Courier New">,
+      anything</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><a name="symmetrical"></a>Symmetrical
+Games<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+<p>For symmetrical games, all patterns are converted to first player patterns.
+When happens the second player evaluation, all pattern matching are reversed.
+This helps reducing the space of possible patterns, and enhance better playing.</p>
+<!--mstheme--></font>
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><a name="patternDB"></a>Pattern
+Database<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+<p>When the tournament begin, players will be inserting relevant patterns (so
+they assume) on the Academy. Inside the Academy, a matching process compares
+each new pattern with the available pattern database (pdb) already saved. One of
+the following things may happen (let the pattern signature be &lt;n, e, v,
+p&gt;):</p>
+<div align="center">
+  <center>
+  <!--mstheme--></font>
+  <table border="0" width="600">
+    <tr>
+      <td width="100%">
+        <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+        <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <!--msthemelist--><tr>
+            <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+            <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><i>The
+              pattern matches a known pattern</i> - the pattern signature &lt;N,
+              E, V, P&gt; is updated using the following procedure:<!--mstheme--></font>
+              <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <!--msthemelist--><tr>
+                  <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                  <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                    number of players is updated by one, i.e., new N = N + 1<!--mstheme--></font><!--msthemelist--></td>
+                </tr>
+                <!--msthemelist--><tr>
+                  <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                  <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                    average ELO is updated by, new E = ( E * N + e ) / (N+1)<!--mstheme--></font><!--msthemelist--></td>
+                </tr>
+                <!--msthemelist--><tr>
+                  <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                  <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+                    expected pattern value is updated by, new V = ( E * V * N +
+                    e * v ) / (N+1)<!--mstheme--></font><!--msthemelist--></td>
+                </tr>
+              <!--msthemelist--></table>
+              <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+          </tr>
+        <!--msthemelist--></table>
+        <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+        <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <!--msthemelist--><tr>
+            <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+            <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><i>The
+              pattern can be matched by a process of <a href="#generalization"> generalization</a></i>.<!--mstheme--></font><!--msthemelist--></td>
+          </tr>
+          <!--msthemelist--><tr>
+            <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+            <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><i>The
+              pattern can be matched by a process of <a href="#specialization"> specialization</a></i>.<!--mstheme--></font><!--msthemelist--></td>
+          </tr>
+          <!--msthemelist--><tr>
+            <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+            <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><i>The
+              pattern does not match any known one </i>- the pattern is included
+              into the pdb.<!--mstheme--></font><!--msthemelist--></td>
+          </tr>
+        <!--msthemelist--></table>
+        <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+      </td>
+    </tr>
+  </table>
+  <!--mstheme--><font face="Times New Roman, Times">
+  </center>
+</div>
+<!--mstheme--></font>
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><a name="generalization"></a>Generalization<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+<p>A new pattern A with signature &lt;N<sub>A</sub>, E<sub>A</sub>, V<sub>A</sub>,
+P<sub>A</sub>&gt; can match by generalization a known pattern B with signature
+&lt;N<sub>B</sub>, E<sub>B</sub>, V<sub>B</sub>, P<sub>B</sub>&gt; if they
+satisfy the following criteria:</p>
+<!--mstheme--></font>
+<table border="0" width="600">
+  <tr>
+    <td width="100%">
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">E<sub>B</sub>
+            + 200 &gt; E<sub>A</sub> &gt; E<sub>B</sub> - 200 (<i>i.e., very bad
+            players should not degrade known knowledge, while very good players
+            should try to specialize it - see next section</i>)<!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">P<sub>A</sub>
+            should be compatible with P<sub>B</sub> (<i>i.e., it's the same
+            player or the game is symmetric</i>)<!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+            two board positions must have the same non-empty area and the same piece
+            positions. This rule can be overridden in the next cases: On a cell
+            by cell comparison (for brevity, I just present the first player
+            cases), if it is found a pair:<br>
+            <!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times">
+      <div align="center">
+        <center>
+        <!--mstheme--></font>
+        <table border="0" width="300">
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times"><b>from</b><!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times"><b>and</b><!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times"><b>turn
+              it to</b><!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">x<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">b
+              or B<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">B<!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">b<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">B<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">B<!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">-<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">x
+              or b or B<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">1<!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">x
+              or b or B<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">o
+              or w or W<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">#<sup>
+              *</sup><!--mstheme--></font></td>
+          </tr>
+        </table>
+        <!--mstheme--><font face="Times New Roman, Times">
+        </center>
+      </div>
+      <blockquote>
+        <blockquote>
+          <p><sup>*</sup> The don't care (#) signal can only be used if both
+          patterns give a strict positive evaluation (&gt;0.66) or a strict
+          negative evaluation (&lt;0.33). This means that the piece color is
+          irrelevant to evaluate this pattern.</p>
+        </blockquote>
+      </blockquote>
+      <!--mstheme--></font>
+    </td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><a name="specialization"></a>Specialization<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+<p>A new pattern A with signature &lt;N<sub>A</sub>, E<sub>A</sub>, V<sub>A</sub>,
+P<sub>A</sub>&gt; can match by specialization a known pattern B with signature
+&lt;N<sub>B</sub>, E<sub>B</sub>, V<sub>B</sub>, P<sub>B</sub>&gt; if they
+satisfy the following criteria:</p>
+<!--mstheme--></font>
+<table border="0" width="600">
+  <tr>
+    <td width="100%">
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">E<sub>A</sub>
+            &gt; E<sub>B</sub> + 200<!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">P<sub>A</sub>
+            should be compatible with P<sub>B</sub><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">The
+            two board positions must have the same area and the same piece
+            positions. This rule can be overridden in the next cases: On a cell
+            by cell comparison (for brevity, I just present the first player
+            cases), if it is found a pair:<br>
+            <!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times">
+      <div align="center">
+        <center>
+        <!--mstheme--></font>
+        <table border="0" width="300">
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times"><b>from
+              A</b><!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times"><b>from
+              B&nbsp;</b><!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times"><b>turn
+              it to</b><!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">x<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">B<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">x<!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">b<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">B<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">b<!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">x
+              or b or B<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">1<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">B<!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">x
+              or b or B<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">#<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">#<sup>
+              *</sup><!--mstheme--></font></td>
+          </tr>
+          <tr>
+            <td width="99" align="center"><!--mstheme--><font face="Times New Roman, Times">(x
+              or b) or B<!--mstheme--></font></td>
+            <td width="92" align="center"><!--mstheme--><font face="Times New Roman, Times">#<!--mstheme--></font></td>
+            <td width="89" align="center"><!--mstheme--><font face="Times New Roman, Times">B
+              or 1<sup> **</sup><!--mstheme--></font></td>
+          </tr>
+        </table>
+        <!--mstheme--><font face="Times New Roman, Times">
+        </center>
+      </div>
+      <blockquote>
+        <blockquote>
+          <p><sup>*</sup> The don't care (#) signal can only be used if both
+          patterns give a strict positive evaluation (&gt;0.66) or a strict
+          negative evaluation (&lt;0.33). This means that the piece color is
+          irrelevant to evaluate this pattern.<sup><br>
+          **</sup> This is for the other cases, where expectations are not
+          definitive or even contradictory.</p>
+        </blockquote>
+      </blockquote>
+      <!--mstheme--></font>
+    </td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333"><a name="patternLib"></a>Pattern
+Libraries<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+  <p align="right"><i>To find the perfect Go player, he'd have to be&nbsp;<br>
+  a Zen Buddhist in the Opening,&nbsp;<br>
+  a Taoist in the Middle-game,&nbsp;<br>
+  and a Confucian in the Endgame!<br>
+  </i><font size="2">Bill Taylor</font></p>
+<p>This section deals with the question of how a player chooses patterns. It's
+common use to divide the game tree into three different sections: Opening,
+Middle-game and Endgame (or using the Go terms: Fuseki, Chuban and Yose). The
+ACADEMY will keep each one of these patterns in different section, and shape
+them differently.</p>
+<!--mstheme--></font>
+<h4><!--mstheme--><font face="Times New Roman, Times" color="#333333">Opening<!--mstheme--></font></h4>
+<!--mstheme--><font face="Times New Roman, Times">
+  <p>This section will keep the set of board positions of the first N moves of the
+game (or just a list of moves descriptions, to save memory) used in the reported
+contests. This set of moves will slowly construct a tree of possible openings
+(called the <i>Fuseki Library</i> or the <i>Opening Theory</i> of the game),
+saving the average expected values of all players that reached that position,
+plus all reported wins, losses and draws.</p>
+<p>The Fuseki library should have a fixed maximum limit (say 1000 nodes) and a
+maximum depth (1/3 of an average game length). When it is full, the leaves with
+less expected value should be removed (value of node N = expected value of N /
+tree depth of N) and update the win/loss/draw ration of the father node).</p>
+<p> There is also a pruning process, stating that when the leaves
+of a certain node, have all negative values, erase those nodes (and update the
+father node), and highly
+decrease the expected value of that node.</p>
+<!--mstheme--></font>
+<h4><!--mstheme--><font face="Times New Roman, Times" color="#333333">Middle-game<!--mstheme--></font></h4>
+<!--mstheme--><font face="Times New Roman, Times">
+  <p>The Chuban library consists of a set of patterns
+(like the ones defined above). Each pattern intends to be a good tactical move <font FACE="Times New Roman">on
+a local area (in Go, called a </font>Tesuji).&nbsp;</p>
+<p>This library too, should be restricted by a maximum size (say 1000 patterns).
+When full, the weakest patterns should be removed. A pattern &lt;N, E, V, P&gt;
+has value N * E * (0.5 - V)<sup>2</sup>.</p>
+<!--mstheme--></font>
+<h4><!--mstheme--><font face="Times New Roman, Times" color="#333333">Endgame<!--mstheme--></font></h4>
+<!--mstheme--><font face="Times New Roman, Times">
+<p>The Yose library (or <i>Endgame Theory</i>), as the others, should have a
+maximum size (but a bigger size, perhaps 5000 patterns) to keep the set of
+patterns gathered in the reported contests.</p>
+<p>A pattern is added to the Yose library if one the following restrictions is
+satisfied:</p>
+<!--mstheme--></font>
+<table border="0" width="600">
+  <tr>
+    <td width="100%">
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">It
+            is a final position (win, loss or draw).<!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">If
+            the pattern is from a move within the last 20% of the average game
+            length.<!--mstheme--></font>
+            <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msthemelist--><tr>
+                <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">Then,
+                  the pattern should be multiplied by the final outcome of the
+                  game (this is a post-mortem analysis made by the ACADEMY where
+                  the result is already known).<!--mstheme--></font>
+                  <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="top" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">If
+                        the result is a win, apply the square root to the
+                        expected value<!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">If
+                        the result is a loss, multiply the expected value by
+                        itself (i.e., square it)<!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                    <!--msthemelist--><tr>
+                      <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu3.gif" width="12" height="12" hspace="15"></td>
+                      <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times">If
+                        the result is a draw, average the value with 0.5<!--mstheme--></font><!--msthemelist--></td>
+                    </tr>
+                  <!--msthemelist--></table>
+                  <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+              </tr>
+            <!--msthemelist--></table>
+            <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font>
+    </td>
+  </tr>
+</table>
+<!--mstheme--><font face="Times New Roman, Times">
+<p>Endgame patterns can also be generalized and specialized as mentioned. The
+removal process is the same as in the Chuban library.</p>
+</blockquote>
+<!--mstheme--></font>
+<h2><!--mstheme--><font face="Times New Roman, Times" color="#333333"><a name="using"></a>Using the
+ACADEMY<!--mstheme--></font></h2>
+<!--mstheme--><font face="Times New Roman, Times">
+<blockquote>
+  <p>Players should not use only the knowledge of these libraries. That would
+  slow down and eventually freeze the learning process. The use of any library
+  should be restricted to 25% for opening consultations, and middle-game and
+  endgame should be restricted to positions with very low expected value.
+  Players with ELO E should only accept proposals from patterns with an average
+  ELO greater than E-200.</p>
+  <p>While updating Fuseki and Yose libraries is a post-mortem task for the
+  ACADEMY, pattern insertion (as mentioned early) in the middle-game is an
+  active player process (even it the library is just updated at the end of that contest).
+  There should be a strict criteria for pattern insertion (or the library will quickly
+  be flooded with useless patterns). For now, the best criteria that I find is:</p>
+  <blockquote>
+    <p><i>If a player with ELO E is in a contest with an adversary with ELO
+    greater than E-100, and a certain move increases the expected value by 20%,
+    (10% if it goes from below 0.5 to above 0.5), <u>and the game is a draw or a
+    win</u>, then post the pattern to the ACADEMY!</i></p>
+  </blockquote>
+<!--mstheme--></font>
+  <h3><!--mstheme--><font face="Times New Roman, Times" color="#333333">The
+  Esperanto solution<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times">
+  <p>One question posed about the ACADEMY is the question of how to represent in
+  order to share the common knowledge among different players. This problem is
+  solved by using patterns and move lists, since those are included in the
+  common language known by all players: the game itself!</p>
+<!--mstheme--></font>
+<h3><!--mstheme--><font face="Times New Roman, Times" color="#333333">Game
+Measures<!--mstheme--></font></h3>
+<!--mstheme--><font face="Times New Roman, Times"><p>The Academy will also
+receive constant information from the Arena, about actual contests with player's
+reports, in order to maintain and update the values for the game measures
+already <a href="index.htm#measures">discussed</a>.</p>
+</blockquote>
+
+<p align="right">
+<img border="0" src="icons/line.gif" width="360" height="10"><a href="#top"><br>
+<img border="0" src="icons/up.gif" alt="goto top" width="12" height="12"></a> <a href="index.htm"><img border="0" src="icons/center.gif" alt="goto main page" width="12" height="12"></a>
+<a href="arena.htm"><img border="0" src="icons/next.gif" alt="next..." width="12" height="12"></a></p>
+
+<!--mstheme--></font>
+
+</body>
+
+</html>

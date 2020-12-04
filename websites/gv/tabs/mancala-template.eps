@@ -1,0 +1,705 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne and Joao Neto
+%%Title: sq-test.ps
+%%CreationDate: 1/1/2004
+%%BoundingBox: 0 0 590 260
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/dx 50 def                       % the size of the circles
+/r { .1 dx mul } def             % the size of the stones
+/coordsize   { dx 0.7 mul } def  % the size of the coordinates
+/insidesize  { dx 0.5 mul } def  % the size of the letters inside the stones
+/pieceborder {dx .01 mul } def
+
+/Chars 
+{[(A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)(AA)(AB)(AC)]
+} def
+
+/Digits
+{	[( 0)( 1)( 2)( 3)( 4)( 5)( 6)( 7)( 8)( 9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)(23)(24)(25)(26)(27)(28)(29)(30)(31)(32)(33)(34)(35)(36)(37)(38)(39)(40)(41)(42)(43)(44)(45)(46)(47)(48)(49)(50)]
+} def
+
+
+%---------------- Functions -------------------
+
+/White1   % draw one white stone
+{
+    /i exch def
+    /j exch def
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc stroke
+} def
+
+/White2
+{
+
+% stones:
+%  1 2
+
+    /i exch def
+    /j exch def
+
+    % draw first stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 0 360 arc stroke
+
+    % draw second stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 0 360 arc stroke
+
+} def
+
+/White3
+{
+
+% stones:
+%   3
+%  1 2
+
+    /i exch def
+    /j exch def
+
+    % draw first stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r sub r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r sub r 0 360 arc stroke
+
+    % draw second stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r sub r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r sub r 0 360 arc stroke
+
+    % draw third stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul j dx mul r add r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r add r 0 360 arc stroke
+
+} def
+
+/White4
+{
+
+% stones:
+%  3 4
+%  1 2
+
+    /i exch def
+    /j exch def
+
+    % draw first stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 1.25 mul sub r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 1.25 mul sub r 0 360 arc stroke
+
+    % draw second stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.25 mul sub r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.25 mul sub r 0 360 arc stroke
+
+    % draw third stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 1.25 mul add r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 1.25 mul add r 0 360 arc stroke
+
+    % draw fourth stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.25 mul add r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.25 mul add r 0 360 arc stroke
+
+} def
+
+/White5
+{
+
+% stones:
+%  4 5
+%   3
+%  1 2
+
+    /i exch def
+    /j exch def
+
+    % draw first stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.75 mul add j dx mul r 1.75 mul sub r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.75 mul add j dx mul r 1.75 mul sub r 0 360 arc stroke
+
+    % draw second stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.75 mul sub j dx mul r 1.75 mul sub r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.75 mul sub j dx mul r 1.75 mul sub r 0 360 arc stroke
+
+    % draw third stone (right in the middle)
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc stroke
+
+    % draw fourth stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.75 mul add j dx mul r 1.75 mul add r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.75 mul add j dx mul r 1.75 mul add r 0 360 arc stroke
+
+    % draw fifth stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.75 mul sub j dx mul r 1.75 mul add r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.75 mul sub j dx mul r 1.75 mul add r 0 360 arc stroke
+
+} def
+
+/White6
+{
+
+% stones:
+%  5 6
+%  3 4
+%  1 2
+
+    /i exch def
+    /j exch def
+
+    % draw first stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul sub r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul sub r 0 360 arc stroke
+
+    % draw second stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul sub r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul sub r 0 360 arc stroke
+
+    % draw 3rd stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 0 360 arc stroke
+
+    % draw 4th stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 0 360 arc stroke
+
+    % draw 5th stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul add r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul add r 0 360 arc stroke
+
+    % draw 6th stone
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul add r 0 360 arc fill
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul add r 0 360 arc stroke
+
+} def
+
+/Whites
+{
+    /i exch def
+    /j exch def
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul sub r 0 360 arc fill
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul sub r 0 360 arc stroke
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul sub r 0 360 arc fill
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul sub r 0 360 arc stroke
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 2.25 mul add j dx mul r 0 360 arc fill
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 2.25 mul add j dx mul r 0 360 arc stroke
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 2.25 mul sub j dx mul r 0 360 arc fill
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 2.25 mul sub j dx mul r 0 360 arc stroke
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul add r 0 360 arc fill
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul add r 0 360 arc stroke
+
+    1 setgray
+    0 setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul add r 0 360 arc fill
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul add r 0 360 arc stroke
+
+} def
+
+/Black1
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul j dx mul r 0 360 arc fill
+    newpath i dx mul j dx mul r 0 360 arc stroke
+
+} def
+
+
+/Black2
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r 0 360 arc stroke
+
+} def
+
+
+/Black3
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r sub r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r sub r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r sub r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r sub r 0 360 arc stroke
+
+    newpath i dx mul j dx mul r add r 0 360 arc fill
+    newpath i dx mul j dx mul r add r 0 360 arc stroke
+
+} def
+
+
+/Black4
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 1.25 mul sub r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r 1.25 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.25 mul sub r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.25 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul add j dx mul r 1.25 mul add r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r 1.25 mul add r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.25 mul add r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.25 mul add r 0 360 arc stroke
+
+} def
+
+/Black5
+{
+    /i exch def
+    /j exch def
+
+    % draw first stone
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.75 mul add j dx mul r 1.75 mul sub r 0 360 arc fill
+    newpath i dx mul r 1.75 mul add j dx mul r 1.75 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 1.75 mul sub j dx mul r 1.75 mul sub r 0 360 arc fill
+    newpath i dx mul r 1.75 mul sub j dx mul r 1.75 mul sub r 0 360 arc stroke
+
+    newpath i dx mul j dx mul r 0 360 arc fill
+    newpath i dx mul j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 1.75 mul add j dx mul r 1.75 mul add r 0 360 arc fill
+    newpath i dx mul r 1.75 mul add j dx mul r 1.75 mul add r 0 360 arc stroke
+
+    newpath i dx mul r 1.75 mul sub j dx mul r 1.75 mul add r 0 360 arc fill
+    newpath i dx mul r 1.75 mul sub j dx mul r 1.75 mul add r 0 360 arc stroke
+
+} def
+
+
+/Black6
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul sub r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul sub r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul add j dx mul r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul add r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul add r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul add r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul add r 0 360 arc stroke
+
+} def
+
+/Blacks
+{
+    /i exch def
+    /j exch def
+
+    0 setgray
+    pieceborder setlinewidth
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul sub r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul sub r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul sub r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul add j dx mul r 0 360 arc fill
+    newpath i dx mul r 2.25 mul add j dx mul r 0 360 arc stroke
+
+%    newpath i dx mul j dx mul r 0 360 arc fill
+%    newpath i dx mul j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 2.25 mul sub j dx mul r 0 360 arc fill
+    newpath i dx mul r 2.25 mul sub j dx mul r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul add r 0 360 arc fill
+    newpath i dx mul r 1.25 mul add j dx mul r 2.25 mul add r 0 360 arc stroke
+
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul add r 0 360 arc fill
+    newpath i dx mul r 1.25 mul sub j dx mul r 2.25 mul add r 0 360 arc stroke
+
+} def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+/Board
+{   % call: r(ows) c(ols) b(if true show coords) h(if true show houses)
+    /h exch def
+    /b exch def
+    /cols exch def
+    /rows exch def
+
+    /width  cols dx mul def
+    /height rows dx mul def
+
+    0 setgray
+    1 setlinecap
+
+    % Draw grid
+    1 setlinewidth
+
+    gsave
+
+    dx 2 div dx 2 div translate
+   
+    1 1 rows   % for each row
+    { 
+        dup
+        /i exch def     
+        /x i 1 sub dx mul dx 2 div add def
+        1 1 cols   % for each column
+        { 
+          /j exch def     
+          /y j 1 sub dx mul dx 2 div add def
+          y x dx 2.2 div 0 360 arc stroke 
+        } for
+    } for
+
+    h {  % draw board houses
+
+      /x1 1 1 sub dx mul dx 2 div add def
+      /y1 cols 1 add 1 sub dx mul dx 2 div add def
+
+      /x2 rows 1 sub dx mul dx 2 div add def
+      /y2 0 1 sub dx mul dx 2 div add def
+
+      % y1 x1 dx 2.2 div 0 360 arc stroke 
+      % y2 x2 dx 2.2 div 0 360 arc stroke 
+
+      y1 dx 2.3 div sub x1 dx 2.3 div sub moveto
+      y1 dx 2.3 div add x1 dx 2.3 div sub lineto
+      y1 dx 2.3 div add x2 dx 2.3 div add lineto
+      y1 dx 2.3 div sub x2 dx 2.3 div add lineto
+      closepath stroke
+
+      y2 dx 2.3 div sub x1 dx 2.3 div sub moveto
+      y2 dx 2.3 div add x1 dx 2.3 div sub lineto
+      y2 dx 2.3 div add x2 dx 2.3 div add lineto
+      y2 dx 2.3 div sub x2 dx 2.3 div add lineto
+      closepath stroke
+
+    } if 
+
+    dx 2 div r 1.5 mul sub 0 translate 
+
+    b {
+      1 1 cols   % for each column label
+      { 
+          dup
+          /i exch def
+          -0.5 i 1 sub Chars i 1 sub get Label 
+      } for
+    } if
+
+
+    dx -1.25 mul dx -0.5 mul r 1.5 mul sub translate 
+
+    b {
+      1 1 rows   % for each row label
+      { 
+          dup
+          /i exch def     
+          h {
+            i -1 Digits i get Label 
+          } {
+            i 0 Digits i get Label 
+          } ifelse
+      } for
+    } if
+
+    grestore
+
+    % Draw board edges
+    2 setlinewidth
+
+    h {
+     newpath 
+     -0.5 dx mul 1 sub
+     0.5 dx mul 1 sub
+     moveto
+
+     -0.5 dx mul 1 sub
+     rows 0.5 add dx mul 1 add
+     lineto
+
+     cols 1.5 add dx mul 1 add
+     rows 0.5 add dx mul 1 add
+     lineto
+
+     cols 1.5 add dx mul 1 add
+     0.5 dx mul 1 sub
+     lineto
+    } {
+     newpath 
+     0.5 dx mul 1 sub
+     0.5 dx mul 1 sub
+     moveto
+
+     0.5 dx mul 1 sub
+     rows 0.5 add dx mul 1 add
+     lineto
+
+     cols 0.5 add dx mul 1 add
+     rows 0.5 add dx mul 1 add
+     lineto
+
+     cols 0.5 add dx mul 1 add
+     0.5 dx mul 1 sub
+     lineto
+    } ifelse
+
+    closepath
+    stroke
+} def
+
+/Label
+{   % call: j i s(tring)
+    /s exch def
+    /i exch def
+    /j exch def
+
+    /Courier findfont coordsize scalefont setfont
+    newpath 
+    j 9 gt {      % if the number (for the column label) is 10 or greater
+      gsave       %    it will condense font to fit size
+      /basefont /Courier findfont def
+      basefont [coordsize 2 div 0 0 coordsize 0 0] makefont setfont
+      i dx mul r 2.5 div sub r add
+      j dx mul r 2.5 div sub 
+      moveto s show
+      grestore
+    }{
+      i dx mul r 2.5 div sub
+      j dx mul r 2.5 div sub 
+      moveto s show
+    } ifelse
+
+} def
+
+
+/Marker
+{   % call: j i g(rey ratio) s(tring -> just 1 char)
+    /s exch def
+    /g exch def
+    /i exch def
+    /j exch def
+
+    g setgray
+    newpath i dx mul r 1.25 mul sub j dx mul r 1.45 mul sub
+    moveto
+
+    gsave
+    /Helvetica-Bold findfont insidesize scalefont setfont
+    .5 setlinewidth
+    s true charpath gsave 1 setgray fill grestore stroke
+    grestore
+
+} def
+
+/MarkerSm
+{   % call: j i g(rey ratio) s(tring -> just 2 chars)
+    /s exch def
+    /g exch def
+    /i exch def
+    /j exch def
+
+    gsave
+
+    g setgray
+    newpath i dx mul r 2.5 mul sub j dx mul r 1.45 mul sub
+    moveto
+
+    /basefont /Helvetica-Bold findfont def
+    basefont [insidesize 1.2 div 0 0 insidesize 0 0] makefont setfont
+    .5 setlinewidth
+    s true charpath gsave 1 setgray fill grestore stroke
+
+    grestore
+
+} def
+
+%--------------------------------------------------------------------------
+%---------------- (make your diagram starting here) -----------------------
+%--------------------------------------------------------------------------
+
+dx 2 mul dx 2 mul translate
+
+3 7 true true Board   % use: n-rows n-columns showCoord showHouses Board
+
+2 3 White1
+2 4 Black1
+2 5 Black2 
+1 2 Black3
+1 4 Black4
+1 6 Black5
+2 6 Black6
+
+3 6 Blacks
+3 7 Blacks
+
+3 6 0 (7) Marker
+3 7 0 (13) MarkerSm
+
+showpage

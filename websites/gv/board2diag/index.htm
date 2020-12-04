@@ -1,0 +1,141 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>board2diag</title>
+<script LANGUAGE="JavaScript" src="board2diag.js"></script>
+</head>
+
+<body bgcolor="#D5BD83" background="../ricebk.jpg">
+
+<center><table border="1" width="600" bordercolor="#000000">
+  <tr>
+    <td width="200" background="../back-board.jpg" align="center" bordercolor="#000000">
+       <script LANGUAGE="JavaScript">board2diag("lurd,7,7,7/7/..xx.../...wx../..A.x../7/7")
+       </script>
+    </td>
+    <td width="40%" align="center">
+      <p align="center"><b><font size="6">&nbsp;board2diag&nbsp;</font></b></td>
+    <td width="200" background="../back-kings.jpg" align="center">
+       <script LANGUAGE="JavaScript">board2diag("lurd,7,7,..@xurR@xur../..rrr../......./......./......./..lll../..@xsrL@xsr..")
+       </script>
+    </td>
+  </tr>
+</table></center><br>
+
+board2diag is a JavaScript tool to easily add board diagrams to a webpage. The
+source code was originally made by Hans Bodlaender [<a href="mailto:hans@chessvariants.com">hans@chessvariants.com</a>]
+and expanded later by João Pedro Neto [<a href="mailto:jpn@di.fc.ul.pt">jpn@di.fc.ul.pt</a>].
+<br>First, one has to include the call to the board2diag.js file, in the following
+form:
+  <p><font face="Courier New"><b>
+  &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot; src=&quot;board2diag.js&quot;&gt;&lt;/SCRIPT&gt;</b></font></p>
+Then, one can use a new JavaScript part, and make a call to board2diag. This
+version assumes all files are in the same directory (this is easily changed).
+Just click on <a href="board2diag.zip"> <img border="0" src="../icons/zipped.gif" width="19" height="19">
+</a> <a href="../hex2diag/board2diag.zip"> 
+</a> to download the actual version.&nbsp;
+<p>The function has one argument, which is a string of the following form:
+<ul>
+  <li>Options about the borders: l if the left side is a border, r if the right
+    side is a border, u if the upper side is a border, d if the down side is a
+    border
+  <li>Comma
+  <li>Number of rows
+  <li>Comma
+  <li>Number of columns
+  <li>String that describes the position. Here:
+    <ul>
+      <li>b is a black soldier, a red soldier, g a green
+        soldier, l a blue soldier, y a yellow soldier, m a magenta soldier
+      <li>if you use uppercase, the stones will be Kings
+      <li>a number is a number of successive empty squares
+      <li>a / marks the end of a row
+      <li>a . is one empty square
+      <li>a , is one handicap point
+      <li>a ; is one empty cell marked with a green dot
+      <li>a : is one empty cell marked with a red dot
+      <li>a * is one empty cell with diagonal lines
+      <li>a h is a special piece used to define walls, blocks, ... if you use H
+        it will blink!
+      <li>z means cell removal, but then <u>you must use only the '.' notation,
+        do not use numbers to represent empty cells</u>!
+      <li>to place Go stones, use 'xwopqstuv' for&nbsp; black, white, brown,
+        yellow, gray, blue, green, red, magenta. Use uppercase to mark the
+        stones.
+      <li>to mark empty cell with numbers, use 'a' for 1, 'c' for 2, 'defijkn'
+        for '3456789'. Use uppercase for letters.
+    </ul>
+</ul>
+<p>
+<br><center>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br>board2diag(&quot;lurd,3,3,9&quot;)<br>");
+board2diag("lurd,3,3,9");
+document.write("<center>board2diag(&quot;lurd,9,9,40,40&quot;)<br>");
+board2diag("lurd,9,9,40,40");
+document.write("<br>board2diag(&quot;ld,5,5,...../.xx../.xWx./...../.....&quot;)<br>");
+board2diag("ld,5,5,...../.xx../.xWx./...../.....");
+document.write("<center>board2diag(&quot;lurd,5,5,.rrr./..R../...../..B../.bbb.&quot;)<br>");
+board2diag("lurd,5,5,.rrr./..R../...../..B../.bbb.");
+document.write("<br>board2diag(&quot;lurd,1,5,.....&quot;)<br>");
+board2diag("lurd,1,5,.....")
+document.write("<br>board2diag(&quot;lurd,5,1,5&quot;)<br>");
+board2diag("lurd,5,1,5")
+document.write("<br>board2diag(&quot;lurd,5,5,zz.zz/zz.zz/...../zz.zz/zz.zz&quot;)<br>");
+board2diag("lurd,5,5,zz.zz/zz.zz/...../zz.zz/zz.zz")
+document.write("<br>board2diag(&quot;lurd,5,5,*.*.*/.*.*./*.*.*/.*.*./*.*.*&quot;)<br>");
+board2diag("lurd,5,5,*.*.*/.*.*./*.*.*/.*.*./*.*.*");
+document.write("<br>board2diag(&quot;lurd,7,7,zz*.*zz/zz.*.zz/*.*.*.*/.*.*.*./*.*.*.*/zz.*.zz/zz*.*zz&quot;)<br>");
+board2diag("lurd,7,7,zz*.*zz/zz.*.zz/*.*.*.*/.*.*.*./*.*.*.*/zz.*.zz/zz*.*zz");
+document.write("<br>board2diag(&quot;,8,4,..../.bB./.rR./.yY./.gG./.lL./.mM5&quot;)<br>");
+board2diag(",8,4,..../.bB./.rR./.yY./.gG./.lL./.mM5");
+document.write("<br>board2diag(&quot;lurd,7,7,:..;..:/.;.:.;./..;;;../;;;B;;;/..;;;../.;.:.;./:..;..:&quot;)<br>");
+board2diag("lurd,7,7,:..;..:/.;.:.;./..;;;../;;;B;;;/..;;;../.;.:.;./:..;..:");
+document.write("<br>board2diag(&quot;lurd,5,5,6acd./.efi./.jkn6&quot;)<br>");
+board2diag("lurd,5,5,6acd./.efi./.jkn6");
+document.write("<br>board2diag(&quot;lurd,5,5,6ACD./.EFI./.JKN6&quot;)<br>");
+board2diag("lurd,5,5,6ACD./.EFI./.JKN6");
+document.write("<br>board2diag(&quot;lurd,5,5,6xwo./.pqs./.tuv6&quot;)<br>");
+board2diag("lurd,5,5,6xwo./.pqs./.tuv6");
+document.write("<br>board2diag(&quot;lurd,5,5,6XWO./.PQS./.TUV6&quot;)<br>");
+board2diag("lurd,5,5,6XWO./.PQS./.TUV6");
+document.write("<br>board2diag(&quot;lurd,5,5,;zzz:/.zzz./..H../.zzz./:zzz;&quot;)<br>");
+board2diag("lurd,5,5,;zzz:/.zzz./..H../.zzz./:zzz;")
+//-->
+</script>
+</center>
+<hr>
+<p><b>Command @ is used to present specific game pieces and syntax (<i>note: the
+use of symbol 'z' is not compatible with these pictures</i>)</b></p>
+<ul>
+  <li> <b> CONNECT GAMES</b> Syntax - <b> @c</b>[x|u][nw connect?][sw connect?][se connect?][ne connect?]
+</ul>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br>board2diag(&quot;lurd,7,7,......./..@cx0010..../...@cx1100xx@cu0100/..@cx0011..@cu0101./...@cx1000@cu0101../...@cu0001.../...u...&quot;)<br><br>");
+board2diag("lurd,7,7,......./..@cx0010..../...@cx1100xx@cu0100/..@cx0011..@cu0101./...@cx1000@cu0101../...@cu0001.../...u...")
+//-->
+</script>
+<ul>
+  <li> <b> ROTATE GAMES</b> Syntax - <b> @r</b>[u|t][n|s|e|w|v|h|1|2|3|4|5|6]
+</ul>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br>board2diag(&quot;lurd,7,7,@ru4@ru1...../@ru3@ru2..@rtv@rth./....@ru5@ru6./......./...@rtn.../..@rtw.@rte../...@rts...&quot;)<br><br>");
+board2diag("lurd,7,7,@ru4@ru1...../@ru3@ru2..@rtv@rth./....@ru5@ru6./......./...@rtn.../..@rtw.@rte../...@rts...")
+//-->
+</script>
+<ul>
+  <li> <b> CHESS GAMES</b> Syntax - <b> @x</b>[x|t|u|v|o|p|s][n|b|t|q]
+</ul>
+<script LANGUAGE="JavaScript"><!--
+document.write("<br>board2diag(&quot;lurd,9,10,10/..@xxn@xtn@xun@xvn@xpn@xsn../10/..@xxb@xtb@xub@xvb@xpb@xsb../10/..@xxr@xtr@xur@xvr@xpr@xsr../10/..@xxq@xtq@xuq@xvq@xpq@xsq../10&quot;)<br>");
+board2diag("lurd,9,10,10/..@xxn@xtn@xun@xvn@xpn@xsn../10/..@xxb@xtb@xub@xvb@xpb@xsb../10/..@xxr@xtr@xur@xvr@xpr@xsr../10/..@xxq@xtq@xuq@xvq@xpq@xsq../10")
+//-->
+</script>
+<p align="right"><i>Version 1.2. Apr 2003</i></p>
+</body>
+
+</html>

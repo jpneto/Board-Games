@@ -1,0 +1,258 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>ZRF v.2.0</title>
+<meta name="Microsoft Theme" content="bars 011">
+</head>
+
+<body background="barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633"
+vlink="#999933" alink="#993300">
+<!--mstheme--><font face="arial, helvetica"><!--mstheme--></font>
+
+<h3 FOLDED ADD_DATE="873997532" align="center"><!--mstheme--><font face="times new roman, times"
+color="#000000"><a NAME="top"></a><font SIZE="-1"><a HREF="http://www.metacrawler.com">webSearch</a>
+| <a HREF="index.htm#MyCVs">my variants</a> |&nbsp; <a HREF="index.htm#Challenges">challenges</a>
+|&nbsp; <a HREF="index.htm#otherPlaces">other places</a></font><!--mstheme--></font></h3>
+<!--mstheme--><font face="arial, helvetica"><!--mstheme--></font>
+
+<h3 FOLDED ADD_DATE="873997549" align="center"><!--mstheme--><font face="times new roman, times"
+color="#000000"><strong><font size="6">New ideas for Zillions</font></strong><!--mstheme--></font></h3>
+<!--mstheme--><font face="arial, helvetica">
+
+<p>&nbsp;</p>
+
+<p>Here are a bunch of suggestions for an update of the ZRF language. Let´s shoot in all
+directions, in order to hit something! Just one note: we know very well that it is easier
+to propose things than to make them! I want to thank ZoG team for such a great game!!!</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Comments for blocks, like the
+    /* */ comments in C<!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica"><!--msthemeseparator-->
+
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica"><font face="Courier New">(last-player?
+    &nbsp;&nbsp; player)<br>
+    (actual-player? player)<br>
+    (next-player?&nbsp;&nbsp; player)</font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica">
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; true if the last/actual/next player is &lt;player&gt;</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica"><font face="Courier New">(piece-of-player?
+    player [position|direction])&nbsp; </font><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica">
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; true if the piece is of &lt;player&gt;</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica"><font face="Courier New">&lt;any-piece&gt;</font>
+    declaration for win/loss-conditions<!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica"><!--msthemeseparator-->
+
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Real global flags for the
+    entire game (boolean and position data type). E.g.,<!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica">
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp; (set-global var_name bool_value)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; (set-global var_name position-name)</font></p>
+
+<p>&nbsp;&nbsp;&nbsp; with a place in the (game ) block for initialization</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; e.g.</p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (game ...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... (set-global
+var_name bool_value) ...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+
+<p>&nbsp;&nbsp;&nbsp; This is ideal for many things, e.g, for programming KO rules <br>
+&nbsp;&nbsp;&nbsp; (you can save the tabu square to compare later).</p>
+
+<p>&nbsp;&nbsp;&nbsp; Also, with position variables, there can be instructions like,</p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp; (send-piece position1 position2)</font></p>
+
+<p>&nbsp;&nbsp;&nbsp; to send a piece from one position to another, in a more direct way.</p>
+
+<p>Just a side thought: It´s a known result of Theory of Computation&nbsp; that if you
+have a programming language with iteration, conditional&nbsp; and global memory, you have
+Turing Equivalence (that is, you can&nbsp; make everything that is computable), at least
+up to the available memory. </p>
+
+<p>I´m not sure if the ZoG memory system satisfies the requirements&nbsp; for Turing
+Equivalence. This may mean that certain board games&nbsp; cannot be implemented, even with
+hard and/or unelegant work.&nbsp; And that´s nasty, because it´s impossible to have a
+procedure&nbsp; to decide if a game (defined by an algorithm) is programmable&nbsp; or
+not.</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">The option of a piece moved by
+    other player, to be able to use&nbsp; the player´s symmetries only in that move turn,
+    Nice to handle neutral pieces that act differently depending of who is moving them (eg.
+    the Holes in Amoeba). E.g.,<!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica">
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp; (piece ...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (user-symmetry true) ...<br>
+&nbsp;&nbsp;&nbsp; )</font></p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">Multiple Mark/Back mechanism,
+    using a Stack and/or a Queue<!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica"><!--msthemeseparator-->
+
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">ForEach instruction, a loop
+    process for iterate elements in a set<!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica">
+
+<p>&nbsp;&nbsp;&nbsp; e.g.,</p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp; (foreach (&lt;square&gt; in
+&lt;some-zone&gt;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; stuff using &lt;square&gt;<br>
+&nbsp;&nbsp;&nbsp; )</font></p>
+
+<p>&nbsp;&nbsp;&nbsp; With this instruction, there may have some set generators, for e.g.,</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <font face="Courier New"> - (found-pieces (&lt;player&gt;
+&lt;piece&gt;) (...) ... )<br>
+&nbsp;&nbsp; - (found-pieces (&lt;player&gt; any-piece) )<br>
+&nbsp;&nbsp; - (found-pieces (any-player any-piece) )<br>
+</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; returns the squares where these pieces are</p>
+
+<p><font face="Courier New">&nbsp;&nbsp; - (found-pieces (condition) ) </font></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; returns the squares where the pieces with
+condition true are (e.g., (found-pieces (attacked?) ), get all attacked pieces)</p>
+
+<p><font face="Courier New">&nbsp;&nbsp; - (found-marked-squares)</font></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; returns all marked squares</p>
+
+<p><font face="Courier New">&nbsp;&nbsp; - (found-attribute &lt;attr-name&gt;
+&lt;value&gt; )</font></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; returns the squares where the pieces that have
+&lt;attr-name&gt; with value &lt;value&gt;</p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font><!--msthemelist-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist-->  <tr>
+<!--msthemelist-->    <td valign="baseline" width="42"><img src="barbul1e.gif" width="20" height="20"
+    hspace="11"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="arial, helvetica">A CASE statement. This may be
+    useful, if ZRF starts handling non-boolean variables and functions.<!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="arial, helvetica">
+
+<p>&nbsp;&nbsp;&nbsp; e.g., </p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp; (case (actual-player) </font></p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( (White) (...stuff...) )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( (Black) (...stuff...) )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( (Red)&nbsp;&nbsp; (...stuff...) )</font></p>
+
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp; ) ;endcase</font></p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+
+<p>Integer types with aritmetic (+,-,*,/,trunc,round) and relacional (&gt;,&lt;,=,&lt;&gt;
+...) operators.&nbsp; Also, local and global integer variables would be nice.</p>
+
+<p>Random Numbers,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g., rand(n) gives a number between 0 and n-1&nbsp; with
+normal distribution</p>
+
+<p>Possibly, ZoG doesn´t have integer types because of performance reasons (At least it
+is not real aritmetic)</p>
+<a HREF="#top">
+
+<p align="right">back to top</a> </p>
+<!--msthemeseparator-->
+<p align="center"><img src="barrulee.gif"></p>
+<!--mstheme--></font>
+
+<h3 align="center"><!--mstheme--><font face="times new roman, times" color="#000000"><font SIZE="-1"><a
+HREF="http://www.metacrawler.com">webSearch</a> | <a HREF="index.htm#MyCVs">my variants</a>
+|&nbsp; <a HREF="index.htm#Challenges">challenges</a> |&nbsp; <a
+HREF="index.htm#otherPlaces">other places</a></font> <!--mstheme--></font></h3>
+<!--mstheme--><font face="arial, helvetica"><!--mstheme--></font>
+</body>
+</html>

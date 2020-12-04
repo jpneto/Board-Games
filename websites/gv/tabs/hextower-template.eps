@@ -1,0 +1,487 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne and Joao Neto
+%%Title: hexs diagrams
+%%CreationDate: 1/1/2004
+%%BoundingBox: 0 0 600 355
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/ScY 0.5 def   % scale of Y axis to give a 3D perspective
+/Rtt 15 def    % how many degrees to rotate
+
+/Root3 1.732050808 def
+
+/OriginX 0 def
+/OriginY 160 def
+
+/HexRadius 22 def
+/HexDiameter { Hexradius 2 mul } def
+
+/CircleRadius { HexRadius 0.65 mul } def
+/CircleDiameter { CircleRadius 2 mul } def
+/CircleLineWidth 1 def
+
+% ----------- Functions -------------
+
+/HexX
+{   % call: i j HexX
+    /j exch def
+    /i exch def
+    OriginX i j add HexRadius mul 1.5 mul add
+} def
+
+/HexY
+{   % call: i j HexY
+    /j exch def
+    /i exch def
+    OriginY j i sub HexRadius mul Root3 mul 2 div sub
+} def
+
+/Hexagon
+{   % call: i j Hexagon
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    0 setlinewidth
+    1 setgray
+    fill
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    .25 setlinewidth
+    0 setgray
+    stroke
+} def
+
+/Label
+{   % call: i j s(tring)
+    /s exch def
+    /j exch def
+    /i exch def
+
+    /coordsize { HexRadius 1.2 mul } def
+    /Courier findfont coordsize 1.5 div scalefont setfont
+    0 setgray
+    newpath
+
+    i 10 gt {      % if the number (for the row label) is 10 or greater
+      gsave       %    it will condense font to fit size
+      /basefont /Courier findfont def
+      basefont [coordsize 2 div 0 0 coordsize 0 0] makefont setfont
+      i j HexX HexRadius 3.2 div sub
+      i j HexY HexRadius 2.5 div sub % ScY mul
+      moveto s show
+      grestore
+    }{
+      i j HexX HexRadius 3.2 div sub
+      i j HexY HexRadius 2.5 div sub % ScY mul
+      moveto s show
+    } ifelse
+
+} def
+
+
+/Marker
+{   % call: i j g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /j exch def
+    /i exch def
+
+    g setgray
+    newpath
+    i j HexX CircleRadius 2 div sub HexRadius 6 div add
+    i j HexY CircleRadius 2 div sub ScY mul
+    moveto
+
+    gsave
+    /Helvetica-Bold findfont HexRadius 1.5 div scalefont setfont
+    .5 setlinewidth
+    b {
+        s true charpath stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+/MarkerSm
+{   % call: i j g(rey ratio) b(oolean/charpath) s(tring -> just 2 chars)
+    /s exch def
+    /b exch def
+    /g exch def
+    /j exch def
+    /i exch def
+
+    g setgray
+    newpath
+    i j HexX CircleRadius 2 div sub
+    i j HexY CircleRadius 2 div sub ScY mul
+    moveto
+
+    gsave
+
+    /basefont /Helvetica-Bold findfont def
+    basefont [HexRadius 2 div 0 0 HexRadius 1.5 div 0 0] makefont setfont
+
+    .5 setlinewidth
+    b {
+        s true charpath stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+%---------------- Constants -------------------
+
+/dx 28 def
+/dy { .55 dx mul } def
+/dz { .375 dx mul } def
+/rdot { .125 dx mul } def
+/pieceborder {dx .03 mul } def
+
+/r { .4 dx mul } def
+/h { .5 r mul } def
+
+/dark .3 def
+/light .7 def
+
+/Chars 
+{[(A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)(N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)(AA)(AB)(AC)]
+} def
+
+/Digits
+{	[( 0)( 1)( 2)( 3)( 4)( 5)( 6)( 7)( 8)( 9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)(23)(24)(25)(26)(27)(28)(29)(30)(31)(32)(33)(34)(35)(36)(37)(38)(39)(40)(41)(42)(43)(44)(45)(46)(47)(48)(49)(50)]
+} def
+
+%---------------- Functions -------------------
+
+% Draw a cell
+
+/XY
+{
+    /k exch def
+    /j exch def
+    /i exch def
+
+    i j HexX
+    i j HexY k h mul add
+
+} def
+
+% Draw a White cell at (i,j) with height k
+
+/White
+{
+    /k exch def
+    /j exch def
+    /i exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    i j k XY translate
+    1 .5 scale
+
+    1 setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul r 0 360 arc
+    stroke
+
+    grestore
+} def
+
+% Draw a Black cell at (i,j) with height k
+
+/Black
+{
+    /k exch def
+    /j exch def
+    /i exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    i j k XY translate
+    1 .5 scale
+
+    dark setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul r 0 360 arc
+    stroke
+
+    grestore
+} def
+
+% Draw a Grey cell at (i,j) with height k
+
+/Grey
+{
+    /k exch def
+    /j exch def
+    /i exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    i j k XY translate
+    1 .5 scale
+
+    light setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 r 360 180 arcn
+    0 h 2 mul r 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul r 0 360 arc
+    stroke
+
+    grestore
+} def
+
+
+%--------------------------------------------------------------------------
+%---------------- (make your diagram starting here) -----------------------
+%--------------------------------------------------------------------------
+
+0 50 translate
+
+gsave
+
+% Rtt  rotate
+% 1 ScY scale
+
+6 0 Hexagon
+7 0 Hexagon
+8 0 Hexagon
+9 0 Hexagon
+10 0 Hexagon
+
+5 1 Hexagon
+6 1 Hexagon
+7 1 Hexagon
+8 1 Hexagon
+9 1 Hexagon
+10 1 Hexagon
+
+4 2 Hexagon
+5 2 Hexagon
+6 2 Hexagon
+7 2 Hexagon
+8 2 Hexagon
+9 2 Hexagon
+10 2 Hexagon
+
+3 3 Hexagon
+4 3 Hexagon
+5 3 Hexagon
+6 3 Hexagon
+7 3 Hexagon
+8 3 Hexagon
+9 3 Hexagon
+10 3 Hexagon
+
+2 4 Hexagon
+3 4 Hexagon
+4 4 Hexagon
+5 4 Hexagon
+6 4 Hexagon
+7 4 Hexagon
+8 4 Hexagon
+9 4 Hexagon
+10 4 Hexagon
+
+2 5 Hexagon
+3 5 Hexagon
+4 5 Hexagon
+5 5 Hexagon
+6 5 Hexagon
+7 5 Hexagon
+8 5 Hexagon
+9 5 Hexagon
+
+2 6 Hexagon
+3 6 Hexagon
+4 6 Hexagon
+5 6 Hexagon
+6 6 Hexagon
+7 6 Hexagon
+8 6 Hexagon
+
+2 7 Hexagon
+3 7 Hexagon
+4 7 Hexagon
+5 7 Hexagon
+6 7 Hexagon
+7 7 Hexagon
+
+2 8 Hexagon
+3 8 Hexagon
+4 8 Hexagon
+5 8 Hexagon
+6 8 Hexagon
+
+10 -1 (9) Label
+9 -1 (8) Label
+8 -1 (7) Label
+7 -1 (6) Label
+6 -1 (5) Label
+5 0 (4) Label
+4 1 (3) Label
+3 2 (2) Label
+2 3 (1) Label
+
+1 5 (a) Label
+1 6 (b) Label
+1 7 (c) Label
+1 8 (d) Label
+1 9 (e) Label
+2 9 (f) Label
+3 9 (g) Label
+4 9 (h) Label
+5 9 (i) Label
+
+grestore
+
+6 0 0 White
+6 0 1 Black
+6 0 2 White
+
+7 0 0 White
+7 0 1 Black
+
+8 0 0 Grey
+8 0 1 Black
+8 0 2 Grey
+
+9 0 0 Grey
+9 0 1 Black
+
+10 0 0 Grey
+10 0 1 White
+10 0 2 White
+10 0 3 White
+
+9 1 0 Grey
+9 1 1 Black
+9 1 2 White
+9 1 3 Black
+
+10 1 0 Grey
+
+10 2 0 Grey
+10 2 1 Grey
+
+10 3 0 Grey
+10 3 1 Grey
+10 3 2 Grey
+
+10 4 0 Black
+
+9 5 0 White
+
+8 6 0 Black
+8 6 1 Black
+
+7 7 0 Black
+7 7 1 Grey
+
+6 8 0 Grey
+6 8 1 White
+
+5 8 0 Grey
+
+4 8 0 White
+
+3 8 0 Grey
+
+2 8 0 White
+
+7 1 0 Grey
+7 1 1 Grey
+
+5 1 0 Black
+5 1 1 Black
+
+4 2 0 Grey
+
+3 3 0 Black
+
+2 4 0 White
+2 5 0 Black
+2 6 0 White
+2 7 0 White
+2 8 0 White
+
+% 7 7 0 false (1) Marker
+% 7 0 1 false (2) Marker
+% 4 4 0 false (13) MarkerSm
+% 5 5 0 true (4) Marker
+
+showpage

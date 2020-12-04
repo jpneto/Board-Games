@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - BULO</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">BULO</font></strong></h1>
+<p align="center"><font size="3"><strong>Copyright (c) 2001 Piet Hein</strong></font></p>
+<p align="left"><font size="3" face="Arial">This gam</font><font size="3" face="Arial">e 
+(aka TacTix) is played on the following 4x4 square board:</font></p>
+    <center>
+      <table border="1" width="186" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,4,4,xxxx/xxxx/xxxx/xxxx");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+&nbsp;
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font size="3" face="Arial"><b>TURNS</b>
+            - At each turn, each player must remove a connected orthogonal line
+          of stones.</font>
+            </li>
+		<li><font
+        size="3" face="Arial"><strong>GOAL</strong> - The player that removes
+          the last stones, loses.</font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="110" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,4,4,.xX./..Xx/xx../.xx.");
+//--></script>
+      </td>
+      <td valign="top" width="414"><font face="Arial"><strong>An example</strong><p><font size="3" face="Arial">If
+        the next player removes the marked stones, he wins the game. The
+        adversary cannot avoid removing the last stone(s).</font></font>
+      </td>
+    </tr>
+</table>
+<p><font size="3" face="Arial">This is a CGT game, sort of 2D NIM. This game can
+be expanded to any board size (<b>TacTex</b> is one name used for hex boards), and also to allow different shapes to be removed
+(like rectangles, pentominoes or diagonal crosses). </font></p>
+<p><font size="3" face="Arial"><a href="http://www.madras.fife.sch.uk/maths/games/eatcake.html">Eatcake</a>
+ <font SIZE="3">is a misère Bulo</font>: Given a NxM board full of pieces, the first player
+must remove a </font><font size="3" face="Arial">connected horizontal line
+          of stones, and second player a vertical line. The last player to move,
+wins.</font></p>
+<p><font size="3" face="Arial">Bill Taylor invented a variant, called <b>Bonus
+NIM</b> played on a 7x7 board (which is expandable to any rectangular board). A player may remove an orthogonal connected line of stones
+of any size. There is a restriction for the first move, where the move must take
+less than half the maximum possible. Also, there is a bonus of four stones for
+making the final capture. <u>Winner is whoever obtains most stones</u>.&nbsp;</font></p>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="168" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,7,7,xx.x.../x..xXXx/xx.xxxx/7/7/7/7");
+//--></script>
+      </td>
+      <td valign="top" width="414"><font face="Arial"><strong>An example</strong><p><font size="3" face="Arial">First
+        player has 18 stones, second player has 17. Second player's turn.</font><p><font size="3">If
+        Second removes the marked stones, First may reply by removing the two
+        below (e5 and f5), creating a null position (i.e., a winning position)
+        which provides him with 4 extra points.</font><p><font size="3">Even if
+        Second tries to maximize each move, he will not gather enough stones to
+        win (e.g., if Second replies by capturing three stones like d6,d7,d8,
+        First just replies g2 and still have enough points to win).</font></font>
+      </td>
+    </tr>
+</table>
+<p><font size="3" face="Arial"> This bonus mechanism can be applied to many NIM
+games, giving a new interest to these mathematical studied games. The bonus size
+is critical to define the best strategy.</font></p>
+<p><font size="3" face="Arial">Another NIM-like games: <a href="nineteen.htm">Nineteen</a>,
+<a href="kinghorses.htm">King's Horses</a>.</font></p>
+</blockquote>
+<hr>
+</body>
+</html>

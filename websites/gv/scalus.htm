@@ -1,0 +1,217 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Games of Soldiers - SCALUS</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<font face="Times New Roman, Times" mstheme>
+
+<blockquote mstheme>
+</font mstheme>
+<h1 align="center"><font face="Times New Roman, Times" color="#333333" mstheme><strong><font face="Arial Black">SCALUS</font></strong></font mstheme></h1>
+<font face="Times New Roman, Times" mstheme>
+<p align="center"><strong><font size="3">Copyright (c) 2000 <a href="mailto:jpn@di.fc.ul.pt"> João Pedro Neto</a></font></strong></p>
+
+    <p align="left"><font face="Arial">After seeing <a
+    href="http://www.members.iex.net/~rfinn/gameshlf/abstract/espnim/epanim.htm">Epaminondas</a>,
+    I associate the piece movements with the idea of shifting on 2D. There are another two
+    operations, namely, rotation and scaling. I took the latter and created a new abstract
+    game (perhaps rotation can also be used to create another game...). Besides that
+    connection, Epaminondas is based on the phalanx formation. There are also tactical
+    maneuvers based on square formations, something that will appear in Scalus.</font></p>
+    <p align="left"><font face="Arial">The game is played a board with 19x10 intersections.
+    Each player has 16 stones. There are two pairs of special cells called the Headquarters
+    (Black HQ's at e2 and f2, and White HQ's at e18 and f18). The initial setup follows:</font></p>
+    <center>
+</font mstheme>
+      <table border="1" width="230" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,19,10,10/4::4/10/3wwww3/3wwww3/3wwww3/3wwww3/50/3xxxx3/3xxxx3/3xxxx3/3xxxx3/10/4::4/10");</script>
+</font mstheme>
+          </td>
+        </tr>
+      </table>
+<font face="Times New Roman, Times" mstheme>
+    </center>
+    <br>
+</font mstheme>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <font face="Times New Roman, Times" mstheme></font mstheme>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" msthemelist>
+        <tr msthemelist>
+          <td valign="top" width="42" msthemelist><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><font face="Times New Roman, Times" mstheme><font size="3" face="Arial"><strong>TURNS
+        - </strong>Black starts playing. Players may not pass.</font></font mstheme></td msthemelist>
+        </tr>
+        <tr msthemelist>
+          <td valign="baseline" width="42" msthemelist><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><font face="Times New Roman, Times" mstheme><font face="Arial"><strong>GOAL</strong>
+        - A player wins when he reaches the opponent's Headquarter or captures all opponent
+        stones.</font></font mstheme></td msthemelist>
+        </tr>
+        <tr msthemelist>
+          <td valign="baseline" width="42" msthemelist><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><font face="Times New Roman, Times" mstheme><font size="3" face="Arial"><strong>SINGLE
+        MOVE</strong> - All stones may move one cell (horizontal, vertical or diagonal). A stone
+        moved in this manner may not capture another.</font></font mstheme></td msthemelist>
+        </tr>
+        <tr msthemelist>
+          <td valign="baseline" width="42" msthemelist><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><font face="Times New Roman, Times" mstheme><font size="3" face="Arial"><strong>GROUP
+        MOVE </strong>- Stones can be moved in groups. A group is a rectangle of m.n stones of the
+        same color. All group movements are made by scaling the previous group
+            pattern, possibly
+        around a pivot stone. There are two types of scaling, expansion (the pattern increases its
+            size) and contraction (the pattern decreases its size). Check below for group moves
+        examples and full rules.</font></font mstheme></td msthemelist>
+        </tr>
+      </table msthemelist>
+      <font face="Times New Roman, Times" mstheme></font mstheme>
+    </td>
+  </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+    <p align="left"><font face="Arial"><strong>Pivot moves</strong></font></p>
+</font mstheme>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="240" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lur,6,10,20/.wW7/6xx../.Ww3xX../10");
+boardgv2diag("lur,6,10,20/w.W..x.x../10/.W.w.x.X../10");
+//--></script>
+</font mstheme>
+      </td>
+      <td valign="top" width="360"><font face="Times New Roman, Times" mstheme><font face="Arial">Lines of n
+        stones and squares of n.n stones are special cases of rectangles. The player chooses the
+        pivot stone and scale the structure by two. Seeing from&nbsp; up to down, there are two
+        line and one square expansions. From down to up, there are three contractions.</font><p><font
+        face="Arial">Every opponent piece inside the destination cells are captured and removed
+        from the game. Any friendly piece on those same cells will abort the expansion/contraction
+        movement. Expanding stone structures may jump other stones. However, contraction is only
+        possible, if there are no friendly pieces in-between (any enemy stones in-between
+        are captured if they stay at some destination cell, or jumped otherwise).</font>
+        </font mstheme>
+      </td>
+    </tr>
+</table>
+<font face="Times New Roman, Times" mstheme></font mstheme>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="240" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lur,6,10,20/.w8/.W4xxx./.w4xXx./10");
+boardgv2diag("lur,6,10,10/.w8/5x.x.x/.W8/5x.X.x/.w8");
+//--></script>
+</font mstheme>
+      </td>
+      <td valign="top" width="360"><font face="Times New Roman, Times" mstheme><font face="Arial"><br>
+        Two more examples: a line of 3 stones with a central pivot, and a 3.2 rectangle.</font><p><font
+        face="Arial">Once again, seeing from up to down means an expansion move, down to up, a
+        contraction move.</font></p>
+        <p><em><font face="Arial">Notation: </font></em></p>
+        <p><font face="Arial">For line moves, just state the stones that define that line and
+        include the pivot between ()s.&nbsp;</font>
+        <p><font face="Arial">For rectangle moves, state all four edges including the pivot between ()s.</font>
+        </font mstheme>
+      </td>
+    </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+    <p align="left"><font face="Arial"><strong>Special no pivot
+    moves</strong></font></p>
+</font mstheme>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="240" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lur,6,10,20/.ww7/6xx../6xx../10");
+boardgv2diag("lur,6,10,20/w..w.x..x./20/5x..x.");
+//--></script>
+</font mstheme>
+      </td>
+      <td valign="top" width="360"><font face="Times New Roman, Times" mstheme><font face="Arial"><br>
+        These are
+        the two special moves where the player does not include the pivot. Two line scaling can
+        also be done on diagonals.</font>
+        <p><font face="Arial">No pivot moves are described by appending an empty pair of ()</font>
+        </font mstheme>
+      </td>
+    </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+    <p align="left"><font face="Arial"><strong>Move Examples</strong></font></p>
+    <p align="left"><font face="Arial">Black starts with a four line expansion 1. e4-e7(e4)
+    and White with a 3x3 square expansion 1... f15-d15-d13-f13(f15) [diagram 1]. After that,
+    Black makes a single move 2. e8-f9 and White answers with a 3x3 square contraction 2...
+    b11-f11-f15-b15(d11) [diagram 2]. Then Black captures white stone at d11 by expanding his
+    f9-e10 double line, 3. f9-e10(f9) [diagram 3]. Now, White may capture d11 black stone with
+    d13-d12(d13) or d13-d12() or d13-d12-e12-e13(d13) or d13-d12-c12-c13(d13) or even with
+    c13-e13-e12-c12(d13)</font></p>
+</font mstheme>
+<table border="1" width="720" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="240" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,19,10,10/4::4/10/3wwww3/.w.w.ww3/6w3/.w.w.ww3/10/.w.w.w4/4x5/10/4x5/3x.xx3/3xxxx3/3x.xx3/3xxxx3/10/4::4/10");
+//--></script>
+</font mstheme>
+      </td>
+      <td align="center" width="240" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,19,10,10/4::4/10/3wwww3/6w3/6w3/..www.w3/..www5/..www5/4x5/5x4/10/3x.xx3/3xxxx3/3x.xx3/3xxxx3/10/4::4/10");
+//--></script>
+</font mstheme>
+      </td>
+      <td align="center" width="240" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,19,10,10/4::4/10/3wwww3/6w3/6w3/..www.w3/..www5/..wxw5/10/5x4/10/3x.xx3/3xxxx3/3x.xx3/3xxxx3/10/4::4/10");
+//--></script>
+</font mstheme>
+      </td>
+    </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+<br><p align="left"><font face="Arial"><strong>Other Patterns<small>[<em>optional rule - not tested</em>]</small></strong></font></p>
+</font mstheme>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="240" bordercolor="#000000" background="back-board.jpg">
+<font face="Times New Roman, Times" mstheme>
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lur,6,10,20/7x../.Ww3xXx./.w5x../10");
+boardgv2diag("lur,6,10,10/7x../10/.W.w.x.X.x/10/.w5x..");
+//--></script>
+</font mstheme>
+      </td>
+      <td valign="top" width="360"><font face="Times New Roman, Times" mstheme>&nbsp;
+        <p><font face="Arial"><br>
+        It's
+        possible to imagine other stone structures that can be scaled. Two examples are the
+        triangle and the cross.</font>
+        </p>
+        </font mstheme>
+      </td>
+    </tr>
+</table>
+<font face="Times New Roman, Times" mstheme>
+  </blockquote>
+<p align="center" msthemeseparator><img src="aricerul.gif" width="600" height="10"></p>
+</font mstheme>
+</body>
+</html>

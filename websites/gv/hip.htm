@@ -1,0 +1,332 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<title>Games of Soldiers - HIP</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+      <h1 align="center"><strong><font face="Arial Black">HIP&nbsp;</font> </strong></h1>
+<p align="center"><font size="3"><strong>Copyright (c) 1960 Martin Gardner</strong></font></p>
+<p><font face="Arial">The game is played on a NxN square. The board starts empty</font></p>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font face="Arial"><b>MOVE
+            </b>- Each player drops a stone into an empty cell, which does not
+            form a square with 3 other placed stones of the same color.</font>
+            <ul>
+				<li><font face="Arial">Squares
+                  are not just formed by orthogonal lines, they can make any slope with the board edge.</font></li>
+		</ul>
+		</li>
+		<li><font face="Arial"><b>GOAL
+            </b>- <font size="3" face="Arial">Wins the player that moved the last stone.</font></font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="130" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,5,5,.xwx./..xww/.axx./.xxw./.w.w.");
+//--></script>
+      </td>
+      <td valign="top" width="470"><font face="Arial"><strong>An example</strong><p>
+		<font size="3" face="Arial">White cannot play at [1] since it would form 
+		a square with c5,e4 and d2 stones. </font>
+		<p><font size="3" face="Arial">Black cannot also play there since it 
+		would form a black square with b5, d5 and d3.</font></font>
+      </td>
+    </tr>
+</table>
+    <p align="left"><font face="Arial">Gardner, on his legendary Scientific American articles, states that if the board size is even (like
+the 8x8 Chess board), the game is a win for the 2nd player. Why? He just needs to
+mirror what the 1st player is doing, until his opponent is out of legal moves.
+There are two ways to remedy this:</font></p>
+<p align="left"><font face="Arial">1) Play on odd sized boards, with a center cell where the 2nd
+player cannot continue to use the mirror strategy.</font></p>
+<p align="left"><font face="Arial">2) Each player moves twice (except for the first move of the
+first player). This version, called DM Hip was designed by <a href="mailto:markthom@flash.net">Mark Thompson</a>
+and is presented at his <a href="http://home.flash.net/~markthom/html/hip.html">website</a>.</font></p>
+		<p align="left"><font face="Arial">In July 2014 I received an email from 
+		Kurt Alan Franke which wrote a min-max solver and found that the 5x5 
+		version is a win for player 2 (the solver evaluated 8331853 positions). 
+		He also wrote a blog
+		<a href="http://txkurt.tumblr.com/post/90596363006/the-game-of-hip-dont-be-a-square">
+		entry</a> about this which I'll copy-paste here in the interest of 
+		posterity:</font></p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		[The 6x6 board] </p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		an interesting problem to solve numerically. There are 2^36 possible 
+		filled board positions, but &#8220;only&#8221; 36 choose 18 have an even number of 
+		counters. We know that the 6x6 board has possible draw games, but how 
+		many? And what about larger or smaller boards?</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		The 6x6 board has 2^36 possible filled board positions. Iterating 
+		through all of them and checking for a draw game takes ~1 hour. 7x7 
+		boards have 2^49 possible filled board positions &#8212; that will take a long 
+		time to iterate through.</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		But there is a trick! A 6x6 subset of a draw game on a 7x7 board must be 
+		a draw game on a 6x6 board. We only need to iterate through all possible 
+		6x6 draw games, and for each one expand with all possible combinations 
+		for the 2*6+1 additional board places. Using this strategy, the results 
+		are calculated extremely fast. I used straight c for this because of the 
+		abundance of bit-twiddling involved.</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		Here are the number of draw games as the board size increases. Playable 
+		draws are restricted to states that can be reached during game play 
+		whereas &#8220;draws&#8221; are any filled board with no completed squares, even if 
+		the number of pieces played by each side is not equal.</p>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			Board&nbsp;&nbsp;&nbsp; Draws&nbsp;&nbsp;&nbsp;&nbsp; Playable Draws</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(2x3)&nbsp;&nbsp;&nbsp;&nbsp; 50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(3x3)&nbsp;&nbsp;&nbsp;&nbsp; 248&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 92</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(3 x 4) &nbsp; 1236 &nbsp; &nbsp; &nbsp; 482</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(4 x 4) &nbsp; &nbsp;5006 &nbsp;&nbsp; &nbsp; 2094</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(4 x 5) &nbsp; &nbsp;18282&nbsp; &nbsp; 7236</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(5 x 5) &nbsp; &nbsp;7120&nbsp; &nbsp; &nbsp; 2704</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(5 x 6) &nbsp; &nbsp;5684&nbsp; &nbsp; &nbsp; 2316</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(6 x 6) &nbsp; &nbsp;56 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;24</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(6 x 7) &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			(7 x 7) &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0</li>
+		</ul>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		So there are no draw games on boards larger than 6x6. The number of 
+		draws first increases rapidly as the possible number of filled boards 
+		goes up exponentially, but then falls quickly since the possible number 
+		of &#8220;squares&#8221; is increasing.</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		Can you find a draw board for the 6x6 game by hand?</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		Next question: What is the value of the game for the different board 
+		sizes? If both players are perfect, will the game be a draw, or will 
+		player 1 or player two win the game?</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		So, to answer this question, I wrote a min-max solver to find the value 
+		of the game of Hip. The search space increases rapidly with board size, 
+		as players may play on any open place. Consider: at a size of 6x7 or 
+		larger, there must be a winner because there are no draw positions. The 
+		smaller boards have many draw positions, so it seems likely that the 
+		values of these games are zero. Boards with an odd number of spaces seem 
+		to favor player 2 because player 1 has to make the first and last moves.</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		A simple exhaustive min-max search got bogged down on 4x4 boards, but 
+		there were room for improvements:</p>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			Cache computed results with a hash of the board state.</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			Cache the state symmetrically to avoid repeating different 
+			rotations/inversions of the same position.</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			Use a heuristic to order the search of possible plays at each level. 
+			This is a simple position evaluator which tries to score each move 
+			based on partially completed squares and plays no longer available 
+			(because they would complete a square).</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			Optimize the weighting factors for the heuristic by calculating the 
+			number of function calls needed for solving mid-sized games. The 
+			most important factor seems to be avoidance of obstructing the 
+			opponent&#8217;s partially completed squares.</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			Instead of having both players trying to win, allow one to be 
+			satisfied with a draw. If the other player can&#8217;t beat the 
+			draw-accepting opponent, then he also couldn&#8217;t beat the cut-throat 
+			opponent. On the other hand, if he *can* beat the draw-accepting 
+			opponent, then he could beat any opponent. Of course, this won&#8217;t 
+			help in pruning the search tree on larger games where no draw is 
+			possible.</li>
+		</ul>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		Using these improvements, I was able to solve the 5x5 game in 30 seconds 
+		of run time. I also looked at a variant called Double-Hip where player 1 
+		first makes a single move followed by players taking turns making two 
+		moves at a time.</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		The hippest winners (standard hip):</p>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		Columns are board size, winner (or 0 for draw), number of minMax() calls</p>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x2 &nbsp; &nbsp; 0&nbsp;25</span></li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x3 &nbsp; &nbsp; 0&nbsp;151</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x4 &nbsp; &nbsp; 0&nbsp;513</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x5 &nbsp; &nbsp; 0&nbsp;3046</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x6 &nbsp; &nbsp; 0&nbsp;13528</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x7 &nbsp; &nbsp; 0&nbsp;53801</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x8 &nbsp; &nbsp; 0&nbsp;209741</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x9 &nbsp; &nbsp; 0&nbsp;966712</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x10 &nbsp; 0&nbsp;4672889</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x11 &nbsp; 0&nbsp;24160738</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x12 &nbsp; 0&nbsp;128431909</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x13 &nbsp; 0&nbsp;693940594</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x14 &nbsp; 0&nbsp;3914022690</li>
+		</ul>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x3 &nbsp; &nbsp; 0&nbsp;1152</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x4 &nbsp; &nbsp; 0&nbsp;13588</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x5 &nbsp; &nbsp; 0&nbsp;91577</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x6 &nbsp; &nbsp; 0&nbsp;553238</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x7 &nbsp; &nbsp; 0&nbsp;9373741</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x8 &nbsp; &nbsp; 0&nbsp;43565423</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x9 &nbsp; &nbsp; 0&nbsp;1579968088</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x10 &nbsp; 0&nbsp;8326162019</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x11 &nbsp; 2&nbsp;836468053068</li>
+		</ul>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x4 &nbsp; &nbsp; 0&nbsp;143191</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x5 &nbsp; &nbsp; 0&nbsp;2047147</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x6 &nbsp; &nbsp; 0&nbsp;33405985</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x7 &nbsp; &nbsp; 2&nbsp;148339665</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x8 &nbsp; &nbsp; 2&nbsp;2512894759</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x9 &nbsp; &nbsp; 2&nbsp;59706092136</li>
+		</ul>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			5x5 &nbsp; &nbsp;2&nbsp;18497405</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			5x6 &nbsp; &nbsp;2&nbsp;238732219</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			5x7 &nbsp; &nbsp;2&nbsp;8841991760</li>
+		</ul>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			6x6 &nbsp; &nbsp;2&nbsp;45650574451</li>
+		</ul>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		Double hip:</p>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x2 &nbsp; &nbsp; 0&nbsp;24</span></li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x3 &nbsp; &nbsp; 0&nbsp;140</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x4 &nbsp; &nbsp; 0&nbsp;642</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x5 &nbsp; &nbsp; 0&nbsp;2677</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x6 &nbsp; &nbsp; 0&nbsp;12817</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x7 &nbsp; &nbsp; 0&nbsp;41236</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x8 &nbsp; &nbsp; 0&nbsp;169427</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x9 &nbsp; &nbsp; 0&nbsp;727970</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x10 &nbsp; 0&nbsp;3595501</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x11 &nbsp; 0&nbsp;17365736</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x12 &nbsp; 0&nbsp;89847914</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x13 &nbsp; 0&nbsp;462033442</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			2x14 &nbsp; 0&nbsp;2488845822</li>
+		</ul>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x3 &nbsp; &nbsp; 2&nbsp;718</span></li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x4 &nbsp; &nbsp; 0&nbsp;11738</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x5 &nbsp; &nbsp; 1&nbsp;42993</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x6 &nbsp; &nbsp; 0&nbsp;532264</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x7 &nbsp; &nbsp; 2&nbsp;2032602</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x8 &nbsp; &nbsp; 0&nbsp;43098332</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x9 &nbsp; &nbsp; 1&nbsp;176813342</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x10 &nbsp; 0&nbsp;6939859704</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			3x11 &nbsp; 2&nbsp;32870151228</li>
+		</ul>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x4 &nbsp; &nbsp; 0&nbsp;145907</span></li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x5 &nbsp; &nbsp; 1&nbsp;1076920</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x6 &nbsp; &nbsp; 1&nbsp;8222698</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x7 &nbsp; &nbsp; 1&nbsp;112612598</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x8 &nbsp; &nbsp; 1&nbsp;2459422890</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			4x9 &nbsp; &nbsp; 1&nbsp;146032800681</li>
+		</ul>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			5x5 &nbsp; &nbsp; 1&nbsp;69554600</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			5x6 &nbsp; &nbsp; 2&nbsp;367440552</li>
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			5x7 &nbsp; &nbsp; 2&nbsp;8024602689</li>
+		</ul>
+		<ul style="margin: 0px 0px 20px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+			<li style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+			6x6 &nbsp; &nbsp; 2&nbsp;52499400683</li>
+		</ul>
+		<p style="margin: 0px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-weight: normal; font-style: normal; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; vertical-align: baseline; color: rgb(76, 76, 76); font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 15px; font-family: inherit; vertical-align: baseline;">
+		Player 2 seems to have the advantage on larger games. A strange game. 
+		The only way to win is not to play&#8230; first.</span></p>
+<hr>
+</blockquote>
+</body>
+</html>

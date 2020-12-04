@@ -1,0 +1,918 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne
+%%Title: hex-figure.ps
+%%CreationDate: 3/1/99
+%%BoundingBox: 0 0 595 547
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/Pi 3.14159265359 def
+
+/Root2 1.414213562 def
+/Root3 1.732050808 def
+/Root6 2.449489743 def
+
+
+/Unit { 20 } def
+/HalfUnit { Unit 2 div } def
+
+/HexX0 { 0 } def
+/HexY0 { 0 } def
+
+/TriX0 { 0 } def
+/TriY0 { 0 } def
+
+/SquareX0 { 0 } def
+/SquareY0 { 0 } def
+
+/SmallRadius { 2 } def
+/LargeRadius { 4.5 } def
+
+/ThinEdgeWidth  { 0.5 } def
+/ThickEdgeWidth { 3.25 } def
+
+/ArrowSize { 10 } def
+
+%------------ Functions ------------
+
+/HexX
+{
+	%function call: i j HexX
+	/j exch def
+	/i exch def
+
+	HexX0 i j add Unit mul 1.5 mul add
+} def
+
+/HexY
+{
+	%function call: i j HexY
+	/j exch def
+	/i exch def
+
+	HexY0 j i sub Unit mul Root3 mul 2 div sub
+} def
+
+/HexXY
+{
+	%function call: i j Hex
+	/j exch def
+	/i exch def
+
+      i j HexX i j HexY
+} def
+
+%--------
+
+/TriX
+{
+	%function call: i j TriX
+	/j exch def
+	/i exch def
+
+	TriX0 i j .5 mul add Unit mul add
+} def
+
+/TriY
+{
+	%function call: j TriY
+	/j exch def
+
+	TriY0 j Unit mul Root3 mul 2 div add
+} def
+
+
+/TriXY
+{
+	%function call: i j Hex
+	/j exch def
+	/i exch def
+
+      i j TriX j TriY
+} def
+
+%--------
+
+/SquareX
+{
+	%function call: i SquareX
+	/i exch def
+
+	SquareX0 i Unit mul add
+} def
+
+/SquareY
+{
+	%function call: j SquareY
+	/j exch def
+
+	SquareY0 j Unit mul add
+} def
+
+/SquareXY
+{
+	%function call: i j Square
+	/j exch def
+	/i exch def
+
+      i SquareX j SquareY
+} def
+
+%--------
+
+/OctoX
+{
+	%function call: i SquareX
+	/i exch def
+
+      /d { 2 Root2 div 1 add Unit mul } def
+
+	SquareX0 i d mul add
+} def
+
+/OctoY
+{
+	%function call: j SquareY
+	/j exch def
+
+      /d { 2 Root2 div 1 add Unit mul } def
+
+	SquareY0 j d mul add
+} def
+
+/OctoXY
+{
+	%function call: i j Square
+	/j exch def
+	/i exch def
+
+      i OctoX j OctoY
+} def
+
+%--------
+
+/DodecX
+{
+	%function call: i SquareX
+	/i exch def
+
+      /d { 2 Root2 div 1 add Unit mul } def
+
+	SquareX0 i d mul add
+} def
+
+/DodecY
+{
+	%function call: j SquareY
+	/j exch def
+
+      /d { 2 Root2 div 1 add Unit mul } def
+
+	SquareY0 j d mul add
+} def
+
+/DodecXY
+{
+	%function call: i j Square
+	/j exch def
+	/i exch def
+
+      i DodecX j DodecY
+} def
+
+%----------- Functions ------------
+
+/Octagon
+{
+    /r exch def
+    /y   exch def
+    /x   exch def
+
+    gsave
+    x y translate
+
+    gsave
+    r rotate
+
+    /a { HalfUnit Unit Root2 div add } def
+
+    newpath
+
+} def
+
+/Polygon
+{
+    /n exch	def  % Number of sides
+    /r exch def  % Rotation
+    /y exch def  % Position
+    /x exch def
+
+    gsave
+    x y translate
+
+    gsave
+
+    /r_offset { 180 n div 90 sub } def
+    r r_offset add rotate
+ 
+    /radius { 1 180 n div sin div Unit mul 2 div } def
+    /d_theta { 360 n div } def
+   
+    newpath
+    0 cos radius mul 0 sin radius mul moveto
+    1 1 n 1 sub  
+    {
+        /i exch def
+        /degrees { i d_theta mul } def
+        degrees cos radius mul degrees sin radius mul lineto
+    } for
+    closepath
+    stroke
+
+    grestore
+    grestore
+} def
+
+/Arrow
+{   % call: i0 j0 angle length width Arrow
+    /width exch def
+    /length exch def
+    /angle exch def
+    /y0 exch def
+    /x0 exch def
+
+    % set up the graphics state
+    gsave
+    %SquareX0 x0 add SquareY0 y0 add translate
+    x0 y0 translate
+    angle rotate
+    0 setgray
+
+    % draw the arrow head
+    0 setlinewidth
+    length ArrowSize 2 div sub 0 moveto
+    width 6 mul neg width 2.5 mul rlineto
+    width 1 mul width 2.5 mul neg rlineto
+    width 1 mul neg width 2.5 mul neg rlineto
+    closepath
+    fill
+
+    % draw the arrow shaft
+    width setlinewidth
+    %ArrowSize 2 div 0 moveto
+    0 0 moveto
+    length ArrowSize sub width 3 mul sub 0 rlineto
+    stroke
+
+    grestore
+} def
+
+/Draw33336
+{
+   1 0 TriXY 0 3 Polygon
+   2 0 TriXY 0 3 Polygon
+   0 1 TriXY 0 3 Polygon
+   2 1 TriXY 0 3 Polygon
+  -1 2 TriXY 0 3 Polygon
+   2 2 TriXY 0 3 Polygon
+  -1 3 TriXY 0 3 Polygon
+   0 3 TriXY 0 3 Polygon
+   1 3 TriXY 0 3 Polygon
+
+  gsave
+  0 HalfUnit Root3 div translate
+
+   .5 0 TriXY 180 3 Polygon
+  1.5 0 TriXY 180 3 Polygon
+  2.5 0 TriXY 180 3 Polygon
+  -.5 1 TriXY 180 3 Polygon
+  2.5 1 TriXY 180 3 Polygon
+  -.5 2 TriXY 180 3 Polygon
+  1.5 2 TriXY 180 3 Polygon
+  -.5 3 TriXY 180 3 Polygon
+   .5 3 TriXY 180 3 Polygon
+  grestore
+} def
+
+/Draw3464
+{
+  0 0 0 6 Polygon
+
+  /dx  { Unit Root3 div 2 mul .5 add } def
+  /dyb { HalfUnit Root3 mul HalfUnit add } def
+  /dya { dyb 2 div } def
+
+  0 0 0 6 Polygon
+
+  0 dyb 0 4 Polygon
+  dx dya 30 4 Polygon
+  dx dya neg 60 4 Polygon
+  0 dyb neg 0 4 Polygon
+  dx neg dya neg 30 4 Polygon
+  dx neg dya 60 4 Polygon
+} def
+
+/Draw33434
+{
+  gsave
+ -45 rotate
+  1 1 TriXY 180 3 Polygon
+  1 1 TriX 1 TriY Unit Root3 div add 0 3 Polygon
+  0 3 TriX HalfUnit Root3 div add 3 TriY 1.5 sub 30 3 Polygon
+ -1 3 TriX Unit Root3 div add 2.7 add 3 TriY 1.5 sub 210 3 Polygon
+  grestore
+} def
+
+/Draw4612
+{
+  0 0 0 12 Polygon
+
+  /dx  { Unit Root3 div 2 mul .5 add } def
+  /dyb { HalfUnit Root3 mul HalfUnit add } def
+  /dya { dyb 2 div } def
+
+  23.625  41 -30 4 Polygon
+  47.25    0   0 4 Polygon
+  23.625 -41  30 4 Polygon
+ -23.625 -41 -30 4 Polygon
+ -47.25    0   0 4 Polygon
+ -23.625  41  30 4 Polygon
+
+} def
+
+%---------------------------------------------------------
+
+.5 setlinewidth
+0 setgray
+
+-21.5 380 translate
+
+%-------- 3.3.3.3.6 --------
+
+.5 setlinewidth
+0 setgray
+
+gsave
+
+0 2 translate
+
+Draw33336
+HalfUnit 1 mul HalfUnit Root3 div 9 mul translate
+Draw33336
+HalfUnit 1 mul HalfUnit Root3 div 9 mul translate
+Draw33336
+
+HalfUnit 3 mul HalfUnit Root3 div 15 mul neg translate
+Draw33336
+HalfUnit 1 mul HalfUnit Root3 div 9 mul translate
+Draw33336
+HalfUnit 1 mul HalfUnit Root3 div 9 mul translate
+Draw33336
+
+HalfUnit 3 mul HalfUnit Root3 div 15 mul neg translate
+Draw33336
+HalfUnit 1 mul HalfUnit Root3 div 9 mul translate
+Draw33336
+HalfUnit 1 mul HalfUnit Root3 div 9 mul translate
+Draw33336
+
+HalfUnit 2 mul HalfUnit Root3 div 24 mul neg translate
+Draw33336
+HalfUnit 1 mul HalfUnit Root3 div 9 mul translate
+Draw33336
+HalfUnit 1 mul HalfUnit Root3 div 9 mul translate
+Draw33336
+
+grestore
+
+%Root3 2 div Unit mul Root3 2 div Unit mul 0 6 Polygon
+
+%-- White frame --
+
+Unit setlinewidth
+1 setgray
+
+newpath
+-20 -20 moveto -20 250 lineto 300 250 lineto 300 -20 lineto -20 -20 lineto
+23 18 moveto
+185 18 lineto
+185 165 lineto
+23 165 lineto
+closepath
+%clip
+%stroke
+fill
+
+%-------- 3.3.3.4.4 --------
+
+.5 setlinewidth
+0 setgray
+
+215 0 translate
+
+gsave
+
+1 1 SquareXY 0 4 Polygon
+2 1 SquareXY 0 4 Polygon
+3 1 SquareXY 0 4 Polygon
+4 1 SquareXY 0 4 Polygon
+5 1 SquareXY 0 4 Polygon
+6 1 SquareXY 0 4 Polygon
+7 1 SquareXY 0 4 Polygon
+8 1 SquareXY 0 4 Polygon
+9 1 SquareXY 0 4 Polygon
+
+1 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+2 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+3 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+4 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+5 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+6 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+7 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+8 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+9 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+
+HalfUnit
+HalfUnit Root3 mul Unit add
+translate
+
+1 1 SquareXY 0 4 Polygon
+2 1 SquareXY 0 4 Polygon
+3 1 SquareXY 0 4 Polygon
+4 1 SquareXY 0 4 Polygon
+5 1 SquareXY 0 4 Polygon
+6 1 SquareXY 0 4 Polygon
+7 1 SquareXY 0 4 Polygon
+8 1 SquareXY 0 4 Polygon
+9 1 SquareXY 0 4 Polygon
+
+1 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+2 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+3 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+4 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+5 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+6 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+7 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+8 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+9 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+
+HalfUnit neg
+HalfUnit Root3 mul Unit add
+translate
+
+1 1 SquareXY 0 4 Polygon
+2 1 SquareXY 0 4 Polygon
+3 1 SquareXY 0 4 Polygon
+4 1 SquareXY 0 4 Polygon
+5 1 SquareXY 0 4 Polygon
+6 1 SquareXY 0 4 Polygon
+7 1 SquareXY 0 4 Polygon
+8 1 SquareXY 0 4 Polygon
+9 1 SquareXY 0 4 Polygon
+
+1 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+2 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+3 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+4 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+5 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+6 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+7 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+8 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+9 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+
+HalfUnit neg
+HalfUnit Root3 mul Unit add
+translate
+
+1 1 SquareXY 0 4 Polygon
+2 1 SquareXY 0 4 Polygon
+3 1 SquareXY 0 4 Polygon
+4 1 SquareXY 0 4 Polygon
+5 1 SquareXY 0 4 Polygon
+6 1 SquareXY 0 4 Polygon
+7 1 SquareXY 0 4 Polygon
+8 1 SquareXY 0 4 Polygon
+9 1 SquareXY 0 4 Polygon
+
+1 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+2 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+3 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+4 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+5 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+6 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+7 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+8 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+9 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+
+HalfUnit
+HalfUnit Root3 mul Unit add
+translate
+
+1 1 SquareXY 0 4 Polygon
+2 1 SquareXY 0 4 Polygon
+3 1 SquareXY 0 4 Polygon
+4 1 SquareXY 0 4 Polygon
+5 1 SquareXY 0 4 Polygon
+6 1 SquareXY 0 4 Polygon
+7 1 SquareXY 0 4 Polygon
+8 1 SquareXY 0 4 Polygon
+9 1 SquareXY 0 4 Polygon
+
+1 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+2 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+3 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+4 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+5 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+6 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+7 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+8 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+9 SquareX 2 SquareY HalfUnit Root3 div add HalfUnit sub 0 3 Polygon
+
+grestore
+
+%-- White frame --
+
+Unit setlinewidth
+1 setgray
+
+newpath
+-20 -20 moveto -20 250 lineto 300 250 lineto 300 -20 lineto -20 -20 lineto
+23 18 moveto
+185 18 lineto
+185 165 lineto
+23 165 lineto
+closepath
+%clip
+%stroke
+fill
+
+%-------- 3.6.3.6 --------
+
+.5 setlinewidth
+0 setgray
+
+215 0 translate
+
+gsave
+
+0 -2 translate
+
+ 0 2 TriXY 0 6 Polygon
+ 2 2 TriXY 0 6 Polygon
+ 4 2 TriXY 0 6 Polygon
+ 6 2 TriXY 0 6 Polygon
+ 8 2 TriXY 0 6 Polygon
+ 0 4 TriXY 0 6 Polygon
+ 2 4 TriXY 0 6 Polygon
+ 4 4 TriXY 0 6 Polygon
+ 6 4 TriXY 0 6 Polygon
+ 8 4 TriXY 0 6 Polygon
+-2 6 TriXY 0 6 Polygon
+ 0 6 TriXY 0 6 Polygon
+ 2 6 TriXY 0 6 Polygon
+ 4 6 TriXY 0 6 Polygon
+ 6 6 TriXY 0 6 Polygon
+-2 8 TriXY 0 6 Polygon
+ 0 8 TriXY 0 6 Polygon
+ 2 8 TriXY 0 6 Polygon
+ 4 8 TriXY 0 6 Polygon
+ 6 8 TriXY 0 6 Polygon
+-4 10 TriXY 0 6 Polygon
+-2 10 TriXY 0 6 Polygon
+ 0 10 TriXY 0 6 Polygon
+ 2 10 TriXY 0 6 Polygon
+ 4 10 TriXY 0 6 Polygon
+
+grestore
+
+%-- White frame --
+
+Unit setlinewidth
+1 setgray
+
+newpath
+-20 -20 moveto -20 250 lineto 300 250 lineto 300 -20 lineto -20 -20 lineto
+23 18 moveto
+185 18 lineto
+185 165 lineto
+23 165 lineto
+closepath
+fill
+
+%-------- 4.8.8 --------
+
+.5 setlinewidth
+0 setgray
+
+-430 -190 translate
+
+gsave
+
+-16 -30 translate
+
+1 1 OctoXY 0 8 Polygon
+2 1 OctoXY 0 8 Polygon
+3 1 OctoXY 0 8 Polygon
+4 1 OctoXY 0 8 Polygon
+1 2 OctoXY 0 8 Polygon
+2 2 OctoXY 0 8 Polygon
+3 2 OctoXY 0 8 Polygon
+4 2 OctoXY 0 8 Polygon
+1 3 OctoXY 0 8 Polygon
+2 3 OctoXY 0 8 Polygon
+3 3 OctoXY 0 8 Polygon
+4 3 OctoXY 0 8 Polygon
+1 4 OctoXY 0 8 Polygon
+2 4 OctoXY 0 8 Polygon
+3 4 OctoXY 0 8 Polygon
+4 4 OctoXY 0 8 Polygon
+
+grestore
+
+%-- White frame --
+
+Unit setlinewidth
+1 setgray
+
+newpath
+-20 -20 moveto -20 190 lineto 250 190 lineto 250 -20 lineto -20 -20 lineto
+23 18 moveto
+185 18 lineto
+185 165 lineto
+23 165 lineto
+closepath
+fill
+
+%-------- 3.4.6.4 --------
+
+.5 setlinewidth
+0 setgray
+
+215 0 translate
+
+gsave
+
+47 32 translate
+
+/dx3464 { HalfUnit 3 mul Root3 HalfUnit mul add  } def
+/dy3464 { Unit Root3 mul Unit add  } def
+
+Draw3464
+0 dy3464 translate
+Draw3464
+0 dy3464 translate
+Draw3464
+
+dx3464 dy3464 2.5 mul neg translate
+Draw3464
+0 dy3464 translate
+Draw3464
+0 dy3464 translate
+Draw3464
+
+dx3464 dy3464 1.5 mul neg translate
+Draw3464
+0 dy3464 translate
+Draw3464
+0 dy3464 translate
+Draw3464
+
+dx3464 dy3464 2.5 mul neg translate
+Draw3464
+0 dy3464 translate
+Draw3464
+0 dy3464 translate
+Draw3464
+
+grestore
+
+%-- White frame --
+
+Unit setlinewidth
+1 setgray
+
+newpath
+-20 -20 moveto -20 190 lineto 220 190 lineto 220 -35 lineto -20 -35 lineto
+23 18 moveto
+185 18 lineto
+185 165 lineto
+23 165 lineto
+closepath
+fill
+
+%-------- 3.3.4.3.4 --------
+
+.5 setlinewidth
+0 setgray
+
+215 0 translate
+
+gsave
+
+ -10 15 translate
+
+ gsave
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ grestore
+
+ gsave
+ 38.8 0 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ grestore
+
+ gsave
+ 2 38.8 mul 0 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ grestore
+
+ gsave
+ 3 38.8 mul 0 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ grestore
+
+ gsave
+ 4 38.8 mul 0 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ 0 38.8 translate
+ Draw33434
+ grestore
+
+grestore
+
+%-- White frame --
+
+Unit setlinewidth
+1 setgray
+
+newpath
+-20 -20 moveto -20 200 lineto 220 200 lineto 220 -30 lineto -20 -30 lineto
+23 18 moveto
+185 18 lineto
+185 165 lineto
+23 165 lineto
+closepath
+fill
+
+%-------- 3.12.12 --------
+
+.5 setlinewidth
+0 setgray
+
+-370 -190 translate
+
+gsave
+
+1 15 translate
+
+/dox { Unit 3.73 mul } def
+/doy { Unit 3.23 mul } def
+
+0 dox mul 0 doy mul 0 12 Polygon
+1 dox mul 0 doy mul 0 12 Polygon
+2 dox mul 0 doy mul 0 12 Polygon
+3 dox mul 0 doy mul 0 12 Polygon
+
+dox 2 div doy translate
+0 dox mul 0 doy mul 0 12 Polygon
+1 dox mul 0 doy mul 0 12 Polygon
+2 dox mul 0 doy mul 0 12 Polygon
+
+dox neg 2 div doy translate
+0 dox mul 0 doy mul 0 12 Polygon
+1 dox mul 0 doy mul 0 12 Polygon
+2 dox mul 0 doy mul 0 12 Polygon
+3 dox mul 0 doy mul 0 12 Polygon
+
+grestore
+
+%-- White frame --
+
+Unit setlinewidth
+1 setgray
+
+newpath
+-45 -20 moveto -45 200 lineto 280 200 lineto 280 -30 lineto -20 -30 lineto
+0 20 moveto
+225 20 lineto
+225 165 lineto
+0 165 lineto
+closepath
+fill
+
+%-------- 4.6.12 --------
+
+.5 setlinewidth
+0 setgray
+
+290 0 translate
+
+0 20 moveto
+225 20 lineto
+225 165 lineto
+0 165 lineto
+closepath
+clip
+
+gsave
+
+5 10.5 translate
+
+/dx4612 { HalfUnit 3 mul Root3 HalfUnit mul add  2 mul } def
+/dy4612 { Unit Root3 mul Unit add 1.5 mul } def
+
+Draw4612
+dx4612 0 translate
+Draw4612
+dx4612 0 translate
+Draw4612
+
+1.5 dx4612 mul neg dy4612 translate
+Draw4612
+dx4612 0 translate
+Draw4612
+dx4612 0 translate
+Draw4612
+
+2.5 dx4612 mul neg dy4612 translate
+Draw4612
+dx4612 0 translate
+Draw4612
+dx4612 0 translate
+Draw4612
+
+grestore
+
+%-- White frame --
+
+Unit setlinewidth
+.97 setgray
+
+newpath
+-45 -20 moveto -45 200 lineto 280 200 lineto 280 -30 lineto -20 -30 lineto
+0 20 moveto
+225 20 lineto
+225 165 lineto
+0 165 lineto
+closepath
+fill
+
+%-------- Labels --------
+
+initclip
+
+/Times findfont 16 scalefont setfont
+0 setgray
+
+-300 0 translate
+
+newpath 20 380 moveto (3.3.3.3.6) show 
+newpath 237 380 moveto (3.3.3.4.4) show 
+newpath 467 380 moveto (3.6.3.6) show 
+newpath 38.5 190 moveto (4.8.8) show 
+newpath 246 190 moveto (3.4.6.4) show 
+newpath 460 190 moveto (3.3.4.3.4) show 
+newpath 100 3 moveto (3.12.12) show 
+newpath 400 3 moveto (4.6.12) show 
+
+showpage

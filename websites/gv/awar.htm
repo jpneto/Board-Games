@@ -1,0 +1,229 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Games of Soldiers - Abstract War</title>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<!--mstheme--><font face="Times New Roman, Times">
+
+<blockquote mstheme>
+<!--mstheme--></font>
+<h1 align="center"><!--mstheme--><font face="Times New Roman, Times" color="#333333"><font face="Arial Black"><strong>Abstract WAR</strong> &nbsp;</font><!--mstheme--></font></h1>
+<!--mstheme--><font face="Times New Roman, Times">
+<p align="center"><strong><font size="3">Copyright (c) 2000
+      João Neto</font></strong></p>
+<blockquote>
+    <p><font face="Arial">This game is played on a 10x10 Hex board, with some special cells
+    called domination cells (DCs), like in the next image.</font></p>
+    <p align="center"><font face="Arial"><img src="boards/abstWAR.gif" width="332" height="383"></font></p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <li><font face="Arial"><strong>GOAL</strong>
+        - To control more than 50% of the board's DCs.</font></li>
+      <li><font face="Arial"><strong>PLAYERS</strong>
+        - 2 to 6 players. </font></li>
+      <li><font face="Arial"><strong>SETUP</strong>
+        - Each player has 4 soldiers placed in the DCs of a corner. For 5 players, the 4 DCs in
+        the remaining empty corner are eliminated. For 2, 3, 4 and 6 players, there is always
+        balanced ways to occupy corners.</font></li>
+      <li><font face="Arial"><strong>TURN</strong>
+        - Each player presents his orders. All Help orders are valid until the player moves again.
+        So, a player may help other player's soldiers. A variant of this rule, is that all players
+        move at the same time.</font></li>
+      <li><font face="Arial"><strong>STRENGTH</strong>
+        - Every order has initial strength of 1.</font></li>
+      <li><font face="Arial"><strong>SOLDIER</strong>
+        - A soldier may receive 3 kinds of orders:</font>
+        <ul>
+          <li><font face="Arial"><strong>HOLD</strong>
+            - hold its position.</font></li>
+          <li><font face="Arial"><strong>MOVE</strong>
+            - moves to a specified legal cell. Each soldier can move through 3 empty hexagons.</font></li>
+          <li><font face="Arial"><strong>HELP</strong>
+            - helps another soldier's order. Each Help order increases the strength by 1. A help is
+            legal if that soldier could move to the place where the helped soldier is. If the helping
+            piece is attacked, then the help is transformed into an Hold order (except if the help is
+            against the soldier that is attacking, see example 3).&nbsp; </font></li>
+          <li><font face="Arial"><strong>GUARD</strong>
+            - A soldier that orders guard, will defend its adjacent empty cells with force 1. This
+            means that another soldier can only pass in one of those cells with superior strength. A
+            guard order can be increased by an help order. A cell guarded by two soldiers, can only be
+            crossed with strength 3.</font></li>
+        </ul>
+      </li>
+      <li><font face="Arial"><strong>CONFLICT</strong>
+        - If two orders interfere, wins that with greater strength. If both have equal strengths
+        they are not made (except if one is an help order against the other, then the help order
+        is not canceled). A soldier may enter in several conflicts, in that case, the conflicts
+        are treated sequentially (from the 1st player to the last). All orders in the last
+        sequence of moves (i.e. until the current player moved in the last turn) are valid. The
+        following cases are possible:</font>
+        <ul>
+          <li><font face="Arial">MOVE &gt;
+            (HOLD or HELP) - if a soldier tries to move into a cell with another soldier, this soldier
+            must retreat to the cell in the opponent direction of the move (mirror symmetry). If the
+            retreat is not possible, the soldier is eliminated.</font></li>
+          <li><font face="Arial">MOVE &gt;
+            MOVE - a soldier tries to move where another soldier has just moved. The soldier with less
+            strength does not move (in parallel turns, this soldier does not move in the first place).
+            If it is the first soldier, then he must retreat, if it is the last soldier, then he stays
+            in the original cell.</font></li>
+        </ul>
+      </li>
+      <li><font face="Arial"><strong>ADJUST</strong>
+        - At the end of each turn, each player must have as many soldiers as DCs. If the number of
+        DCs is greater, he can drop more soldiers in his unoccupied DCs (if he does not have
+        unoccupied DCs, he must wait). If he has more soldiers, he must remove as many soldiers as
+        needed in order to get the same number of DCs.</font></li>
+      <li><font face="Arial"><strong>AGREEMENT</strong>
+        - [<em>optional rule</em>] An agreement is a compromise (in game theory, a compromise is a
+        move that reduces the future move range of one or more players) that some players may
+        agree to follow. The syntax is ACCEPT( type, players, time, other-players ), where <strong>players</strong>
+        are the set of players will comply and send this order (if any players does not send the
+        order, the agreement is void), <strong>time</strong> is for how long the agreement must
+        take place (the maximum time is 10 turns) and <strong>type</strong> may be:</font>
+        <ul>
+          <li><font face="Arial">peace - the
+            players will not move or help a move against their soldiers (however, they can help
+            another help of an hostile move).</font></li>
+          <li><font face="Arial">neutral -
+            the players may not help any move from other-players set.</font></li>
+          <li><font face="Arial">war - the
+            players are oblige to move against or help any soldier that can move against an
+            other-player's soldier (if there are several choices, the player can choose from one of
+            them).</font></li>
+          <li><font face="Arial">Example:
+            ACCEPT( war, red+black, 7, green )</font></li>
+        </ul>
+      </li>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+    <p><font face="Arial">Let's check some examples (all samples
+    use the same image below):</font></p>
+<!--mstheme--></font>
+<!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="top" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Example 1:
+        &nbsp; Retreat</font>
+        <ul>
+          <li><font face="Arial">Blue C3
+            HOLD | B5 HELP C3</font></li>
+          <li><font face="Arial">Red A6 MOVE
+            B5 | D9 HELP A6</font></li>
+          <li><font face="Arial">Result: The
+            Blue soldier B5 must retreat to the symmetric cell of the attacker direction, i.e., cell
+            C4.</font></li>
+        </ul>
+      <!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Example 2:
+        Retreat</font>
+        <ul>
+          <li><font face="Arial">Blue B5
+            HOLD | C3 HELP B5 | D5 HELP B5</font></li>
+          <li><font face="Arial">Red A6 MOVE
+            B5 | D9 HELP A6 | B7 HELP A6</font></li>
+          <li><font face="Arial">Green F6
+            MOVE D5</font></li>
+          <li><font face="Arial">Result: B5
+            had help of two soldiers, but F6 neutralized D5 help, so B5 must retreat again to C4.</font></li>
+        </ul>
+      <!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Example 3:
+        1 is not equal to 2</font>
+        <ul>
+          <li><font face="Arial">Blue D5
+            MOVE F6 | C3 HELP D5</font></li>
+          <li><font face="Arial">Green F6
+            MOVE C3</font></li>
+          <li><font face="Arial">Result: The
+            F6 move would neutralize C3 help, but C3 is helping an attack against F6, so F6 don't
+            neutralize C3, and then F6 must retreat due to the strength 2 attack, to cell H7
+            (symmetric cell relative to D5).</font></li>
+        </ul>
+        <p align="center"><font face="Arial"><img
+        src="boards/awarEg.gif" width="186" height="204"></font></p>
+      <!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Example 4:
+        Same cell move</font>
+        <ul>
+          <li><font face="Arial">Blue C3
+            MOVE E4</font></li>
+          <li><font face="Arial">Green F6
+            MOVE E4</font></li>
+          <li><font face="Arial">Result:
+            With parallel moves, both moves are not made, since they try to move to the same cell with
+            equal force. In sequence moves, the player that moves first goes to E4.</font></li>
+        </ul>
+      <!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Example 6:
+        Cell Defense</font>
+        <ul>
+          <li><font face="Arial">Blue C3
+            MOVE D4 | D5 MOVE D4</font></li>
+          <li><font face="Arial">Green F6
+            MOVE C4</font></li>
+          <li><font face="Arial">Result: The
+            Blue soldiers defended cell C4 with force 1 without occupying it (both moves has strength
+            1). That way, the green soldier was unable to move to C4 (however, if F7 helps F6, then
+            F6's move would succeed, since the total green strength would be 2).</font></li>
+        </ul>
+      <!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+  <!--msthemelist--><tr>
+    <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu1.gif" width="15" height="15" hspace="13"></td>
+    <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Example 7:
+        Chain Helps</font>
+      <!--mstheme--></font>
+      <!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="top" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Blue D5
+            MOVE F6 | C3 HELP D5</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Red H10
+            MOVE I8</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Green H6
+            HELP I8 | I8 HELP F6</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+        <!--msthemelist--><tr>
+          <!--msthemelist--><td valign="baseline" width="42"><img src="aricebu2.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><!--mstheme--><font face="Times New Roman, Times"><font face="Arial">Result: All
+            green soldiers stay at their positions. The Blue attack cannot succeed (strength 2 vs 2).
+            The Red attack didn't neutralize I8 help because its force is 2 (it had H6 help). If H6
+            order was neutralized by some reason, then I8 order would be transformed to Hold, and
+            soldier F6 would retreat to H7.</font><!--mstheme--></font><!--msthemelist--></td>
+        </tr>
+      <!--msthemelist--></table>
+      <!--mstheme--><font face="Times New Roman, Times"><!--mstheme--></font><!--msthemelist--></td>
+  </tr>
+<!--msthemelist--></table>
+<!--mstheme--><font face="Times New Roman, Times">
+  </blockquote>
+</blockquote>
+<!--msthemeseparator--><p align="center"><img src="aricerul.gif"></p>
+<!--mstheme--></font>
+</body>
+</html>

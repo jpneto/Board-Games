@@ -1,0 +1,417 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne and Joao Neto
+%%Title: hexs diagrams
+%%CreationDate: 1/1/2004
+%%BoundingBox: 0 0 400 400
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/Root3 1.732050808 def
+
+/OriginX 0 def
+/OriginY 160 def
+
+/HexRadius 24 def
+/HexDiameter { Hexradius 2 mul } def
+
+/CircleRadius { HexRadius 0.65 mul } def
+/CircleDiameter { CircleRadius 2 mul } def
+/CircleLineWidth 1 def
+
+% ----------- Functions -------------
+
+/HexX
+{   % call: i j HexX
+    /j exch def
+    /i exch def
+    OriginX i j add HexRadius mul 1.5 mul add
+} def
+
+/HexY
+{   % call: i j HexY
+    /j exch def
+    /i exch def
+    OriginY j i sub HexRadius mul Root3 mul 2 div sub
+} def
+
+/White
+{   % call: i j White
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    0 setlinewidth
+    1 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+
+    % Draw outline
+    0 setgray
+    CircleLineWidth setlinewidth
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    stroke
+} def
+
+/Grey
+{   % call: i j Grey
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    0 setlinewidth
+    .75 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+
+    % Draw outline
+    0 setgray
+    CircleLineWidth setlinewidth
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    stroke
+} def
+
+/Black
+{   % call: i j Black
+    /j exch def
+    /i exch def
+
+    % Fill shape
+    CircleLineWidth setlinewidth
+    0 setgray
+    newpath
+    i j HexX i j HexY CircleRadius 0 360 arc
+    fill
+} def
+
+/Hexagon
+{   % call: i j Hexagon
+    /j exch def
+    /i exch def
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    0 setlinewidth
+    1 setgray
+    fill
+
+    % move to tile's top left vertex
+    newpath
+    i j HexX HexRadius 2 div sub
+    i j HexY HexRadius Root3 mul 2 div add
+    moveto
+
+    % draw tile outline
+    HexRadius 			0 rlineto
+    HexRadius 2 div 		HexRadius Root3 mul 2 div neg rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div neg rlineto
+    HexRadius neg 		0 rlineto
+    HexRadius 2 div neg	HexRadius Root3 mul 2 div rlineto
+    closepath
+    .25 setlinewidth
+    0 setgray
+    stroke
+} def
+
+/Label
+{   % call: i j s(tring)
+    /s exch def
+    /j exch def
+    /i exch def
+
+    /coordsize { HexRadius 1.2 mul } def
+    /Courier findfont coordsize scalefont setfont
+    0 setgray
+    newpath
+
+    i 10 gt {      % if the number (for the row label) is 10 or greater
+      gsave       %    it will condense font to fit size
+      /basefont /Courier findfont def
+      basefont [coordsize 2 div 0 0 coordsize 0 0] makefont setfont
+      i j HexX HexRadius 3.2 div sub
+      i j HexY HexRadius 2.5 div sub
+      moveto s show
+      grestore
+    }{
+      i j HexX HexRadius 3.2 div sub
+      i j HexY HexRadius 2.5 div sub
+      moveto s show
+    } ifelse
+
+} def
+
+
+/Marker
+{   % call: i j g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /j exch def
+    /i exch def
+
+    g setgray
+    newpath
+    i j HexX CircleRadius 2 div sub
+    i j HexY CircleRadius 2 div sub
+    moveto
+
+    gsave
+    /Helvetica-Bold findfont HexRadius scalefont setfont
+    .5 setlinewidth
+    b {
+        s true charpath stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+%-------------- Program --------------
+
+-150 150 translate
+
+9 -3 Hexagon
+10 -3 Hexagon
+11 -3 Hexagon
+12 -3 Hexagon
+13 -3 Hexagon
+14 -3 Hexagon
+15 -3 Hexagon
+16 -3 Hexagon
+
+8 -2 Hexagon
+9 -2 Hexagon
+10 -2 Hexagon
+11 -2 Hexagon
+12 -2 Hexagon
+13 -2 Hexagon
+14 -2 Hexagon
+15 -2 Hexagon
+16 -2 Hexagon
+
+7 -1 Hexagon
+8 -1 Hexagon
+9 -1 Hexagon
+10 -1 Hexagon
+11 -1 Hexagon
+12 -1 Hexagon
+13 -1 Hexagon
+14 -1 Hexagon
+15 -1 Hexagon
+16 -1 Hexagon
+
+6 0 Hexagon
+7 0 Hexagon
+8 0 Hexagon
+9 0 Hexagon
+10 0 Hexagon
+11 0 Hexagon
+12 0 Hexagon
+13 0 Hexagon
+14 0 Hexagon
+15 0 Hexagon
+16 0 Hexagon
+
+5 1 Hexagon
+6 1 Hexagon
+7 1 Hexagon
+8 1 Hexagon
+9 1 Hexagon
+10 1 Hexagon
+11 1 Hexagon
+12 1 Hexagon
+13 1 Hexagon
+14 1 Hexagon
+15 1 Hexagon
+16 1 Hexagon
+
+4 2 Hexagon
+5 2 Hexagon
+6 2 Hexagon
+7 2 Hexagon
+8 2 Hexagon
+9 2 Hexagon
+10 2 Hexagon
+11 2 Hexagon
+12 2 Hexagon
+13 2 Hexagon
+14 2 Hexagon
+15 2 Hexagon
+16 2 Hexagon
+
+3 3 Hexagon
+4 3 Hexagon
+5 3 Hexagon
+6 3 Hexagon
+7 3 Hexagon
+8 3 Hexagon
+9 3 Hexagon
+10 3 Hexagon
+11 3 Hexagon
+12 3 Hexagon
+13 3 Hexagon
+14 3 Hexagon
+15 3 Hexagon
+16 3 Hexagon
+
+2 4 Hexagon
+3 4 Hexagon
+4 4 Hexagon
+5 4 Hexagon
+6 4 Hexagon
+7 4 Hexagon
+8 4 Hexagon
+9 4 Hexagon
+10 4 Hexagon
+11 4 Hexagon
+12 4 Hexagon
+13 4 Hexagon
+14 4 Hexagon
+15 4 Hexagon
+16 4 Hexagon
+
+2 5 Hexagon
+3 5 Hexagon
+4 5 Hexagon
+5 5 Hexagon
+6 5 Hexagon
+7 5 Hexagon
+8 5 Hexagon
+9 5 Hexagon
+10 5 Hexagon
+11 5 Hexagon
+12 5 Hexagon
+13 5 Hexagon
+14 5 Hexagon
+15 5 Hexagon
+
+2 6 Hexagon
+3 6 Hexagon
+4 6 Hexagon
+5 6 Hexagon
+6 6 Hexagon
+7 6 Hexagon
+8 6 Hexagon
+9 6 Hexagon
+10 6 Hexagon
+11 6 Hexagon
+12 6 Hexagon
+13 6 Hexagon
+14 6 Hexagon
+
+2 7 Hexagon
+3 7 Hexagon
+4 7 Hexagon
+5 7 Hexagon
+6 7 Hexagon
+7 7 Hexagon
+8 7 Hexagon
+9 7 Hexagon
+10 7 Hexagon
+11 7 Hexagon
+12 7 Hexagon
+13 7 Hexagon
+
+2 8 Hexagon
+3 8 Hexagon
+4 8 Hexagon
+5 8 Hexagon
+6 8 Hexagon
+7 8 Hexagon
+8 8 Hexagon
+9 8 Hexagon
+10 8 Hexagon
+11 8 Hexagon
+12 8 Hexagon
+
+2 9 Hexagon
+3 9 Hexagon
+4 9 Hexagon
+5 9 Hexagon
+6 9 Hexagon
+7 9 Hexagon
+8 9 Hexagon
+9 9 Hexagon
+10 9 Hexagon
+11 9 Hexagon
+
+2 10 Hexagon
+3 10 Hexagon
+4 10 Hexagon
+5 10 Hexagon
+6 10 Hexagon
+7 10 Hexagon
+8 10 Hexagon
+9 10 Hexagon
+10 10 Hexagon
+
+2 11 Hexagon
+3 11 Hexagon
+4 11 Hexagon
+5 11 Hexagon
+6 11 Hexagon
+7 11 Hexagon
+8 11 Hexagon
+9 11 Hexagon
+
+16 -4 (15) Label
+15 -4 (14) Label
+14 -4 (13) Label
+13 -4 (12) Label
+12 -4 (11) Label
+11 -4 (10) Label
+10 -4 (9) Label
+9 -4 (8) Label
+8 -3 (7) Label
+7 -2 (6) Label
+6 -1 (5) Label
+5 0 (4) Label
+4 1 (3) Label
+3 2 (2) Label
+2 3 (1) Label
+
+1 5 (a) Label
+1 6 (b) Label
+1 7 (c) Label
+1 8 (d) Label
+1 9 (e) Label
+1 10 (f) Label
+1 11 (g) Label
+1 12 (h) Label
+2 12 (i) Label
+3 12 (j) Label
+4 12 (k) Label
+5 12 (l) Label
+6 12 (m) Label
+7 12 (n) Label
+8 12 (o) Label
+
+9 -3 0 false (1) Marker
+16 4 0 false (1) Marker
+2 11 0 false (1) Marker
+
+16 -3 0 false (2) Marker
+2 4 0 false (2) Marker
+9 11 0 false (2) Marker
+
+%------------ Trailer --------------
+
+showpage

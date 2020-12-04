@@ -1,0 +1,494 @@
+%!PS-Adobe-3.0
+%%Creator: Cameron Browne
+%%Title: hex-figure.ps
+%%CreationDate: 3/1/99
+%%BoundingBox: 0 0 595 327
+%%Pages: 1
+%%Page: 1 1
+%%EndComments
+
+%---------------- Constants -------------------
+
+/dx 18 def
+/pieceborder {dx .03 mul } def
+/coordsize   { dx 0.7 mul } def  % the size of the coordinates
+/insidesize  { dx 0.7 mul } def  % the size of the letters inside the squares
+/radius { .35 dx mul } def
+/h { .5 radius mul } def
+
+/dark .3 def
+/light .7 def
+
+/Chars 
+{[(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(t)(u)(v)(w)(x)(y)(z)]} def
+
+/Digits
+{	[( 0)( 1)( 2)( 3)( 4)( 5)( 6)( 7)( 8)( 9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)(23)(24)(25)(26)]} def
+
+%---------------- Functions -------------------
+
+% Draw a cell
+
+/XY
+{
+    /kxy exch def
+    /jxy exch def
+    /ixy exch def
+
+    ixy 0.5 add dx mul
+    jxy 0.2 add dx mul kxy h mul add
+
+} def
+
+% Draw a White cell at (i,j) with height k
+
+/White
+{
+    /kwhite exch def
+    /jwhite exch def
+    /iwhite exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    iwhite jwhite kwhite XY translate
+    1 .5 scale
+
+    1 setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul radius 0 360 arc
+    stroke
+
+    grestore
+} def
+
+% Draw a Black cell at (i,j) with height k
+
+/Black
+{
+    /kblack exch def
+    /jblack exch def
+    /iblack exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    iblack jblack kblack XY translate
+    1 .5 scale
+
+    dark setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul radius 0 360 arc
+    stroke
+
+    grestore
+} def
+
+% Draw a Grey cell at (i,j) with height k
+
+/Grey
+{
+    /kgrey exch def
+    /jgrey exch def
+    /igrey exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    igrey jgrey kgrey XY translate
+    1 .5 scale
+
+    light setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul radius 0 360 arc
+    stroke
+
+    grestore
+} def
+
+% Draw a White cell with dot at (i,j) with height k
+
+/WhiteDot
+{
+    /kwhitedot exch def
+    /jwhitedot exch def
+    /iwhitedot exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    iwhitedot jwhitedot kwhitedot XY translate
+    1 .5 scale
+
+    1 setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul radius 0 360 arc
+    stroke
+
+    1 1 scale
+    newpath
+    0 h -1 mul radius 6 div 0 360 arc
+    fill
+
+    grestore
+} def
+
+% Draw a black cell with white dot at (i,j) with height k
+
+/BlackDot
+{
+    /kblack exch def
+    /jblack exch def
+    /iblack exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    iblack jblack kblack XY translate
+    1 .5 scale
+
+    dark setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul radius 0 360 arc
+    stroke
+
+    1 setgray
+    1 1 scale
+    newpath
+    0 h -1 mul radius 6 div 0 360 arc
+    fill
+
+    grestore
+} def
+
+% Draw a grey cell with dot at (i,j) with height k
+
+/GreyDot
+{
+    /kgrey exch def
+    /jgrey exch def
+    /igrey exch def
+
+    pieceborder setlinewidth
+
+    gsave
+
+    igrey jgrey kgrey XY translate
+    1 .5 scale
+
+    light setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    fill
+
+    0 setgray
+    newpath 
+    0 0 radius 360 180 arcn
+    0 h 2 mul radius 180 0 arcn
+    closepath
+    stroke
+    newpath 
+    0 h 2 mul radius 0 360 arc
+    stroke
+
+    1 1 scale
+    newpath
+    0 h -1 mul radius 6 div 0 360 arc
+    fill
+
+    grestore
+} def
+
+/Tower
+{
+    /bottom exch def
+    /middle exch def
+    /top exch def
+    /overtop exch def
+    /overover exch def
+
+    /jtower exch def
+    /itower exch def
+
+    itower jtower Square
+
+    bottom 1 eq { jtower itower 0 White } if
+    bottom 2 eq { jtower itower 0 Black } if
+    bottom 3 eq { jtower itower 0 Grey  } if
+    bottom 4 eq { jtower itower 0 WhiteDot } if
+    bottom 5 eq { jtower itower 0 BlackDot } if
+    bottom 6 eq { jtower itower 0 GreyDot  } if
+
+    middle 1 eq { jtower itower 1 White } if
+    middle 2 eq { jtower itower 1 Black } if
+    middle 3 eq { jtower itower 1 Grey  } if
+    middle 4 eq { jtower itower 1 WhiteDot } if
+    middle 5 eq { jtower itower 1 BlackDot } if
+    middle 6 eq { jtower itower 1 GreyDot  } if
+
+    top 1 eq { jtower itower 2 White } if
+    top 2 eq { jtower itower 2 Black } if
+    top 3 eq { jtower itower 2 Grey  } if
+    top 4 eq { jtower itower 2 WhiteDot } if
+    top 5 eq { jtower itower 2 BlackDot } if
+    top 6 eq { jtower itower 2 GreyDot  } if
+
+    overtop 1 eq { jtower itower 3 White } if
+    overtop 2 eq { jtower itower 3 Black } if
+    overtop 3 eq { jtower itower 3 Grey  } if
+    overtop 4 eq { jtower itower 3 WhiteDot } if
+    overtop 5 eq { jtower itower 3 BlackDot } if
+    overtop 6 eq { jtower itower 3 GreyDot  } if
+
+    overover 1 eq { jtower itower 4 White } if
+    overover 2 eq { jtower itower 4 Black } if
+    overover 3 eq { jtower itower 4 Grey  } if
+    overover 4 eq { jtower itower 4 WhiteDot } if
+    overover 5 eq { jtower itower 4 BlackDot } if
+    overover 6 eq { jtower itower 4 GreyDot  } if
+
+} def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/PlaceAt
+{   % call: r(ow) c(ol)
+    /colAt exch def
+    /rowAt exch def
+    dx colAt mul dx rowAt mul moveto    
+} def
+
+/Square
+{   % call: row col
+    /colSq exch def
+    /rowSq exch def
+
+    colSq rowSq add 2 mod 0 eq {
+      rowSq colSq PlaceAt (+) show
+    } {
+      rowSq colSq PlaceAt (*) show
+    } ifelse 
+} def
+
+/Board
+{   % call: r(ows) c(ols) p(osition <- array) b(ool -> show coord)
+    /b    exch def
+    /pos  exch def
+    /cols exch def
+    /rows exch def
+
+    1 1 rows   % for each row
+    { 
+        /i exch def
+        i 0 PlaceAt (/) show
+
+        b {  % write row coords
+          i -0.25 Digits i get Label
+        } if                 
+
+        1 1 cols   % for each column
+        { 
+          /j exch def     
+
+          % get (i,j) symbol from the board
+          pos i 1 sub cols mul j 1 sub add get
+          /piece exch def     
+
+          rows i sub 1 add j 
+
+          piece 10000 idiv            % decompose into 5 variables
+          piece 10000 mod 1000 idiv 
+          piece 1000 mod 100 idiv 
+          piece 100 mod 10 idiv 
+          piece 10 mod 
+          Tower
+
+
+        } for
+        i cols 1 add PlaceAt (\\) show
+
+        1 1 cols   % draw upper and bottom lines
+        { 
+          /j exch def     
+          0 j PlaceAt (_) show
+          rows 1 add j PlaceAt (-) show
+
+          b {  % write column coords
+            0 j Chars j 1 sub get Label
+          } if                 
+
+        } for
+    } for
+
+} def
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+/Label
+{   % call: row col s(tring)
+    /s exch def
+    /c exch def
+    /r exch def
+
+    gsave       
+    dx 4 div dx 5 div translate 
+
+    /Courier findfont coordsize scalefont setfont
+    r 9 gt {      % if the number is 10 or greater
+      /basefont /Courier findfont def   % it will condense font to fit size
+      basefont [coordsize 2 div 0 0 coordsize 0 0] makefont setfont
+      r c 0.4 add PlaceAt 
+    } {
+      r c PlaceAt 
+    } ifelse
+
+    s show
+
+    grestore
+
+} def
+
+/Marker
+{   % call: j i g(rey ratio) b(oolean/charpath) s(tring -> just 1 char)
+    /s exch def
+    /b exch def
+    /g exch def
+    /i exch def
+    /j exch def
+
+    gsave
+    g setgray
+    dx 3.5 div dx 5 div translate 
+    j i PlaceAt
+
+    /Helvetica-Bold findfont insidesize scalefont setfont
+    .5 setlinewidth
+    b {
+        s true charpath gsave 1 setgray fill grestore stroke
+      } {
+        s show
+    } ifelse
+    grestore
+
+} def
+
+/MarkerSm
+{   % call: j i g(rey ratio) b(oolean/charpath) s(tring -> just 2 chars)
+    /s exch def
+    /b exch def
+    /g exch def
+    /i exch def
+    /j exch def
+
+    gsave
+    g setgray
+    dx 3.5 div dx 6 div translate 
+    j i PlaceAt
+
+    /basefont /Helvetica-Bold findfont def
+    basefont [insidesize 2 div 0 0 insidesize 0 0] makefont setfont
+    .5 setlinewidth
+
+    b {
+        s true charpath gsave 1 setgray fill grestore stroke
+      } {
+        s show
+    } ifelse
+
+    grestore
+
+} def
+
+%--------------------------------------------------------------------------
+
+/ChessPiece findfont
+dx scalefont 
+setfont
+
+%--------------------------------------------------------------------------
+%---------------- (make your diagram starting here) -----------------------
+%--------------------------------------------------------------------------
+% each cell is a number with up to 5 digits. Possible digits:
+% 1: white checker, 2: black checker, 3: grey checker
+% 4,5,6: white,black,grey stones with dots
+
+8  8 [    0     0     0     0     0     0     0     0
+          0     0     0     0     0     0     0     0
+          0     0     0     0     0     0     0     0
+      23456     0     0     0     0     0     0     0
+          0     0     0     0     0     0     0     0
+       1111  1231 13121   423   141   252   363   456
+         23    33   112   123   321   222   123   232  
+          1     2     3    11    12    13    21    22 ] true Board 
+
+%6 5 0 true (x) Marker
+%5 6 0 false (13) MarkerSm
+
+showpage

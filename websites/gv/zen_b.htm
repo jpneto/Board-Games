@@ -1,0 +1,147 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - ZeN</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">ZeN&nbsp;</font></strong></h1>
+<p align="center"><strong><font size="3">Copyright (c) 2004 <a href="mailto:W.Taylor@math.canterbury.ac.nz">Bill
+Taylor</a></font></strong></p>
+<p align="left"><font size="3" face="Arial">ZeN is a two player strategy game played on any
+square board. The author suggests 15x15 (as usual, smaller is more tactical,
+larger more strategic).&nbsp;</font></p>
+
+    <center>
+      <table border="1" width="340" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,15,15,225");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+&nbsp;
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font size="3" face="Arial"><b>BOARD</b> - The board is a Torus,
+          i.e., the first and last row are adjacent and the left and right
+          column are adjacent.</font>
+            </li>
+		<li><font size="3" face="Arial"><b>MOVE</b>  - On each turn, each player
+            must do one of the following actions:</font>
+            <ul>
+				<li><font size="3" face="Arial">Drop a stone into an empty cell.</font>
+                  </li>
+				<li><font size="3" face="Arial">Connect two friendly stones
+                  which are diagonally adjacent, if it does not cross another
+                  such connection.</font></li>
+		</ul>
+		</li>
+		<li><font
+        size="3" face="Arial"><strong>GOAL</strong></font>
+            <ul>
+				<li><font size="3" face="Arial">The Z player (in the diagrams, the
+              black stones) wins by forming
+              a horizontal loop around the Torus or make a SW-NE (/) spiral loop.</font></li>
+				<li><font size="3" face="Arial">The N second player (the red stones) wins by
+              forming a vertical loop around the Torus or make a SE-NW (\)
+              spiral loop.</font></li>
+		</ul>
+		</li>
+		</ul>
+    </td>
+  </tr>
+</table>
+&nbsp;
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="265" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,11,11,11/11/11/11/5@cx0010u4/5u@cx10004/11/11/11/11/11");
+//--></script>
+      </td>
+      <td valign="top" width="335"><font face="Arial"><strong>A connecting example</strong>
+        <p>The black stones are connected. The red stones cannot be connected directly.</font>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="265" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,11,11,u10/.x9/u3u6/u10/@cx0100xxxx@cx0010u4/u4u@cx1000xxx@cx0001/uu@cu00108/3@cu10107/4@cu1000u5/5x5/11");
+//--></script>
+      </td>
+      <td valign="top" width="335"><font face="Arial"><strong>A completed game</strong>
+        <p>Black (the Z player) made a horizontal loop. Notice the link between
+        a7 and k6.</font>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="265" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,5,5,.@cu0100..@cx0100/@cu0001..@cx0101u/.x@cx0001uu/xx.@cu0100./xu@cu0001.x");
+//--></script>
+      </td>
+      <td valign="top" width="335"><font face="Arial"><b>Spiral loops</b></font>
+        <p><font size="3" face="Arial">The spiral loops are required, because it
+        is possible that neither player can now get a loop
+in their primary direction (horizontal for Z, vertical for N), though both have a spiral loop.</font></p>
+        <p><font size="3" face="Arial">In this case, Z has won the game.</font>
+      </td>
+    </tr>
+</table>
+<p><font size="3" face="Arial">This game is similar to <a href="quax.htm">Quax</a>
+but on a different board topology (there are no edges on a Torus).<p">&nbsp;The
+game will be available on Richard Rognlie's email <a href="http://www.gamerz.net/pbmserv/index.html">server</a>
+(at June or July).</font></p>
+<table border="1" width="610" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="370" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,15,15,6uxu6/3u.x.x.x5/4u.u.xux4/2uxu@cx0110ux.u5/2xu@cx0101u@cx1000.u.x4/2u@cx0101u;6x2/u.@cx0001u;5x.ux./.uu;3u4xux/x.x8xuxu/12u.u/10u4/8u6/15/8u.x4/4u2x7");
+//--></script>
+      </td>
+      <td valign="top" width="240"><font face="Arial"><strong>A sample game</strong>
+        <p>This is a board position of a real game when N resigned (the red
+        stones).<p>The player cannot stop the horizontal loop for Z. If Red
+        tries to block off black's c9 end, say by playing b10, then</font>
+        <font face="Arial">black can play d8 and threat to occupy the green dot
+        connection path.</font>
+        <p><font face="Arial">If Red plays at one of the green points, then Black
+        extends his c9 end</font> <font face="Arial">with b10, easily reaching
+        the other black stones across the edge of the board.</font></p>
+ <p><font face="Arial"> The
+        remaining chains are already too strong.</font>
+      </td>
+    </tr>
+</table>
+<p><font size="3" face="Arial">Some words from the author: <i>This game was
+invented specifically as a companion to the popular game &quot;Projex&quot; (by
+the same author), for two purposes. One is that the projective planar topology
+of the latter is difficult for the non-mathematical learner to follow at first;
+whereas the Toroidal topology is to some extent much simpler, and may be already
+familiar from various computer war games. The other is to produce such a game
+with local *rectangular* geometry, which is more familiar and convenient for the
+casual gamer, rather than the &quot;purer&quot; local hexagonal geometry so
+beloved of true abstract gamers. </i></font></p>
+<p><font size="3" face="Arial"><i>Note that the &quot;N&quot; and &quot;Z&quot;
+names of the stones exactly reflect the directions of the connections required
+by each side! Horizontal or &quot;positive&quot; sloped diagonals for
+&quot;Z&quot;, and vertical or negative slopes for &quot;N&quot;. Very neat.
+Even better, it allows the game to reflect the origin of the author, New Zealand,
+and also to make up the main part of the name, ZeN, which may also reflect the
+mind-boggling nature of the opposing connections!</i></font></p>
+</blockquote>
+<hr>
+</body>
+</html>

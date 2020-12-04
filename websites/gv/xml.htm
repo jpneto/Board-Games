@@ -1,0 +1,200 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>
+The WAG-XML project
+</title>
+</head>
+<body background="ricebk.jpg">
+<h1 align="center"><b>The WAG/XML project</b></h1>
+<p align="center"><i>by João Pedro Neto and Derek Hohls</i></p>
+
+<font face="Arial">Derek Hohls and me started a small project to create a
+standard format to translate game rules into XML markups. The goal is to accommodate
+the games presented at the World of Abstract Games (WAG) website into a data
+format that can be processed (in the future) by a database management system.</font>
+<p><font face="Arial">The main element is the tag &lt;game&gt; which includes
+every information concerning a specific game (and its variants).</font></p>
+<blockquote>
+  <blockquote>
+<p><font face="Courier New">&lt;game&gt;...&lt;/game&gt;</font></p>
+  </blockquote>
+</blockquote>
+<p><font face="Arial">Inside the &lt;game&gt; tag, there are some mandatory
+tags, namely:</font></p>
+<blockquote>
+  <blockquote>
+<p><font face="Courier New">&lt;title&gt;The game title&lt;/title&gt;<br>
+<br>
+&lt;meta&gt; [Information about the game] &lt;/meta&gt;</font></p>
+  </blockquote>
+  <p><font face="Arial">The &lt;meta&gt; tag includes information not related to
+  the game rules, like the game author and year, the publisher and the webpage
+  writer. An example:</font></p>
+  <blockquote>
+<p><font face="Courier New">&lt;meta&gt;<br>
+&nbsp;&nbsp; &lt;year>1989&lt;/year><br>
+<br>
+&nbsp;&nbsp; &lt;author><br>
+&nbsp;&nbsp;&nbsp;&nbsp; &lt;name>Author's Name&lt;/name><br>
+&nbsp;&nbsp;&nbsp;&nbsp; &lt;mail&gt;email@internet&lt;/mail>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &lt;url&gt;www.url.com&lt;/url&gt;&nbsp;<br>
+&nbsp;&nbsp; &lt;/author><br>
+<br>
+&nbsp;&nbsp; &lt;publisher><br>
+&nbsp;&nbsp;&nbsp;&nbsp; &lt;name&gt;Ab Games, Lda.&lt;/name><br>
+&nbsp;&nbsp;&nbsp;&nbsp; &lt;url&gt;www.url.com&lt;/url&gt;&nbsp;<br>
+&nbsp;&nbsp; &lt;/publisher><br>
+<br>
+&nbsp;&nbsp; &lt;writer><br>
+&nbsp;&nbsp;&nbsp;&nbsp;      &lt;name&gt;Writer's name&lt;/name><br>
+&nbsp;&nbsp;&nbsp;&nbsp;      &lt;mail&gt;email@internet&lt;/mail>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;      &lt;url&gt;www.url.com&lt;/url&gt;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;      &lt;year>2003&lt;/year><br>
+&nbsp;&nbsp;    &lt;/writer><br>
+&lt;/meta&gt;</font></p>
+  </blockquote>
+</blockquote>
+<p><font face="Arial">The &lt;components&gt; tag includes information about the
+game features except the rules. An example:</font></p>
+<blockquote>
+  <blockquote>
+    <p><font face="Courier New">  &lt;components>&nbsp;<br>
+    &nbsp; &lt;board&nbsp; top="5" middle=&quot;7&quot; bottom="5">hex&lt;/board><br>
+    <br>
+    &nbsp; &lt;pieces number="14" color="black" id="soldiers" />&nbsp;<br>
+    &nbsp;    &lt;pieces number="14" color="white" id="soldiers" />&nbsp;<br>
+    <br>
+    &nbsp; &lt;section>soldier&lt;/section><br>
+    <br>
+    &nbsp; &lt;features grid="hex"&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    cancapture=&quot;true&quot;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; canmove=&quot;true&quot;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    mustcapture=&quot;true&quot;/&gt;<br>
+    <br>
+    &nbsp; &lt;zillions>http://www.zog.com&lt;/zillions><br>
+    <br>
+    &nbsp; &lt;diagram type="hex" middle=&quot;7&quot;&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;5,7,5,wwwww/wwwwww/..www../..xxx../xxxxxx/xxxxx&quot;<br>
+    &nbsp; &lt;/diagram><br>
+    <br>
+    &nbsp; &lt;image width="80" height="45"&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; src=&quot;icons/image.jpg&quot;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text="a comment"/><br>
+    <br>
+  &lt;/components></font></p>
+  </blockquote>
+  <p><font face="Arial">The &lt;board&gt; gives the typical size of the game
+  board. The &lt;pieces&gt; describe the minimal physical requirements of game
+  pieces in order to play the game. &lt;section&gt; provides information to what
+  section the game belongs (soldier, king, stack). &lt;features&gt; denote some
+  rule features (like pieces move, pieces capture, what type of grid, ...).</font>
+  <font face="Arial">&lt;zillions&gt; points to an optional link with ZoG
+  information. The &lt;diagram&gt; draws a Javascript diagram of a certain board
+  type (the type must be &quot;sq&quot;, &quot;hex&quot; or &quot;sqstack&quot;).
+  &lt;diagram&gt; may be used within other tags. The &lt;image&gt; inserts an
+  image, it may be also use on other contexts.&nbsp;</font></p>
+</blockquote>
+<p><font face="Arial">Next, comes the &lt;description&gt; tag, which includes
+the game rules and samples. The rules and divided in three parts: (i) the game
+setup, (ii) the rules where it's possible to create rule sections and rules
+subsections, and (iii) the game goal. An example:</font></p>
+<blockquote>
+  <blockquote>
+    <p><font face="Courier New">  &lt;description><br>
+    <br>
+    &nbsp; &lt;setup>Setup description&lt;/setup><br>
+    <br>
+    &nbsp; &lt;rules><br>
+    &nbsp;&nbsp;&nbsp; &lt;rulesection><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;rule>&lt;rtitle&gt;MOVING&lt;/rtitle>rule 1&lt;/rule><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;rule>rule 2&lt;/rule><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;rule>rule 3&lt;/rule><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;rulesection&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;rule>rule 3.1&lt;/rule><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;rule>rule 3.2&lt;/rule><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/rulesection><br>
+    &nbsp;&nbsp;&nbsp; &lt;/rulesection><br>
+    &nbsp; &lt;/rules><br>
+    <br>
+    &nbsp; &lt;goal>Goal definition&lt;/goal><br>
+    <br>
+    &nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>plus zero or more examples</i><br>
+    &nbsp;<br>
+    &lt;/description></font></p>
+  </blockquote>
+  <p><font face="Arial">The format of an example is like the following two:</font></p>
+  <blockquote>
+    <p><font face="Courier New">    &lt;example><br>
+    &nbsp;&nbsp; &lt;diagram type="hex" middle=&quot;7&quot;&gt;&nbsp;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;5,7,5,.wwww/wwwwww/w.www../.axxx../.x.xxx/xx.xx&quot;<br>
+    &nbsp;&nbsp; &lt;/diagram>&nbsp;<br>
+    &nbsp;&nbsp; &lt;title>An example&lt;/title><br>
+    &nbsp;&nbsp; &lt;note&gt;it's possible to make &lt;b>bolds&lt;/b>, newlines&lt;br/&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;i>italics&lt;/i>, &lt;u>underlines&lt;/u>, urls &lt;url>www...&lt;/url>&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and images&lt;br/&gt;&lt;image width="80" height="45"
+    src=&quot;a.jpg&quot;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text="a comment"/><br>
+    &nbsp;&nbsp; &lt;/note><br>
+    &lt;/example><br>
+    <br>
+    &lt;example><br>
+    &nbsp; &lt;diagram type=&quot;sqstack&quot; col=&quot;5&quot;&gt;&nbsp;&nbsp;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp; &quot;4,5,..[..xWwx]../...../...../.....&quot;<br>
+    &nbsp; &lt;/diagram>&nbsp;<br>
+    &nbsp; &lt;title>Another example&lt;/title><br>
+    &nbsp; &lt;note>bla blabla blabla blabla bla&lt;/note><br>
+    &lt;/example></font></p>
+  </blockquote>
+</blockquote>
+<p><font face="Arial">There's also some optional tags for additional
+information.</font></p>
+<blockquote>
+  <blockquote>
+    <p><font face="Courier New">  &lt;subtitle&gt;The game subtitle&lt;/subtitle>&nbsp;&nbsp;
+    <i>game subtitle</i><br>
+    <br>
+  &lt;notes><br>
+    &nbsp; &lt;note>General notes&lt;/note><br>
+    &nbsp; &lt;history>Some historical notes.&lt;/history><br>
+    &nbsp; &lt;rulenote>Rule notes&lt;/rulenote><br>
+    &nbsp; &lt;authornote>Author's notes&lt;/authornote><br>
+  &lt;/notes><br>
+    <br>
+  &lt;related>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <i>a related game</i><br>
+    &nbsp; &lt;name>Blokus&lt;/name><br>
+    &nbsp; &lt;url>Blokus.htm&lt;/url><br>
+  &lt;/related><br>
+    <br>
+  &lt;variant>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <i>a variant</i><br>
+    &nbsp;&nbsp; &lt;title&gt;...&lt;/title><br>
+    &nbsp;&nbsp; &lt;subtitle&gt;...&lt;/subtitle><br>
+    &nbsp;&nbsp; &lt;meta>...&lt;/meta><br>
+    &nbsp;&nbsp; &lt;components>...&lt;/components><br>
+    &nbsp;&nbsp; &lt;notes>...&lt;/notes><br>
+    &nbsp;&nbsp; &lt;description>...&lt;/description><br>
+ &lt;/variant></font></p>
+  </blockquote>
+</blockquote>
+<p><font face="Arial">Each &lt;game&gt; element is processed by the following <a href="game.xsl">game.xsl</a>
+file using a transformation tool like <a href="http://users.iclway.co.uk/mhkay/saxon/">Saxon</a>.
+The format stuff is included at file <a href="wagstyle.css">wagstyle.css</a>.</font></p>
+<p><font face="Arial">
+E.g., given a XML file <a href="abalone2.xml">abalone.xml</a>, if we execute</font></p>
+<blockquote>
+<p><font face="Courier New">java -classpath saxon.jar com.icl.saxon.StyleSheet&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; abalone.xml&nbsp; game.xsl&nbsp; >&nbsp; abalone.html</font></p>
+</blockquote>
+<p><font face="Arial">we get <a href="_X_abalone.html">abalone.html</a>.</font></p>
+<p><font face="Arial">Some browsers, like IE6, can do this transformation
+automatically, so a link to the plain <a href="abalone.xml">abalone.xml</a> is
+enough.</font></p>
+<p>&nbsp;</p>
+</body>
+</html>

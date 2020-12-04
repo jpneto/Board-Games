@@ -1,0 +1,110 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - DIAMOND &amp; PIVOTS</title>
+<script LANGUAGE="JavaScript" src="hex2diag/hex2diag.js"></script>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">DIAMONDS &amp; PIVOTS&nbsp;</font></strong></h1>
+<p align="center"><strong><font size="3">Copyright (c) 2005 João Pedro Neto</font></strong></p>
+<p align="left"><font face="Arial">This game</font><font size="3" face="Arial"> 
+is played on the following hexagonal board.</font></p>
+    <center>
+    <table border="2" width="280" bgcolor="#D5BD83" bordercolorlight="#333366" bordercolordark="#000000">
+      <tr>
+        <td width="100%" background="back-board.jpg"><script LANGUAGE="JavaScript"><!--
+hexgv2diag("5,9,5,...../....../......./......../........./......../......./....../.....");
+        //--></script></td>
+      </tr>
+    </table>
+    </center>
+&nbsp;
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><font face="Arial"><b>DIAMOND</b> - A pattern of four connected 
+		friendly stones arranged in two connected lines of two stones each.</font></li>
+		<li><b><font face="Arial">TURN</font></b><font size="3" face="Arial">
+            - </font><font face="Arial">Each players passes or drops a friendly stone over 
+		an empty cell. </font>
+		<ul>
+			<li><font face="Arial">If any diamond patterns with four friendly 
+			stones are made, the player must choose one, choose a stone from it 
+			(the pivot), and place its other three stones in a line starting 
+			from the pivot.</font><ul>
+				<li><font face="Arial">Every stone (of either color) that was on 
+				those destination cells are captured and removed from the board.</font></li>
+				<li><font face="Arial">If, after a pivot movement, another 
+				diamond is made, the player must repeat this procedure.</font></li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+		<li><font face="Arial"><b>PIE RULE</b> - After the first drop, the 
+		second player may swap sides.</font></li>
+		<li><font size="3" face="Arial"><b>GOAL</b>
+            - After two passes, wins the player with more stones (if the number 
+		is equal, wins the second player)</font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+  <p>&nbsp;</p>
+  <table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="left" width="280" bordercolor="#000000" bgcolor="#D5BD83" background="back-board.jpg"><script LANGUAGE="JavaScript"><!--
+hexgv2diag("5,9,5,...../..Xx../..xx.../....x.../.....x.../......../......./wwww../.w...");
+hexgv2diag("5,9,5,...../....../..X..../...Xx.../....Xx.../....X.../......./wwww../.w...");
+hexgv2diag("5,9,5,...../....../..x..../...x..../........./....X.../.a.X.../wwXw../.X...");
+//--></script>
+      </td>
+      <td valign="top" width="330"><font face="Arial"><strong>An example</strong><p>
+		Black's turn. He dropped the marked stone, making a pivot (the four top 
+		black stones).</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>Then, he chooses c5 as the pivot and make 
+		a line in such a way to create two new diamonds. Black must now select 
+		one of them and continue moving.<p>&nbsp;<p>&nbsp;<p> &nbsp;<p> &nbsp;<p> &nbsp;<p> 
+		Black picks the lower diamond, uses f5 as the pivot and uses the 
+		remaining three stones is a way to capture 2 white stones. 
+		<p> White's position is weaker than Black's, however he may try to reply 
+		by dropping at [1] which guarantees a diamond in the next turn.</font></td>
+    </tr>
+  </table>
+<p>Some notes from Bill Taylor:</p>
+<pre wrap>First I note that the tactic of tank-like crawling is unstoppable:
+
+x x x x . . .       . . x x . . .       . . . x x x x
+ x # . . . . ----&gt;   . x x x x . ----&gt;   . . . x x .   ----&gt; etc
+
+Now this is not necessarily a bad thing, though it may become a little
+predictable, perhaps.  Nonetheless, it can be accounted for.
+At first I thought the board was too small, and would need expanding,
+but in fact we can *just* get it onto our board.  It appears to show
+that the worst opening move is NOT in the corner, but on the side!</pre>
+<pre wrap>    . . . , .  
+   . . . , . .      Black's opening move here can be worked up into 
+  . . . , . . .     a &quot;tank&quot; going along one of the two comma lines,
+ . . . , . o . .    which means that the o move can be as shown,
+. . . , . . . . .   or even slightly closer to the comma tracks.
+ . , , , , , , ,  
+  x , . . . . .     I think we could keep this in mind now.
+   . . . . . .      I think the opening advantage is still very great,
+    . . . . .       and the opener needs to go to this worst spot,
+                    to get the best out of the inevitable(?) swap.
+</pre>
+<p>&nbsp;</p>
+</blockquote>
+<hr>
+</body>
+</html>

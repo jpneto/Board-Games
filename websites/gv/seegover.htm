@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Games of Soldiers - SEEGOVER</title>
+<SCRIPT LANGUAGE="JavaScript" src="board2diag/board2diag.js"></SCRIPT>
+<meta name="Microsoft Theme" content="ricepapr 011">
+</head>
+
+<body background="ricebk.jpg" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#333366" alink="#990000">
+
+<blockquote>
+<h1 align="center"><strong><font face="Arial Black">SEEGOVER</font></strong></h1>
+<p align="center"><strong><font size="3">Copyright (c) 1977 T.Truran</font></strong></p>
+<p align="left"><font size="3" face="Arial">This game is played on an empty 5x5 square board:</font></p>
+    <center>
+      <table border="1" width="120" cellspacing="1" bordercolorlight="#333366" bordercolordark="#000000">
+        <tr>
+          <td width="100%" background="back-board.jpg" align="center">
+<script LANGUAGE="JavaScript">boardgv2diag("lurd,5,5,25");</script>
+          </td>
+        </tr>
+      </table>
+    </center>
+<p align="left"><font size="3" face="Arial">There are 24 white and 24 black stones off board (or just 24 
+<a href="othello.htm">Othello</a> stones).</font></p>
+<table border="0" width="80%">
+  <tr>
+    <td width="100%">
+      <ul>
+		<li><b><font face="Arial">DROP PHASE</font></b><font size="3" face="Arial">
+            - At each turn, each player must drop a friendly stone on an empty 
+		cell, except the central cell which should be empty until this first 
+		phase is over.</font><ul>
+		<li><font size="3" face="Arial">When 24 stones are dropped, the game 
+		continues with the move phase.</font></li>
+		</ul>
+		</li>
+		<li><b><font face="Arial">MOVE PHASE</font></b><font size="3" face="Arial"> 
+		- At each turn, each player must do one of the following actions:</font>
+            <ul>
+				<li><font size="3" face="Arial">Move a friendly stone to an 
+				orthogonally adjacent empty cell.</font><ul>
+				<li><font face="Arial">There are custodian captures, i.e., every 
+				enemy stone between the moved stone and another friendly stone 
+				(over the same line) switches color.</font></li>
+				<li><font face="Arial">After a move with results in a capture, 
+				the moved stone may optionally move again into its initial cell 
+				(which may result in more custodian captures).</font></li>
+		</ul>
+				</li>
+				<li><font face="Arial">If a player cannot move any stone, he 
+				should pick one friendly stone on any cell and drop it on the 
+				empty cell, executing the eventual custodian captures.</font></li>
+		</ul>
+		</li>
+		<li><font
+        size="3" face="Arial"><strong>GOAL</strong> - A player who has only four 
+		stones or less, loses the game.</font></li>
+		</ul>
+    </td>
+  </tr>
+</table>
+<p align="left"><font face="Arial">There are the possibility of cyclic positions 
+(check the second example). To handle those cases, there are, at least, these 
+options: (a) it is invalid to repeat a previous position (h</font><font size="3" face="Arial">owever, 
+this super-Ko rule may be hard to check); (b) declare a draw if a cycle is 
+found; (c) it is invalid to have N consecutive moves without captures (say N=4).</p>
+<table border="1" width="600" cellspacing="3" cellpadding="2" bordercolorlight="#333366" bordercolordark="#000000">
+    <tr>
+      <td align="center" width="120" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,5,5,.wxxw/wwxxw/xwxxx/xxxxx/wxwxx");
+//--></script>
+      </td>
+      <td valign="top" width="480"><font face="Arial"><strong>An example</strong><p>
+		Black's turn<font size="3" face="Arial">. Since he </font></font>cannot 
+		move, he must drop a stone at a5. Black moves a2-a5, capturing the white 
+		stones at a4 and b5.<p>Then White must move a1-a2 (its only valid move). 
+		Then Black may move b1-a1 (capturing a2) and then, since he made a 
+		capture, he moves back to b1 (capturing c1).<p>After that move, Black 
+		win the game, since White only has four stones left.</td>
+    </tr>
+    <tr>
+      <td align="center" width="120" bordercolor="#000000" background="back-board.jpg">
+<script LANGUAGE="JavaScript"><!--
+boardgv2diag("lurd,5,5,wwxww/wwxww/w.www/xxwxx/xxwxx");
+//--></script>
+</td>
+      <td valign="top" width="480"><b>A cyclic example</b><p>Black's turn. 
+		<p>If you try to play this position, you will find that the board 
+		repeats itself after six moves!</td>
+    </tr>
+</table>
+<p align="left"><font face="Arial">I wish to thank
+<a href="mailto:povedapoveda2000@yahoo.es">Julián R.</a> of Madrid for this game 
+information.</font></p>
+</blockquote>
+<hr>
+</body>
+</html>
